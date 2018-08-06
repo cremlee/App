@@ -28,6 +28,7 @@ import android.luna.Utils.Logger.EvoTrace;
 import android.luna.rs232.Ack.AckQuery;
 import android.luna.service.BlueComService;
 import android.luna.service.ComService;
+import android.luna.service.ScheduleService;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -352,7 +353,7 @@ public class CremApp extends Application {
     private  boolean flagEvoService = false;
     private  boolean Isbindservice =false;
     private  boolean flagblueService = false;
-
+    private  boolean flagscheduleService = false;
     //// TODO: 2018/1/5 myclass
     private DataHelper dataHelper=null;
 
@@ -436,6 +437,18 @@ public class CremApp extends Application {
         bindService(intent, blueservice, Context.BIND_AUTO_CREATE);
     }
 
+    private void bindScheduleService()
+    {
+        Intent intent = new Intent(CremApp.this, ScheduleService.class);
+        bindService(intent, scheduleservice, Context.BIND_AUTO_CREATE);
+    }
+    private void unbindScheduleService() {
+        if (flagscheduleService) {
+            unbindService(scheduleservice);
+            flagscheduleService = false;
+        }
+
+    }
     private void unbindEvoService() {
         if (flagEvoService) {
             unbindService(evoService);
@@ -486,12 +499,26 @@ public class CremApp extends Application {
         }
     };
 
+    private ServiceConnection scheduleservice = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            ScheduleService.MyBinder binder = (ScheduleService.MyBinder)service;
+            binder.getService();
+            flagscheduleService =true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+
     public void bindAllService() {
         if(!Isbindservice)
         {
             bindblueService();
             bindCoffeeService();
-            //bindSchedulerService();
+            bindScheduleService();
             // 读取机器类型
             Isbindservice =true;
         }
@@ -502,7 +529,7 @@ public class CremApp extends Application {
         {
             unbindEvoService();
             unbindBlueService();
-            //unbindSchedulerService();
+            unbindScheduleService();
             Isbindservice = false;
         }
     }

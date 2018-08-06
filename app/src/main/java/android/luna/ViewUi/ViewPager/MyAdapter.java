@@ -68,17 +68,24 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.ViewHolder> imple
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.itemView.setTag(position);
         if(drinkMenuButtonList.get(position).getDrinkstate()==0) {
+            holder.itemView.setClickable(true);
             holder.itemView.setOnClickListener(this);
             holder.drinkstate.setVisibility(View.GONE);
         }
         else if(drinkMenuButtonList.get(position).getDrinkstate()==1){
             holder.drinkstate.setText("Out of Stock");
+            holder.drinkstate.setVisibility(View.VISIBLE);
+            holder.itemView.setClickable(false);
         }
         else if(drinkMenuButtonList.get(position).getDrinkstate()==2){
             holder.drinkstate.setText("Not Available");
+            holder.drinkstate.setVisibility(View.VISIBLE);
+            holder.itemView.setClickable(false);
         }
         else if(drinkMenuButtonList.get(position).getDrinkstate()==3){
             holder.drinkstate.setText("Empty waster bin");
+            holder.drinkstate.setVisibility(View.VISIBLE);
+            holder.itemView.setClickable(false);
         }
         holder.tvname.setText(drinkMenuButtonList.get(position).getName());
         holder.tvprice.setText(drinkMenuButtonList.get(position).getPrice()==0?"":Float.toString(drinkMenuButtonList.get(position).getPrice()));

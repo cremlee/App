@@ -5,6 +5,8 @@ import android.luna.Activity.Base.CremApp;
 import android.luna.Data.Interface.IScheduleDetail;
 import android.luna.Data.Interface.IScheduleEvent;
 import android.luna.Data.Interface.IScheduleFactory;
+import android.luna.Data.Interface.ISmart;
+import android.luna.Data.Interface.ISmartDetail;
 import android.luna.Data.Interface.IVendScheduleDetail;
 import android.luna.Data.module.Scheduler;
 import android.luna.Data.module.SchedulerDetail;
@@ -28,6 +30,8 @@ public class ScheduleDaoFactory extends BaseDaobak implements IScheduleFactory {
     private IScheduleEvent scheduleEventdao   = null;
     private IScheduleDetail scheduleDetaildao = null;
     private IVendScheduleDetail vendscheduleDetaildao = null;
+    private ISmart smartdao =null;
+    private ISmartDetail smartDetaildao =null;
     public ScheduleDaoFactory(Context context, CremApp app) {
         super(context, app);
     }
@@ -407,5 +411,15 @@ public class ScheduleDaoFactory extends BaseDaobak implements IScheduleFactory {
             };
         }
         return vendscheduleDetaildao;
+    }
+
+    @Override
+    public ISmart getSmartDao() {
+        return null;
+    }
+
+    @Override
+    public ISmartDetail getSmartDetailDao() {
+        return null;
     }
 }

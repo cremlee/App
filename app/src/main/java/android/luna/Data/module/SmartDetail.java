@@ -9,8 +9,8 @@ import java.io.Serializable;
 
 import evo.luna.android.R;
 
-@DatabaseTable(tableName="tb_scheduler_detailcopy")
-public class SchedulerDetailCopy implements Serializable {
+@DatabaseTable(tableName="tb_smart_detail")
+public class SmartDetail implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@DatabaseField(generatedId=true)

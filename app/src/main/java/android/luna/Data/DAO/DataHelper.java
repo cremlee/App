@@ -328,6 +328,10 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
     private Dao<SchedulerDetail,Integer>  _SchedulerDetailDao =null;
     private Dao<VendSchedulerDetail,Integer>  _VendSchedulerDetailDao =null;
 
+    private Dao<Smart,Integer>  _smartDao =null;
+    private Dao<SmartDetail,Integer>  _smartDetailsDao =null;
+
+    private Dao<DaylightSetting,Integer>  _daylightSettingsDao =null;
 
     public Dao<Scheduler,Integer> get_SchedulerDao()
     {
@@ -341,7 +345,6 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         }
         return _SchedulerDao;
     }
-
     public Dao<SchedulerDetail,Integer> get_SchedulerDetailDao()
     {
         if(_SchedulerDetailDao ==null)
@@ -365,6 +368,42 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
             }
         }
         return _VendSchedulerDetailDao;
+    }
+    public Dao<Smart,Integer> get_SmartDao()
+    {
+        if(_smartDao ==null)
+        {
+            try {
+                _smartDao = getDao(Smart.class);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return _smartDao;
+    }
+    public Dao<SmartDetail,Integer> get_SmartDetailDao()
+    {
+        if(_smartDetailsDao ==null)
+        {
+            try {
+                _smartDetailsDao = getDao(SmartDetail.class);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return _smartDetailsDao;
+    }
+    public Dao<DaylightSetting,Integer> get_daylightSettingsDao()
+    {
+        if(_daylightSettingsDao ==null)
+        {
+            try {
+                _daylightSettingsDao = getDao(DaylightSetting.class);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return _daylightSettingsDao;
     }
     //###############################################################################################//
     //###############################################################################################//
@@ -443,6 +482,16 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         }
         try {
             TableUtils.createTable(connectionSource, WasterBinStock.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            TableUtils.createTable(connectionSource, Smart.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            TableUtils.createTable(connectionSource, SmartDetail.class);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -581,16 +630,19 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        try {
+            TableUtils.createTable(connectionSource, DaylightSetting.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         InitDatabase();
         /*TableUtils.createTable(connectionSource, Maintenance.class);
         TableUtils.createTable(connectionSource, Soldout.class);
         TableUtils.createTable(connectionSource, SpiderDatastruct.class);
         TableUtils.createTable(connectionSource, HardwareConfig.class);
-        TableUtils.createTable(connectionSource, DrinkName.class);
         TableUtils.createTable(connectionSource, TradeEvent.class);
         TableUtils.createTable(connectionSource, CoinBoxItem.class);
-        TableUtils.createTable(connectionSource, IntelligentECO.class);
-        TableUtils.createTable(connectionSource, DaylightSetting.class);*/
+        TableUtils.createTable(connectionSource, IntelligentECO.class);*/
     }
 
     @Override
@@ -621,6 +673,20 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
 
     public void testadd()
     {
-        
+        try {
+            TableUtils.createTable(connectionSource, Smart.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            TableUtils.createTable(connectionSource, SmartDetail.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            TableUtils.createTable(connectionSource, DaylightSetting.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

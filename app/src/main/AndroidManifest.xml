@@ -279,6 +279,10 @@
             android:name="android.luna.service.BlueComService"
             android:enabled="true"
             android:exported="true"/>
+        <service
+            android:name="android.luna.service.ScheduleService"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>

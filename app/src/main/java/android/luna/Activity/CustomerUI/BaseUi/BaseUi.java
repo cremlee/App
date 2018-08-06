@@ -161,9 +161,8 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getApp().getHelper().testadd();
+        getApp().getHelper().testadd();
         //addDragView();
-        KeyManager.getWechatkey();
         getApp().bindAllService();
         warningAdapter = new MachineWarningAdapter(getApp().getallMachineWarnList(),this);
         IntentFilter filter = new IntentFilter();

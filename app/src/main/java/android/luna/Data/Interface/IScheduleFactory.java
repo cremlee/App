@@ -8,4 +8,6 @@ public interface IScheduleFactory {
     IScheduleEvent getScheduleEventDao();
     IScheduleDetail getScheduleDetailDao();
     IVendScheduleDetail getVendScheduleDetailDao();
+    ISmart getSmartDao();
+    ISmartDetail getSmartDetailDao();
 }

@@ -5,14 +5,8 @@ import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
 
-@DatabaseTable(tableName = "tb_schedulercopy")
-public class SchedulerCopy implements Serializable {
-
-	public static final int TYPE_DAILY_CLEAN = 1;
-	public static final int TYPE_WEEKLY_CLEAN = 2;
-	public static final int TYPE_ENERGY_SAVING = 3;
-	public static final int TYPE_FREE_DRINK = 4;
-
+@DatabaseTable(tableName = "tb_smart")
+public class Smart implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@DatabaseField(generatedId = true)
 	private int id;
@@ -28,10 +22,10 @@ public class SchedulerCopy implements Serializable {
 	private int offvalue; // 折扣 0：free 1：50 %off
 
 
-	public SchedulerCopy() {
+	public Smart() {
 	}
 
-	public SchedulerCopy(int eventType, String startTime, int persistTime,
+	public Smart(int eventType, String startTime, int persistTime,
                          int week, int offvalue) {
 		super();
 		this.eventType = eventType;

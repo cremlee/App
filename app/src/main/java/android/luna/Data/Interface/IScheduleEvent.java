@@ -12,5 +12,5 @@ public interface IScheduleEvent extends ISchedule<Scheduler> {
        List<Scheduler> queryBytype(int type);
        Scheduler findSchedulerById(int schedulerId);
         int deleteById(int id);
-       void createOrUpdateScheduler(Scheduler scheduler);
+        void createOrUpdateScheduler(Scheduler scheduler);
 }
