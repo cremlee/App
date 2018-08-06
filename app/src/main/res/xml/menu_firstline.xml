@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_log"
+        icon="@drawable/ics_cfa"
+        title="Friends" />
+    <tab
+        id="@+id/tab_clean"
+        icon="@drawable/ics_cleaning"
+        title="Friends" />
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ics_home"
+        title="Friends" />
+</tabs>

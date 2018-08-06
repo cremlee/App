@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <!--head area-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent">
+            <!--showcompanyinfo-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/company_name"
+                android:textColor="@android:color/background_light"
+                android:textSize="28sp"
+                android:layout_marginLeft="20dp"
+                />
+            <!--showtime-->
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textColor="@android:color/background_light"
+                android:textSize="23sp" />
+            <Button
+                android:id="@+id/btnback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back_bt_seletor"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white"
+             />
+        <!--body area-->
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="5">
+            <!--Coffee part-->
+        <RelativeLayout
+            android:clipChildren="false"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <com.lid.lib.LabelImageView
+                android:layout_marginTop="80dp"
+                android:id="@+id/drinkimage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:id="@+id/drinkname"
+                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/drinkimage"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/drinkprice"
+                android:textSize="24sp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/drinkname"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_below="@+id/drinkprice"
+                android:id="@+id/wechatcode"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+            <ImageView
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_below="@+id/drinkprice"
+                android:layout_alignParentRight="true"
+                android:id="@+id/alicode"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+            <Button
+                android:id="@+id/btndrinkinfo"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/aller_bt_seletor"
+
+                android:layout_marginEnd="5dp"
+                android:layout_alignBaseline="@+id/btn_jug"
+                android:layout_alignBottom="@+id/btn_jug"
+                android:layout_alignParentRight="true" />
+
+            <Button
+                android:background="@drawable/jug_bt_seletor"
+                android:layout_marginLeft="5dp"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:id="@+id/btn_jug"
+                android:layout_width="70dp"
+                android:layout_height="70dp" />
+        </RelativeLayout>
+            <!--story telling-->
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent">
+                <ViewFlipper
+                    android:visibility="gone"
+                    android:id="@+id/vp_drinkstory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </ViewFlipper>
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/rly_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/pay_select"
+                    android:orientation="vertical"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:textSize="24sp"
+                        android:layout_gravity="center"
+                        android:text="Selection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <Button
+                        android:enabled="false"
+                        android:text="free pin"
+                        android:id="@+id/pay_pin"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp" />
+                    <Button
+                        android:enabled="false"
+                        android:text="Coges"
+                        android:id="@+id/pay_coges"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp" />
+                    <Button
+                        android:enabled="false"
+                        android:text="Nayax"
+                        android:id="@+id/pay_nayax"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp" />
+                    <Button
+                        android:text="Qrcode"
+                        android:id="@+id/pay_qr"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp" />
+                </LinearLayout>
+                    <FrameLayout
+                        android:id="@+id/fly_pay"
+                        android:layout_margin="10dp"
+                        android:layout_toStartOf="@+id/pay_select"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white"
+            />
+        <!--foot area-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.2">
+            <Button
+                android:id="@+id/btndrinkstart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/start_bt_seletor" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Congratulations"
+        android:layout_gravity="left"
+        android:textSize="32sp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_margin="30dp"
+            android:textSize="24sp"
+            android:textAppearance="@anim/hyperspace_out"
+            android:text="       Ok that sounds better but any such solutions requiring waiting time in production need to be avoided in the future since it creates a lot of waste and non value added waiting time in the production lines with increased inventory etc. which is something we will ned to attack going forward and then it will need to be removed."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

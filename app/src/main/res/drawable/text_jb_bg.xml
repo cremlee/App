@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 设置圆角 -->
+    <!--<corners android:radius="5dip"/>-->
+    <!-- 设置渐变色 -->
+    <gradient
+        android:startColor="@android:color/transparent"
+        android:centerColor="@android:color/darker_gray"
+        android:endColor="@android:color/transparent"/>
+    <!-- 设置边框颜色和宽度 -->
+</shape>

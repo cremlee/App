@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <com.lid.lib.LabelImageView
+                android:id="@+id/drinkicon"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                app:paddingStart="10dp"
+                app:label_backgroundColor="#C2185B"
+                app:label_orientation="LEFT_TOP"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/drinkname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="drink name"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp" />
+        <!--<TextView
+            android:id="@+id/drinkprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="$ 1.00"
+            android:textColor="@android:color/background_light"
+            android:textSize="23sp" />-->
+        <com.mcxtzhang.lib.AnimShopButton
+            android:layout_marginTop="10dp"
+            android:id="@+id/cart_btn"
+            app:maxCount="10"
+            app:radius="20dp"
+            app:hintText="Add to cart"
+            app:hingTextSize="24sp"
+            app:addEnableBgColor="#3190E8"
+            app:addEnableFgColor="#ffffff"
+            app:hintBgColor="#3190E8"
+            app:hintBgRoundValue="15dp"
+            app:hintFgColor="#ffffff"
+            app:gapBetweenCircle="100dp"
+            app:numTextSize="20sp"
+            app:lineWidth="3dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp" />
+    </LinearLayout>
+    <TextView
+        android:textColor="@color/material_red_800"
+        android:id="@+id/drinkstate"
+        android:alpha="0.4"
+        android:background="@color/light_gray"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

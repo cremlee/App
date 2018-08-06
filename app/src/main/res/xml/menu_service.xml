@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_log"
+        icon="@drawable/ics_cfa"
+        title="Friends" />
+    <tab
+        id="@+id/tab_cup"
+        icon="@drawable/ics_drinksetting"
+        title="Favorites" />
+    <tab
+        id="@+id/tab_test"
+        icon="@drawable/ics_test"
+        title="Nearby" />
+    <tab
+        id="@+id/tab_setting"
+        icon="@drawable/ics_setting"
+        title="Friends" />
+    <tab
+        id="@+id/tab_clean"
+        icon="@drawable/ics_cleaning"
+        title="Friends" />
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ics_home"
+        title="Friends" />
+</tabs>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/spring_wood"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+
+        android:layout_margin="40dp"
+        android:id="@+id/icon"
+        android:layout_width="120dp"
+        android:layout_height="120dp" />
+    <ToggleButton
+        android:id="@+id/switch_edit"
+        android:textOff = "locked"
+        android:textOn  = "editable"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/icon"
+        android:layout_below="@+id/icon" />
+
+    <CheckBox
+        android:layout_margin="20dp"
+        android:layout_below="@+id/switch_edit"
+        android:text="Use the Password"
+        android:layout_width="180dp"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:layout_toRightOf="@+id/switch_edit"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <RelativeLayout
+                android:layout_margin="20dp"
+                android:id="@+id/drk_1_lyt"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/drk_1_name"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:text="drink name"
+                    android:textSize="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/ic_add"
+                    android:layout_margin="10dp"
+                    android:layout_above="@+id/drk_1_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_margin="20dp"
+                android:id="@+id/drk_2_lyt"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/drk_2_name"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:text="drink name"
+                    android:textSize="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/ic_add"
+                    android:layout_margin="10dp"
+                    android:layout_above="@+id/drk_2_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <RelativeLayout
+                android:layout_margin="20dp"
+                android:id="@+id/drk_3_lyt"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/drk_3_name"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:text="drink name"
+                    android:textSize="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/ic_add"
+                    android:layout_margin="10dp"
+                    android:layout_above="@+id/drk_3_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_margin="20dp"
+                android:id="@+id/drk_4_lyt"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/drk_4_name"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:text="drink name"
+                    android:textSize="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/ic_add"
+                    android:layout_margin="10dp"
+                    android:layout_above="@+id/drk_4_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    </RelativeLayout>
+

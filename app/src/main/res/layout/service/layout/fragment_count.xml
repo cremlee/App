@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="10dp">
+   <ImageView
+       android:id="@+id/chart_bar"
+       android:layout_alignParentRight="true"
+       android:src="@drawable/ics_counters"
+       android:layout_margin="20dp"
+       android:layout_width="100dp"
+       android:layout_height="100dp" />
+   <RelativeLayout
+       android:id="@+id/a1"
+       android:layout_alignParentRight="true"
+       android:layout_centerInParent="true"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+      <com.github.mikephil.charting.charts.PieChart
+          android:id="@+id/mChart"
+          android:layout_width="250dp"
+          android:layout_height="250dp"/>
+   </RelativeLayout>
+   <ScrollView
+       android:id="@+id/sv"
+       android:scrollbars="none"
+       android:layout_toLeftOf="@+id/a1"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/spring_wood"
+      android:orientation="vertical" >
+      <!--<android.luna.ViewUi.widget.SettingItemTextView2
+             android:id="@+id/chart_convert"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             cqube:textview2TextBackground="@color/material_blueGrey_900"
+             cqube:textview2TextColor="@color/white"
+             cqube:textview2TextTitle="Counter Chart"
+             cqube:textview2DrawbleRight="@drawable/ics_counters" />-->
+      <!-- 不能被清掉 -->
+      <android.luna.ViewUi.widget.SettingItemTextView2
+          android:id="@+id/masterTotalWaterItem"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          cqube:textview2TextBackground="@color/title_text_color2"
+          cqube:textview2TextColor="@color/white"
+          cqube:textview2TextTitle="@string/counter_master_water"
+          cqube:textview2TextValue="0" />
+      <!-- 不能被清掉 -->
+
+      <android.luna.ViewUi.widget.SettingItemTextView2
+          android:id="@+id/masterTotalBeverageItem"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          cqube:textview2TextBackground="@color/title_text_color2"
+          cqube:textview2TextColor="@color/white"
+          cqube:textview2TextTitle="@string/counter_master_total"
+          cqube:textview2TextValue="0" />
+
+      <android.luna.ViewUi.widget.SettingItemTextView2
+          android:id="@+id/resetCountBeverageItem"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          cqube:textview2TextTitle="@string/counter_beverage"
+          cqube:textview2TextValue="@string/counter_rst" />
+
+      <ListView
+          android:id="@+id/list_counter"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:divider="@drawable/inset90"
+          android:dividerHeight="1dp"
+          android:fadingEdge="none"
+          android:scrollbars="none"/>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/line"
+          android:paddingLeft="30dp"
+          android:paddingRight="30dp" />
+
+      <TextView
+          android:id="@+id/totalBeverageItem"
+          style="@style/TextViewTitleItem"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="right|center_vertical"
+          android:paddingEnd="30dp"
+          android:textColor="@color/title_text_color"
+          android:textSize="20sp" />
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/line"
+          android:paddingLeft="30dp"
+          android:paddingRight="30dp" />
+
+      <android.luna.ViewUi.widget.SettingItemTextView2
+          android:id="@+id/resetCountProgramItem"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          cqube:textview2TextTitle="@string/counter_clean"
+          cqube:textview2TextValue="@string/counter_rst" />
+
+      <ListView
+          android:id="@+id/list_cleanprogram"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:divider="@drawable/inset90"
+          android:dividerHeight="1dp"
+          android:fadingEdge="none"
+          android:scrollbars="none" />
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/line"
+          android:paddingLeft="30dp"
+          android:paddingRight="30dp" />
+  </LinearLayout>
+   </ScrollView>
+   <RelativeLayout
+       android:id="@+id/lyt_chart"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent">
+       <lecho.lib.hellocharts.view.ColumnChartView
+           android:padding="50dp"
+           android:id="@+id/helloChart"
+           android:layout_centerInParent="true"
+           android:layout_width="match_parent"
+           android:layout_height="500dp" />
+   </RelativeLayout>
+</RelativeLayout>

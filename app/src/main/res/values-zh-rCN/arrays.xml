@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="export_folder" >
+        <item>config 1</item>
+        <item>config 2</item>
+        <item>config 3</item>
+        <item>config 4</item>
+        <item>config 5</item>
+        <item>drink name</item>
+    </string-array>
+
+    <string-array name="hopper_cap_value" >
+        <item>1.0 L</item>
+        <item>1.5 L</item>
+        <item>2.0 L</item>
+        <item>2.5 L</item>
+    </string-array>
+
+    <integer-array name="hopper_cap_key" >
+        <item>10 </item>
+        <item>15 </item>
+        <item>20 </item>
+        <item>25 </item>
+    </integer-array>
+
+    <string-array name="hopper_bean_value" >
+        <item>coffee bean 1</item>
+        <item>coffee bean 2</item>
+    </string-array>
+
+    <integer-array name="hopper_bean_key" >
+        <item>129</item>
+        <item>130</item>
+    </integer-array>
+
+    <string-array name="es_cp_value" >
+        <item>150 ml</item>
+        <item>200 ml</item>
+    </string-array>
+
+    <integer-array name="es_cp_key" >
+        <item>150</item>
+        <item>200</item>
+    </integer-array>
+
+    <string-array name="power_value" >
+        <item>None</item>
+        <item>Espresso</item>
+        <item>Chocolate</item>
+        <item>Whitening</item>
+        <item>Milk powder</item>
+        <item>Milk granulate</item>
+        <item>Sugar</item>
+        <item>Instant coffee</item>
+        <item>Soup</item>
+    </string-array>
+
+    <integer-array name="powder_key" >
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </integer-array>
+
+    <string-array name="water_value" >
+        <item>Normal</item>
+        <item>Pure</item>
+    </string-array>
+
+    <integer-array name="water_key" >
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="led_mode_value" >
+        <item>off</item>
+        <item>always on</item>
+        <item>flash</item>
+        <item>breath</item>
+        <item>circling</item>
+    </string-array>
+
+    <integer-array name="led_mode_key" >
+        <item>5</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+    <string-array name="led_color_value" >
+        <item>red</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>orange</item>
+        <item>yellow</item>
+        <item>purple</item>
+        <item>white</item>
+    </string-array>
+
+    <integer-array name="led_color_key" >
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </integer-array>
+
+<!--    <string-array name="led_int_value" >
+        <item>normal</item>
+        <item>weak</item>
+    </string-array>-->
+
+    <integer-array name="led_int_key" >
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+
+   <!--this is part for FAQ -->
+    <string-array name="faq_questions">
+        <item>this is the first question</item>
+        <item>this is the second question</item>
+        <item>this is the third question</item>
+    </string-array>
+
+    <string-array name="faq_answers">
+        <item>this is the answer for question 1 </item>
+        <item>this is the answer for question 2</item>
+        <item>this is the answer for question 3</item>
+    </string-array>
+</resources>

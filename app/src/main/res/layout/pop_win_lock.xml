@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:background="@android:color/background_dark"
+        android:layout_width="600dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_marginTop="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/img_psw"
+            android:background="@drawable/coffee"
+            />
+        <TextView
+            android:layout_below="@+id/img_psw"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:id="@+id/tv_pswinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="welcome"
+            android:textSize="36sp"
+            />
+        <com.andrognito.patternlockview.PatternLockView
+            android:id="@+id/pattern_lock_view"
+            apps:dotAnimationDuration="200"
+            apps:dotNormalSize="16dp"
+            apps:dotSelectedSize="32dp"
+            apps:pathEndAnimationDuration="100"
+            apps:normalStateColor="@android:color/white"
+            apps:correctStateColor="@android:color/holo_green_light"
+            apps:wrongStateColor="@android:color/holo_red_light"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/tv_pswinfo"
+            android:layout_centerHorizontal="true"
+            android:layout_width="320dp"
+            android:layout_height="320dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

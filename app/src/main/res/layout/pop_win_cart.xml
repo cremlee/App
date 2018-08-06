@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    android:background="@color/material_white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/material_blueGrey_200"
+        android:textAlignment="center"
+        android:textColor="@color/bb_darkBackgroundColor"
+        android:text="Drink List"
+        android:textSize="32sp" />
+
+    <ListView
+        android:id="@+id/lv_item"
+        android:dividerHeight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/cart_go"
+        android:layout_below="@+id/tv_title"/>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/cart_go"
+        android:text="Go"
+        android:textSize="32sp"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/tol_price"
+        android:textSize="32sp"
+        android:layout_below="@+id/lv_item"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
+        android:text="$ 10.99"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

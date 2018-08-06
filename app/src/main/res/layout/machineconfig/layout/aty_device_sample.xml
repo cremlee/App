@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button
+            android:layout_marginLeft="20dp"
+            android:text="Back"
+            android:layout_centerVertical="true"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight="6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <RadioGroup
+            android:id="@+id/device_rg"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:layout_width="160dp"
+            android:layout_height="match_parent">
+            <Space
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:button="@null"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Property"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:button="@null"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Test &#038; Calibration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:button="@null"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text=" Maintenance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Space
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+        <ScrollView
+            android:layout_toRightOf="@+id/device_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

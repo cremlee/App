@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_marginLeft="20dp"
+            android:text="Back"
+            android:textSize="24sp"
+            android:layout_centerVertical="true"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight="6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <RadioGroup
+            android:background="@color/title_text_color2"
+            android:id="@+id/device_rg"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:layout_width="160dp"
+            android:layout_height="match_parent">
+            <Space
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/tab_device_bg"
+                android:text="Property"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/tab_device_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Test &#038; Calibration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/rb_3"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/tab_device_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text=" Maintenance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Space
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+        <ScrollView
+            android:background="@color/spring_wood"
+            android:layout_margin="20dp"
+            android:id="@+id/sv_pty"
+            android:layout_toRightOf="@+id/device_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:textview1Text="Boiler property"
+                    cqube:textview1TextBackground="@color/title_text_color2"
+                    cqube:textview1TextColor="@android:color/white" />
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/boiler_id"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Device ID:"
+                    cqube:textview2TextValue="00020101"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemDropDown
+                    android:id="@+id/water_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:dropdownTextName="Inlet Water Type"
+                    cqube:dropdownTextValue="Normal" />
+                <android.luna.ViewUi.widget.SettingItemDropDown
+                    android:id="@+id/boiler_cp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:dropdownTextName="Max Capability"
+                    cqube:dropdownTextValue="1.5 L" />
+            <!--ntc-->
+            <LinearLayout
+                android:id="@+id/lyt_ntc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:textview1Text="NTC property"
+                    cqube:textview1TextBackground="@color/title_text_color2"
+                    cqube:textview1TextColor="@android:color/white" />
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/ntc_id"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Device ID:"
+                    cqube:textview2TextValue="00020101"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:visibility="gone"
+                    android:id="@+id/ntc_type"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Sensor Type:"
+                    cqube:textview2TextValue="Single"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/ntc_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbName="Normal Temperature"
+                    cqube:sbCur="0"
+                    cqube:sbMax="100"
+                    cqube:sbUnit="°"
+                    />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/ntc_warn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbName="Warn Temperature"
+                    cqube:sbCur="0"
+                    cqube:sbMax="100"
+                    cqube:sbUnit="°"
+                    />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/ntc_block"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbName="Block Temperature"
+                    cqube:sbCur="0"
+                    cqube:sbMax="100"
+                    cqube:sbUnit="°"
+                    />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/ntc_eco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbName="ECO Temperature"
+                    cqube:sbCur="0"
+                    cqube:sbMax="100"
+                    cqube:sbUnit="°"
+                    />
+            </LinearLayout>
+             <!--flowmeter-->
+            <!--<LinearLayout
+                    android:id="@+id/lyt_flowmeter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <android.luna.ViewUi.widget.SettingItemTextView1
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:textview1Text="Flow meter property"
+                        cqube:textview1TextBackground="@color/title_text_color2"
+                        cqube:textview1TextColor="@android:color/white" />
+
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/flowmeter_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Device ID:"
+                    cqube:textview2TextValue="00020101" />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/ntc_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbName="Flow meter pluse"
+                    cqube:sbCur="1250"
+                    cqube:sbMax="2500"
+                    cqube:sbMin="0"
+                    cqube:sbUnit="p"/>
+            </LinearLayout>-->
+            <LinearLayout
+                android:id="@+id/lyt_waterlevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:textview1Text="Water Level property"
+                    cqube:textview1TextBackground="@color/title_text_color2"
+                    cqube:textview1TextColor="@android:color/white" />
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/watersen_id"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Device ID:"
+                    cqube:textview2TextValue="00020101"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/watersen_type"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Sensor Type:"
+                    cqube:textview2TextValue="Single"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <ScrollView
+            android:visibility="gone"
+            android:layout_margin="20dp"
+            android:background="@color/spring_wood"
+            android:id="@+id/sv_tc"
+            android:layout_toRightOf="@+id/device_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:textview1Text="Test part"
+                    cqube:textview1TextBackground="@color/title_text_color2"
+                    cqube:textview1TextColor="@android:color/white" />
+                <android.luna.ViewUi.widget.SettingItemCheckBox
+                    android:id="@+id/t_boiler_valve"
+                    cqube:checkBoxText="Boiler Inlet Valve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <!--<android.luna.ViewUi.widget.SettingItemCheckBox
+                    android:id="@+id/t_water_pump"
+                    cqube:checkBoxText="Water pump"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>-->
+                <android.luna.ViewUi.widget.SettingItemCheckBox
+                    android:id="@+id/t_heater"
+                    cqube:checkBoxText="Heater Element"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/t_ntc"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Current Temperature"
+                    cqube:textview2TextValue="-"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/t_water"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Current Water Level"
+                    cqube:textview2TextValue="-"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <!--<android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/t_pressure"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Current Boiler Pressure"
+                    cqube:textview2TextValue="9bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>-->
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:textview1Text="Calibration part"
+                    cqube:textview1TextBackground="@color/title_text_color2"
+                    cqube:textview1TextColor="@android:color/white" />
+
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/ntc_offset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Temperature Offset"
+                    cqube:textview2TextValue="0" />
+            </LinearLayout>
+        </ScrollView>
+        <ScrollView
+            android:visibility="gone"
+            android:layout_margin="20dp"
+            android:background="@color/spring_wood"
+            android:id="@+id/sv_mt"
+            android:layout_toRightOf="@+id/device_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:textview1Text="Maintenance info"
+                    cqube:textview1TextBackground="@color/title_text_color2"
+                    cqube:textview1TextColor="@android:color/white" />
+                    <android.luna.ViewUi.widget.MaintenceItemView
+                        android:id="@+id/m_inlet_valve"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:itemTitle="Boiler Inlet Valve"
+                        cqube:max="100"
+                        cqube:first_txt="Check"
+                        cqube:sec_txt="Replace" />
+                    <android.luna.ViewUi.widget.MaintenceItemView
+                        android:id="@+id/m_boiler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:itemTitle="Boiler Descale"
+                        cqube:max="100"
+                        cqube:first_txt="Check"
+                        cqube:sec_txt="Replace" />
+                    <android.luna.ViewUi.widget.MaintenceItemView
+                        android:id="@+id/m_water_level"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:itemTitle="Water Level"
+                        cqube:max="100"
+                        cqube:first_txt="Check"
+                        cqube:sec_txt="Replace" />
+                    <android.luna.ViewUi.widget.MaintenceItemView
+                        android:id="@+id/m_ntc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:itemTitle="Ntc"
+                        cqube:max="100"
+                        cqube:first_txt="Check"
+                        cqube:sec_txt="Replace" />
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black_squeeze"
+    android:orientation="vertical" >
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="35dp" >
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/default_text_desc_color" />
+
+        <TextView
+            android:id="@+id/mon"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/setting_scheduler_item"
+            android:gravity="center"
+            android:textColor="@color/title_text_color" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/default_text_desc_color" />
+
+        <TextView
+            android:id="@+id/tue"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/setting_scheduler_item"
+            android:gravity="center"
+            android:textColor="@color/title_text_color" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/default_text_desc_color" />
+
+        <TextView
+            android:id="@+id/wed"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/setting_scheduler_item"
+            android:gravity="center"
+            android:textColor="@color/title_text_color" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/default_text_desc_color" />
+
+        <TextView
+            android:id="@+id/thu"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/setting_scheduler_item"
+            android:gravity="center"
+            android:textColor="@color/title_text_color" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/default_text_desc_color" />
+
+        <TextView
+            android:id="@+id/fri"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/setting_scheduler_item"
+            android:gravity="center"
+            android:textColor="@color/title_text_color" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/default_text_desc_color" />
+
+        <TextView
+            android:id="@+id/sat"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/setting_scheduler_item"
+            android:gravity="center"
+            android:textColor="@color/title_text_color" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/default_text_desc_color" />
+
+        <TextView
+            android:id="@+id/sun"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/setting_scheduler_item"
+            android:gravity="center"
+            android:textColor="@color/title_text_color" />
+    </TableRow>
+
+</TableLayout>

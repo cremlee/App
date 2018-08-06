@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/spring_wood">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <android.luna.ViewUi.widget.SettingItemTextView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview1IsTextBold="true"
+            cqube:textview1Text="Recipe ingredient settings"
+            cqube:textview1TextBackground="@color/title_text_color2"
+            cqube:textview1TextColor="@android:color/white" />
+        <android.luna.ViewUi.widget.SettingItemTextView2
+            android:id="@+id/recipeNameItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#cdcccb"
+            cqube:textview2TextTitle="Cappuccino"
+            cqube:textview2TextValue="25.0 secs, 100ml" />
+        <LinearLayout
+            android:id="@+id/layoutRecipeEditGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:background="#cdcccb"
+            android:gravity="center_vertical|right"
+            android:minHeight="60dp"
+            android:orientation="vertical" >
+            <TextView
+                android:id="@+id/addIngredient"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@android:drawable/ic_input_add"
+                 />
+        </LinearLayout>
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:id="@+id/layoutScaleGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

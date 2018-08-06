@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:background="@color/spring_wood"
+    android:scrollbars="none"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <android.luna.ViewUi.widget.SettingItemTextView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview1IsTextBold="true"
+            cqube:textview1Text="Powder Nutrition Settings"
+            cqube:textview1TextBackground="@color/title_text_color2"
+            cqube:textview1TextColor="@android:color/white" />
+        <android.luna.ViewUi.widget.SettingItemTextView2
+            android:id="@+id/NameItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview2DrawbleRight="@drawable/ic_arrow_right_gray"
+            cqube:textview2TextTitle="Powder Name" />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/Density"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            cqube:sbCur="1"
+            cqube:sbMax="20"
+            cqube:sbMin="0"
+            cqube:sbName="Density"
+            cqube:sbUnit="g/ml"
+            />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+        android:id="@+id/KiloItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        cqube:sbCur="10"
+        cqube:sbMax="100"
+        cqube:sbMin="0"
+        cqube:sbName="Kilocalorie"
+        cqube:sbUnit=" kj"
+        />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/ProteinItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            cqube:sbCur="10"
+            cqube:sbMax="100"
+            cqube:sbMin="0"
+            cqube:sbName="Protein"
+            cqube:sbUnit=" g"
+            />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/FatItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            cqube:sbCur="10"
+            cqube:sbMax="100"
+            cqube:sbMin="0"
+            cqube:sbName="Fat"
+            cqube:sbUnit=" g"
+            />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/CarbohydrateItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            cqube:sbCur="10"
+            cqube:sbMax="100"
+            cqube:sbMin="0"
+            cqube:sbName="Carbohydrate"
+            cqube:sbUnit=" g"
+            />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/SodiumItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            cqube:sbCur="10"
+            cqube:sbMax="100"
+            cqube:sbMin="0"
+            cqube:sbName="Sodium"
+            cqube:sbUnit=" g"
+            />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/SugarItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            cqube:sbCur="10"
+            cqube:sbMax="100"
+            cqube:sbMin="0"
+            cqube:sbName="Sugar"
+            cqube:sbUnit=" g"
+            />
+    </LinearLayout>
+</ScrollView>

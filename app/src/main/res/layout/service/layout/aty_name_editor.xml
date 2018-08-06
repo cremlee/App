@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/lytheader"
+        android:background="@color/material_grey_700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/btn_back"
+            android:textSize="42sp"
+            android:text="@string/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_below="@+id/lytheader"
+        android:layout_margin="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+        <RadioGroup
+            android:id="@+id/myTabRg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+<Space
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="0dp" />
+            <RadioButton
+                android:id="@+id/rb_export"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center_horizontal|bottom"
+                android:padding="30dp"
+                android:text="Export name"
+                android:textColor="@drawable/tab_selector_tv_color"
+                android:textSize="28sp" />
+            <RadioButton
+                android:id="@+id/rb_import"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center_horizontal|bottom"
+                android:padding="30dp"
+                android:text="Import name"
+                android:textColor="@drawable/tab_selector_tv_color"
+                android:textSize="28sp" />
+            <Space
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+        </RadioGroup>
+        <FrameLayout
+            android:id="@+id/fly_clean"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>

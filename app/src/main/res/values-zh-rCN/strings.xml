@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Coffee</string>
+    <!-- rfaLayout中的覆盖层默认透明度 -->
+    <string name="rfab_rfal__float_convert_color_alpha">0.7</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="left_arrow">&#060;</string>
+    <string name="right_arrow">&#062;</string> 
+    <string name="later">Later</string>
+
+    <!-- Clean Machine Activity -->
+    <string name="clean_machine_hint">Please clean machine now</string>
+
+    <!-- Clean Machine -->
+    <string name="cleaning">Cleaning</string>
+    <string name="maintenance">Maintenance</string>
+    <string name="clean_and_maintainance">Cleaning &#038; Maintenance</string>
+    <string name="clean_no_maintainance">Cleaning</string>
+
+    <!-- Recipe maker -->
+    <string name="setting_beverages">Beverages</string>
+    <string name="beverage_maker">Beverage Maker</string>
+    <string name="edit_beverage">Edit Beverage</string>
+    <string name="general_recipe_settings">Recipe Basic Settings</string>
+    <string name="beverage_name">Beverage Name</string>
+    <string name="change_recipe">Edit Recipe</string>
+    <string name="drink_icon_picture">Beverage Icon Picture</string>
+    <string name="drink_bg_color">Beverage Icon Background Color</string>
+    <string name="drink_icon_picture1">Beverage Image 2</string>
+    <string name="drink_icon_picture2">Beverage Image 3</string>
+    <string name="landing_page">Landing Page</string>
+    <string name="add_recipe_settings">Recipe Custom Settings</string>
+    <string name="add_ingradient">Add Ingredient</string>
+    <string name="stoppable">Stoppable</string>
+    <string name="cup_sensor">Cup Sensor</string>
+    <string name="drink_price">Drink Price</string>
+    <string name="brew_light">Brew Light</string>
+    <string name="buzzer_sound">Buzzer Sound</string>
+    <string name="dispense_type">Dispensing Mode</string>
+    <string name="pre_selections">Preselection Options</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="milk">Milk</string>
+    <string name="strength">Strength</string>
+    <string name="sugar">Sugar</string>
+    <string name="topping">Topping</string>
+    <string name="volume">Volume</string>
+    <string name="jug">Jug Option</string>
+    <string name="dirct">One Button Dispensing Mode</string>
+    
+    <!-- 待整理，有些不用了 end -->
+    <!-- Scheduler Settings -->
+    <string name="scheduler">Scheduler</string>
+    <string name="buttons_pre_row">Buttons pre row</string>
+    <string name="active">Active</string>
+    <string name="select">Select</string>
+    <string name="select_days">Select Day(s)</string>
+    <string name="start_time1">Start Time</string>
+    <string name="end_time1">End Time</string>
+    <string name="select_day_time">Select Schedule Day &#038; Time</string>
+    <string name="done">Done</string>
+    <string name="activity_schedule"><xliff:g name="as">%s</xliff:g> Activity Schedulers</string>
+    <string name="sun">SUN</string>
+    <string name="mon">MON</string>
+    <string name="tue">TUE</string>
+    <string name="wed">WED</string>
+    <string name="thu">THU</string>
+    <string name="fri">FRI</string>
+    <string name="sat">SAT</string>
+    <string name="overview">Scheduler Overview</string>
+	<string name="clearall">Clear All</string>
+	<string name="sch_off">Off</string>
+	<string name="sch_daily">Daily Clean</string>
+	<string name="sch_weekly">Weekly Clean</string>
+	<string name="sch_eco">Energy Saving</string>
+	
+    <!-- Counters -->
+    <string name="counters">Counters</string>
+    <string name="total_beverage">Total Beverages:<xliff:g name="tb">%d</xliff:g></string>
+	<string name="counter_master_water">Master Total Water</string>
+    <string name="counter_master_total">Master Total Beverages</string>
+    <string name="counter_beverage">Beverages</string>
+    <string name="counter_clean">Cleaning Programs</string>
+    <string name="counter_rst">Reset Counters</string>
+    <string name="counter_cleanbrew">Clean Brewer</string>
+    <string name="counter_cleanmix">Clean Mixer</string>
+    <string name="counter_cleanvalve">Clean Valves</string>
+    <string name="counter_cleangrd">Clean Grinders</string>
+    <string name="counter_waterflush">Flush Water Filter</string>
+    <string name="counter_brewflush">Flush Brewer</string>
+    <string name="counter_openbrew">Open Brewer</string>
+    <string name="counter_openvalve">Open Valve</string>
+    
+    
+    
+    <!-- Screen Settings -->
+    <string name="button_background">Button Background</string>
+    <string name="button_size">Button Size</string>
+    <string name="remove_button">Remove Button</string>
+<!--     <string name="buttons_pre_row">Buttons pre row</string> -->
+    <string name="screen_background">Screen Background</string>
+    <string name="setting_screen">Screen Settings</string>
+    <string name="save">Save</string>
+    <string name="settings">Settings</string>
+    <string name="no_files">No Files</string>
+    <string name="stop">STOP</string>
+    <string name="enter">Enter</string>
+    <string name="sleep">Sleep</string>
+    <string name="choose_a_beverage">Choose A Beverage</string>
+    <string name="back">Back</string>
+
+    <!-- Calibration start -->
+    <string name="calibration">Calibration</string>
+    <string name="calibration_hardware_test">Calibration &#038; Hardware Test</string>
+    <string name="calibration_values">Calibration Values</string>
+
+    <!-- Hardware Test start -->
+    <string name="hardware_test">Hardware Test</string>
+    
+    <!-- Hardware Config -->
+    <string name="hardware_config">Hardware Config</string>
+
+    <!-- Soldout settings -->
+    <string name="soldout_settings">Canister Settings</string>
+	<string name="soldout_txt">Configure The Canister Setup</string>
+	<string name="soldout_empty">Empty Waste Bin</string>
+	<string name="soldout_config">Configure The Canister Filling Levels</string>
+	
+    <!-- Documents -->
+    <string name="setting_instructions">Instructions</string>
+
+    <!-- Machine Settings start -->
+    <string name="machine_settings">Machine Settings</string>
+    <string name="machine_info">Version:<xliff:g>%s</xliff:g>\n
+        Firmware Version:<xliff:g>%s</xliff:g>\n
+        Service Call:<xliff:g>%s</xliff:g>\n
+        Machine Name:<xliff:g>%s</xliff:g>\n
+        Installation Site:<xliff:g>%s</xliff:g></string>
+    <string name="datatime">Date &#038; Time</string>
+    <!-- Ingredient Maker start -->
+    <string name="ingredient_maker">Ingredient Maker</string>
+
+    <!-- Utility start -->
+    <string name="utility">Utility</string>
+
+    <!-- Beverage/Ingredient name 提示 -->
+    <string name="name_already_exists">Name Already Exists!</string>
+    <string name="invalid_ingredient_selection">Invalid Ingredient Selection</string>
+    <string name="no_ingredient">No Ingredient</string>
+    <string name="default_ingredient">Default Ingredient</string>
+    <string name="drink_in_use">Drink In Use</string>
+	<string name="ingredient_selection_too_much">Too Many Ingredients Selection</string>
+    <!-- Tag txt -->
+    <string name="clean_is_progress">Cleaning in progress.</string>
+    <string name="dispensing_error">Dispensing error.</string>
+    <string name="door_is_open">Door is open.</string>
+    <string name="dispensing_in_progress">Dispensing in progress.</string>
+    <string name="previewing_please_wait">Previewing,please wait.</string>
+    <string name="stop_jug_brew">Aborting jug brew, please wait.</string>
+    <string name="wait_clean_finished">Cleaning in progress, please wait.</string>
+    <string name="wait_dispen_finished">Dispensing in progress, please wait.</string>
+    <string name="already_on_screen">Already on screen.</string>
+    <string name="enter_old_pin">Please enter current PIN.</string>
+    <string name="enter_new_pin">Please enter new PIN.</string>
+    <string name="incorrect_pIN">Incorrect PIN.</string>
+    <string name="invalid_value">Please input measured value.</string>
+    <string name="no_ingredient_selected">No ingredient selected.</string>
+    <string name="no_ingredient_name">Please input ingredient name.</string>
+    <string name="ingredient_repeat">Product already exits.</string>
+    <!--  -->
+    <string name="preview_block">Previewing,please wait.</string>
+    <string name="calibration_block">Wait for calibration to finish.</string>
+    <string name="approximate_min">Time remaining:<xliff:g>%s</xliff:g> min</string>
+    <string name="approximate_mins">Time remaining:<xliff:g>%s</xliff:g> mins</string>
+    <string name="str_cancel">CANCEL</string>
+    <string name="str_ok">OK</string>
+
+    <!-- 通用格式 -->
+    <string name="cups"><xliff:g name="caps">%d</xliff:g> cups</string>
+    <string name="ml"><xliff:g name="ml">%s</xliff:g>ml</string>
+    <string name="sec_float"><xliff:g name="sec">%1$2.1f</xliff:g>s</string>
+    <string name="sec_int"><xliff:g name="secs">%d</xliff:g>secs</string>
+    <string name="temp"><xliff:g name="temp">%d</xliff:g>°</string>
+    <string name="start_time">Start:<xliff:g name="secs">%2.1f</xliff:g> secs</string>
+    <string name="change_base_recipe_time"><xliff:g name="secs">%s</xliff:g> secs\nEdit\n(double-tap)</string>
+    <string name="change_base_recipe_param"><xliff:g name="secs">%2.1f</xliff:g> secs, %2.1fml</string>
+    <string name="maintenance_used"><xliff:g name="used">%02d</xliff:g>/<xliff:g name="life_length">%02d</xliff:g> Months</string>
+    <string name="for_service_call">For Service Call:<xliff:g name="cellphone">%s</xliff:g></string>
+
+    <!--
+    Soldout 料包
+    IngredientInstantActivity
+           此数组很重要，是用数组下标来确定是哪一个Espresso，修改时务必注意
+    -->
+    <string-array name="canister_key">
+        <item>None</item>
+        <item>Espresso</item>
+        <item>Chocolate</item>
+        <item>Whitening</item>
+        <item>Milk Powder</item>
+        <item>Milk Granulate</item>
+        <item>Sugar</item>
+        <item>Instant Coffee</item>
+        <item>Soup</item>
+    </string-array>
+
+    <integer-array name="canister_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </integer-array>
+
+    <string-array name="groups">
+        <item>Water Tank</item>
+        <item>Canisters</item>
+        <item>Brewer</item>
+        <item>Cold Water System</item>
+    </string-array>
+    
+    <string-array name="watertype">
+        <item>Tea Water</item>
+        <item>Still Water</item>
+        <item>Sparkling Water</item>
+    </string-array>
+    
+    <string-array name="milktype">
+        <item>Milk 1</item>
+        <item>Milk 2</item>
+        <item>Milk 3</item>
+        <item>Milk 4</item>
+        <item>Milk 5</item>
+        <item>Milk 6</item>
+        <item>Milk 7</item>
+        <item>Milk 8</item>
+        <item>Milk 9</item>
+    </string-array>
+    
+    <!-- Black#Yellow#Red#Green#Purple#Orange#Blue#White -->
+    <string-array name="colortype">
+        <item>Black</item>
+        <item>Yellow</item>
+        <item>Red</item>
+        <item>Green</item>
+        <item>Purple</item>
+        <item>Orange</item>
+        <item>Blue</item>
+        <item>White</item>
+    </string-array>
+    <string-array name="scrtime">
+        <item>Off</item>
+        <item>1 Minute</item>
+        <item>5 Minutes</item>
+        <item>15 Minutes</item>
+        <item>30 Minutes</item>
+    </string-array>
+    
+    <string-array name="scrinterval">
+        <item>3 Seconds</item>
+        <item>5 Seconds</item>
+        <item>10 Seconds</item>
+        <item>30 Seconds</item>
+        <item>1 Minute</item>
+        <item>5 Minutes</item>
+    </string-array>
+    
+    <string-array name="drkanimation">
+        <item>Default</item>
+        <item>Customized</item>
+    </string-array>
+    
+    <!-- Red#Green#Blue#Orange#Yellow#Purple -->
+    <!-- modify by lee change to color1~6  -->
+    <string-array name="ledcolor">
+        <item>Color 1</item>
+        <item>Color 2</item>
+        <item>Color 3</item>
+        <item>Color 4</item>
+        <item>Color 5</item>
+        <item>Color 6</item>
+    </string-array>
+	
+    <string name="input_ingredient_weight">Please input the ingredient weight.</string>
+    <string name="input_water_volume">Please input the water volume.</string>
+    <string name="input_the_tank_temperature">Please input the tank temperature.</string>
+    <string name="input_grinder_powder_weight">Please input the grinder powder weight.</string>
+    <string name="grinder_powder_mf13_only_cxt">1. Open the door, remove the brewer.\n2. Place a container under the grinder outlet. Press START.\n3. Measure the sample powder.\n4. Input the value, press OK to finish.</string>
+    <string name="coffee_canister_dosage_title">Coffee Canister Dosage / Canister 1</string>
+    <string name="coffee_canister_dosage_cxt">1. Open the door, remove the brewer.\n2. Place a container under the coffee canister outlet. Press START.\n3. Measure the sample powder.\n4. Input the value, press OK to finish.</string>
+    <string name="instant_canister2_title">Instant Canister 2</string>
+    <string name="instant_canister2_cxt">1. Open the door, remove the mixer.\n2. Place a container under the instant canister outlet. Press START.\n3. Measure the sample powder.\n4. Input the value, press OK to finish.</string>
+    <string name="instant_canister3_title">Instant Canister 3</string>
+    <string name="instant_canister3_cxt">1. Open the door, remove the mixer.\n2. Place a container under the instant canister outlet. Press START.\n3. Measure the sample powder.\n4. Input the value, press OK to finish.\n</string>
+    <string name="instant_canister4_title">Instant Canister 4</string>
+    <string name="instant_canister4_cxt">1. Open the door, remove the mixer.\n2. Place a container under the instant canister outlet. Press START.\n3. Measure the sample powder.\n4. Input the value, press OK to finish.\n</string>
+    <string name="water_tank_temperature_title">Water tank temperature</string>
+    <string name="water_tank_temperature_cxt">1. Open the water tank lid. Measure the water temperature with a probe thermometer until water temperature remains stable for 30 seconds.\n2. The deviation should be within 5 degrees.</string>
+    <string name="running_time_title">Running time</string>
+    <string name="running_time_cxt">Press START button to calibrate</string>
+    <string name="hot_water_outlet_valve_title">Tea water outlet valve</string>
+    <string name="hot_water_outlet_valve_cxt">1. Close the door.\n2. Place a container under the water outlet on the drip tray. Press START.\n3. Measure the sample water.\n4. Input the value, press OK to finish.</string>
+    <string name="mixer_cold_water_outlet_valve_title">Mixer Cold Water Outlet Valve</string>
+    <string name="mixer_cold_water_outlet_valve_cxt">1. Close the door.\n2. Place a container under the coffee outlet on the drip tray. Press START.\n3. Measure the sample water.\n4. Input the value, press OK to finish.</string>
+    <string name="mixer1_hot_water_outlet_valve_title">Mixer1 Hot Water Outlet Valve</string>
+    <string name="mixer1_hot_water_outlet_valve_cxt">1. Close the door.\n2. Place a container under the coffee outlet on the drip tray. Press START.\n3. Measure the sample water.\n4. Input the value, press OK to finish.</string>
+    <string name="mixer2_hot_water_outlet_valve_title">Mixer2 Hot Water Outlet Valve</string>
+    <string name="mixer2_hot_water_outlet_valve_cxt">1. Close the door.\n2. Place a container under the coffee outlet on the drip tray. Press START.\n3. Measure the sample water.\n4. Input the value, press OK to finish.</string>
+    <string name="coffee_hot_water_outlet_valve_title">Coffee Hot Water Outlet Valve</string>
+    <string name="coffee_hot_water_outlet_valve_cxt">1. Open the door. Disconnect the hot water hose from the brewer.\n2. Place a container under the hot water hose end. Press START.\n3. Measure the sample water.\n4. Input the value, press OK to finish.</string>
+    <string name="still_water_outlet_valve_title">Still Water Outlet Valve</string>
+    <string name="still_water_outlet_valve_cxt">1. Close the door.\n2. Place a container under the water outlet on the drip tray. Press START.\n3. Measure the sample water.\n4. Input the value, press OK to finish.</string>
+    <string name="sparkling_water_out_valve_title">Sparkling Water Outlet Valve</string>
+    <string name="sparkling_water_out_valve_cxt">1. Close the door.\n2. Place a container under the water outlet on the drip tray. Press START.\n3. Measure the sample water.\n4. Input the value, press OK to finish.</string>
+    <!-- Clean -->
+    <string name="clean_brew_title">Sparkling Water Outlet Valve</string>
+    <string name="clean_brew_cxt">1. Open the door, pour the brewer cleaning agent into the brewer then close and lock the door.\n2. Fully raise both drink outlets and place the cleaning container on the drip tray under both outlets.\n3. Press START.</string>
+    <string name="clean_weekly_cxt">1. Open the door, pour the brewer cleaning agent into the brewer then close and lock the door.\n2. Fully raise both drink outlets and place the cleaning container on the drip tray under both outlets.\n3. Press START.</string>
+    <string name="clean_grinder_cxt">1. Remove the brewer.\n2. Remove the bean hopper and store the remaining beans.\n3. Add the grinder cleaning tablets and replace the hopper into the machine.\n4. Place a container under the grinder outlet to catch the tablet residue.\n5. Press and hold PUSH to run the grinder until all tablet residue has been expelled. \n6. Refill the hopper with beans.\n7. Press and hold PUSH until only clean coffee grounds come out.</string>
+    <string name="clean_milk_cxt">Open the door, place a cleaning container under the coffee outlet.\nPress START to run the cleaning procedure.</string>
+    <string name="clean_daily_cxt">Place a cleaning container on the drip tray.\nPress START to run the cleaning procedure.</string>
+    <string name="clean_water_filter_flush_cxt">Place a 3L cleaning container on the drip tray. \nPress START button to run the water filter flush.\nRecommended to flush 15L (5 cycles).</string>
+    <string name="clean_water_filter_flush_cxt2">Empty and replace the cleaning container. \nPress CONTINUE to go on the flush procedure.\n Press ABORT to stop flushing.</string>
+    <string name="clean_open_brewer_cxt">Press OPEN to rotate the brewer to the open position or CLOSE to return it to the home position.</string>
+
+    <!-- Warning -->
+    <string name="warning">Warning</string>
+    <string name="replace_drip_tray">Replace Drip Tray</string>
+    <string name="replace_drip_tray_cxt">The drip tray is removed or incorrectly installed. Please remove and replace the drip tray.</string>
+    <string name="empty_drip_tray">Empty Drip Tray</string>
+    <string name="empty_drip_tray_cxt">The drip tray is full. Please remove, empty and replace it.</string>
+    <string name="water_heating">Heating Water</string>
+    <string name="water_is_heating">Water is heating.</string>
+    <string name="com_time_out">Communication Error!</string>
+    <string name="title_drk_dor_open">Door was opened during dispensing!</string>
+    <string name="hint_drk_dor_open">Please close the door and wait for the drink to finish!</string>
+    
+    <string name="warning_water_temperature">The water is heating, please wait a moment.</string>
+    <string name="wait_for_the_water">Please wait for the water to finish heating.</string>
+    <string name="overcurrent">Overcurrent</string>
+    <string name="overcurrent_cxt">An overcurrent condition was detected, restart the machine to clear the error. If the problem persists contact technical support for assistance.\n\n</string>
+    <string name="motor_module_err">Motor Module Error</string>
+    <string name="temp_sensor_error">Temp Sensor Error</string>
+    <string name="temp_sensor_error_cxt">A temperature sensor error was detected, restart the machine to clear the error. If the problem persists contact technical support for assistance.\n\n</string>
+    <string name="call_service_hint">Service phone: <xliff:g>%s</xliff:g>\nMachine name: <xliff:g>%s</xliff:g>\nInstallation site: <xliff:g>%s</xliff:g></string>
+    <string name="check_water_supply">Check Water Supply</string>
+    <string name="check_water_supply_hint">Water filling is taking too long, please check the water supply and restart the machine to clear the error. If the problem persists contact technical support for assistance.\n\n</string>
+    <string name="low_water_level">Low Water Level</string>
+    <string name="wait_for_the_water_tank">The water tank is filling, please wait a moment.</string>
+    <string name="ingredients_are_running_low">Ingredients are running low.</string>
+    
+    <string name="waste_bin_is_almost_full">Empty Waste Bin</string>
+    <string name="waste_bin_is_full">The waste bin is full, please open the door and empty and replace the waste bin. Then enter Canister Settings and reset the waste counter by pressing Empty Waste Bin.</string>
+    <string name="warning_daily_clean">Daily Cleaning</string>
+    <string name="daily_clean_is_due">To ensure a fresh and great tasting drink every time run the Daily Clean function now. Press OK to begin, it takes less than 1 minute.</string>
+    <string name="weekly_clean">Weekly Cleaning</string>
+    <string name="weekly_clean_cxt">To ensure a fresh and great tasting drink every time run the Weekly Clean function now. Press OK to begin, it only takes about 9 minutes.</string>
+    <string name="heating_time_error">Heating Time Error</string>
+    <string name="heating_time_error_hint">The water is taking too long to heat up, please restart the machine to clear the error. If the problem persists contact technical support for assistance.\n\n</string>
+    <string name="are_you_sure_delete">Are you sure you want to delete the selected ingredient?</string>
+    <string name="are_you_sure_clean">Are you sure you want to clear all scheduled events?</string>
+    <string name="reset_counters">Are you sure you want to reset the counters?</string>
+    <string name="refill_canisters">Reset Canister Level</string>
+    <string name="refill_canisters_cxt">Only set the canister level after the canister has been filled to the desired volume.\n\nAre you sure you want to proceed?</string>
+    <string name="reset_waste_counter">Reset Waste Counter</string>
+    <string name="reset_waste_counter_cxt">"Always reset the waste counter after the waste bin has been emptied and replaced.\n\nAre you sure you want to reset?"</string>
+    <string name="reset">Reset</string>
+    
+    <string name="reset_cxt">"Only reset the counter if you have replaced, cleaned or inspected the part according to the instructions in the EVO Technical Manual.\n\nAre you sure you want to reset?"</string>
+    <string name="clean_cxt">"Please clean or check the part according to the instructions in the EVO Technical Manual."</string>
+    <string name="cool_err">Cooling error</string>
+    <string name="check_water_sensor">Water Level Sensor Error</string>
+    <string name="check_water_sensor_hint">A water level sensor error was detected, please restart the machine to clear the error. If the problem persists contact technical support for assistance.\n\n</string>
+    <string name="check_water_filter">Check Water filter</string>
+    <string name="check_water_filter_hint">Please the check water filter and restart the machine, then run the Flush Water Filter function.</string>
+    <string name="factory_reset">Factory Reset</string>
+
+	<string name="factory_reset_cxt">"All settings and recipes will be reset to factory defaults.\nAre you sure you want to proceed?"</string>
+    <string name="note">IMPORTANT!\nIf you have refilled the coffee or ingredients, or emptied the waste bin, please be sure to reset the canister volume or clear the waste bin counter in the Canister Settings.</string>    
+    <string name="note_canister_only">IMPORTANT!\nIf you have refilled the coffee or ingredients, please be sure to reset the canister volume in the Canister Settings.</string>
+    <string name="note_waste_only">IMPORTANT!\nIf you have emptied the waste bin, please be sure to clear the waste bin counter in the Canister Settings.</string>
+    <string name="apk_update">Software Update Notice</string>
+    <string name="apk_update_cxt">"Please restart the machine after you updated the software!"</string>
+
+    <!-- Update -->
+    <string name="system_update">System Update</string>
+    <string name="export_setting">Export Setting</string>
+    <string name="import_setting">Import Setting</string>
+  
+    <string name="update_select">Please Select:</string>
+    <string name="install">Install</string>
+    <string name="export">Export</string>
+    <string name="import1">Import</string>
+    <string name="export_to">Export to</string>
+    <string name="import_to">Import to</string>
+    <string name="app_ver">Software version: V<xliff:g>%s</xliff:g></string>
+    <string name="firmware_ver">Firmware version: <xliff:g>%s</xliff:g></string>
+
+    
+    <!-- Hint -->
+   <string name="hint_close_door">Please close the door.</string> 
+   <string name="hint_low_water">Water Level Low</string> 
+   <string name="hint_low_temp">Temperature Low</string> 
+   <string name="hint_cal_error">Calibration value is out of bounds!</string> 
+   
+    <string-array name="configureArray">
+        <item>Configure 1</item>
+        <item>Configure 2</item>
+        <item>Configure 3</item>
+        <item>Configure 4</item>
+        <item>Configure 5</item>
+        <item>Factory Settings</item>
+        <item>Picture And PDF</item>
+    </string-array>
+    <string-array name="configureArray1">
+        <item>Configure 1</item>
+        <item>Configure 2</item>
+        <item>Configure 3</item>
+        <item>Configure 4</item>
+        <item>Configure 5</item>
+        <item>Picture And PDF</item>
+    </string-array>
+    <string-array name="exportType">
+        <item>All</item>
+    </string-array>
+    <string-array name="updateType">
+        <item>Software</item>
+        <item>Firmware</item>
+    </string-array>
+
+    <string name="cmd_rsp_ok">OK</string>
+    <string name="cmd_rsp_err">Dispensing Error</string>
+    <string name="cmd_rsp_err_packge">Dispensing Error: Package Error!</string>
+    <string name="cmd_rsp_err_indispensing">Dispensing</string>
+    <string name="cmd_rsp_id_invalid">Dispensing Error: Invalid ID!</string>
+    <string name="cmd_rsp_err_cmd">Dispensing Error: CMD error!</string>
+    <string name="cmd_rsp_err_state">Dispensing Error: Status Error!</string>
+    <string name="title_activity_update_firmware">Update Firmware</string>
+ 
+	<!--new   20160705-->
+	<string name="hint_wait">Wait</string>
+	<string name="hint_start">Start</string>
+	<string name="hint_open">打开</string>
+	<string name="hint_close">Close</string>
+	<string name="hint_add">Add</string>
+	<!--new   20160907-->
+	<string name="hint_update_fail">Update firmware failed!</string>
+	
+	<!--Edit Ingredient Water  -->
+	<string name="edt_ingredient_water">Edit Ingredient Water</string>
+	<string name="edt_ingredient_coffee">Edit Ingredient Filter Brewer</string>
+	<string name="edt_ingredient_instant">Edit Ingredient Instant</string>
+	<string name="edt_ingredient_setting">General Ingredient Settings</string>
+	<string name="edt_ingredient_list">Ingredient List</string>
+	<string name="edt_ingredient_new">New Ingredient Maker</string>
+	
+	<string name="edt_ingredient_name">Ingredient Name</string>
+	<string name="edt_ingredient_watertype">Water Type</string>
+	<string name="edt_ingredient_watervolume">Water Volume</string>
+	<string name="edt_ingredient_totaltime">Total Time</string>
+	<string name="edt_ingredient_cofamt">Coffee Amount</string>
+	<string name="edt_ingredient_aeration">Aeration</string>
+	<string name="edt_ingredient_prebrewT">Prewbrew Time</string>
+	<string name="edt_ingredient_extractionT">Extraction Time</string>
+	<string name="edt_ingredient_press">Press</string>
+	<string name="edt_ingredient_decompressT">Decompress Time</string>
+	<string name="edt_ingredient_emptyT">Empty Time</string>
+	<string name="edt_ingredient_wipperspd">Whipper Speed</string>
+	<string name="edt_ingredient_pdttype">Product Type</string>
+	<string name="edt_ingredient_pdtamt">Product Amount</string>
+	<string name="edt_ingredient_prevolume">Preflush Volume</string>
+	<string name="edt_ingredient_pret">Preflush Pause Time</string>
+	<string name="edt_ingredient_postvolume">Postflush Volume</string>
+	<string name="edt_ingredient_postt">Postflush Pause Time</string>
+	<string name="edt_ingredient_bscset">Ingredient Basic Settings</string>
+	
+	<!--Scheduler  -->
+	
+	<string name="sdl_evttype">Event Type</string>
+	<string name="sdl_edrt">Duration (Hours)</string>
+	<string name="sdl_stopt">Stop Time</string>
+	<!--layout  -->
+	<string name="scrlyt_tl_bkg">Choose Background Image</string>
+	<string name="scrlyt_tl_brdg">Branding Image</string>
+	<string name="scrlyt_tl_ssg">Choose Screen Saver Image</string>
+	<string name="scrlyt_tl_dkg">Drink Image</string>
+	<string name="scrlyt_txt_1">Font Color</string>
+	<string name="scrlyt_txt_2">Background Image</string>
+	<string name="scrlyt_txt_3">Branding Image</string>
+	<string name="scrlyt_txt_4">Welcome Message</string>
+	<string name="scrlyt_txt_5">Energy Saving Mode Message</string>
+	<string name="scrlyt_txt_6">Energy Saving Mode Background Image</string>
+	<string name="scrlyt_txt_7">Screen Saver Image</string>
+	<string name="scrlyt_txt_8">Screen Saver Activation Time</string>
+	<string name="scrlyt_txt_9">Screen Saver Interval</string>
+	<string name="scrlyt_txt_10">Drink Animation</string>
+	<string name="scrlyt_txt_11">Drink Image</string>
+	<string name="scrlyt_txt_12">Screen Layout</string>
+	<string name="scrlyt_txt_13">Screen Layout Edit</string>
+	<string name="scrlyt_en_sort">Enable Sort</string>
+	<string name="scrlyt_preview">Preview</string>
+	<string name="scrlyt_bigicon1">0 or 1 Large Icons</string>
+	<string name="scrlyt_bigicon4">4 fixed Large Icons</string>
+	<string name="scrlyt_changebtn">Change Button</string>
+	<string name="scrlyt_slide">Slide Show</string>
+	
+	
+	<!--machine settings  -->
+	<string name="mch_set_dislpay">Display Settings</string>
+	<string name="mch_set_dislpay_txt1">Brightness</string>
+	<string name="mch_set_dislpay_txt2">Language</string>	
+	<string name="mch_set_dislpay_txt4">LED Mode</string>
+	<string name="mch_set_dislpay_txt5">LED Color</string>
+	
+	<string name="mch_set_dislpay_txt6">LED Brightness</string>
+	
+	<string name="mch_set_temperatrure">Temperature Settings</string>
+	<string name="mch_set_temperatrure_txt1">Tank Temperature</string>
+	<string name="mch_set_temperatrure_txt2">Warning Temperature</string>
+	<string name="mch_set_temperatrure_txt3">Blocking Temperature</string>
+	<string name="mch_set_temperatrure_txt4">Energy Save Temperature</string>
+	
+	<string name="mch_set_canister_txt1">Enable Canister Warning</string>
+	<string name="mch_set_canister_txt2">Enable Waste Bin Warning</string>
+	
+	
+	<string name="mch_set_additional">Additional Settings</string>
+	<string name="mch_set_additional_txt1">Fan Idle Speed</string>
+	<string name="mch_set_additional_txt2">Fan Run Time</string>
+	<string name="mch_set_additional_txt4">Enable Drip Tray Sensors</string>
+	<string name="mch_set_additional_txt5">Enable Jug Mode</string>
+	<string name="mch_set_additional_txt6">Enable Cup Sensors</string>
+	<string name="mch_set_additional_txt7">Clean Warning Blocks Machine</string>
+	<string name="mch_set_additional_txt8">Water Hardness Setting</string>
+	<string name="mch_set_additional_txt9">Water Filter Setting</string>
+	<string name="mch_set_additional_daily">Door Open Enables Daily Clean</string>
+	<string name="mch_set_additional_onebutton">Enable One Button Dispensing Mode</string>
+	
+	<string name="mch_set_pin">PIN Settings</string>
+	<string name="mch_set_pin_txt1">Enable User PIN</string>
+	<string name="mch_set_pin_txt2">Change User PIN</string>
+	<string name="mch_set_pin_txt3">Enable Service PIN</string>
+	<string name="mch_set_pin_txt4">Change Service PIN</string>
+
+	
+	<string name="mch_set_drink">Drink Settings</string>
+	<string name="mch_set_drink_txt1">Enable Water During Dispensing</string>
+	<string name="mch_set_drink_txt2">Enable Tea Water</string>
+	<string name="mch_set_drink_txt3">Enable Still Water</string>
+	<string name="mch_set_drink_txt4">Enable Sparkling Water</string>
+	
+	
+	<string name="mch_set_mchinfo">Machine Information</string>
+	<string name="mch_set_mchinfo_txt1">Software Version</string>
+	<string name="mch_set_mchinfo_txt2">Firmware Version</string>
+	<string name="mch_set_mchinfo_txt3">Service Call</string>
+	<string name="mch_set_mchinfo_txt4">Machine Name</string>
+	<string name="mch_set_mchinfo_txt5">Installation Site</string>
+	
+	<string name="mch_set_wizard">Run Setup Wizard</string>
+	
+	<!-- Calibration -->
+	<string name="cal_watertank_txt80">Coffee Hot Water Inlet Valve</string>
+	<string name="cal_watertank_txt81">Mixer1 Water Outlet Valve</string>
+	<string name="cal_watertank_txt82">Mixer2 Water Outlet Valve</string>
+	<string name="cal_watertank_txt83">Mixer Cold Water Outlet Valve</string>
+	<string name="cal_watertank_txt84">Still Water Outlet Valve</string>
+	<string name="cal_watertank_txt85">Tea Water Outlet Valve</string>
+	<string name="cal_watertank_txt86">Sparkling Water Outlet Valve</string>
+	<string name="cal_watertank_txt87">Grinder/Canister 1</string>
+	<string name="cal_watertank_txt8a">Canister 2</string>
+	<string name="cal_watertank_txt8b">Canister 3</string>
+	<string name="cal_watertank_txt8c">Canister 4</string>
+	<string name="cal_watertank_txt8d">Water Tank Temperature</string>
+	<string name="cal_watertank_txt8e">Running Time</string>
+	<string name="cal_watertank_txt8f">Current Water Temperature:</string>
+	
+	
+	<!--Instructions  -->
+	<string name="pdf">PDF</string>
+	<string name="video">Video</string>
+	<string name="log">Log File</string>
+	<string name="browser">Browser Files</string>
+	
+	<!-- test part  -->
+	<string name="tst_overview">Overview</string>
+	<string name="tst_mix1whp">Mixer1 Whipper</string>
+	<string name="tst_mix2whp">Mixer2 Whipper</string>
+	<string name="tst_brewmtr">Brew Motor</string>
+	<string name="tst_fan">Fan</string>
+	<string name="tst_valve_inlet">Inlet Valve</string>
+	<string name="tst_valve_inletcd">Cold Water Inlet Valve</string>
+	<string name="tst_led">LED Test</string>
+	<string name="tst_hopper">Bean Hopper Auger</string>
+	
+	<!--maintenacne  -->
+	<string name="mte_boiler">Boiler</string>
+	<string name="mte_boiler_ovm">Outlet Valve Membrane</string>
+	<string name="mte_boiler_ovs">Outlet Valve Seals</string>
+	<string name="mte_boiler_ovo">Outlet Valve O-ring</string>
+	<string name="mte_boiler_lspst">Short Level Sensor Pin</string>
+	<string name="mte_boiler_lspl">Long Level Sensor Pin</string>
+	<string name="mte_boiler_lspsg">Level Sensor Pin Seal</string>
+	<string name="mte_boiler_nsr">NTC Sensor</string>
+	<string name="mte_boiler_nsg">NTC Seal</string>
+	
+	<string name="mte_brewingunit">Brewing Unit</string>
+	<string name="mte_brewingunit_bf">Brewing Filter</string>
+	<string name="mte_brewingunit_bcbr">Brewing Chamber</string>
+	<string name="mte_brewingunit_bcdr">Brewing Cylinder</string>
+	<string name="mte_brewingunit_cgs">Coffee Grounds Scraper</string>
+	
+	<string name="mte_ingredients">Ingredients</string>
+	<string name="mte_ingredients_gd">Grinder Discs</string>
+	<string name="mte_ingredients_mmp">Mixer Mounting Plate</string>
+	<string name="mte_ingredients_ms">Mixer Seal</string>
+	<string name="mte_ingredients_mo">Mixer O-ring</string>
+	<string name="mte_ingredients_mw">Mixer Whippers</string>
+	
+	<string name="mte_ventilation">Ventilation</string>
+	<string name="mte_ventilation_vt">Ventilation Tube</string>
+	<string name="mte_ventilation_fb">Fan Box</string>	
+	<string name="mte_waterfilter">Water Filter</string>
+	
+	<string name="main_push">Push</string>
+	<string name="main_start">Start</string>
+	<string name="main_wait">Wait</string>
+	
+	
+	<string name="hint_plug_key">Please remove the service key to enter service menu.</string>
+	<string name="hint_info">Information</string>
+	 <!-- pdf -->
+    <string name="version">1.9a (git build)</string>
+    <string name="no_media_warning">Storage media not present</string>
+    <string name="no_media_hint">Sharing the storage media with a PC can make it inaccessible</string>
+    <string name="cancel">Cancel</string>
+    <string name="search_backwards">Search backwards</string>
+    <string name="search_forwards">Search forwards</string>
+    <string name="search_document">Search document</string>
+    <string name="picker_title_App_Ver_Dir">%1$s %2$s: %3$s</string>
+    <string name="outline_title">Table of Contents</string>
+    <string name="enter_password">Enter password</string>
+    <string name="text_not_found">Text not found</string>
+    <string name="searching_">Searching&#8230;</string>
+    <string name="toggle_links">Highlight and enable links</string>
+    <string name="no_further_occurrences_found">No further occurrences found</string>
+    <string name="search">Search</string>
+    <string name="copy">Copy</string>
+    <string name="strike_out">Strike-out</string>
+    <string name="delete">Delete</string>
+    <string name="highlight">Highlight</string>
+    <string name="underline">Underline</string>
+    <string name="edit_annotations">Edit annotations</string>
+    <string name="ink">Ink</string>
+    <string name="proof">Proof</string>
+    <string name="separation">Separation</string>
+    <string name="print">Print</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="parent_directory">[Up one level]</string>
+    <string name="entering_reflow_mode">Entering reflow mode</string>
+    <string name="leaving_reflow_mode">Leaving reflow mode</string>
+    <string name="print_failed">Print failed</string>
+    <string name="select_text">Select text</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="no_text_selected">No text selected</string>
+    <string name="draw_annotation">Draw annotation</string>
+    <string name="nothing_to_save">Nothing to save</string>
+    <string name="document_has_changes_save_them_">Document has changes. Save them?</string>
+    <string name="cannot_open_document">Cannot open document</string>
+    <string name="cannot_open_document_Reason">Cannot open document: %1$s</string>
+    <string name="cannot_open_file_Path">Cannot open file: %1$s</string>
+    <string name="cannot_open_buffer">Cannot open buffer</string>
+    <string name="fill_out_text_field">Fill out text field</string>
+    <string name="okay">Okay</string>
+    <string name="choose_value">Choose value</string>
+    <string name="not_supported">Not supported</string>
+    <string name="copy_text_to_the_clipboard">Copy text to the clipboard</string>
+    <string name="more">More</string>
+    <string name="accept">Accept</string>
+    <string name="copy_text">copy text</string>
+    <string name="format_currently_not_supported">Format currently not supported</string>
+    <string name="toggle_reflow_mode">Toggle reflow mode</string>
+    <!-- 20161024 added -->
+    <string name="UI_EXIT">EXIT</string>
+    <string name="MAKE_B_S">Edit Beverage Finished!</string>
+    <string name="MAKE_B_F">Edit Beverage Failed!</string>   
+    <string name="mch_set_canister_txt3">Waste Bin Cup Capacity</string>
+    <string name="mch_set_additional_txt3">Run Fan Continuously</string>
+    <string name="mch_set_drink_txt5">Enable Beep After Dispensing</string>
+    <string name="manufactory">Initial Configuration</string>
+    <!-- Always On#Flash#Breath#Circling#Off -->
+	<string-array name="ledmode">
+        <item>Always On</item>
+        <item>Flash</item>
+        <item>Breath</item>
+        <item>Circling</item>
+        <item>Off</item>
+    </string-array>
+    <!-- Normal#Soft -->
+    <string-array name="ledbright">
+        <item>Normal</item>
+        <item>Soft</item>
+    </string-array>
+    <string name="mtc_check">CHECK</string>
+    <string name="mtc_clean">CLEAN</string>
+    <string name="mtc_replace">REPLACE</string>   
+    <string name="TIP_SET_NAME">Set Beverage Name</string>
+    <string name="TIP_INPUT_NAME">Input Beverage Name</string>
+    <string name="SLT_SET_WLC_MSG">Set Welcome Message</string>
+    <string name="SLT_SET_SLP_MSG">Set Sleep Message</string>   
+    <string name="DLG_DELET_TITLE">Delete Picture</string>
+    <string name="DLG_DELET_CONTENT">Are you sure to delete this picture!</string>
+    <string-array name="Water_Type">
+        <item>Hot water</item>
+        <item>Warm water</item>
+        <item>Hot warm water</item>
+        <item>Cold water</item>        
+    </string-array>
+    <string name="EDT_ING_FILTER">Filter Brewer</string>
+    <string name="EDT_ING_INSTANT">Instant</string>
+    <string name="EDT_ING_WATER">Water</string>
+    <string name="EDT_ING_MILK">Fresh Milk</string>
+    <string name="PIN_OLD">Old Pin</string>
+    <string name="PIN_NEW">New Pin</string>
+    <string name="PIN_CONFIRM">Confirm New Pin</string>
+    <string name="PIN_ENTER_SERVICE_PIN">Enter Service Pin</string>
+    <string name="PIN_ENTER_USER_PIN">Enter User Pin</string>
+    <string name="PIN_INPUT_SERVICE_PIN">Input Service Pin</string>
+    <string name="PIN_INPUT_USER_PIN">Input User Pin</string>
+    
+    <string name="MACHINE_ENTER_CALL">Enter Service Call</string>
+    <string name="MACHINE_ENTER_NAME">Enter Machine Name</string>
+    <string name="MACHINE_ENTER_SITE">Enter Installation Site</string>
+    <string name="CAL_INPUT">Input</string>
+    <string name="TEST_VIEW">Hardware test graphic view</string>
+    <string name="tst_mix_cold">Mixer Cold Water Outlet Valve</string>
+    <string name="tst_heater">Heater</string>
+    <string name="mch_set_dislpay_txt5_1">Warning LED Color</string>
+    <string name="mch_set_mchinfo_txt6">Installation Date</string>
+    <string name="sch_wakeup">Wake Up</string>
+	<string name="DRINK_MAKE_DEL">Delete ingredient</string>	
+    <string name="set">Set</string>
+    <string name="warn_temp">Current water temperature is</string>
+    <string name="export_log">Export Logfile</string>
+    <string name="CONTINUE">CONTINUE</string> 
+    <string name="ABORT">ABORT</string> 
+    <string name="check_mtc">Check Maintenance</string> 
+    <string name="coffee_are_running_low">Coffee is running low.</string>
+    <string name="PIN_ENTER_MANU_PIN">Enter Factory Pin</string>
+    <string name="Enter_Filter_Capacity">Enter Filter Capacity(L)</string> 
+    <string name="Filter_NO">Do you really want to use the machine without a filter?</string>  
+    <string name="SET_ING_NAME">Set Ingredient Name</string>
+    <string name="IPT_ING_NAME">Input Ingredient Name</string>
+    <string name="NONE">None</string> 
+    <string name="UNKNOWN">Unknown</string>  
+    <string name="OTHER">Other</string> 
+    
+    <string-array name="Dispens_Type">
+        <item>Push And Hold</item>
+        <item>Portion</item>       
+    </string-array>
+    <string name="retry">Retry</string>
+    <string name="set_date">Please select time and date</string>
+    <string name="update_txt1">Import files failed,please retry!</string>   
+    <string name="update_txt2">Export files failed,please retry!</string>   
+    <string name="update_txt3">Update Finished</string>  
+    <string name="prepare">Preparing your</string> 
+    <string name="videoplayer">Video Player</string> 
+    
+  <!--   20170217 add -->
+  	<string name="take_drink">Please take your drink</string> 
+  	<string name="wake_me_up">Wake me up!</string> 
+	<string name="wizard_next">NEXT</string>
+	<string name="wizard_back">BACK</string>
+	<string name="wizard_finish">完成</string>
+    <string name="wizard_title">Setup Wizard</string> 
+    <string name="wizard_language_info">Thank you for choosing a CQube EVO.\nThis guide will help you to configure your coffee machine.\nPlease select your language:</string> 
+    <string name="wizard_date_year">Year</string> 
+    <string name="wizard_date_month">Month</string> 
+    <string name="wizard_date_day">Day</string> 
+    <string name="wizard_date_hour">Hour</string> 
+    <string name="wizard_date_minute">Minute</string> 
+    <string name="wizard_date_info">Please enter time and date:</string> 
+    <string name="wizard_machine_info">Please enter machine data:</string> 
+    <string name="wizard_machine_type">Machine type</string> 
+    <string name="wizard_water_info">Please select the water hardness level:</string> 
+    <string name="wizard_filter_info">Please select the type of water filter installed:</string>
+    <string name="wizard_filter_info1">Note:If you choose premium filter,please do water filter flush in clean menu before using!</string>
+    <string name="wizard_finish_info">Your CQube EVO is now ready for use.\nPlease press finish to exit the setup wizard.\nYou can run the wizard anytime from the settings menu.</string> 
+    <string name="wizard_finish_info1">Start wizard when next power on</string> 
+
+    <string name="Canister_bean">Coffee Beans</string> 
+    <string name="Canister_pre">Pre-ground Coffee</string> 
+    <string name="calibrate">Calibrate</string> 
+    <string name="scale">scale</string> 
+    
+     <!-- phase1.5 add -->
+    <string name="mch_set_payment">Payment Settings</string>
+    <string name="main_pay">Pay</string>
+    <string name="EDT_ING_FILTER_ADV">Advanced Brewer Settings</string>
+    <string name="edt_ingredient_milktype">Milk Type</string>
+    <string name="edt_ingredient_milkvolume">Milk Volume</string>
+    <string name="edt_ingredient_milk">Edit Ingredient Milk</string>
+    <string name="PIN_ENTER_VEND_PIN">Enter Vend Pin</string>
+    <string name="PIN_INPUT_VEND_PIN">Input Vend Pin</string>
+    <string name="EDT_ING_ESPRESSO">Espresso</string>
+    <string name="EDT_ING_AD_SET"> Advanced Brewer Cycle Settings</string>
+   	<string name="EDT_ING_AD_DELAY_WATER">Water Dispense Delay</string>
+    <string name="EDT_ING_AD_DELAY_GRINDER">Grinder Dispense Delay</string>
+    <string name="EDT_ING_AD_MIX">Mixer Advanced Setting</string>
+    <string name="EDT_ING_FILTERADV_STEP_ADD">Add New Step</string>
+    <string name="EDT_ING_FILTERADV_STEP_P">Go to position</string>
+    <string name="EDT_ING_FILTERADV_STEP_W">Wait</string>
+    <string name="EDT_ING_FILTERADV_STEP_S">Speed</string>
+    <string name="PAY_SETTING">Payment Settings</string>
+    <string name="PAY_1">General</string>
+    <string name="PAY_2">Overview</string>
+    <string name="PAY_3">Currency</string>
+    <string name="PAY_4">Free Vend</string>
+    <string name="PAY_5">Vend Scheduler</string>
+    <string name="PAY_6">Enable Free Vend Pin</string>
+    <string name="PAY_7">Change Vend Pin</string>
+    <string name="PAY_8">Nayax</string>
+    <string name="PAY_9">Enable</string>
+    <string name="PAY_9_1">Show in user menu</string>
+    <string name="PAY_10">Coges</string>
+    <string name="PAY_11">Add Credits</string>
+    <string name="PAY_12">Wechat</string>
+    <string name="mch_set_additional_txt11">Fan After Dispensing Speed</string>
+	<string name="mch_set_additional_txt21">Fan After Dispensing Run Time</string>
+	<string name="edt_ingredient_coffee_ad">Edit Ingredient Advanced Filter Brewer</string>
+    <string name="mch_set_pin_txt5">Scheduler Settings</string>
+    <string name="mch_set_pin_txt6">Enable Intelligent ECO</string>
+    <string name="mch_set_pin_txt7">Reset Intelligent ECO Scheduler</string>
+    <string name="mch_set_pin_txt8">Daylight Time Setting</string>
+    <string name="mch_set_pin_txt9">Enable Daylight Setting</string>
+    <string name="setting_add">Add Credit</string>
+    <string name="DAYLIGHT_TITLE">Set Daylight Date and Time</string>
+    <string name="DAYLIGHT_S_T">Select Start Date and Time</string>
+    <string name="DAYLIGHT_S_D">Start Date and Time</string>
+    <string name="DAYLIGHT_E_T">Select End Date and Time</string>
+    <string name="DAYLIGHT_E_D">End Date and Time</string>
+    <string name="EDT_ING_AD_DELETE">Delete Step</string>
+    <string name="EDT_ING_AD_NEW">New Step</string>
+    <string name="AD_SET_NAME">Set Step Name</string>
+    <string name="AD_SET_NAME_HINT">Input Step Name</string>
+    <string name="wizard_skip">SKIP</string>
+    <string name="counter_reset">Reset</string>
+    <string name="counter_reset_cxt">"All Log info will be reset.\nAre you sure you want to proceed?"</string>
+    <!--design for gallery 20180108-->
+    <string name="company_name">Crem International Company Ltd</string>
+
+    <string name="picker_sure">确定</string>
+    <string name="picker_cancel">cancel</string>
+    <string name="picker_title">Selection</string>
+
+    <string name="picker_year">Year</string>
+    <string name="picker_month">Month</string>
+    <string name="picker_day">Day</string>
+    <string name="picker_hour">Hour</string>
+    <string name="picker_minute">Minute</string>
+    <string name="selection_min_limit_reached">You must select at least 1 item!</string>
+    <string-array name="locallanguage">
+        <item>中文</item>
+        <item>荷兰 </item>
+        <item>丹麦 </item>
+        <item>英语</item>
+        <item>芬兰 </item>
+        <item>德国 </item>
+        <item>挪威 </item>
+        <item>瑞典</item>
+    </string-array>
+    <!--ProductionLine-->
+    <string name="PL_TITLE">工厂模式向导</string>
+    <string name="LANG_SELECT">请选择语言种类</string>
+    <string name="MACHINE_TYPE_SELECT">请选择需要导入的机器型号</string>
+    <string name="UPLOAD">导入</string>
+    <string name="NEXT">下一步</string>
+    <string name="PL_TEST">设备测试</string>
+    <string name="PL_START">开始</string>
+    <string name="PL_STOP">停止</string>
+    <string name="PL_WAIT">等待测试</string>
+    <string name="PL_PASS">通过</string>
+    <string name="PL_IN_TEST">测试中</string>
+    <string name="PL_FAIL">失败</string>
+    <string name="PL_HOPPER">豆仓</string>
+    <string name="PL_GRINDER">磨豆机</string>
+    <string name="PL_ES_BREWER">意式冲泡器</string>
+    <string name="PL_MIXER">混料斗</string>
+    <string name="PL_CANISTER">速溶料斗</string>
+    <string name="PL_VALVE">电子阀</string>
+    <string name="PL_PUMP">水泵</string>
+    <string name="PL_CUP_SEN">茶杯感应器</string>
+    <string name="PL_DRIPTRAY">接水盘</string>
+    <string name="PL_NTC">水温感应器</string>
+    <string name="PL_VALVE_TITLE"> 1.按下测试按钮,检查电子阀是否工作正常\n\n2.选择测试结果.\n</string>
+    <string name="PL_VALVE_TEST">测试</string>
+    <string name="PL_DRY_TITLE">清洁并干燥机器</string>
+    <string name="PL_STEP_1">第一步</string>
+    <string name="PL_STEP_2">第二步</string>
+    <string name="PL_STEP_3">第三步</string>
+    <string name="PL_STEP_4">第四步</string>
+    <string name="PL_STEP_1_CONTENT">1.根据视频指导排空水箱 \n2.按下打开按钮.\n3.从XXX位置吹入空气.</string>
+    <string name="PL_REPORT">设备测试报告</string>
+    <string name="PL_REPORT_DATE">报告日期:</string>
+    <string name="PL_REPORT_ID">操作员编号:</string>
+    <string name="PL_REPORT_UPLOAD">上传</string>
+</resources>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlyt_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <!--head area-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent">
+            <!--showcompanyinfo-->
+            <TextView
+                android:id="@+id/tv_comp_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/company_name"
+                android:textColor="@android:color/background_light"
+                android:textSize="28sp"
+                android:layout_marginLeft="20dp"
+                />
+            <!--showinfo-->
+            <android.luna.ViewUi.HintLable.IconNumberView
+                android:id="@+id/btn_info"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/ico_info"
+                android:layout_centerInParent="true"
+                 />
+
+
+            <!--showtime-->
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="2018 12月26日 13:13:00"
+                android:textColor="@android:color/background_light"
+                android:textSize="23sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1" />
+        <!--body area-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="0dp"
+            android:layout_weight="5">
+            <ListView
+                android:layout_marginBottom="6dp"
+                android:layout_above="@+id/image_shop"
+                android:id="@+id/lstgroup"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"/>
+            <android.luna.ViewUi.HintLable.IconNumberView
+                android:layout_marginLeft="50dp"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/image_shop"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@mipmap/ic_add_shopping"
+                />
+            <android.luna.ViewUi.myViewFlipper
+                android:layout_toRightOf="@+id/lstgroup"
+                android:id="@+id/vf"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone">
+            </android.luna.ViewUi.myViewFlipper>
+            <GridView
+                android:listSelector="@android:color/transparent"
+                android:layout_toRightOf="@+id/lstgroup"
+                android:id="@+id/gv_drink"
+                android:stretchMode="columnWidth"
+                android:gravity="center"
+                android:horizontalSpacing="8dp"
+                android:verticalSpacing="8dp"
+                android:numColumns="3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+            </GridView>
+        </RelativeLayout>
+        <!--foot area-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1">
+
+            <ImageView
+                android:id="@+id/image_banner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/banner"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:stepper="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textColor="@color/material_blueGrey_900"
+        android:id="@+id/item_name"
+        android:textSize="20sp"
+        android:text="drinkname"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/item_name"
+        android:id="@+id/item_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+    <TextView
+        android:textColor="@color/material_blueGrey_900"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignBottom="@+id/item_icon"
+        android:layout_toRightOf="@+id/item_icon"
+        android:id="@+id/item_price"
+        android:textSize="18sp"
+        android:text="$ 1.5 / cup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.bigkoo.snappingstepper.SnappingStepper
+        android:id="@+id/item_spin"
+        android:layout_toRightOf="@+id/item_price"
+        android:layout_alignTop="@+id/item_price"
+        android:layout_marginStart="50dp"
+        stepper:max="0"
+        stepper:min="10"
+        stepper:step="1"
+        stepper:value="0"
+        stepper:mode="auto"
+        stepper:stepper_background="@color/suva_gray"
+        stepper:stepper_leftButtonBackground="@color/suva_gray"
+        stepper:stepper_rightButtonBackground="@color/suva_gray"
+        stepper:stepper_contentBackground="@color/white"
+        stepper:stepper_contentTextColor="@color/material_blueGrey_900"
+        stepper:stepper_contentTextSize="18"
+        android:layout_width="130dp"
+        android:layout_height="40dp"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_alignStart="@+id/item_price"
+        android:layout_alignEnd="@+id/item_spin"
+        android:background="@color/suva_gray"
+        android:layout_below="@+id/item_spin"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:id="@+id/ttl"
+        android:textColor="@color/material_blueGrey_900"
+        android:layout_below="@+id/item_spin"
+        android:text="tol:"
+        android:textSize="18sp"
+        android:layout_marginTop="25dp"
+        android:layout_alignStart="@+id/item_spin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/item_tol_price"
+        android:textColor="@color/material_red_300"
+        android:layout_below="@+id/item_spin"
+        android:layout_toRightOf="@+id/ttl"
+        android:text="$ 5.00"
+        android:textSize="20sp"
+        android:layout_alignEnd="@+id/item_spin"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Space
+        android:layout_below="@+id/item_tol_price"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/item_remove"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@+id/item_spin"
+        android:background="@android:drawable/ic_delete" />
+</RelativeLayout>

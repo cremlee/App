@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:background="@color/spring_wood"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/m_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.mcxtzhang.indexlib.IndexBar.widget.IndexBar
+            android:id="@+id/indexBar"
+            android:layout_gravity="right"
+            app:indexBarPressBackground="@color/colorBottomNavigationAccent"
+            app:indexBarTextSize="32sp"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tvSideBarHint"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_side_bar_bg"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="52sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="A"
+            tools:visibility="visible"/>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/flt_person_drink"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+        <RelativeLayout
+            android:id="@+id/lyt_psw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/material_black">
+            <TextView
+                android:id="@+id/txt_psw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/person_psw"
+                android:gravity="center"
+                android:text="welcome"
+                android:textColor="@color/material_white"
+                android:textSize="30sp" />
+            <com.andrognito.patternlockview.PatternLockView
+                android:id="@+id/person_psw"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                app:correctStateColor="@android:color/holo_green_light"
+                app:dotAnimationDuration="200"
+                app:dotNormalSize="20dp"
+                app:dotSelectedSize="32dp"
+                app:normalStateColor="@android:color/white"
+                app:pathEndAnimationDuration="300"
+                app:wrongStateColor="@android:color/holo_red_light" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/person_drink"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/suva_gray">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="40dp" />
+
+            <ToggleButton
+                android:id="@+id/switch_edit"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_alignLeft="@+id/icon"
+                android:layout_below="@+id/icon"
+                android:textOff="locked"
+                android:textOn="editable" />
+
+            <Button
+                android:id="@+id/btn_changpsw"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_alignLeft="@+id/switch_psw"
+                android:layout_below="@+id/switch_psw"
+                android:text="Change the Password" />
+
+            <CheckBox
+                android:id="@+id/switch_psw"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/switch_edit"
+                android:layout_margin="20dp"
+                android:text="Use the Password" />
+
+            <Button
+                android:id="@+id/btn_remove"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignLeft="@+id/icon"
+                android:layout_below="@+id/btn_changpsw"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:background="@android:drawable/ic_menu_delete" />
+
+            <LinearLayout
+                android:id="@+id/fun_drink"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="60dp"
+                android:layout_toRightOf="@+id/switch_edit"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/drk_1_lyt"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="30dp"
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true">
+
+                        <TextView
+                            android:id="@+id/drk_1_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:text="drink name"
+                            android:textSize="22dp" />
+
+                        <ImageView
+                            android:id="@+id/drk_1_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_above="@+id/drk_1_name"
+                            android:layout_margin="10dp"
+                            android:src="@mipmap/ic_add" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/drk_2_lyt"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="30dp"
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true">
+
+                        <TextView
+                            android:id="@+id/drk_2_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:text="drink name"
+                            android:textSize="22dp" />
+
+                        <ImageView
+                            android:id="@+id/drk_2_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_above="@+id/drk_2_name"
+                            android:layout_margin="10dp"
+                            android:src="@mipmap/ic_add" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:id="@+id/drk_3_lyt"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="30dp"
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true">
+
+                        <TextView
+                            android:id="@+id/drk_3_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:text="drink name"
+                            android:textSize="22dp" />
+
+                        <ImageView
+                            android:id="@+id/drk_3_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_above="@+id/drk_3_name"
+                            android:layout_margin="10dp"
+                            android:src="@mipmap/ic_add" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/drk_4_lyt"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="30dp"
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true">
+
+                        <TextView
+                            android:id="@+id/drk_4_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:text="drink name"
+                            android:textSize="22dp" />
+
+                        <ImageView
+                            android:id="@+id/drk_4_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_above="@+id/drk_4_name"
+                            android:layout_margin="10dp"
+                            android:src="@mipmap/ic_add" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/fun_drink_edt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/spring_wood"
+                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/icon">
+
+                <Button
+                    android:id="@+id/fun_drink_close"
+                    android:layout_margin="3dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@android:drawable/ic_menu_revert" />
+                <TextView
+                    android:id="@+id/title_fun"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Title"
+                    android:textSize="32sp" />
+                <Button
+                    android:id="@+id/fun_btn_set"
+                    android:layout_width="100dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/title_fun"
+                    android:layout_margin="10dp"
+                    android:text="Set" />
+                <EditText
+                    android:inputType="text"
+                    android:hint="please input name"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"
+                    android:id="@+id/fun_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_fun"
+                    android:layout_margin="10dp"
+                    android:layout_toStartOf="@+id/fun_btn_set" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/fun_name"
+                    android:orientation="horizontal">
+                    <ListView
+
+                        android:background="@drawable/lineborder"
+                        android:id="@+id/fun_sp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                         />
+                    <LinearLayout
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/fun_sp"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/volumeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:paddingTop="10dp">
+
+                            <TextView
+                                android:id="@+id/volumeText"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="@string/volume"
+                                android:textColor="@color/bg_color_3"
+                                android:textSize="18sp"
+                                android:textStyle="italic" />
+
+                            <RatingBar
+                                android:id="@+id/volumeBatingBar"
+                                style="@style/strength"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/volumeText"
+                                android:numStars="5"
+                                android:progress="3"
+                                android:stepSize="1" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/strengthItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:paddingTop="10dp">
+
+                            <TextView
+                                android:id="@+id/strengthText"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="@string/strength"
+                                android:textColor="@color/bg_color_3"
+                                android:textSize="18sp"
+                                android:textStyle="italic" />
+
+                            <RatingBar
+                                android:id="@+id/strengthBatingBar"
+                                style="@style/strength"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/strengthText"
+                                android:numStars="5"
+                                android:progress="3"
+                                android:stepSize="1" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/milkItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:paddingTop="10dp">
+
+                            <TextView
+                                android:id="@+id/milkText"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center_vertical"
+                                android:text="@string/milk"
+                                android:textColor="@color/bg_color_3"
+                                android:textSize="18sp"
+                                android:textStyle="italic" />
+
+                            <RatingBar
+                                android:id="@+id/milkBatingBar"
+                                style="@style/strength"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/milkText"
+                                android:numStars="5"
+                                android:progress="2"
+                                android:stepSize="1" />
+                        </RelativeLayout>
+                        <!--<RelativeLayout
+                            android:id="@+id/strengthItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:paddingTop="10dp" >
+
+                            <TextView
+                                android:gravity="center_vertical"
+                                android:id="@+id/strengthText"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/strength"
+                                android:textColor="@color/bg_color_3"
+                                android:textSize="18sp"
+                                android:textStyle="italic" />
+
+                            <RatingBar
+                                style="@style/strength"
+                                android:id="@+id/strengthBatingBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/strengthText"
+                                android:numStars="5"
+                                android:progress="3"
+                                android:stepSize="1" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/strengthItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:paddingTop="10dp" >
+
+                            <TextView
+                                android:gravity="center_vertical"
+                                android:id="@+id/strengthText"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/strength"
+                                android:textColor="@color/bg_color_3"
+                                android:textSize="18sp"
+                                android:textStyle="italic" />
+
+                            <RatingBar
+                                style="@style/strength"
+                                android:id="@+id/strengthBatingBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/strengthText"
+                                android:numStars="5"
+                                android:progress="3"
+                                android:stepSize="1" />
+                        </RelativeLayout>-->
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/fun_icon_edt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/spring_wood"
+                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/icon">
+
+                <Button
+                    android:id="@+id/fun_icon_close"
+                    android:layout_margin="3dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@android:drawable/ic_menu_revert" />
+                <TextView
+                    android:id="@+id/title_fun_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Icon editor"
+                    android:textSize="32sp" />
+                <Button
+                    android:id="@+id/fun_btn_icon_set"
+                    android:layout_width="100dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/title_fun_icon"
+                    android:layout_margin="10dp"
+                    android:text="Set" />
+                <EditText
+                    android:inputType="text"
+                    android:hint="please input name"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"
+                    android:id="@+id/fun_icon_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_fun_icon"
+                    android:layout_margin="10dp"
+                    android:layout_toStartOf="@+id/fun_btn_icon_set" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/fun_icon_name"
+                    android:layout_above="@+id/fun_drag"
+                    android:orientation="horizontal">
+                </android.support.v7.widget.RecyclerView>
+
+                <TextView
+                    android:background="@color/material_grey_400"
+                    android:id="@+id/fun_drag"
+                    android:textSize="36sp"
+                    android:gravity="center"
+                    android:text="Drag here to change the icon"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <Button
+            android:id="@+id/exit"
+            android:layout_margin="20dp"
+            android:layout_gravity="right|bottom"
+            android:background="@drawable/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+</LinearLayout>

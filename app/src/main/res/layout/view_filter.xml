@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter and Hardness"
+        android:layout_gravity="left"
+        android:textSize="32sp"/>
+    <RelativeLayout
+        android:background="@color/material_white"
+        android:layout_margin="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
+        <TextView
+            android:id="@+id/filter_title"
+            android:layout_marginStart="20dp"
+            android:textSize="28sp"
+            android:layout_centerVertical="true"
+            android:text="Filter Type"
+            android:textColor="@color/material_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/sp_filter"
+            android:background="@color/spring_wood"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="@color/material_white"
+        android:layout_margin="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
+        <TextView
+            android:layout_marginStart="20dp"
+            android:textSize="28sp"
+            android:layout_centerVertical="true"
+            android:text="Water hardness"
+            android:textColor="@color/material_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/sp_hardness"
+            android:background="@color/spring_wood"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+</LinearLayout>

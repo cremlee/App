@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="export_folder" >
+        <item>config 1</item>
+        <item>config 2</item>
+        <item>config 3</item>
+        <item>config 4</item>
+        <item>config 5</item>
+        <item>drink name</item>
+    </string-array>
+
+    <string-array name="hopper_cap_value" >
+        <item>1.0 L</item>
+        <item>1.5 L</item>
+        <item>2.0 L</item>
+        <item>2.5 L</item>
+    </string-array>
+
+    <integer-array name="hopper_cap_key" >
+        <item>10 </item>
+        <item>15 </item>
+        <item>20 </item>
+        <item>25 </item>
+    </integer-array>
+
+    <string-array name="hopper_bean_value">
+        <item>coffee bean 1</item>
+        <item>coffee bean 2</item>
+    </string-array>
+
+    <integer-array name="hopper_bean_key">
+        <item>129</item>
+        <item>130</item>
+    </integer-array>
+
+    <string-array name="es_cp_value" >
+        <item>150 ml</item>
+        <item>200 ml</item>
+    </string-array>
+
+    <integer-array name="es_cp_key" >
+        <item>150</item>
+        <item>200</item>
+    </integer-array>
+
+    <string-array name="power_value" >
+        <item>None</item>
+        <item>Espresso</item>
+        <item>Chocolate</item>
+        <item>Whitening</item>
+        <item>Milk powder</item>
+        <item>Milk granulate</item>
+        <item>Sugar</item>
+        <item>Instant coffee</item>
+        <item>Soup</item>
+    </string-array>
+
+    <integer-array name="powder_key" >
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </integer-array>
+
+    <string-array name="water_value" >
+        <item>Normal</item>
+        <item>Pure</item>
+    </string-array>
+
+    <integer-array name="water_key" >
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="led_mode_value" >
+        <item>off</item>
+        <item>always on</item>
+        <item>flash</item>
+        <item>breath</item>
+        <item>circling</item>
+    </string-array>
+
+    <integer-array name="led_mode_key" >
+        <item>5</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+    <string-array name="led_color_value" >
+        <item>red</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>orange</item>
+        <item>yellow</item>
+        <item>purple</item>
+        <item>white</item>
+    </string-array>
+
+    <integer-array name="led_color_key" >
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </integer-array>
+
+    <string-array name="led_int_value" translatable="false">
+        <item>normal</item>
+        <item>weak</item>
+    </string-array>
+
+    <integer-array name="led_int_key" translatable="false">
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+    <!-- this is adpater for group filter
+        filter1(byte1)+filter2(byte2) = 2 byte
+        0x00+0x00  = all
+        0x01+0x00  = filter
+        .
+        .
+        .
+        .
+    -->
+    <string-array name="filter_1_value" translatable="false">
+        <item>all</item>
+        <item>drink type</item>
+        <item>Top welcome</item>
+    </string-array>
+
+    <string-array name="filter_2_0_value" translatable="false">
+        <item>all</item>
+    </string-array>
+
+    <string-array name="filter_2_1_value" translatable="false">
+        <item>filter</item>
+        <item>espresso</item>
+        <item>milk</item>
+        <item>chocolate</item>
+        <item>water</item>
+    </string-array>
+
+    <string-array name="filter_2_2_value" translatable="false">
+        <item>top 5</item>
+        <item>top 10</item>
+    </string-array>
+
+    <string-array name="region" translatable="false">
+        <item>Chinese</item>
+        <item>NL</item>
+        <item>DA</item>
+        <item>English</item>
+        <item>FI</item>
+        <item>GE</item>
+        <item>NO</item>
+        <item>SV</item>
+    </string-array>
+
+    <string-array name="filter" translatable="false">
+        <item>filter 1</item>
+        <item>filter 2</item>
+        <item>filter 3</item>
+        <item>filter 4</item>
+        <item>filter 5</item>
+</string-array>
+
+    <string-array name="hardness" translatable="false">
+        <item>5°</item>
+        <item>10°</item>
+        <item>20°</item>
+        <item>50°</item>
+    </string-array>
+
+    <!--this is part for FAQ -->
+    <string-array name="faq_questions">
+        <item>this is the 1 question</item>
+        <item>this is the 2 question</item>
+        <item>this is the 3 question</item>
+        <item>this is the 4 question</item>
+        <item>this is the 5 question</item>
+        <item>this is the 6 question</item>
+    </string-array>
+
+    <string-array name="faq_answers">
+        <item>this is the answer for question 1 \n1. Remove the brewer.\n2. Remove the bean hopper and store the remaining beans.\n3. Add the grinder cleaning tablets and replace the hopper into the machine.\n4. Place a container under the grinder outlet to catch the tablet residue.\n5. Press and hold PUSH to run the grinder until all tablet residue has been expelled. \n6. Refill the hopper with beans.\n7. Press and hold PUSH until only clean coffee grounds come out.</item>
+        <item>this is the answer for question 2</item>
+        <item>this is the answer for question 3 \n 1. Open the door, pour the brewer cleaning agent into the brewer then close and lock the door.\n2. Fully raise both drink outlets and place the cleaning container on the drip tray under both outlets.\n3. Press START.</item>
+        <item>this is the answer for question 4 \n1. Remove the brewer.\n2. Remove the bean hopper and store the remaining beans.\n3. Add the grinder cleaning tablets and replace the hopper into the machine.\n4. Place a container under the grinder outlet to catch the tablet residue.\n5. Press and hold PUSH to run the grinder until all tablet residue has been expelled. \n6. Refill the hopper with beans.\n7. Press and hold PUSH until only clean coffee grounds come out.</item>
+        <item>this is the answer for question 5</item>
+        <item>this is the answer for question 6 \n 1. Open the door, pour the brewer cleaning agent into the brewer then close and lock the door.\n2. Fully raise both drink outlets and place the cleaning container on the drip tray under both outlets.\n3. Press START.</item>
+    </string-array>
+
+    <string-array name="machine_type" translatable="false">
+        <item>MF13</item>
+        <item>MF13-SW</item>
+        <item>MF13-SSW</item>
+        <item>MF04</item>
+        <item>MF04-SW</item>
+        <item>MF04-SSW</item>
+        <item>CARARRA</item>
+        <item>UNITY</item>
+        <item>CL22</item>
+        <item>PSL50-ES12B</item>
+        <item>PSL50-ES13</item>
+        <item>PSL50-ESFBT14</item>
+        <item>FROM USB</item>
+    </string-array>
+    <string-array name="machine_type_key" translatable="false">
+        <item>00001300</item>
+        <item>00001301</item>
+        <item>00001302</item>
+        <item>00000400</item>
+        <item>00000401</item>
+        <item>00000402</item>
+        <item>01000000</item>
+        <item>01002300</item>
+        <item>01002200</item>
+        <item>01001200</item>
+        <item>01001300</item>
+        <item>01001400</item>
+        <item>00ff0000</item>
+    </string-array>
+
+</resources>

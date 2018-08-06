@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <!--head area-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent">
+            <!--showcompanyinfo-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/company_name"
+                android:textColor="@android:color/background_light"
+                android:textSize="28sp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/btn_info" />
+            <!--showinfo-->
+            <android.luna.ViewUi.HintLable.IconNumberView
+                android:id="@+id/btn_info"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/ico_info"
+                android:layout_centerInParent="true"
+                 />
+            <!--showtime-->
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="280dp"
+                android:layout_height="25sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="2018 12月26日 13:13:00"
+                android:textColor="@android:color/background_light"
+                android:textSize="23sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1" />
+        <!--body area-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+            <RelativeLayout
+                android:alpha="0.2"
+                android:id="@+id/rlyt_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </RelativeLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:clipChildren="false"/>
+        </RelativeLayout>
+        <!--foot area-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/image_banner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/banner" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1" />
+    </LinearLayout>
+    <android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu
+        android:layout_margin="8dp"
+        android:id="@+id/menu_fav"
+        apps:fab_labelsPosition="right"
+        apps:fab_addButtonSize="normal"
+        apps:fab_labelStyle="@style/menu_labels_style"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/actionbtn1"
+            apps:fab_colorPressed="@android:color/holo_red_dark"
+            apps:fab_colorNormal="@android:color/holo_red_light"
+            apps:fab_icon="@drawable/bat"
+            apps:fab_title="Cloud 3D"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/actionbtn2"
+            apps:fab_title="Gallery"
+            apps:fab_icon="@drawable/bear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/actionbtn3"
+            apps:fab_colorPressed="@android:color/holo_green_dark"
+            apps:fab_colorNormal="@android:color/holo_green_light"
+            apps:fab_title="Normal"
+            apps:fab_icon="@drawable/butterfly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/actionbtn4"
+            apps:fab_title="Service password"
+            apps:fab_icon="@drawable/deer"
+            apps:fab_colorPressed="@android:color/holo_purple"
+            apps:fab_colorNormal="@android:color/holo_purple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <!--<android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            apps:fab_title="button5"
+            apps:fab_icon="@drawable/dolphin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />-->
+    </android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu>
+    <android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu
+        android:layout_margin="8dp"
+        android:id="@+id/menu_language"
+        apps:fab_labelsPosition="left"
+        apps:fab_addButtonSize="normal"
+        apps:fab_labelStyle="@style/menu_labels_style"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/lang1"
+            apps:fab_colorPressed="@android:color/holo_red_dark"
+            apps:fab_colorNormal="@android:color/holo_red_light"
+            apps:fab_icon="@drawable/flag_english"
+            apps:fab_title="Chinese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+       <!-- <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/lang2"
+            apps:fab_title="Gallery"
+            apps:fab_icon="@mipmap/ic_lang_gm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/lang3"
+            apps:fab_colorPressed="@android:color/holo_green_dark"
+            apps:fab_colorNormal="@android:color/holo_green_light"
+            apps:fab_title="Normal"
+            apps:fab_icon="@drawable/ic_lang_gm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />-->
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/lang4"
+            apps:fab_title="English"
+            apps:fab_icon="@drawable/flag_english"
+            apps:fab_colorPressed="@android:color/holo_purple"
+            apps:fab_colorNormal="@android:color/holo_purple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <!--<android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            apps:fab_title="button5"
+            apps:fab_icon="@drawable/dolphin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />-->
+    </android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu>
+</RelativeLayout>

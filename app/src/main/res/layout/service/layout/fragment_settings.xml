@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_screensetting"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:layout_weight="1"
+            android:text="Screen Settings" />
+        <Button
+            android:id="@+id/btn_canistersetting"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:layout_weight="1"
+            android:text="Canister Settings" />
+        <Button
+            android:id="@+id/btn_machinesetting"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:layout_weight="1"
+            android:text="Machine Settings" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp" >
+        <Button
+             android:layout_margin="30dp"
+             android:layout_width="0dp"
+             android:layout_weight="1"
+             android:layout_height="match_parent" />
+         <Button
+             android:visibility="invisible"
+             android:layout_margin="30dp"
+             android:layout_width="0dp"
+             android:layout_weight="1"
+             android:layout_height="match_parent" />
+         <Button
+             android:visibility="invisible"
+             android:layout_margin="30dp"
+             android:layout_width="0dp"
+             android:layout_weight="1"
+             android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/material_grey_400"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+    android:layout_marginTop="30dp"
+    android:layout_marginStart="20dp"
+    android:textColor="@color/material_black"
+    android:text="@string/PL_TEST"
+    android:textSize="26sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/stop"
+            android:text="@string/PL_STOP"
+            android:layout_width="150dp"
+            android:layout_height="45dp" />
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/start"
+            android:text="@string/PL_START"
+            android:layout_width="150dp"
+            android:layout_height="45dp" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/test_item"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+    <Button
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="24sp"
+        android:text="NEXT"
+        android:drawableEnd="@drawable/ic_navigate_next_black_48dp"
+        android:layout_gravity="right"
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+</LinearLayout>

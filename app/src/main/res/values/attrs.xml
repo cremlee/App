@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 Deven Singh
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+
+<resources>
+    <declare-styleable name="RadarView">
+        <attr name="radar_layer" format="integer" />
+        <attr name="rotation_enable" format="boolean" />
+        <attr name="web_mode" format="enum">
+            <enum name="polygon" value="1" />
+            <enum name="circle" value="2" />
+        </attr>
+        <attr name="max_value" format="float" />
+
+        <attr name="vertex_line_color" format="color" />
+        <attr name="vertex_line_width" format="dimension" />
+        <attr name="layer_line_color" format="color" />
+        <attr name="layer_line_width" format="dimension" />
+        <attr name="vertex_text_color" format="color" />
+        <attr name="vertex_text_size" format="dimension" />
+        <attr name="vertex_icon_size" format="dimension" />
+        <attr name="vertex_icon_position" format="enum">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="top" value="3" />
+            <enum name="bottom" value="4" />
+            <enum name="center" value="5" />
+        </attr>
+        <attr name="vertex_icon_margin" format="dimension" />
+        <attr name="center_text_color" format="color" />
+        <attr name="center_text_size" format="dimension" />
+        <attr name="vertex_text_offset" format="dimension" />
+
+        <attr name="center_text" format="string" />
+        <attr name="vertex_text" format="reference" />
+
+
+        //Deprecated
+        <attr name="radar_line_color" format="color" />
+        <attr name="radar_line_enable" format="boolean" />
+        <attr name="radar_line_width" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="Passwordinputview">
+        <attr name="passwordLength" format="integer"/>
+        <attr name="borderWidth" format="dimension"/>
+        <attr name="borderRadius" format="dimension"/>
+        <attr name="borderColor" format="color"/>
+        <attr name="passwordWidth" format="dimension"/>
+        <attr name="passwordColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="free" >
+        <attr name="millisInFuture" format="integer" />
+        <attr name="toAlpha" format="float" />
+        <attr name="moveable" format="boolean"/>
+        <attr name="autoBack" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="UnderLineLinearLayout">
+        <!--时间轴偏移值-->
+        <attr name="line_margin_side" format="dimension"/>
+        <!--时间轴动态调整值-->
+        <attr name="line_dynamic_dimen" format="dimension"/>
+        <!--线宽-->
+        <attr name="line_stroke_width" format="dimension"/>
+        <!--线的颜色-->
+        <attr name="line_color" format="color"/>
+        <!--点的大小-->
+        <attr name="point_size" format="dimension"/>
+        <!--点的颜色-->
+        <attr name="point_color" format="color"/>
+        <!--图标-->
+        <attr name="icon_src" format="reference"/>
+        <!--时间轴的gravity-->
+        <!--the gravity of the timeline-->
+        <attr name="line_gravity">
+            <enum name="Left" value="2"/>
+            <enum name="Right" value="4"/>
+            <enum name="Middle" value="0"/>
+            <enum name="Top" value="1"/>
+            <enum name="Bottom" value="3"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SettingItemCheckBox">
+                <attr name="checkBoxText" format="string" />
+                <attr name="checkBoxChecked" format="boolean" />
+                <attr name="cbkTextColor" format="color" />
+                <attr name="lineEnable" format="boolean" />
+        </declare-styleable>
+        <declare-styleable name="FancyButtonsAttrs">
+                <!-- Default Android attrs -->
+                <attr name="android:enabled" />
+                <attr name="android:text" />
+                <attr name="android:textSize" />
+                <attr name="android:textAllCaps" />
+
+                <attr name="fb_defaultColor" format="color" />
+                <attr name="fb_text" format="string" />
+
+                <attr name="fb_textColor" format="color" />
+                <attr name="fb_iconColor" format="color" />
+
+                <attr name="fb_textFont" format="string" />
+                <attr name="fb_iconFont" format="string" />
+                <attr name="fb_icon" format="color|reference" />
+
+                <attr name="fb_textSize" format="dimension" />
+                <attr name="fb_iconResource" format="integer" />
+                <attr name="fb_fontIconResource" format="string" />
+                <attr name="fb_fontIconSize" format="dimension" />
+                <attr name="fb_iconPosition" format="enum">
+                        <enum name="left" value="1" />
+                        <enum name="right" value="2" />
+                        <enum name="top" value="3" />
+                        <enum name="bottom" value="4" />
+                </attr>
+
+                <attr name="fb_textPosition" format="enum">
+                        <enum name="left" value="1" />
+                        <enum name="right" value="2" />
+                        <enum name="top" value="3" />
+                        <enum name="bottom" value="4" />
+                </attr>
+
+                <attr name="fb_textGravity" format="enum">
+                        <enum name="top" value="0x30" />
+                        <enum name="bottom" value="0x50" />
+                        <enum name="left" value="0x03" />
+                        <enum name="right" value="0x05" />
+                        <enum name="center_vertical" value="0x10" />
+                        <enum name="fill_vertical" value="0x70" />
+                        <enum name="center_horizontal" value="0x01" />
+                        <enum name="fill_horizontal" value="0x07" />
+                        <enum name="center" value="0x11" />
+                        <enum name="fill" value="0x77" />
+                        <enum name="clip_vertical" value="0x80" />
+                        <enum name="clip_horizontal" value="0x08" />
+                        <enum name="start" value="0x00800003" />
+                        <enum name="end" value="0x00800005" />
+                </attr>
+
+                <attr name="fb_iconPaddingLeft" format="dimension" />
+                <attr name="fb_iconPaddingRight" format="dimension" />
+                <attr name="fb_iconPaddingTop" format="dimension" />
+                <attr name="fb_iconPaddingBottom" format="dimension" />
+
+                <attr name="fb_radiusTopLeft" format="dimension"/>
+                <attr name="fb_radiusTopRight" format="dimension"/>
+                <attr name="fb_radiusBottomLeft" format="dimension"/>
+                <attr name="fb_radiusBottomRight" format="dimension"/>
+
+                <attr name="fb_borderColor" format="color" />
+                <attr name="fb_borderWidth" format="dimension" />
+                <attr name="fb_focusColor" format="color" />
+                <attr name="fb_disabledColor" format="color" />
+                <attr name="fb_disabledTextColor" format="color" />
+                <attr name="fb_disabledBorderColor" format="color" />
+                <attr name="fb_radius" format="dimension" />
+                <attr name="fb_textAllCaps" format="boolean" />
+
+                <attr name="fb_ghost" format="boolean" />
+                <attr name="fb_useSystemFont" format="boolean" />
+        </declare-styleable>
+
+        <declare-styleable name="BottomBar">
+                <attr name="bb_tabXmlResource" format="reference" />
+                <attr name="bb_tabletMode" format="boolean" />
+                <attr name="bb_behavior">
+                        <flag name="shifting" value="1" />
+                        <flag name="shy" value="2" />
+                        <flag name="underNavbar" value="4" />
+                        <flag name="iconsOnly" value="8" />
+                </attr>
+                <attr name="bb_longPressHintsEnabled" format="boolean" />
+                <attr name="bb_inActiveTabAlpha" format="float" />
+                <attr name="bb_activeTabAlpha" format="float" />
+                <attr name="bb_inActiveTabColor" format="color" />
+                <attr name="bb_activeTabColor" format="color" />
+                <attr name="bb_badgeBackgroundColor" format="color" />
+                <attr name="bb_badgesHideWhenActive" format="boolean" />
+                <attr name="bb_titleTextAppearance" format="reference" />
+                <attr name="bb_titleTypeFace" format="string" />
+                <attr name="bb_showShadow" format="boolean" />
+        </declare-styleable>
+
+        <declare-styleable name="NiceSpinner">
+                <attr name="arrowTint" format="color" />
+                <attr name="hideArrow" format="boolean" />
+                <attr name="arrowDrawable" format="reference|color"/>
+                <attr name="dropDownListPaddingBottom" format="dimension"/>
+                <attr name="backgroundSelector" format="integer"/>
+                <attr name="textTint" format="color"/>
+        </declare-styleable>
+        <declare-styleable name="SquareMenu">
+        
+        <attr name="fabColor" format="color" />
+        <attr name="squareFabSize" format="integer" />
+        <!-- Align the bounds of the children.
+          @param fabDirection -->
+        <attr name="menuOpenDirection" format="string" />
+        <attr name="iconM1" format="integer" />
+        <attr name="iconM2" format="integer" />
+        <attr name="iconM3" format="integer" />
+    </declare-styleable>
+        <declare-styleable name="CircleProgressBar">
+                <attr name="line_count" format="integer"/>
+                <attr name="draw_progress_text" format="boolean"/>
+                <attr name="line_width" format="dimension|reference"/>
+                <attr name="background_color" format="color|reference"/>
+                <attr name="progress_start_color" format="color|reference"/>
+                <attr name="progress_end_color" format="color|reference"/>
+                <attr name="progress_text_color_1" format="color|reference"/>
+                <attr name="progress_text_size_1" format="dimension|reference"/>
+                <attr name="progress_stroke_width" format="dimension|reference"/>
+                <attr name="progress_background_color" format="color|reference"/>
+                <attr name="progress_text_format_pattern" format="string|reference"/>
+                <attr name="style">
+                        <enum name="line" value="0"/>
+                        <enum name="solid" value="1"/>
+                        <enum name="solid_line" value="2"/>
+                </attr>
+                <attr name="progress_shader">
+                        <enum name="linear" value="0"/>
+                        <enum name="radial" value="1"/>
+                        <enum name="sweep" value="2"/>
+                </attr>
+                <attr name="progress_stroke_cap">
+                        <enum name="butt" value="0"/>
+                        <enum name="round" value="1"/>
+                        <enum name="square" value="2"/>
+                </attr>
+        </declare-styleable>
+        <declare-styleable name="FloatingActionButton">
+                <attr name="fab_colorPressed" format="color"/>
+                <attr name="fab_colorDisabled" format="color"/>
+                <attr name="fab_colorNormal" format="color"/>
+                <attr name="fab_icon" format="reference"/>
+                <attr name="fab_size" format="enum">
+                        <enum name="normal" value="0"/>
+                        <enum name="mini" value="1"/>
+                </attr>
+                <attr name="fab_title" format="string"/>
+                <attr name="fab_stroke_visible" format="boolean"/>
+        </declare-styleable>
+        <declare-styleable name="AddFloatingActionButton">
+                <attr name="fab_plusIconColor" format="color"/>
+        </declare-styleable>
+        <declare-styleable name="FloatingActionsMenu">
+                <attr name="fab_addButtonColorPressed" format="color"/>
+                <attr name="fab_addButtonColorNormal" format="color"/>
+                <attr name="fab_addButtonSize" format="enum">
+                        <enum name="normal" value="0"/>
+                        <enum name="mini" value="1"/>
+                </attr>
+                <attr name="fab_addButtonPlusIconColor" format="color"/>
+                <attr name="fab_addButtonStrokeVisible" format="boolean"/>
+                <attr name="fab_labelStyle" format="reference"/>
+                <attr name="fab_labelsPosition" format="enum">
+                        <enum name="left" value="0"/>
+                        <enum name="right" value="1"/>
+                </attr>
+                <attr name="fab_expandDirection" format="enum">
+                        <enum name="up" value="0"/>
+                        <enum name="down" value="1"/>
+                        <enum name="left" value="2"/>
+                        <enum name="right" value="3"/>
+                </attr>
+        </declare-styleable>
+        <declare-styleable name="TagCloudView">
+                <attr name="autoScrollMode">
+                        <enum name="disable" value="0"/>
+                        <enum name="decelerate" value="1"/>
+                        <enum name="uniform" value="2"/>
+                </attr>
+                <attr name="radiusPercent" format="float"/>
+                <attr name="scrollSpeed" format="float"/>
+                <attr name="lightColor" format="color"/>
+                <attr name="darkColor" format="color"/>
+        </declare-styleable>
+        <declare-styleable name="SettingItemTextView2">
+                <attr name="textview2TextTitle" format="string" />
+                <attr name="textview2TextValue" format="string" />
+                <attr name="textview2DrawbleLeft" format="reference" />
+                <attr name="textview2DrawbleRight" format="reference" />
+                <attr name="textview2TextColor" format="color" />
+                <attr name="textview2TextBackground" format="color" />
+                <attr name="textview2Line" format="boolean" />
+        </declare-styleable>
+        <declare-styleable name="SettingItemTextView1">
+                <attr name="textview1Text" format="string" />
+                <attr name="textview1TextColor" format="integer" />
+                <attr name="textview1TextBackground" format="integer" />
+                <attr name="textview1IsTextBold" format="boolean" />
+                <attr name="textview1DrawbleLeft" format="reference" />
+                <attr name="textview1DrawbleRight" format="reference" />
+                <attr name="textview1Line" format="boolean" />
+                <attr name="textview1LineMarginLeft" format="integer" />
+        </declare-styleable>
+        <declare-styleable name="SettingItemDropDown">
+                <attr name="dropdownItems" format="string" />
+                <attr name="dropdownValues" format="string" />
+                <attr name="dropdownTextName" format="string" />
+                <attr name="dropdownTextValue" format="string" />
+                <attr name="dropdownDrawble" format="reference" />
+                <attr name="dropdownLine" format="boolean" />
+        </declare-styleable>
+        <declare-styleable name="SettingItemSeekBar">
+                <attr name="sbName" format="string" />
+                <attr name="sbMin" format="integer" />
+                <attr name="sbMax" format="integer" />
+                <attr name="sbCur" format="integer" />
+                <attr name="sbUnit" format="string" />
+                <attr name="sbLine" format="boolean" />
+        </declare-styleable>
+        <!-- These top three attributes are not accessible to library users -->
+        <attr name="md_divider" format="color" />
+
+        <!-- Accessible global theming attributes -->
+        <attr name="md_dark_theme" format="boolean" />
+        <attr name="md_background_color" format="color" />
+
+        <attr name="md_icon" format="reference" />
+        <attr name="md_icon_max_size" format="dimension" />
+        <attr name="md_icon_limit_icon_to_default_size" format="boolean" />
+
+        <attr name="md_title_color" format="color" />
+        <attr name="md_content_color" format="color" />
+        <attr name="md_link_color" format="color" />
+
+        <attr name="md_positive_color" format="color" />
+        <attr name="md_neutral_color" format="color" />
+        <attr name="md_negative_color" format="color" />
+        <attr name="md_widget_color" format="color" />
+
+        <attr name="md_item_color" format="color" />
+        <attr name="md_divider_color" format="color" />
+        <attr name="md_list_selector" format="reference" />
+
+        <attr name="md_btn_stacked_selector" format="reference" />
+        <attr name="md_btn_positive_selector" format="reference" />
+        <attr name="md_btn_neutral_selector" format="reference" />
+        <attr name="md_btn_negative_selector" format="reference" />
+
+        <attr name="md_btn_ripple_color" format="color" />
+
+        <attr name="md_title_gravity" format="enum">
+                <enum name="start" value="0" />
+                <enum name="center" value="1" />
+                <enum name="end" value="2" />
+        </attr>
+
+        <attr name="md_content_gravity" format="enum">
+                <enum name="start" value="0" />
+                <enum name="center" value="1" />
+                <enum name="end" value="2" />
+        </attr>
+
+        <attr name="md_btnstacked_gravity" format="enum">
+                <enum name="start" value="0" />
+                <enum name="center" value="1" />
+                <enum name="end" value="2" />
+        </attr>
+
+        <attr name="md_items_gravity" format="enum">
+                <enum name="start" value="0" />
+                <enum name="center" value="1" />
+                <enum name="end" value="2" />
+        </attr>
+
+        <attr name="md_buttons_gravity" format="enum">
+                <enum name="start" value="0" />
+                <enum name="center" value="1" />
+                <enum name="end" value="2" />
+        </attr>
+
+        <declare-styleable name="MDRootLayout">
+                <attr name="md_reduce_padding_no_title_no_buttons" format="boolean" />
+        </declare-styleable>
+
+        <attr name="md_medium_font" format="string" />
+        <attr name="md_regular_font" format="string" />
+
+    <declare-styleable name="MaintenceItemView">
+        <attr name="itemTitle" format="string" />
+        <attr name="progress" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="progressTxt" format="string" />
+        <attr name="first_txt" format="string" />
+        <attr name="sec_txt" format="string" />
+    </declare-styleable>
+</resources>

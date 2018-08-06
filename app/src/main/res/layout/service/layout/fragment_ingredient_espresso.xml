@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spring_wood"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <android.luna.ViewUi.widget.SettingItemTextView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview1Text="@string/edt_ingredient_setting"
+            cqube:textview1TextBackground="@color/title_text_color2"
+            cqube:textview1TextColor="@android:color/white" />
+
+        <!-- Ingredient Name -->
+
+        <android.luna.ViewUi.widget.SettingItemTextView2
+            android:id="@+id/ingredientNameItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview2TextTitle="@string/edt_ingredient_name"
+            cqube:textview2TextValue="Water" />
+
+        <!-- water Type -->
+
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/waterTypeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:dropdownItems="Tea Water#Still Water#Sparkling Water"
+            cqube:dropdownTextName="@string/edt_ingredient_watertype"
+            cqube:dropdownValues="0#1#2" />
+
+        <!-- Water Volume -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/waterVolumeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="100"
+            cqube:sbMax="200"
+            cqube:sbMin="5"
+            cqube:sbName="@string/edt_ingredient_watervolume"
+            cqube:sbUnit="ml" />
+
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/grinder1TypeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:dropdownItems="None#Bean1#Bean2"
+            cqube:dropdownTextName="Grinder"
+            android:visibility="gone"
+            cqube:dropdownValues="0#129#130" />
+
+        <!-- Grinder1 Amount -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/grinder1AmountItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="0"
+            cqube:sbMax="20"
+            cqube:sbMin="0"
+            cqube:sbName="@string/edt_ingredient_cofamt"
+            cqube:sbUnit="g" />
+        <!-- Aereation -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/pressureItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="12"
+            cqube:sbMax="12"
+            cqube:sbMin="1"
+            cqube:sbName="Pressure"
+            cqube:sbUnit="bar" />
+        <!-- Pre Brew Time -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/preBrewTimeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="3"
+            cqube:sbMax="20"
+            cqube:sbMin="0"
+            cqube:sbName="Prebrew Time "
+            cqube:sbUnit="s" />
+
+        <!-- Extraction Time -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/preBrewTime1Item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="3"
+            cqube:sbMax="20"
+            cqube:sbMin="0"
+            cqube:sbName="Prebrew Time 1"
+            cqube:sbUnit="s" />
+
+        <!-- brewTime -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/brewTimeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="10"
+            cqube:sbMax="20"
+            cqube:sbMin="1"
+            cqube:sbName="BrewTime"
+            cqube:sbUnit="s" />
+        <!-- Total Time -->
+
+        <android.luna.ViewUi.widget.SettingItemTextView2
+            android:id="@+id/totalTimeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview2TextTitle="@string/edt_ingredient_totaltime"
+            cqube:textview2TextValue="20.0s" />
+
+        <!--<evo.luna.android.widget.NumberCircleProgressBar
+            android:id="@+id/pbPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_margin="20dp"
+            android:textAlignment="center"
+            cqube:max="100"
+            cqube:progress="0"
+            cqube:progress_circle_radius="69dp"
+            cqube:progress_fill_mode="rotate"
+            cqube:progress_reached_color="@color/title_text_color"
+            cqube:progress_text_color="@android:color/white"
+            cqube:progress_text_size="28sp"
+            cqube:progress_text_visibility="visible"
+            cqube:progress_unreached_color="@color/line" />-->
+    </LinearLayout>
+
+</ScrollView>

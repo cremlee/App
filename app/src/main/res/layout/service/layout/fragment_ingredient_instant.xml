@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spring_wood"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <android.luna.ViewUi.widget.SettingItemTextView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview1Text="@string/edt_ingredient_bscset"
+            cqube:textview1TextBackground="@color/title_text_color2"
+            cqube:textview1TextColor="@android:color/white" />
+        <!-- Ingredient Name -->
+
+        <android.luna.ViewUi.widget.SettingItemTextView2
+            android:id="@+id/ingredientNameItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview2TextTitle="@string/edt_ingredient_name"
+            cqube:textview2TextValue="Instant" />
+
+        <!-- Whipper Speed -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/whipperSpeedItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="0"
+            cqube:sbMax="100"
+            cqube:sbMin="0"
+            cqube:sbName="@string/edt_ingredient_wipperspd"
+            cqube:sbUnit="%" />
+
+        <!--
+        Water Volume
+        Mix-water dispense time(ms)
+        -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/waterVolumeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="5"
+            cqube:sbMax="150"
+            cqube:sbMin="5"
+            cqube:sbName="@string/edt_ingredient_watervolume"
+            cqube:sbUnit="ml" />
+
+        <LinearLayout
+            android:id="@+id/instantadvancelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal">
+            <TextView
+                android:text="@string/EDT_ING_AD_MIX"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                style="@style/TextViewTitleItem"
+                />
+            <android.luna.ViewUi.SeekBar.SeekBarPressure
+                android:id="@+id/instantadvanceItem"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="30dp"
+            android:background="@color/line" />
+        <!--
+        Package One Type
+        Packet1 type
+        -->
+
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/package1TypeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:dropdownTextName="@string/edt_ingredient_pdttype"
+            cqube:dropdownTextValue="None" />
+
+        <!--
+        Package One Amount
+        Packet1 powder amount (g)
+        -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/package1AmountItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="10"
+            cqube:sbMax="30"
+            cqube:sbMin="0"
+            cqube:sbName="@string/edt_ingredient_pdtamt"
+            cqube:sbUnit="g" />
+
+        <!--
+        Package Two Type
+        Packet2 type
+        -->
+
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/package2TypeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            cqube:dropdownTextName="Product2 Type"
+            cqube:dropdownTextValue="None" />
+
+        <!--
+        Package Two Amount
+        Packet2 powder amount (ml)
+        -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/package2AmountItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            cqube:sbCur="1"
+            cqube:sbMax="30"
+            cqube:sbMin="0"
+            cqube:sbName="Product2 Amount"
+            cqube:sbUnit="g" />
+
+        <!--
+        Pre Flush Volume
+        Mix-whipper pre flush time (ms)
+        -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/preFlushVolumeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="1"
+            cqube:sbMax="15"
+            cqube:sbMin="1"
+            cqube:sbName="@string/edt_ingredient_prevolume"
+            cqube:sbUnit="ml" />
+
+        <!-- Preflush pause time -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/preflushPauseTimeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="1"
+            cqube:sbMax="5"
+            cqube:sbMin="0"
+            cqube:sbName="@string/edt_ingredient_pret"
+            cqube:sbUnit="s" />
+
+        <!-- After Flush Volume -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/afterFlushVolumeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="1"
+            cqube:sbMax="15"
+            cqube:sbMin="1"
+            cqube:sbName="@string/edt_ingredient_postvolume"
+            cqube:sbUnit="ml" />
+
+        <!-- PostFlush pause time -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/postFlushPauseTimeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="3"
+            cqube:sbMax="5"
+            cqube:sbMin="0"
+            cqube:sbName="@string/edt_ingredient_postt"
+            cqube:sbUnit="s" />
+
+
+
+        <!-- Water type -->
+        <!--  cqube:dropdownItems="Hot water#Warm water#Cold water"
+        cqube:dropdownValues="0#1#2"
+        -->
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/waterTypeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:dropdownItems="Cold water#Warm water#Hot warm water#Hot water"
+            cqube:dropdownTextName="@string/edt_ingredient_watertype"
+            cqube:dropdownTextValue="None"
+            cqube:dropdownValues="2#1#3#0" />
+
+        <!--
+        Total Time
+        Mix-water after flush time (ms)
+        -->
+
+        <android.luna.ViewUi.widget.SettingItemTextView2
+            android:id="@+id/totalTimeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview2TextTitle="@string/edt_ingredient_totaltime"
+            cqube:textview2TextValue="20s" />
+
+       <!-- <evo.luna.android.widget.NumberCircleProgressBar
+            android:id="@+id/pbPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            cqube:max="100"
+            cqube:progress="0"
+            cqube:progress_circle_radius="69dp"
+            cqube:progress_fill_mode="rotate"
+            cqube:progress_reached_color="@color/title_text_color"
+            cqube:progress_text_color="@android:color/white"
+            cqube:progress_text_size="28sp"
+            cqube:progress_text_visibility="visible"
+            cqube:progress_unreached_color="@color/line" />-->
+    </LinearLayout>
+
+</ScrollView>

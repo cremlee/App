@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:columnCount="3"
+    app:rowCount="2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+       <Button
+           android:id="@+id/btn_screensetting"
+           app:layout_rowWeight="1"
+           app:layout_columnWeight="1"
+           app:layout_gravity="fill"
+           android:layout_margin="30dp"
+            android:text="Screen Settings" />
+        <Button
+            android:id="@+id/btn_canistersetting"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            android:layout_margin="30dp"
+            android:text="Canister Settings" />
+        <Button
+
+            android:id="@+id/btn_machinesetting"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            android:layout_margin="30dp"
+            android:text="Machine Settings" />
+
+        <Button
+            android:id="@+id/btn_payment"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            android:layout_margin="30dp"
+            android:text="Payment Settings"
+            />
+       <!-- <Button
+
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            android:layout_margin="30dp"
+            />
+         <Button
+             app:layout_rowWeight="1"
+             app:layout_columnWeight="1"
+             app:layout_gravity="fill"
+             android:layout_margin="30dp" />-->
+
+
+</android.support.v7.widget.GridLayout>

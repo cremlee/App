@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spring_wood"
+    android:scrollbars="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <android.luna.ViewUi.widget.SettingItemTextView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview1Text="Payment normal Settings"
+            cqube:textview1TextBackground="@color/title_text_color2"
+            cqube:textview1TextColor="@android:color/white" />
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/currencyTypeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:dropdownTextName="Currency"
+            cqube:dropdownTextValue="None" />
+        <android.luna.ViewUi.widget.SettingItemTextView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview1Text="MDB "
+            cqube:textview1TextBackground="@color/title_text_color2"
+            cqube:textview1TextColor="@android:color/white" />
+        <android.luna.ViewUi.widget.SettingItemCheckBox
+            android:id="@+id/coges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:checkBoxText="Use Coges"
+            />
+        <android.luna.ViewUi.widget.SettingItemCheckBox
+            android:id="@+id/nayax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:checkBoxText="Use Nayax"
+            />
+        <android.luna.ViewUi.widget.SettingItemTextView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview1Text="Free Pin"
+            cqube:textview1TextBackground="@color/title_text_color2"
+            cqube:textview1TextColor="@android:color/white" />
+        <android.luna.ViewUi.widget.SettingItemCheckBox
+            android:id="@+id/pincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:checkBoxText="Use Free Pin"/>
+        <android.luna.ViewUi.widget.SettingItemTextView2
+            android:id="@+id/resetpin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview2TextTitle="Reset pin code"
+            cqube:textview2TextValue=">" />
+        <android.luna.ViewUi.widget.SettingItemTextView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview1Text="Online"
+            cqube:textview1TextBackground="@color/title_text_color2"
+            cqube:textview1TextColor="@android:color/white" />
+        <android.luna.ViewUi.widget.SettingItemCheckBox
+            android:id="@+id/alipay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:checkBoxText="Use Alipay"/>
+        <android.luna.ViewUi.widget.SettingItemCheckBox
+            android:id="@+id/wechat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:checkBoxText="Use Wechat pay"/>
+        <android.luna.ViewUi.widget.SettingItemTextView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview1Text="Happy hour"
+            cqube:textview1TextBackground="@color/title_text_color2"
+            cqube:textview1TextColor="@android:color/white" />
+        <android.luna.ViewUi.widget.SettingItemCheckBox
+            android:id="@+id/happy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:checkBoxText="Happy hour mode"/>
+    </LinearLayout>
+</ScrollView>

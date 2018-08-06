@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ImageView
+
+    android:adjustViewBounds="true"
+    android:scaleType="centerInside"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:background="@drawable/coffee"
+    android:src="@drawable/cupviewclip"
+    />
+    <Button
+        android:id="@+id/btn_add"
+        android:text="add for milk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+    <Button
+        android:id="@+id/btn_des"
+        android:text="add for milk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+    <android.luna.ViewUi.CupView.cupView
+        android:id="@+id/ivcup"
+        android:layout_width="300dp"
+        android:layout_height="300dp" />
+</LinearLayout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:alignmentMode="alignBounds"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:background="@drawable/lineborder"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="System "
+                android:gravity="center"
+                android:textSize="32sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:id="@+id/ver_android"
+                android:padding="5dp"
+                app:textview2TextTitle="Android version:"
+                app:textview2TextValue="4.4.2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:id="@+id/ver_kernal"
+                android:padding="5dp"
+                app:textview2TextTitle="kernal"
+                app:textview2TextValue="dadakk3345"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:id="@+id/ver_mode"
+                android:padding="5dp"
+                app:textview2TextTitle="Model"
+                app:textview2TextValue="dadakk3345"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:id="@+id/blue_mac"
+                android:padding="5dp"
+                app:textview2TextTitle="Bluetooth Adress"
+                app:textview2TextValue=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:background="@drawable/lineborder"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="Application"
+                android:gravity="center"
+                android:textSize="32sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:id="@+id/ver_app"
+                android:padding="10dp"
+                app:textview2TextTitle="Software version:"
+                app:textview2TextValue="1.5.0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:id="@+id/ver_database"
+                android:padding="10dp"
+                app:textview2TextTitle="Database version :"
+                app:textview2TextValue="1.0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:background="@drawable/lineborder"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="Firmware"
+                android:gravity="center"
+                android:textSize="32sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:padding="10dp"
+                app:textview2TextTitle="IO-Board version:"
+                app:textview2TextValue="1.5.0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:padding="10dp"
+                app:textview2TextTitle="Payment version :"
+                app:textview2TextValue="1.0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:background="@drawable/lineborder"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Machine"
+                android:textSize="32sp" />
+
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:textview2TextTitle="Machine name :"
+                app:textview2TextValue="EVO" />
+
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:textview2TextTitle="Serial No :"
+                app:textview2TextValue="2006-0713-0013-0001" />
+
+            <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:textview2TextTitle="Install Date :"
+                app:textview2TextValue="2018-01-01" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

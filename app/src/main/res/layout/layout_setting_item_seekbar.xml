@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="72dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="71dp"
+        android:orientation="horizontal"
+        android:paddingEnd="20dp"
+        android:paddingStart="30dp" >
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/TextViewTitleItem"
+            android:layout_width="270dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" />
+		<TextView
+		    android:id="@+id/btndes"
+		    android:layout_width="30dp"
+		    android:layout_height="30dp"
+		    android:background="@drawable/abc_button_grey"
+		    android:text="-" 
+		    android:textSize="18sp"
+		    android:gravity="center"
+		    android:textAlignment="center"
+		    android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/minValue"
+            style="@style/TextViewTitleDescItem"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center" />		
+        <SeekBar
+            android:id="@+id/seekBar"
+            style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:maxHeight="4dp"
+            android:progressDrawable="@drawable/seekbar_default"
+            android:thumb="@drawable/ic_settings_seekbar_thum" />
+
+        <TextView
+            android:id="@+id/maxValue"
+            style="@style/TextViewTitleDescItem"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+             />
+			<TextView
+		    android:id="@+id/btnplus"
+		    android:layout_width="30dp"
+		    android:layout_height="30dp"
+		    android:background="@drawable/abc_button_grey"
+		    android:gravity="center"
+		    android:textAlignment="center"
+		    android:text="+" 
+		    android:textSize="18sp"
+		    android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/currentValue"
+            style="@style/TextViewTitleDescItem"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:gravity="right|center"
+            android:textColor="@color/title_text_color" 
+            android:paddingRight="5dp"
+            />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="30dp"
+        android:background="@color/line" />
+
+</LinearLayout>

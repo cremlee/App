@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:background="@drawable/background">
+    <LinearLayout
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <!--head area-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent">
+            <ImageView
+                android:id="@+id/image_banner"
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
+            <!--showcompanyinfo-->
+            <TextView
+                android:layout_toEndOf="@+id/image_banner"
+                android:maxLength="20"
+                android:id="@+id/tv_comp_name"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:text="@string/company_name"
+                android:textColor="@android:color/background_light"
+                android:textSize="28sp"
+                android:layout_marginStart="5dp"
+                />
+            <Button
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:layout_toEndOf="@+id/tv_comp_name"
+                android:id="@+id/lang"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:text="Language"
+                />
+            <!--showinfo-->
+            <android.luna.ViewUi.HintLable.IconNumberView
+                android:id="@+id/btn_info"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/ico_info"
+                android:layout_centerInParent="true"
+                />
+            <!--showtime-->
+            <TextClock
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:textColor="@android:color/background_light"
+                android:textSize="23sp" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1" />
+        <!--body area-->
+        <RelativeLayout
+            android:clipChildren="false"
+            android:layout_width="match_parent"
+            android:id="@+id/rlyt_bg"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+
+        </RelativeLayout>
+        <!--foot area-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1" />
+        <RelativeLayout
+            android:id="@+id/lyt_foot"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0">
+
+        </RelativeLayout>
+    </LinearLayout>
+    <android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu
+        android:layout_margin="8dp"
+        android:id="@+id/menu_fav"
+        apps:fab_labelsPosition="right"
+        apps:fab_addButtonSize="normal"
+        apps:fab_labelStyle="@style/menu_labels_style"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/actionbtn1"
+            apps:fab_colorPressed="@android:color/holo_red_dark"
+            apps:fab_colorNormal="@android:color/holo_red_light"
+            apps:fab_icon="@drawable/bat"
+            apps:fab_title="Layout 2*5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/actionbtn2"
+            apps:fab_title="Layout 3*5"
+            apps:fab_icon="@drawable/bear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id ="@+id/actionbtn3"
+            apps:fab_colorPressed="@android:color/holo_green_dark"
+            apps:fab_colorNormal="@android:color/holo_green_light"
+            apps:fab_title="Gallery"
+            apps:fab_icon="@drawable/butterfly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <!--<android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            apps:fab_title="All Drinks"
+            apps:fab_icon="@drawable/deer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            apps:fab_title="button5"
+            apps:fab_icon="@drawable/dolphin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />-->
+    </android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu>
+    <ImageView
+        android:layout_marginBottom="20dp"
+        android:id="@+id/profile"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_person"
+        android:padding="10dp"
+        android:background="@drawable/button_corner"
+        />
+</RelativeLayout>

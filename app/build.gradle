@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '25.0.3'
+    dexOptions {
+        jumboMode = true
+    }
+    defaultConfig {
+        applicationId "evo.luna.android"
+        minSdkVersion 17
+        targetSdkVersion 21
+        versionCode 1
+        /*ndk {
+            moduleName "LunaCom"
+        }*/
+        multiDexEnabled true
+    }
+    lintOptions {
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layout/update',
+                            'src/main/res/layout/service',
+                            'src/main/res/layout/gallery',
+                            'src/main/res/layout/adapter',
+                            'src/main/res/layout/cloud',
+                            'src/main/res/layout/normal',
+                            'src/main/res/layout/shopping',
+                            'src/main/res/layout/machineconfig',
+                            'src/main/res/layout/office',
+                            'src/main/res/layout/tool',
+                            'src/main/res/layout/production',
+                            'src/main/res'
+                    ]
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    allprojects {
+        repositories {
+            maven {
+                url 'https://dl.bintray.com/wangyuwei/maven'
+            }
+            jcenter()
+            maven { url "https://jitpack.io" }
+        }
+    }
+    packagingOptions {
+        exclude('META-INF/DEPENDENCIES')
+//        exclude('META-INF/NOTICE')
+//        exclude('META-INF/LICENSE')
+        exclude('META-INF/LICENSE')
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    compile files('libs/ormlite-android-4.48.jar')
+    compile 'com.squareup.leakcanary:leakcanary-android:1.3'
+    compile 'me.wangyuwei:ParticleView:1.0.4'
+    compile 'com.github.mcxtzhang:PathAnimView:V1.0.0'
+    compile 'com.andrognito.patternlockview:patternlockview:1.0.0'
+    compile files('libs/gson-2.3.1.jar')
+    compile 'com.bigkoo:snappingstepper:1.0.2'
+    compile 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1'
+    compile 'com.android.support:design:26.0.0-alpha1'
+    compile 'com.aurelhubert:ahbottomnavigation:2.1.0'
+    compile 'com.yinglan.keyboard:hidekeyboard:1.1.3'
+    compile 'com.github.tibolte:elasticdownload:1.0.4'
+    compile 'com.github.linger1216:labelview:v1.1.2'
+    compile files('libs/commons-collections4-4.1.jar')
+    compile files('libs/commons-beanutils-1.9.3.jar')
+    compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
+    compile 'com.github.mcxtzhang:SuspensionIndexBar:V1.0.0'
+    compile 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+    compile 'com.github.mcxtzhang:AnimShopButton:V1.2.0'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    compile 'com.github.barteksc:android-pdf-viewer:3.0.0-beta.5'
+    compile 'com.github.SilenceDut:ExpandableLayout:1.2.0'
+    compile files('libs/zixing-core-3.2.0.jar')
+    compile 'com.github.lecho:hellocharts-android:v1.5.8'
+    compile 'com.android.support:cardview-v7:26.0.0-alpha1'
+    compile 'com.android.support:gridlayout-v7:26.0.0-alpha1'
+    compile 'org.xclcharts:lib:2.4'
+    compile files('libs/httpclient-cache-4.5.3.jar')
+    compile files('libs/httpcore-4.4.6.jar')
+    compile 'com.android.support:multidex:1.0.1'
+    compile files('libs/httpclient-4.5.3.jar')
+    compile 'com.squareup.okhttp3:okhttp:3.10.0'
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.0'
+            }
+        }
+    }
+}

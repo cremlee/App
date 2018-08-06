@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_nutrition"
+        icon ="@android:drawable/ic_menu_search"
+        title="Nutrition"
+
+        />
+    <tab
+        id="@+id/tab_contain"
+        icon ="@android:drawable/ic_dialog_dialer"
+        title="Contains"
+
+        />
+    <tab
+        id="@+id/tab_import"
+        icon ="@android:drawable/ic_input_add"
+        title="Friends"
+
+        />
+</tabs>

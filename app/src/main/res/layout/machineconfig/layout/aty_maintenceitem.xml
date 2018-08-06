@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="@color/setting_item_bg"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:id="@+id/textName"
+            style="@style/TextViewTitleItem"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:text="maintence item"
+            />
+        <SeekBar
+            android:id="@+id/seekBarUsed"
+            style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:max="100"
+            android:progressDrawable="@drawable/seekbar_green"
+            android:thumb="@android:color/transparent" />
+        <TextView
+            android:id="@+id/textUsedTime"
+            style="@style/TextViewTitleDescItem"
+            android:text="555/6000"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="14sp" />
+        <Button
+            android:id="@+id/btn_c"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/calibrate_buttion_style"
+            android:text="Clean"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+        <Button
+            android:id="@+id/btn_r"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/calibrate_buttion_style"
+            android:text="@string/reset"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <View
+        android:layout_marginLeft="20dp"
+        android:background="@color/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+</LinearLayout>

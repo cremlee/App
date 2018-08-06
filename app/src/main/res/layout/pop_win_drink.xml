@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:id="@+id/rly_outside"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@color/material_white"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:layout_width="800dp"
+        android:layout_height="600dp">
+    <TextView
+        android:gravity="center"
+        android:text="Drink Information"
+        android:textSize="36sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="500dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="Nutrition List"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ListView
+                android:id="@+id/lv_nutrition"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        </LinearLayout>
+
+        <android.luna.ViewUi.radarview.RadarView
+            app:vertex_text_offset="20dp"
+            app:vertex_icon_size="0dp"
+            app:vertex_line_color="#99FFFFFF"
+            app:layer_line_color="#99FFFFFF"
+            app:vertex_text_color="@color/material_black"
+            android:id="@+id/rd_nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_weight="1.2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="this drink contains"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <GridView
+                android:id="@+id/gv_contain"
+                android:layout_weight="1"
+                android:numColumns="4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="this drink may contains"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <GridView
+                android:id="@+id/gv_maycontain"
+                android:layout_weight="1"
+                android:numColumns="4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</RelativeLayout>

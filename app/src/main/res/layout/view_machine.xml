@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Machine Infomation"
+        android:layout_gravity="left"
+        android:textSize="32sp"/>
+
+    <android.luna.ViewUi.widget.SettingItemTextView2
+        android:id="@+id/stv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:textview2DrawbleLeft="@mipmap/ic_person"
+        app:textview2TextTitle="  Machine Name"
+        app:textview2TextValue="EVO MF13" />
+
+    <android.luna.ViewUi.widget.SettingItemTextView2
+        android:id="@+id/stv_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:textview2DrawbleLeft="@mipmap/ic_call_black_48dp"
+
+        app:textview2TextTitle="  Service Phone"
+        app:textview2TextValue="13333333333" />
+
+    <android.luna.ViewUi.widget.SettingItemTextView2
+        android:id="@+id/stv_site"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:textview2DrawbleLeft="@mipmap/ic_add_location_black_48dp"
+        app:textview2TextTitle="  Install Site"
+        app:textview2TextValue="shanghai" />
+
+    <android.luna.ViewUi.widget.SettingItemTextView2
+        android:id="@+id/stv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:textview2DrawbleLeft="@mipmap/ic_fiber_pin_black_48dp"
+        app:textview2TextTitle="  Machine ID"
+        app:textview2TextValue="111-222-333-444" />
+</LinearLayout>

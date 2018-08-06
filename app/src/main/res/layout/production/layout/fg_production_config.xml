@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:background="@mipmap/production_bg"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
+    <LinearLayout
+        android:background="@color/suva_gray"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/lang"
+            app:dropdownTextName="@string/LANG_SELECT"
+            app:dropdownDrawble="@drawable/ic_setting_popup_arrow_grey"
+            android:background="@color/spring_wood"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/machine"
+            app:dropdownTextName="@string/MACHINE_TYPE_SELECT"
+            app:dropdownDrawble="@drawable/ic_setting_popup_arrow_grey"
+            android:background="@color/spring_wood"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/upload"
+                android:layout_centerInParent="true"
+                android:text="@string/UPLOAD"
+                android:layout_width="90dp"
+                android:layout_height="90dp" />
+            <Button
+                android:textSize="24sp"
+                android:text="@string/NEXT"
+                android:drawableEnd="@drawable/ic_navigate_next_black_48dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

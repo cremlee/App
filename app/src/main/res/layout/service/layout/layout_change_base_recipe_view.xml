@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/leftLayout"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/changeBaseRecipeName"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/changeBaseRecipeClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:gravity="center"
+                    android:paddingRight="2dp"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/ic_delete" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/changeBaseRecipeStartTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="start: 0.0 secs"
+                android:textColor="@color/title_text_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/changeBaseRecipeParam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/title_text_color"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:id="@+id/rightLayout"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/spring_wood"
+            android:orientation="vertical" >
+
+            <android.luna.ViewUi.widget.RecipeDragView
+                android:id="@+id/recipeDragView"
+                android:layout_width="250dp"
+                android:minWidth="50dp"
+                android:layout_height="match_parent"
+                android:background="@color/title_text_color"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="30dp"
+        android:background="@color/line" />
+
+</LinearLayout>

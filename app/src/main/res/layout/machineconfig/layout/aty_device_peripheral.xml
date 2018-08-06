@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_marginLeft="20dp"
+            android:text="Back"
+            android:textSize="24sp"
+            android:layout_centerVertical="true"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight="6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <RadioGroup
+            android:background="@color/title_text_color2"
+            android:id="@+id/device_rg"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:layout_width="160dp"
+            android:layout_height="match_parent">
+            <Space
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/tab_device_bg"
+                android:text="Property"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/tab_device_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Test &#038; Calibration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/rb_3"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/tab_device_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text=" Maintenance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Space
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+        <ScrollView
+            android:background="@color/spring_wood"
+            android:layout_margin="20dp"
+            android:id="@+id/sv_pty"
+            android:layout_toRightOf="@+id/device_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                android:id="@+id/lyt_door"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:textview1Text="Door property"
+                    cqube:textview1TextBackground="@color/title_text_color2"
+                    cqube:textview1TextColor="@android:color/white" />
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/door_id"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Device ID:"
+                    cqube:textview2TextValue="00020101"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lyt_cup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <android.luna.ViewUi.widget.SettingItemTextView1
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:textview1Text="Cup Sensor property"
+                        cqube:textview1TextBackground="@color/title_text_color2"
+                        cqube:textview1TextColor="@android:color/white" />
+                    <android.luna.ViewUi.widget.SettingItemTextView2
+                        android:id="@+id/cup1_id"
+                        android:padding="1dp"
+                        cqube:textview2TextTitle="1# Device ID:"
+                        cqube:textview2TextValue="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <android.luna.ViewUi.widget.SettingItemTextView2
+                        android:id="@+id/cup2_id"
+                        android:padding="1dp"
+                        cqube:textview2TextTitle="2# Device ID:"
+                        cqube:textview2TextValue="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lyt_drip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <android.luna.ViewUi.widget.SettingItemTextView1
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:textview1Text="Drip tray property"
+                        cqube:textview1TextBackground="@color/title_text_color2"
+                        cqube:textview1TextColor="@android:color/white" />
+                    <android.luna.ViewUi.widget.SettingItemTextView2
+                        android:id="@+id/drip_id"
+                        android:padding="1dp"
+                        cqube:textview2TextTitle="Device ID:"
+                        cqube:textview2TextValue="00020101"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <android.luna.ViewUi.widget.SettingItemDropDown
+                        android:id="@+id/drip_cp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:dropdownTextName="Max Capability"
+                        cqube:dropdownTextValue="1.5 L" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lyt_waster"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <android.luna.ViewUi.widget.SettingItemTextView1
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:textview1Text="Waster bin property"
+                        cqube:textview1TextBackground="@color/title_text_color2"
+                        cqube:textview1TextColor="@android:color/white" />
+                    <android.luna.ViewUi.widget.SettingItemTextView2
+                        android:id="@+id/waster_id"
+                        android:padding="1dp"
+                        cqube:textview2TextTitle="Device ID:"
+                        cqube:textview2TextValue="00020101"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <android.luna.ViewUi.widget.SettingItemDropDown
+                        android:id="@+id/waster_cp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:dropdownTextName="Max Capability"
+                        cqube:dropdownTextValue="1.5 L"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lyt_led"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <android.luna.ViewUi.widget.SettingItemTextView1
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:textview1Text="LED property"
+                        cqube:textview1TextBackground="@color/title_text_color2"
+                        cqube:textview1TextColor="@android:color/white" />
+                    <android.luna.ViewUi.widget.SettingItemTextView2
+                        android:id="@+id/led_id"
+                        android:padding="1dp"
+                        cqube:textview2TextTitle="Device ID"
+                        cqube:textview2TextValue="00020101"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <android.luna.ViewUi.widget.SettingItemTextView2
+                        android:id="@+id/led_type"
+                        android:padding="1dp"
+                        cqube:textview2TextTitle="Led Type"
+                        cqube:textview2TextValue="three color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <android.luna.ViewUi.widget.SettingItemDropDown
+                        android:id="@+id/led_i_mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:dropdownTextName="Idle Led Mode"
+                        cqube:dropdownTextValue="off" />
+                    <android.luna.ViewUi.widget.SettingItemDropDown
+                        android:id="@+id/led_i_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:dropdownTextName="Idle Led Color"
+                        cqube:dropdownTextValue="1.5 L" />
+                    <android.luna.ViewUi.widget.SettingItemDropDown
+                        android:id="@+id/led_i_int"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:dropdownTextName="Idle Led Intensity"
+                        cqube:dropdownTextValue="Normal" />
+                    <android.luna.ViewUi.widget.SettingItemDropDown
+                        android:id="@+id/led_w_mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:dropdownTextName="Warn Led Mode"
+                        cqube:dropdownTextValue="off" />
+                    <android.luna.ViewUi.widget.SettingItemDropDown
+                        android:id="@+id/led_w_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:dropdownTextName="Wrarn Led Color"
+                        cqube:dropdownTextValue="1.5 L" />
+                    <android.luna.ViewUi.widget.SettingItemDropDown
+                        android:id="@+id/led_w_int"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:dropdownTextName="Warn Led Intensity"
+                        cqube:dropdownTextValue="Normal" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <ScrollView
+            android:visibility="gone"
+            android:layout_margin="20dp"
+            android:background="@color/spring_wood"
+            android:id="@+id/sv_tc"
+            android:layout_toRightOf="@+id/device_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:textview1Text="Test part"
+                    cqube:textview1TextBackground="@color/title_text_color2"
+                    cqube:textview1TextColor="@android:color/white" />
+                <android.luna.ViewUi.widget.SettingItemCheckBox
+                    android:id="@+id/t_led"
+                    cqube:checkBoxText="LED"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/t_door_st"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Door Switch"
+                    cqube:textview2TextValue="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/t_drip_st"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Drip tray Switch"
+                    cqube:textview2TextValue="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/t_waster_st"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Waster bin Switch"
+                    cqube:textview2TextValue="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/t_cup_st"
+                    android:padding="1dp"
+                    cqube:textview2TextTitle="Cup Sensor"
+                    cqube:textview2TextValue="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </ScrollView>
+        <ScrollView
+            android:visibility="gone"
+            android:layout_margin="20dp"
+            android:background="@color/spring_wood"
+            android:id="@+id/sv_mt"
+            android:layout_toRightOf="@+id/device_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:textview1Text="Maintenance info"
+                    cqube:textview1TextBackground="@color/title_text_color2"
+                    cqube:textview1TextColor="@android:color/white" />
+                    <android.luna.ViewUi.widget.MaintenceItemView
+                        android:id="@+id/m_door"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:itemTitle="Door Sensor"
+                        cqube:max="100"
+                        cqube:first_txt="Check"
+                        cqube:sec_txt="Replace" />
+                    <android.luna.ViewUi.widget.MaintenceItemView
+                        android:id="@+id/m_led"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:itemTitle="LED "
+                        cqube:max="100"
+                        cqube:first_txt="Check"
+                        cqube:sec_txt="Replace" />
+                    <!--<android.luna.ViewUi.widget.MaintenceItemView
+                        android:id="@+id/m_hot_valve"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:itemTitle="Hot Water Valve"
+                        cqube:max="100"
+                        cqube:first_txt="Check"
+                        cqube:sec_txt="Replace" />
+                    <android.luna.ViewUi.widget.MaintenceItemView
+                        android:id="@+id/m_mix_whipper"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:itemTitle="Mixer Whipper"
+                        cqube:max="100"
+                        cqube:first_txt="Check"
+                        cqube:sec_txt="Replace" />
+                    <android.luna.ViewUi.widget.MaintenceItemView
+                        android:id="@+id/m_fan_motor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:itemTitle="Fan Motor"
+                        cqube:max="100"
+                        cqube:first_txt="Check"
+                        cqube:sec_txt="Replace" />-->
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

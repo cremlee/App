@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp" >
+        <TextView
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:text="Software info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="24sp"
+            android:text="Current version:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView9"
+            android:layout_above="@+id/sf_update"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="260dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current version:"
+            android:textSize="24sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/textView9"
+            android:layout_marginBottom="72dp" />
+
+        <TextView
+            android:id="@+id/ver_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.500"
+            android:textSize="24sp"
+            android:layout_alignBaseline="@+id/textView10"
+            android:layout_alignBottom="@+id/textView10"
+            android:layout_alignStart="@+id/ver_old" />
+
+        <TextView
+            android:textSize="24sp"
+            android:text="1.400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_alignBaseline="@+id/textView9"
+            android:layout_alignBottom="@+id/textView9"
+            android:layout_toEndOf="@+id/textView9"
+            android:id="@+id/ver_old" />
+
+        <Button
+            android:text="update"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sf_update"
+            android:layout_above="@+id/ver_new"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="103dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp" >
+        <TextView
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:text="Firmware info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="24sp"
+            android:text="Current version:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView91"
+            android:layout_above="@+id/sf_update1"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="260dp" />
+
+        <TextView
+            android:id="@+id/textView101"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current version:"
+            android:textSize="24sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/textView91"
+            android:layout_marginBottom="72dp" />
+
+        <TextView
+            android:id="@+id/ver_new1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.500"
+            android:textSize="24sp"
+            android:layout_alignBaseline="@+id/textView101"
+            android:layout_alignBottom="@+id/textView101"
+            android:layout_alignStart="@+id/ver_old1" />
+
+        <TextView
+            android:textSize="24sp"
+            android:text="1.400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_alignBaseline="@+id/textView91"
+            android:layout_alignBottom="@+id/textView91"
+            android:layout_toEndOf="@+id/textView91"
+            android:id="@+id/ver_old1" />
+
+        <Button
+            android:text="update"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sf_update1"
+            android:layout_above="@+id/ver_new1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="103dp" />
+    </RelativeLayout>
+</LinearLayout>

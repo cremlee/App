@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+<TextView
+    android:background="@color/suva_gray"
+    android:id="@+id/title"
+    android:textSize="48sp"
+    android:text="@string/back"
+    android:paddingLeft="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <GridView
+        android:stretchMode="columnWidth"
+        android:padding="10dp"
+        android:id="@+id/gv_res"
+        android:verticalSpacing="20dp"
+        android:layout_below="@+id/title"
+        android:numColumns="4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></GridView>
+</RelativeLayout>

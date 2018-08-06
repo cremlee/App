@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+    <me.wangyuwei.particleview.ParticleView
+        android:id="@+id/pv"
+        android:background="#2E2E2E"
+        app:pv_text_anim_time="3000"
+        app:pv_spread_anim_time="2000"
+        app:pv_host_text_anim_time="1500"
+        app:pv_host_text="Crem "
+        app:pv_host_text_size="96sp"
+        app:pv_particle_text=" EVO"
+        app:pv_particle_text_size="48sp"
+        app:pv_text_color="#FFF"
+        app:pv_background_color="#2E2E2E"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <com.mcxtzhang.pathanimlib.PathAnimView
+        android:id="@+id/storeView3"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+</RelativeLayout>

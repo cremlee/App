@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_update"
+        icon="@drawable/ic_system_update_black_48dp"
+         />
+    <tab
+        id="@+id/tab_export"
+        icon="@drawable/ic_file_upload_black_48dp"
+        />
+    <tab
+        id="@+id/tab_import"
+        icon="@drawable/ic_file_download_black_48dp"
+         />
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ics_home"
+        />
+</tabs>

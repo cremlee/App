@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <android.luna.ViewUi.DashBoard.DashboardView
+        android:id="@+id/IN_bean1"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:text="Bean Hopper"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <android.luna.ViewUi.DashBoard.DashboardView
+                android:id="@+id/IN_bean2"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_centerInParent="true"
+                android:textSize="20sp"
+                android:text="Espresso"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <android.luna.ViewUi.DashBoard.DashboardView
+                android:id="@+id/IN_bean3"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_centerInParent="true"
+                android:textSize="20sp"
+                android:text="Chocolate"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <android.luna.ViewUi.DashBoard.DashboardView
+                android:id="@+id/IN_bean4"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_centerInParent="true"
+                android:textSize="20sp"
+                android:text="Milk"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <RelativeLayout
+            android:id="@+id/a2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <android.luna.ViewUi.TempView.Themometer
+                android:id="@+id/mTemp"
+                android:padding="40dp"
+                android:layout_centerInParent="true"
+                android:layout_width="320dp"
+                android:layout_height="320dp" />
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/a2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:background="@color/material_textWhite_black"
+            android:textColor="@color/material_black"
+            android:id="@+id/a3"
+            android:text="Machine Event List"
+            android:textSize="28sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/a4"
+                android:layout_below="@+id/a3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+               <TextView
+                   android:textColor="@color/material_black"
+                   android:textAlignment="center"
+                   android:background="@drawable/textshape"
+                   android:textSize="20sp"
+                   android:text="Code"
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content" />
+                <TextView
+                    android:textColor="@color/material_black"
+                    android:background="@drawable/textshape"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:text="Level"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textColor="@color/material_black"
+                    android:background="@drawable/textshape"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:text="Content"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <ListView
+                android:background="@color/material_textWhite_dividers"
+                android:scrollbars="vertical"
+                android:id="@+id/errorlsv"
+                android:layout_below="@+id/a4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
