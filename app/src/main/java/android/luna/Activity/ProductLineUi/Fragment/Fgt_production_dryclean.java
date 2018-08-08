@@ -1,8 +1,10 @@
 package android.luna.Activity.ProductLineUi.Fragment;
 
 import android.graphics.SurfaceTexture;
+import android.luna.Utils.Device.DeviceXmlFactory;
 import android.luna.Utils.FileHelper;
 import android.luna.ViewUi.MaterialDialog.MaterialDialog;
+import android.luna.rs232.Cmd.CmdCleanMachine;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,9 +33,14 @@ public class Fgt_production_dryclean extends productionFragment implements View.
     private ViewFlipper op_vf;
     private Fg_step_1 fgstep1;
     private Fg_step_2 fgstep2;
+    private Fg_step_3 fgstep3;
+    private Fg_step_4 fgstep4;
     private void Playhelp(int index)
     {
-        String path = (index%2 ==0? FileHelper.FILE_PRODUCTION+"step1.mp4":FileHelper.FILE_PRODUCTION+"step2.mp4");
+        String path = FileHelper.FILE_PRODUCTION+"step"+index+".mp4";
+
+
+
         if(mMediaPlayer == null)
         {
            mMediaPlayer= new MediaPlayer();
@@ -154,7 +161,10 @@ public class Fgt_production_dryclean extends productionFragment implements View.
         step_video = viewVideo.findViewById(R.id.textureView);
         op_vf.addView(viewVideo);
         step_video.setSurfaceTextureListener(this);
-
+        try {
+           String cmd = new CmdCleanMachine().buildCmdStart(DeviceXmlFactory.getCleanComponent(FileHelper.FILE_DEVICE_CONFIG,DeviceXmlFactory.CLEAN_TYPE_DRY_OPEN));
+        }
+        catch (Exception e){}
     }
 
     private void showuploadwindow()
@@ -191,9 +201,19 @@ public class Fgt_production_dryclean extends productionFragment implements View.
                 Playhelp(2);
                 break;
             case R.id.step_3:
+                if(fgstep3 == null)
+                {
+                    fgstep3 = new Fg_step_3();
+                }
+                getChildFragmentManager().beginTransaction().replace(R.id.op_fun, fgstep3).commit();
                 Playhelp(3);
                 break;
             case R.id.step_4:
+                if(fgstep4 == null)
+                {
+                    fgstep4 = new Fg_step_4();
+                }
+                getChildFragmentManager().beginTransaction().replace(R.id.op_fun, fgstep4).commit();
                 Playhelp(4);
                 break;
         }

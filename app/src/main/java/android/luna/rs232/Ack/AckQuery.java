@@ -38,6 +38,9 @@ public class AckQuery implements IEncode {
     public static final int MS_STORAGE_OP= 0x62;
     public static final int MS_STORAGE_FINISH= 0x61;
 
+    public static final int MS_CFG_DOWNLOAD = 0x71;
+    public static final int MS_CFG_FINISH = 0x72;
+
     //public static final int INDEX_COOLING_TEMPERATURE =0;
     public static final int INDEX_NTC_HIGH_TEMPERATURE =0x00060101;
     public static final int INDEX_NTC_LOW_TEMPERATURE =0x00060102;
@@ -141,6 +144,40 @@ public class AckQuery implements IEncode {
             return 0xffffffff;
         else
             return state_list.get(index).getValue();
+    }
+
+    public String getWaterString()
+    {
+        String ret ="WL: ";
+        if(getWaterHighState()!=0xffffffff)
+            ret= ret+"[H:"+getWaterHighState()+"]";
+        if(getWaterLowState()!=0xffffffff)
+            ret= ret+"[L:"+getWaterLowState()+"]";
+        return ret;
+    }
+
+    public String getDoorString()
+    {
+        String ret ="DR: ";
+        if(getIndexDoorState()!=0xffffffff)
+            ret= ret+getIndexDoorState();
+        return ret;
+    }
+
+    public String getBinString()
+    {
+        String ret ="WB: ";
+        if(getIndexWasterBinState()!=0xffffffff)
+            ret= ret+getIndexWasterBinState();
+        return ret;
+    }
+
+    public String getDripString()
+    {
+        String ret ="DT: ";
+        if(getIndexDriptrayState()!=0xffffffff)
+            ret= ret+getIndexDriptrayState();
+        return ret;
     }
 
     public int getIndexDoorState()

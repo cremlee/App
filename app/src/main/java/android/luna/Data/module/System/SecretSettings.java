@@ -12,11 +12,17 @@ import java.io.Serializable;
 public class SecretSettings implements Serializable{
     @DatabaseField(generatedId = true)
     private int id;
+    @DatabaseField(defaultValue = "1")  //off
     private int qrmode;
+    @DatabaseField(defaultValue = "evopsw20180502ll")
     private String qrpin;
+    @DatabaseField(defaultValue = "0")  //off
     private int servicemode;
+    @DatabaseField(defaultValue = "000000")  //off
     private String servicepin;
+    @DatabaseField(defaultValue = "0")  //off
     private int usermode;
+    @DatabaseField(defaultValue = "000000")  //off
     private String userpin;
 
 }

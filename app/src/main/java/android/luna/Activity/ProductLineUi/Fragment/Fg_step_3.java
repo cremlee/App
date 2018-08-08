@@ -17,13 +17,13 @@ import evo.luna.android.R;
  * Created by Lee.li on 2018/7/6.
  */
 
-public class Fg_step_2 extends  productionFragment implements View.OnClickListener{
+public class Fg_step_3 extends  productionFragment implements View.OnClickListener{
     private TextView info;
     private String cmd="";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fg_step_2, container, false);
+        View view = inflater.inflate(R.layout.fg_step_3, container, false);
         InitView(view);
 
         return view;

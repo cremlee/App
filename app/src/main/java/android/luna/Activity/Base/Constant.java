@@ -344,7 +344,10 @@ public final class Constant {
 	 */
 	public static final String ACTION_MAKE_DRINK_FINISH_ACK = "evo.luna.android.action.MAKE_DRINK_FINISH";
 
-
+	/**
+	 * Config finished
+	 */
+	public static final String ACTION_CONFIG_MACHINE_FINISH = "evo.luna.android.action.CONFIG_MACHINE_FINISH";
 	/**
 	 *
 	 */
@@ -516,6 +519,8 @@ public final class Constant {
 	public static final int ACK_PAY_QUERY= 0x9C;
 
 	public static final int ACK_ERROR_CHECK= 0x9D;
+
+	public static final int ACK_CONFIG_FINISH = 0xA0;
 	/**
 	 * 数据包破损，需要重新发送
 	 */

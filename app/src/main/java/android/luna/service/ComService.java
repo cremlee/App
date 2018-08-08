@@ -22,6 +22,7 @@ import android.luna.rs232.Ack.AckCalibrationFinish;
 import android.luna.rs232.Ack.AckCalibrationRequest;
 import android.luna.rs232.Ack.AckCleanFinish;
 import android.luna.rs232.Ack.AckCleanRequest;
+import android.luna.rs232.Ack.AckConfigFinish;
 import android.luna.rs232.Ack.AckDeviceDB;
 import android.luna.rs232.Ack.AckDeviceDBSet;
 import android.luna.rs232.Ack.AckDrinkFinish;
@@ -37,6 +38,7 @@ import android.luna.rs232.Ack.DataStruct.DeviceParamItem;
 import android.luna.rs232.Ack.DataStruct.ErrorItem;
 import android.luna.rs232.Cmd.CmdCalibration;
 import android.luna.rs232.Cmd.CmdCleanFinish;
+import android.luna.rs232.Cmd.CmdConfigFinish;
 import android.luna.rs232.Cmd.CmdDrinkFinish;
 import android.luna.rs232.Cmd.CmdStateQuery;
 import android.luna.rs232.Cmd.CmdTestFinish;
@@ -501,6 +503,9 @@ public class ComService extends Service implements ICommunication {
             case ACK_CALIBRATION_FINISH:
                 dealwithAckCalibrationFinish(acks,boadcast);
                 break;
+            case ACK_CONFIG_FINISH:
+                dealwithAckConfigFinish(acks,boadcast);
+                break;
             //// TODO: 2018/2/5 chuwubao xiangguan
             case ACK_PACKAGE_CORRUPT:
                 EvoTrace.e(TAG_ACK, "ACK_PACKAGE_CORRUPT");
@@ -616,6 +621,15 @@ public class ComService extends Service implements ICommunication {
                     app.addCmdQueue((new CmdTestFinish()).buildCmd());
                 }
                 break;
+            case AckQuery.MS_CFG_DOWNLOAD:
+                break;
+            case AckQuery.MS_CFG_FINISH:
+                if(ackQuery.cleanfinishcheck++>=AckQuery.MS_CLEAN_FINISH_CHECK_FREQUENCY)
+                {
+                    ackQuery.cleanfinishcheck =0;
+                    app.addCmdQueue((new CmdConfigFinish()).buildCmd());
+                }
+                break;
         }
         if(ackQuery.getMachine_state()!=AckQuery.MS_BLOCK_MODE)
         {
@@ -667,8 +681,8 @@ public class ComService extends Service implements ICommunication {
                     }
                 }
             }
-            app.resettheWarningList(_machinewarnlist);
         }
+        app.resettheWarningList(_machinewarnlist);
     }
 
     /**
@@ -879,6 +893,16 @@ public class ComService extends Service implements ICommunication {
         AckDeviceDBSet ack = new AckDeviceDBSet();
         ack.Encodeing2class(acks);
         boadcast = new Intent(Constant.ACTION_DB_SET_ACK);
+        boadcast.putExtra("ACK",ack.getAckresult());
+        sendBroadcast(boadcast);
+    }
+
+    private void dealwithAckConfigFinish(String[] acks,Intent boadcast)
+    {
+        EvoTrace.e(TAG_ACK, "dealwithAckConfigFinish");
+        AckConfigFinish ack = new AckConfigFinish();
+        ack.Encodeing2class(acks);
+        boadcast = new Intent(Constant.ACTION_CONFIG_MACHINE_FINISH);
         boadcast.putExtra("ACK",ack.getAckresult());
         sendBroadcast(boadcast);
     }

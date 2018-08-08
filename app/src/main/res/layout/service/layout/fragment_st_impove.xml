@@ -109,77 +109,113 @@
 
         </RelativeLayout>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
         <RelativeLayout
-            android:background="@drawable/layout_white_border"
-            android:layout_margin="10dp"
-            android:orientation="horizontal"
             android:id="@+id/lyt2"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:layout_weight="4"
-            android:layout_height="match_parent">
+            android:background="@drawable/layout_white_border"
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/title3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/material_black"
-                android:textSize="30sp"
                 android:text="Machine Event"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textColor="@color/material_black"
+                android:textSize="30sp" />
+
             <LinearLayout
-                android:layout_margin="10dp"
-                android:layout_below="@+id/title3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title3"
+                android:layout_margin="10dp">
+
                 <ListView
-                    android:background="@color/material_textWhite_dividers"
-                    android:scrollbars="vertical"
                     android:id="@+id/errorlsv"
                     android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_height="match_parent"/>
+                    android:background="@color/material_textWhite_dividers"
+                    android:scrollbars="vertical" />
+
                 <TextView
                     android:id="@+id/error_help"
                     android:layout_width="200dp"
                     android:layout_height="match_parent" />
             </LinearLayout>
         </RelativeLayout>
+
         <RelativeLayout
-            android:background="@drawable/layout_white_border"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="3.3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:background="@drawable/layout_white_border">
+
             <TextView
                 android:id="@+id/title4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/material_black"
-                android:textSize="30sp"
                 android:text="Others"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textColor="@color/material_black"
+                android:textSize="30sp" />
+
             <LinearLayout
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/title4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title4"
+                android:layout_marginTop="20dp">
+
                 <android.luna.ViewUi.DashBoard.DialChart01View
                     android:id="@+id/dash_ntc"
-                    android:layout_margin="10dp"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent" />
-                <android.luna.ViewUi.DashBoard.DialChart01View
-                    android:visibility="invisible"
+                    android:layout_height="match_parent"
                     android:layout_margin="10dp"
+                    android:layout_weight="1" />
+                 <LinearLayout
+                     android:orientation="vertical"
+                     android:layout_weight="1"
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent">
+                     <TextView
+                         android:id="@+id/st_door"
+                         android:textSize="26sp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content" />
+                     <TextView
+                         android:id="@+id/st_water"
+                         android:textSize="26sp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content" />
+                     <TextView
+                         android:id="@+id/st_drip"
+                         android:textSize="26sp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content" />
+                     <TextView
+                         android:id="@+id/st_bin"
+                         android:textSize="26sp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content" />
+                 </LinearLayout>
+                <!--<android.luna.ViewUi.DashBoard.DialChart01View
                     android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:layout_height="match_parent" />
+                    android:visibility="invisible" />-->
             </LinearLayout>
 
 

@@ -104,6 +104,7 @@ public class aty_customer_ui_12 extends BaseActivity implements View.OnClickList
                 else
                 {
                     showToast("make drink failed:"+ackresult);
+                    mHandler.sendEmptyMessageDelayed(1000,500);
                 }
             }
             else if(action.equals(Constant.ACTION_MAKE_DRINK_FINISH_ACK))
@@ -200,7 +201,7 @@ public class aty_customer_ui_12 extends BaseActivity implements View.OnClickList
             super.handleMessage(msg);
             switch (msg.what) {
                 case 1000:
-                    getApp().setIsmainpagereload(true);
+                    //getApp().setIsmainpagereload(true);
                     AppManager.getAppManager().finishActivity(aty_customer_ui_12.this);
                 default:
                     break;
@@ -238,20 +239,20 @@ public class aty_customer_ui_12 extends BaseActivity implements View.OnClickList
                     case Ingredient.TYPE_INSTANT:
                         IngredientInstant instant = ingredientFactoryDao.getInstantDao().findByT(beverageIngredient.getIngredientPid());
                         if (instant != null) {
-                            ingredientTime = (int) ((instant.getWaterVolume() * beverageIngredient.getScaleUp() / 100 + instant.getPreflushVolume() + instant.getWaterAfterFlushVolume()) * 1000 / 20) + (instant.getPauseTimeAfterDispense() + instant.getPreflushPauseTime()) + 2000;
+                            ingredientTime = (int) ((instant.getWaterVolume() * beverageIngredient.getScaleUp() / 100 + instant.getPreflushVolume() + instant.getWaterAfterFlushVolume()) * 100) + (instant.getPauseTimeAfterDispense() + instant.getPreflushPauseTime()) + 2000;
                         }
                         break;
                     case Ingredient.TYPE_WATER:
                         IngredientWater water = ingredientFactoryDao.getWaterDao().findByT(beverageIngredient.getIngredientPid());
                         if (water != null) {
-                            ingredientTime = (int) (water.getWaterVolume() / 20 * 1000);
+                            ingredientTime = (int) (water.getWaterVolume() *100);
                         }
                         break;
                     case Ingredient.TYPE_ESPRESSO:
                         IngredientEspresso espresso = ingredientFactoryDao.getEspressoDao().findByT(beverageIngredient.getIngredientPid());
                         if(espresso!=null)
                         {
-                            ingredientTime = (int) (espresso.getBrewtime()+espresso.getPrebrewtime()+espresso.getPreinfusiontime())*1000+10000;
+                            ingredientTime = (int) (espresso.getBrewtime()+espresso.getPrebrewtime()+espresso.getPreinfusiontime())*1000+10000+espresso.getWatervolume()*100+(int)espresso.getPowderamount()*100;
                         }
                         break;
                     default:

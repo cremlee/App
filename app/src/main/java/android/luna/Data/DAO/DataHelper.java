@@ -5,6 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.luna.Data.module.*;
 import android.luna.Data.module.Powder.PowderItem;
 import android.luna.Data.module.Powder.PowderNutrition;
+import android.luna.Data.module.System.DisplaySoundSettings;
+import android.luna.Data.module.System.SecretSettings;
+import android.luna.Data.module.System.SmartSettings;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
@@ -453,6 +456,51 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         return _paymentSettingIntegerDao;
     }
     //###############################################################################################//
+    //#####################################system param #############################################//
+    //###############################################################################################//
+    private Dao<DisplaySoundSettings,Integer>  _displaySoundSettingsIntegerDao =null;
+    private Dao<SecretSettings,Integer> _secretSettingsIntegerDao=null;
+    private Dao<SmartSettings,Integer> _smartSettingsIntegerDao =null;
+
+    public Dao<DisplaySoundSettings,Integer> get_displaySoundSettingsIntegerDao()
+    {
+        if(_displaySoundSettingsIntegerDao ==null)
+        {
+            try {
+                _displaySoundSettingsIntegerDao = getDao(DisplaySoundSettings.class);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return _displaySoundSettingsIntegerDao;
+    }
+
+    private Dao<SecretSettings,Integer> get_secretSettingsIntegerDao()
+    {
+        if(_secretSettingsIntegerDao ==null)
+        {
+            try {
+                _secretSettingsIntegerDao = getDao(SecretSettings.class);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return _secretSettingsIntegerDao;
+    }
+
+    private Dao<SmartSettings,Integer> get_smartSettingsIntegerDao()
+    {
+        if(_smartSettingsIntegerDao ==null)
+        {
+            try {
+                _smartSettingsIntegerDao = getDao(SmartSettings.class);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return _smartSettingsIntegerDao;
+    }
+    //###############################################################################################//
     //###############################################################################################//
     //###############################################################################################//
     @Override
@@ -635,6 +683,23 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        try {
+            TableUtils.createTable(connectionSource, DisplaySoundSettings.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            TableUtils.createTable(connectionSource, SmartSettings.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            TableUtils.createTable(connectionSource, SecretSettings.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
         InitDatabase();
         /*TableUtils.createTable(connectionSource, Maintenance.class);
         TableUtils.createTable(connectionSource, Soldout.class);
@@ -668,23 +733,38 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         }catch (SQLException e) {
             e.printStackTrace();
         }
+        try {
+            get_displaySoundSettingsIntegerDao().createOrUpdate(new DisplaySoundSettings());
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            get_smartSettingsIntegerDao().createOrUpdate(new SmartSettings());
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            get_secretSettingsIntegerDao().createOrUpdate(new SecretSettings());
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
     public void testadd()
     {
         try {
-            TableUtils.createTable(connectionSource, Smart.class);
+            TableUtils.createTable(connectionSource, DisplaySoundSettings.class);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         try {
-            TableUtils.createTable(connectionSource, SmartDetail.class);
+            TableUtils.createTable(connectionSource, SmartSettings.class);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         try {
-            TableUtils.createTable(connectionSource, DaylightSetting.class);
+            TableUtils.createTable(connectionSource, SecretSettings.class);
         } catch (SQLException e) {
             e.printStackTrace();
         }

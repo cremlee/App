@@ -51,10 +51,7 @@ public class Fg_step_1 extends  productionFragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fg_step_1, container, false);
         InitView(view);
-        try {
-            cmd = new CmdCleanMachine().buildCmdStart(DeviceXmlFactory.getCleanComponent(FileHelper.FILE_DEVICE_CONFIG,DeviceXmlFactory.CLEAN_TYPE_DRY_OPEN));
-        }
-        catch (Exception e){}
+
         return view;
     }
 
@@ -69,6 +66,10 @@ public class Fg_step_1 extends  productionFragment implements View.OnClickListen
             {
                 case R.id.open:
                     // TODO: 2018/7/12 da kai jiqi de shui fa
+                    try {
+                        cmd = new CmdCleanMachine().buildCmdStart(DeviceXmlFactory.getCleanComponent(FileHelper.FILE_DEVICE_CONFIG,DeviceXmlFactory.CLEAN_TYPE_DRY_OPEN));
+                    }
+                    catch (Exception e){}
                     if(!cmd.equals(""))
                         ((BaseActivity)getActivity()).getApp().addCmdQueue(cmd);
                     break;

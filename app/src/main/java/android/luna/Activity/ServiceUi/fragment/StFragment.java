@@ -54,6 +54,7 @@ public class StFragment extends Fragment implements View.OnClickListener {
     private MaterialDialog tipdialog;
     private ListView errorlsv;
     private MachineWarningAdapter warningAdapter;
+    private TextView st_door,st_water,st_drip,st_bin;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -175,6 +176,10 @@ public class StFragment extends Fragment implements View.OnClickListener {
         errorlsv = view.findViewById(R.id.errorlsv);
         error_help = view.findViewById(R.id.error_help);
         errorlsv.setAdapter(warningAdapter);
+        st_door = view.findViewById(R.id.st_door);
+        st_water = view.findViewById(R.id.st_water);
+        st_drip = view.findViewById(R.id.st_drip);
+        st_bin = view.findViewById(R.id.st_bin);
     }
     private Handler mHandler = new Handler() {
         @Override
@@ -182,7 +187,45 @@ public class StFragment extends Fragment implements View.OnClickListener {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 1000:
-                    dash_ntc.setCurrentStatus(app.getAckQueryInstance().getNtcHighTemperature()/100.f);
+                    if(app.getAckQueryInstance().getNtcHighTemperature()!=0xffffffff)
+                        dash_ntc.setCurrentStatus(app.getAckQueryInstance().getNtcHighTemperature()/100.f);
+                    if(app.getAckQueryInstance().getWaterHighState()!=0xffffffff)
+                    {
+                        st_water.setVisibility(View.VISIBLE);
+                        st_water.setText(app.getAckQueryInstance().getWaterString());
+                    }
+                    else
+                    {
+                        st_water.setVisibility(View.GONE);
+                    }
+                    if(app.getAckQueryInstance().getIndexDoorState()!=0xffffffff)
+                    {
+                        st_door.setVisibility(View.VISIBLE);
+                        st_door.setText(app.getAckQueryInstance().getDoorString());
+                    }
+                    else
+                    {
+                        st_door.setVisibility(View.GONE);
+                    }
+                    if(app.getAckQueryInstance().getIndexDriptrayState()!=0xffffffff)
+                    {
+                        st_drip.setVisibility(View.VISIBLE);
+                        st_drip.setText(app.getAckQueryInstance().getDripString());
+                    }
+                    else
+                    {
+                        st_drip.setVisibility(View.GONE);
+                    }
+                    if(app.getAckQueryInstance().getIndexWasterBinState()!=0xffffffff)
+                    {
+
+                        st_bin.setVisibility(View.VISIBLE);
+                        st_bin.setText(app.getAckQueryInstance().getBinString());
+                    }
+                    else
+                    {
+                        st_bin.setVisibility(View.GONE);
+                    }
                     mHandler.sendEmptyMessageDelayed(1000,1000);
                     break;
                 default:

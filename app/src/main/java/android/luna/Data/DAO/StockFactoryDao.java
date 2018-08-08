@@ -46,7 +46,7 @@ public class StockFactoryDao extends BaseDaobak implements IMachineStock {
                         if(espresso!=null)
                         {
                             powerType = espresso.getPowdertype();
-                            powderAmount = (int)(espresso.getPowderamount()*ingredint.getScaleUp()/10);
+                            powderAmount = (int)(espresso.getPowderamount()*ingredint.getScaleUp()/100);
                            CanisterItemStock item = getCanisterStockDao().queryByPid(powerType);
                             if(item!=null)
                             {
@@ -63,7 +63,7 @@ public class StockFactoryDao extends BaseDaobak implements IMachineStock {
                         if(instant!=null)
                         {
                             powerType = instant.getPacket1Type();
-                            powderAmount = (int)(instant.getPacket1Amount()*ingredint.getScaleUp()/10);
+                            powderAmount = (int)(instant.getPacket1Amount()*ingredint.getScaleUp()/100);
                             CanisterItemStock item = getCanisterStockDao().queryByPid(powerType);
                             if(item!=null)
                             {

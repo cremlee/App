@@ -61,173 +61,175 @@ public class MachineWarn implements Serializable ,Comparable<MachineWarn>{
         if(strid.startsWith("0001"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE1;
+                return MachineError.ECODE0101;
             else if(warningcode ==2)
-                return MachineError.ECODE2;
+                return MachineError.ECODE0102;
         }
         else if(strid.startsWith("0002"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE3;
+                return MachineError.ECODE0201;
             else if(warningcode ==2)
-                return MachineError.ECODE4;
+                return MachineError.ECODE0202;
         }
         else if(strid.startsWith("0003"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE5;
+                return MachineError.ECODE0301;
             else if(warningcode ==2)
-                return MachineError.ECODE6;
+                return MachineError.ECODE0302;
             else if(warningcode ==3)
-                return MachineError.ECODE7;
+                return MachineError.ECODE0303;
         }
         else if(strid.startsWith("0004"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE8;
+                return MachineError.ECODE0401;
             else if(warningcode ==2)
-                return MachineError.ECODE9;
+                return MachineError.ECODE0402;
         }
         else if(strid.startsWith("0005"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE10;
+                return MachineError.ECODE0501;
             else if(warningcode ==2)
-                return MachineError.ECODE11;
+                return MachineError.ECODE0502;
         }
         else if(strid.startsWith("0006"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE12;
+                return MachineError.ECODE0601;
             else if(warningcode ==2)
-                return MachineError.ECODE13;
+                return MachineError.ECODE0602;
             else if(warningcode ==3)
-                return MachineError.ECODE14;
+                return MachineError.ECODE0603;
+            else if(warningcode ==4)
+                return MachineError.ECODE0604;
         }
         else if(strid.startsWith("0007"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE15;
+                return MachineError.ECODE0701;
             else if(warningcode ==2)
-                return MachineError.ECODE16;
+                return MachineError.ECODE0702;
             else if(warningcode ==3)
-                return MachineError.ECODE17;
+                return MachineError.ECODE0703;
             else if(warningcode ==4)
-                return MachineError.ECODE18;
+                return MachineError.ECODE0704;
         }
         else if(strid.startsWith("0008"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE19;
+                return MachineError.ECODE0801;
             else if(warningcode ==2)
-                return MachineError.ECODE20;
+                return MachineError.ECODE0802;
         }
         else if(strid.startsWith("0009"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE21;
+                return MachineError.ECODE0901;
         }
         else if(strid.startsWith("000A"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE22;
+                return MachineError.ECODE0A01;
             else if(warningcode ==2)
-                return MachineError.ECODE23;
+                return MachineError.ECODE0A02;
         }
         else if(strid.startsWith("000B"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE24;
+                return MachineError.ECODE0B01;
             else if(warningcode ==2)
-                return MachineError.ECODE25;
+                return MachineError.ECODE0B02;
         }
         else if(strid.startsWith("000C"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE26;
+                return MachineError.ECODE0C01;
         }
         else if(strid.startsWith("000D"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE27;
+                return MachineError.ECODE0D01;
             else if(warningcode ==2)
-                return MachineError.ECODE28;
+                return MachineError.ECODE0D02;
         }
         else if(strid.startsWith("0012"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE29;
+                return MachineError.ECODE1201;
             else if(warningcode ==2)
-                return MachineError.ECODE30;
+                return MachineError.ECODE1202;
         }
         else if(strid.startsWith("0013"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE31;
+                return MachineError.ECODE1301;
         }
         else if(strid.startsWith("0014"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE32;
+                return MachineError.ECODE1401;
             else if(warningcode ==2)
-                return MachineError.ECODE33;
+                return MachineError.ECODE1402;
         }
         else if(strid.startsWith("0015"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE34;
+                return MachineError.ECODE1501;
             else if(warningcode ==2)
-                return MachineError.ECODE35;
+                return MachineError.ECODE1502;
             else if(warningcode ==3)
-                return MachineError.ECODE36;
+                return MachineError.ECODE1503;
         }
         else if(strid.startsWith("0016"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE37;
+                return MachineError.ECODE1601;
             else if(warningcode ==2)
-                return MachineError.ECODE38;
+                return MachineError.ECODE1602;
         }
         else if(strid.startsWith("0017"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE39;
+                return MachineError.ECODE1701;
             else if(warningcode ==2)
-                return MachineError.ECODE40;
+                return MachineError.ECODE1702;
         }
         else if(strid.startsWith("0018"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE41;
+                return MachineError.ECODE1801;
         }
         else if(strid.startsWith("0019"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE42;
+                return MachineError.ECODE1901;
             else if(warningcode ==2)
-                return MachineError.ECODE43;
+                return MachineError.ECODE1902;
         }
         else if(strid.startsWith("001A"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE44;
+                return MachineError.ECODE1A01;
         }
         else if(strid.startsWith("00FF"))
         {
             if(warningcode == 1)
-                return MachineError.ECODE45;
+                return MachineError.ECODEFF01;
             else if(warningcode ==2)
-                return MachineError.ECODE46;
+                return MachineError.ECODEFF02;
             else if(warningcode ==3)
-                return MachineError.ECODE47;
+                return MachineError.ECODEFF03;
             else if(warningcode ==4)
-                return MachineError.ECODE48;
+                return MachineError.ECODEFF04;
             else if(warningcode ==5)
-                return MachineError.ECODE49;
+                return MachineError.ECODEFF05;
             else if(warningcode ==6)
-                return MachineError.ECODE50;
+                return MachineError.ECODEFF06;
             else if(warningcode ==7)
-                return MachineError.ECODE51;
+                return MachineError.ECODEFF07;
         }
         return "not defined!";
     }

@@ -1,7 +1,12 @@
 package android.luna.Activity.ProductLineUi.Fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.luna.Activity.Base.BaseActivity;
+import android.luna.Activity.Base.Constant;
 import android.luna.Activity.Base.CremApp;
 import android.luna.Data.DAO.PowderFactory;
 import android.luna.Data.DAO.StockFactoryDao;
@@ -72,6 +77,8 @@ public class Fgt_production_config extends productionFragment implements View.On
         initver();
         InitView(view);
         app = ((BaseActivity)getActivity()).getApp();
+        filter = new IntentFilter();
+        filter.addAction(Constant.ACTION_CONFIG_MACHINE_FINISH);
         return view;
     }
     private void initver()
@@ -169,8 +176,31 @@ public class Fgt_production_config extends productionFragment implements View.On
                 .progress(true, 0)
                 .show();
     }
+    private  IntentFilter filter;
+    @Override
+    public void onResume() {
+        super.onResume();
+        getActivity().registerReceiver(receiver,filter);
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        getActivity().unregisterReceiver(receiver);
+    }
 
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if(action.equals(Constant.ACTION_CONFIG_MACHINE_FINISH))
+            {
+                if(BuildConfig.isDebug) {
+                    mHandler.sendEmptyMessageDelayed(1000, 1000);
+                }
+            }
+        }
+    };
     class UploadMachineConfigAsyncTask extends AsyncTask<String,Integer,String> {
         private List<Device> devices = null;
         private List<DeviceItemLayout> deviceItemLayouts = null;
@@ -351,9 +381,7 @@ public class Fgt_production_config extends productionFragment implements View.On
             }
             if(!"".equalsIgnoreCase(cmd))
                 ((BaseActivity) getActivity()).getApp().addCmdQueue(cmd);
-            if(BuildConfig.isDebug) {
-                mHandler.sendEmptyMessageDelayed(1000, 5000);
-            }
+
         }
     }
 

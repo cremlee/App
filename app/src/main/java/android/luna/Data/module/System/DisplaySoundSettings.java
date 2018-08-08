@@ -11,14 +11,24 @@ import java.io.Serializable;
 public class DisplaySoundSettings implements Serializable{
     @DatabaseField(generatedId = true)
     private int id;
+    @DatabaseField(defaultValue = "4")  //en
     private int localinfo;
+    @DatabaseField(defaultValue = "0")  //off
     private int ledmode;
+    @DatabaseField(defaultValue = "0")  //off
     private int ledcolor;
+    @DatabaseField(defaultValue = "0")  //off
     private int ledbrightness;
+    @DatabaseField(defaultValue = "0")  //off
     private int wledmode;
+    @DatabaseField(defaultValue = "0")  //off
     private int wledcolor;
+    @DatabaseField(defaultValue = "0")  //off
     private int wledbrightness;
+    @DatabaseField(defaultValue = "0")  //off
     private int jugmode;
+    @DatabaseField(defaultValue = "0")  //off
     private int nutritionmode;
+    @DatabaseField(defaultValue = "0")  //off
     private int beepmode;
 }

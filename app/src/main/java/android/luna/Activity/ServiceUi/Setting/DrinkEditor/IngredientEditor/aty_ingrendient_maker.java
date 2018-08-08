@@ -287,18 +287,18 @@ public class aty_ingrendient_maker extends BaseActivity implements View.OnClickL
                 break;
             case Ingredient.TYPE_INSTANT:
                if (mingredientInstant != null) {
-                    ingredientTime = (int) ((mingredientInstant.getWaterVolume()  + mingredientInstant.getPreflushVolume() + mingredientInstant.getWaterAfterFlushVolume()) * 1000 / 20) + (mingredientInstant.getPauseTimeAfterDispense() + mingredientInstant.getPreflushPauseTime()) + 5000;
+                    ingredientTime = (int) ((mingredientInstant.getWaterVolume()  + mingredientInstant.getPreflushVolume() + mingredientInstant.getWaterAfterFlushVolume()) * 100) + (mingredientInstant.getPauseTimeAfterDispense() + mingredientInstant.getPreflushPauseTime()) + 5000;
                 }
                 break;
             case Ingredient.TYPE_WATER:
                 if (mingredientWater != null) {
-                    ingredientTime = (int) (mingredientWater.getWaterVolume() / 20 * 1000);
+                    ingredientTime = (int) (mingredientWater.getWaterVolume() * 100);
                 }
                 break;
             case Ingredient.TYPE_ESPRESSO:
                 if(mingredientEspresso!=null)
                 {
-                    ingredientTime = (int) (mingredientEspresso.getBrewtime()+mingredientEspresso.getPrebrewtime()+mingredientEspresso.getPreinfusiontime())*1000+10000+(int)(mingredientEspresso.getPowderamount()*1000);
+                    ingredientTime = (int) (mingredientEspresso.getBrewtime()+mingredientEspresso.getPrebrewtime()+mingredientEspresso.getPreinfusiontime())*1000+10000+(int)(mingredientEspresso.getPowderamount()*100)+mingredientEspresso.getWatervolume()*100;
                 }
                 break;
             default:
