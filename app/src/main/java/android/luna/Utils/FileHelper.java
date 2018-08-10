@@ -43,6 +43,7 @@ public class FileHelper {
     public static final String FILE_KEY_ALI= getSDCardDirPath()+"/crem/key/pay.auk";
     public static final String FILE_KEY_WECHAT= getSDCardDirPath()+"/crem/key/pay.wuk";
     public static final String FILE_PRODUCTION= getSDCardDirPath()+"/crem/machine/config/";
+    public static final String PATH_CLEAN= getSDCardDirPath()+"/crem/machine/clean/";
     public static final String FILE_DEVICE_CONFIG= PATH_CONFIG+"config.xmld";
     public static final String PATH_LANG= "/update/language/";
 

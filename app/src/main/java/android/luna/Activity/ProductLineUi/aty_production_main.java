@@ -24,18 +24,18 @@ public class aty_production_main extends BaseActivity implements Fgt_production_
     protected void onCreate(Bundle savedInstanceState) {
         getApp().bindAllService();
         super.onCreate(savedInstanceState);
-        /*if(production_config==null)
+        if(production_config==null)
         {
             production_config = new Fgt_production_config();
             production_config.setOnnextListerner(this);
-        }*/
-        if(productionDryclean==null)
+        }
+        /*if(productionDryclean==null)
         {
             productionDryclean = new Fgt_production_dryclean();
             productionDryclean.setOnnextListerner(this);
-        }
+        }*/
 
-        getFragmentManager().beginTransaction().replace(R.id.tb_fun,productionDryclean).commit();
+        getFragmentManager().beginTransaction().replace(R.id.tb_fun,production_config).commit();
     }
 
     @Override

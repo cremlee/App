@@ -68,6 +68,14 @@ public class aty_theme_gallery extends BaseUi {
     }
 
     @Override
+    public void galleryfunction() {
+        drinkMenuButtonList.add(new DrinkMenuButton(""));
+        drinkMenuButtonList.add(new DrinkMenuButton(""));
+        drinkMenuButtonList.add(0,new DrinkMenuButton(""));
+        drinkMenuButtonList.add(0,new DrinkMenuButton(""));
+    }
+
+    @Override
     public void InitEvent() {
         super.InitEvent();
         mAdapter = new MyAdapter(drinkMenuButtonList,this);

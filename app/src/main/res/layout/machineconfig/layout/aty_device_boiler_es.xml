@@ -253,6 +253,7 @@
                     cqube:textview1TextBackground="@color/title_text_color2"
                     cqube:textview1TextColor="@android:color/white" />
                 <android.luna.ViewUi.widget.SettingItemCheckBox
+                    android:visibility="gone"
                     android:id="@+id/t_boiler_valve"
                     cqube:checkBoxText="Boiler Inlet Valve"
                     android:layout_width="match_parent"

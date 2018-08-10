@@ -300,7 +300,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
                 if(currentitem!=null) {
                     getApp().set_drinkMenuButton(currentitem);
                     startActivity(new Intent(BaseUi.this, aty_customer_ui_12.class));
-                    getApp().addCmdQueue((new CmdMakeDrink()).buildMakeDrinkCmd(getApp().get_drinkMenuButton().getPid(), CmdMakeDrink.OPERATE_START, 3, 3, 3, 3, 3, 0));
+                    //getApp().addCmdQueue((new CmdMakeDrink()).buildMakeDrinkCmd(getApp().get_drinkMenuButton().getPid(), CmdMakeDrink.OPERATE_START, 3, 3, 3, 3, 3, 0));
 
                 }
             }
@@ -435,6 +435,10 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
     }
 
     private WarningPopWindow warningPopWindow=null;
+    public void galleryfunction()
+    {
+
+    }
     @Override
     public void onClick(View v) {
 
@@ -448,6 +452,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
                         @Override
                         public void onDismiss() {
                             officePopWindow = null;
+                            galleryfunction();
                         }
                     });
                     officePopWindow.SetOnQuickStartClick(new OfficePopWindow.OnQuickStartClick() {

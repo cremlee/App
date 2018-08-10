@@ -197,7 +197,10 @@
             android:screenOrientation="landscape"
             android:configChanges="locale"
             android:name="android.luna.Activity.CustomerUI.Gallery.aty_theme_gallery">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:screenOrientation="landscape"
@@ -208,10 +211,6 @@
             android:screenOrientation="landscape"
             android:configChanges="locale"
             android:name="android.luna.Activity.ProductLineUi.aty_production_main">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity

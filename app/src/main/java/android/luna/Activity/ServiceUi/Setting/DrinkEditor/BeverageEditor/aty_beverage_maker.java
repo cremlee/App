@@ -563,16 +563,18 @@ public class aty_beverage_maker extends BaseActivity implements View.OnClickList
             case R.id.btn_ui:
             case R.id.btn_basci:
             case R.id.btn_ingredient:
-                SwitchBeverageInfo(id,mbeverageBasic.getName());
+                if(mbeverageBasic!=null)
+                    SwitchBeverageInfo(id,mbeverageBasic.getName());
                 break;
             case R.id.btn_test:
-                if(getApp().getAckQueryInstance().getMachine_state()!= AckQuery.MS_BLOCK_MODE)
+                if(getApp().getAckQueryInstance().getMachine_state()!= AckQuery.MS_BLOCK_MODE && mbeverageBasic!=null)
                     PreviewTest();
                 else
                     showTestToast("Machine Error state:"+getApp().getAckQueryInstance().getMachine_state());
                 break;
             case R.id.btn_save:
-                SaveBeverage();
+                if(mbeverageBasic!=null)
+                    SaveBeverage();
                 break;
             case R.id.btn_close:
                 getApp().setIsmainpagereload(true);

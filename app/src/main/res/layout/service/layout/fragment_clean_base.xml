@@ -29,6 +29,7 @@
             android:layout_weight="1" />
     </LinearLayout>
     <Button
+        android:text="start"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/start"

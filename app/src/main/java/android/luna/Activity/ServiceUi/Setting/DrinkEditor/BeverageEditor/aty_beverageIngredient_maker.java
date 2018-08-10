@@ -28,6 +28,7 @@ import android.luna.Data.module.IngredientWater;
 import android.luna.Data.module.Powder.PowderItem;
 import android.luna.Utils.AndroidUtils_Ext;
 import android.luna.ViewUi.MaterialDialog.MaterialDialog;
+import android.luna.rs232.Ack.AckQuery;
 import android.luna.rs232.Cmd.CmdMakeIngredient;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -116,11 +117,11 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                 int createst=1;
                 int ackresult = intent.getIntExtra("ACK",2);
                 int op = intent.getIntExtra("OP",4);
+                if(progressDialog!=null)
+                {
+                    progressDialog.dismiss();
+                }
                 if(op!=4) {
-                    if(progressDialog!=null)
-                    {
-                        progressDialog.dismiss();
-                    }
                     switch (m_ingredientType) {
                         case Ingredient.TYPE_FILTER_BREW:
                             if (mingredientFilterBrew != null) {
@@ -371,7 +372,10 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                 AppManager.getAppManager().finishActivity(aty_beverageIngredient_maker.this);
                 break;
             case R.id.btn_test:
-                perviewtest();
+                if(getApp().getAckQueryInstance().getMachine_state()!= AckQuery.MS_BLOCK_MODE)
+                    perviewtest();
+                else
+                    showTestToast("Machine Error state:"+getApp().getAckQueryInstance().getMachine_state());
                 break;
             case R.id.btn_save:
                 SaveIngredient();
@@ -386,6 +390,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
         {
             if(mingredientFilterBrew!=null && Tb_Filterbrew!=null)
             {
+                showSavewindow();
                 Tb_Filterbrew.save();
                 ingredientStructure = cmdMakeIngredient.buildFilterBrewStructure(mingredientFilterBrew);
                 getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_PREVIEW, mingredientFilterBrew.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_FILTER_BREW), ingredientStructure));
@@ -395,6 +400,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
         {
             if(mingredientInstant!=null && Tb_Instant!=null)
             {
+                showSavewindow();
                 Tb_Instant.save();
                 ingredientStructure = cmdMakeIngredient.buildInstantStructure(mingredientInstant);
                 getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_PREVIEW, mingredientInstant.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_INSTANT), ingredientStructure));
@@ -404,6 +410,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
         {
             if(mingredientWater!=null && Tb_Water!=null)
             {
+                showSavewindow();
                 Tb_Water.save();
                 ingredientStructure = cmdMakeIngredient.buildWaterStructure(mingredientWater);
                 getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_PREVIEW, mingredientWater.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_WATER), ingredientStructure));
@@ -413,6 +420,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
         {
             if(mingredientEspresso!=null && Tb_espresso!=null)
             {
+                showSavewindow();
                 Tb_espresso.save();
                 ingredientStructure = cmdMakeIngredient.buildEspressoStructure(mingredientEspresso);
                 getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_PREVIEW, mingredientEspresso.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_ESPRESSO), ingredientStructure));
@@ -428,15 +436,9 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
             {
                 Tb_Filterbrew.save();
                 ingredientStructure = cmdMakeIngredient.buildFilterBrewStructure(mingredientFilterBrew);
-                if(mingredientFilterBrew.getCreatestatus()==1) {
-                    showSavewindow();
-                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_ADD, mingredientFilterBrew.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_FILTER_BREW), ingredientStructure));
-                }
-                else if(mingredientFilterBrew.getCreatestatus()==3)
-                {
-                    showSavewindow();
-                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientFilterBrew.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_FILTER_BREW), ingredientStructure));
-                }
+                showSavewindow();
+                getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientFilterBrew.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_FILTER_BREW), ingredientStructure));
+
                 iscurrentChanged =false;
             }
         }
@@ -444,13 +446,8 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
             if (mingredientInstant != null && Tb_Instant != null) {
                 Tb_Instant.save();
                 ingredientStructure = cmdMakeIngredient.buildInstantStructure(mingredientInstant);
-                if (mingredientInstant.getCreatestatus() == 1) {
-                    showSavewindow();
-                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_ADD, mingredientInstant.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_INSTANT), ingredientStructure));
-                } else if (mingredientInstant.getCreatestatus() == 3) {
-                    showSavewindow();
-                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientInstant.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_INSTANT), ingredientStructure));
-                }
+                showSavewindow();
+                getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientInstant.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_INSTANT), ingredientStructure));
                 iscurrentChanged = false;
             }
         }
@@ -460,15 +457,9 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
             {
                 Tb_Water.save();
                 ingredientStructure = cmdMakeIngredient.buildWaterStructure(mingredientWater);
-                if(mingredientWater.getCreatestatus()==1)
-                {
-                    showSavewindow();
-                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_ADD, mingredientWater.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_WATER), ingredientStructure));
-                }else if(mingredientWater.getCreatestatus()==3)
-                {
-                    showSavewindow();
-                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientWater.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_WATER), ingredientStructure));
-                }
+                showSavewindow();
+                getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientWater.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_WATER), ingredientStructure));
+
                 iscurrentChanged =false;
             }
         }
@@ -478,15 +469,8 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
             {
                 Tb_espresso.save();
                 ingredientStructure = cmdMakeIngredient.buildEspressoStructure(mingredientEspresso);
-                if(mingredientEspresso.getCreatestatus()==1)
-                {
-                    showSavewindow();
-                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_ADD, mingredientEspresso.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_ESPRESSO), ingredientStructure));
-                }else if(mingredientEspresso.getCreatestatus()==3)
-                {
-                    showSavewindow();
-                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientEspresso.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_ESPRESSO), ingredientStructure));
-                }
+                showSavewindow();
+                getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientEspresso.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_ESPRESSO), ingredientStructure));
                 iscurrentChanged =false;
             }
         }

@@ -4,6 +4,7 @@ import android.luna.Activity.Base.AppManager;
 import android.luna.Activity.Base.BaseActivity;
 import android.luna.Activity.ServiceUi.Setting.Clean.fragment.BrewerCleanFragment;
 import android.luna.Activity.ServiceUi.Setting.Clean.fragment.DailyCleanFragment;
+import android.luna.Activity.ServiceUi.Setting.Clean.fragment.FreeCleanFragment;
 import android.luna.Activity.ServiceUi.Setting.Clean.fragment.WeeklyCleanFragment;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -22,6 +23,7 @@ public class aty_clean_main extends BaseActivity implements RadioGroup.OnChecked
     private DailyCleanFragment tb_daily;
     private WeeklyCleanFragment tb_weekly;
     private BrewerCleanFragment tb_brewer;
+    private FreeCleanFragment tb_cleanshow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,11 +73,16 @@ public class aty_clean_main extends BaseActivity implements RadioGroup.OnChecked
                 break;
             case R.id.rb_brewer:
 
-                if(tb_brewer==null)
+                /*if(tb_brewer==null)
                 {
                     tb_brewer = new BrewerCleanFragment();
                 }
-                getFragmentManager().beginTransaction().replace(R.id.fly_clean,tb_brewer).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fly_clean,tb_brewer).commit();*/
+                if(tb_cleanshow==null)
+                {
+                    tb_cleanshow = new FreeCleanFragment();
+                }
+                getFragmentManager().beginTransaction().replace(R.id.fly_clean,tb_cleanshow).commit();
                 break;
             case R.id.rb_mixer:
                 break;
