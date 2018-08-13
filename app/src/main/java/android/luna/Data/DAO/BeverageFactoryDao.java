@@ -795,8 +795,56 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
     public IBeverageGroup getBeverageGroup() {
         if(beverageGroupDao == null) {
             beverageGroupDao = new IBeverageGroup() {
+
                 @Override
                 public List<BeverageGroup> querylistbyPid(int pid) {
+                    return null;
+                }
+
+                @Override
+                public int creategroupid() {
+                    int ret =1;
+                    try {
+                        QueryBuilder<BeverageGroup, Integer> builder =  getHelper().getBeverageGroupDao().queryBuilder();
+                        builder.orderBy("groupid",true);
+                        List<BeverageGroup> beverageGroups= builder.query();
+                        if(beverageGroups!=null && beverageGroups.size()>0) {
+                            for (BeverageGroup item:beverageGroups)
+                            {
+                               if(ret == item.getGroupid() )
+                               {
+                                   ret++;
+                               }
+                               else if(item.getGroupid() > ret)
+                               {
+                                   return ret;
+                               }
+                            }
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    return ret;
+                }
+
+                @Override
+                public void deletegroup(int id) {
+                    try {
+                        DeleteBuilder<BeverageGroup, Integer> builder = getHelper().getBeverageGroupDao().deleteBuilder();
+                        builder.where().eq("groupid", id);
+                        builder.delete();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public BeverageGroup queryGroupItem(int id) {
+                    try {
+                        return getHelper().getBeverageGroupDao().queryForEq("groupid",id).get(0);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                     return null;
                 }
 
@@ -812,6 +860,12 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
 
                 @Override
                 public int create(BeverageGroup beverageGroup) {
+
+                    try {
+                        getHelper().getBeverageGroupDao().create(beverageGroup);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                     return 0;
                 }
 

@@ -6,22 +6,30 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
+import android.graphics.SurfaceTexture;
 import android.luna.Activity.Base.BaseActivity;
 import android.luna.Activity.Base.Constant;
 import android.luna.Activity.Base.CremApp;
 import android.luna.Utils.Device.DeviceXmlFactory;
 import android.luna.Utils.FileHelper;
 import android.luna.Utils.ImageConvertFactory;
+import android.luna.Utils.Logger.EvoTrace;
+import android.luna.ViewUi.CleanProcessView.CleanProcessView;
 import android.luna.ViewUi.MaterialDialog.MaterialDialog;
 import android.luna.rs232.Cmd.CmdCleanMachine;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
+import android.view.Surface;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import evo.luna.android.R;
 
@@ -29,17 +37,19 @@ import evo.luna.android.R;
  * Created by Lee.li on 2018/5/30.
  */
 
-public class FreeCleanFragment extends Fragment implements View.OnClickListener {
+public class FreeCleanFragment extends Fragment implements View.OnClickListener ,TextureView.SurfaceTextureListener {
     private TextView title;
     private Button btnaction;
-    private ImageView icon;
     private TextView content;
     private MaterialDialog progressDialog;
     private IntentFilter filter;
     private CremApp app;
     private  int stepcount =4;
     private int currentcleanstep;
-    private ImageView index1,index2,index3,index4;
+    private CleanProcessView clean_index;
+    private MediaPlayer mMediaPlayer;
+    private Surface _surface;
+    private ViewFlipper icon;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -48,22 +58,61 @@ public class FreeCleanFragment extends Fragment implements View.OnClickListener 
         app = ((BaseActivity)getActivity()).getApp();
         return view;
     }
+    private View viewVideo,viewImage;
+    private TextureView step_video;
+    private ImageView step_pic;
     public void InitView(View view)
     {
-        index1 = view.findViewById(R.id.index1);
-        index2 = view.findViewById(R.id.index2);
-        index3 = view.findViewById(R.id.index3);
-        index4 = view.findViewById(R.id.index4);
+        clean_index = view.findViewById(R.id.clean_index);
+        clean_index.setTotalcount(5);
+        clean_index.activeSite(0,0);
         title = view.findViewById(R.id.title);
         icon = view.findViewById(R.id.icon);
+        viewVideo = getActivity().getLayoutInflater().inflate(R.layout.lyt_step_texture, null);
+        step_video = viewVideo.findViewById(R.id.textureView);
+        icon.addView(viewVideo);
+        step_video.setSurfaceTextureListener(this);
+        viewImage = getActivity().getLayoutInflater().inflate(R.layout.lyt_step_video, null);
+        step_pic = viewImage.findViewById(R.id.step_pic);
+        icon.addView(viewImage);
+
         content = view.findViewById(R.id.content);
         btnaction = view.findViewById(R.id.action);
         btnaction.setOnClickListener(this);
-        setTitle("Machine cleanning");
-        setContent("Please follow the guide to finish the cleanning \n 1.Press the Start button.");
-        setIcon(0);
-        setactiontitle("Start");
+        icon.setDisplayedChild(0);
+
         currentcleanstep =0;
+    }
+
+
+    private void Playhelp(int index)
+    {
+        String path = FileHelper.FILE_PRODUCTION+"step"+index+".mp4";
+        if(mMediaPlayer == null)
+        {
+            mMediaPlayer= new MediaPlayer();
+            mMediaPlayer.setSurface(_surface);
+        }else {
+            if (mMediaPlayer.isPlaying()) {
+                mMediaPlayer.stop();
+            }
+            mMediaPlayer.release();
+            mMediaPlayer = null;
+            mMediaPlayer = new MediaPlayer();
+            mMediaPlayer.setSurface(_surface);
+        }
+        try {
+            mMediaPlayer.setDataSource(getActivity(), Uri.parse(path));
+            mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp){
+                    mMediaPlayer.start();
+                }
+            });
+            mMediaPlayer.prepare();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -99,14 +148,12 @@ public class FreeCleanFragment extends Fragment implements View.OnClickListener 
                 if(progressDialog!=null && progressDialog.isShowing())
                 {
                     progressDialog.dismiss();
-                    setContent("1. AAAAAAAAAAAAAAAAAA \n2. BBBBBBBBBBBBBBB\n3.CCCCCCCCCCCCC");
-                    setactiontitle("Start");
-                    index1.setBackgroundColor(getActivity().getResources().getColor(R.color.green));
-                    index2.setBackgroundColor(getActivity().getResources().getColor(R.color.yellow));
-                    setIcon(ImageConvertFactory.getfrompath(FileHelper.PATH_CLEAN+"2.png"));
-                    currentcleanstep =2;
-                    btnaction.setVisibility(View.VISIBLE);
                 }
+                setContent("1. AAAAAAAAAAAAAAAAAA \n2. BBBBBBBBBBBBBBB\n3.CCCCCCCCCCCCC");
+                setactiontitle("Start");
+                setIcon(2);
+                currentcleanstep =2;
+                btnaction.setVisibility(View.VISIBLE);
                 ((BaseActivity)getActivity()).showToastLong("Clean Cmd Timeout!");
             }
             else if(action.equals(Constant.ACTION_CLEAN_MACHINE_FINISH)) {
@@ -114,9 +161,7 @@ public class FreeCleanFragment extends Fragment implements View.OnClickListener 
                 if(progressDialog!=null && progressDialog.isShowing())
                 {
                     progressDialog.dismiss();
-                    index2.setBackgroundColor(getActivity().getResources().getColor(R.color.green));
-                    index3.setBackgroundColor(getActivity().getResources().getColor(R.color.yellow));
-                    setIcon(ImageConvertFactory.getfrompath(FileHelper.PATH_CLEAN+"3.png"));
+                    setIcon(3);
                     currentcleanstep =3;
                     setContent("1. AAAAAAAAAAAAAAAAAA \n2. BBBBBBBBBBBBBBB");
                     btnaction.setVisibility(View.VISIBLE);
@@ -154,19 +199,17 @@ public class FreeCleanFragment extends Fragment implements View.OnClickListener 
         content.setText(a);
     }
 
-    public void setIcon(int rsid)
-    {
-        if(rsid ==0)
-            icon.setImageBitmap(null);
-        else
-            icon.setImageResource(rsid);
-    }
-
     public void setIcon(Bitmap rsid)
     {
-        icon.setImageBitmap(rsid);
+        step_pic.setImageBitmap(rsid);
+        icon.setDisplayedChild(1);
     }
 
+    public void setIcon(int id)
+    {
+        Playhelp(id);
+        icon.setDisplayedChild(0);
+    }
     public void setactiontitle(String a)
     {
         btnaction.setText(a);
@@ -176,6 +219,14 @@ public class FreeCleanFragment extends Fragment implements View.OnClickListener 
         super.onDestroy();
         if(progressDialog!=null)
             progressDialog.dismiss();
+        if(mMediaPlayer!=null)
+        {
+            if(mMediaPlayer.isPlaying())
+                mMediaPlayer.stop();
+            _surface =null;
+            mMediaPlayer.release();
+            mMediaPlayer=null;
+        }
     }
 
     private void dealwithCleanUi(int step)
@@ -185,16 +236,13 @@ public class FreeCleanFragment extends Fragment implements View.OnClickListener 
             case 0:
                 setContent("1. AAAAAAAAAAAAAAAAAA \n2. BBBBBBBBBBBBBBB");
                 setactiontitle("Next");
-                index1.setBackgroundColor(getActivity().getResources().getColor(R.color.yellow));
-                setIcon(ImageConvertFactory.getfrompath(FileHelper.PATH_CLEAN+"1.png"));
+                setIcon(1);
                 currentcleanstep =1;
                 break;
             case 1:
                 setContent("1. AAAAAAAAAAAAAAAAAA \n2. BBBBBBBBBBBBBBB\n3.CCCCCCCCCCCCC");
                 setactiontitle("Start");
-                index1.setBackgroundColor(getActivity().getResources().getColor(R.color.green));
-                index2.setBackgroundColor(getActivity().getResources().getColor(R.color.yellow));
-                setIcon(ImageConvertFactory.getfrompath(FileHelper.PATH_CLEAN+"2.png"));
+                setIcon(2);
                 currentcleanstep =2;
                 break;
             case 2:
@@ -211,15 +259,12 @@ public class FreeCleanFragment extends Fragment implements View.OnClickListener 
             case 3:
                 setContent("1. AAAAAAAAAAAAAAAAAA \n2. BBBBBBBBBBBBBBB");
                 setactiontitle("Next");
-                index3.setBackgroundColor(getActivity().getResources().getColor(R.color.green));
-                index4.setBackgroundColor(getActivity().getResources().getColor(R.color.yellow));
-                setIcon(ImageConvertFactory.getfrompath(FileHelper.PATH_CLEAN+"4.png"));
+                setIcon(3);
                 currentcleanstep =4;
                 break;
             case 4:
                 setContent("Clean finished");
-                index4.setBackgroundColor(getActivity().getResources().getColor(R.color.green));
-                setIcon(0);
+                setIcon(4);
                 setactiontitle("Done");
                 break;
         }
@@ -234,5 +279,37 @@ public class FreeCleanFragment extends Fragment implements View.OnClickListener 
                 dealwithCleanUi(currentcleanstep);
                 break;
         }
+    }
+
+    @Override
+    public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
+        _surface = new Surface(surface);
+        btnaction.setVisibility(View.VISIBLE);
+        setTitle("Machine cleanning");
+        setContent("Please follow the guide to finish the cleanning \n 1.Press the Start button.");
+        setactiontitle("Start");
+        setIcon(ImageConvertFactory.getfrompath(FileHelper.PATH_CLEAN+"1.png"));
+
+    }
+
+    @Override
+    public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
+    }
+
+    @Override
+    public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
+        if (mMediaPlayer != null) {
+            if(mMediaPlayer.isPlaying())
+                mMediaPlayer.stop();
+            mMediaPlayer.release();
+            mMediaPlayer = null;
+            _surface =null;
+        }
+        return true;
+    }
+
+    @Override
+    public void onSurfaceTextureUpdated(SurfaceTexture surface) {
+        EvoTrace.e("video","onSurfaceTextureUpdated");
     }
 }

@@ -38,9 +38,6 @@ public class Fgt_production_dryclean extends productionFragment implements View.
     private void Playhelp(int index)
     {
         String path = FileHelper.FILE_PRODUCTION+"step"+index+".mp4";
-
-
-
         if(mMediaPlayer == null)
         {
            mMediaPlayer= new MediaPlayer();

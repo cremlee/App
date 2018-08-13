@@ -51,6 +51,11 @@ public class BeverageGroup implements Serializable ,Comparator<BeverageGroup>,Co
 		this.showinscreen = showinscreen;
 	}
 
+	public BeverageGroup(int groupid, String name) {
+		this.groupid = groupid;
+		this.name = name;
+	}
+
 	public int getId() {
 		return id;
 	}
