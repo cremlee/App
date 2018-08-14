@@ -68,7 +68,7 @@ public class aty_screensetting_main extends BaseActivity implements View.OnClick
             logoPictureItem.setVisibility(View.VISIBLE);
         else
             logoPictureItem.setVisibility(View.GONE);
-        faveritecheckItem.setChecked(_screenSettings.getLogoflag() == 1 ? true : false);
+        faveritecheckItem.setChecked(_screenSettings.getShowfavourite() == 1 ? true : false);
 
         languagecheckItem.setChecked(_screenSettings.getShowlanguage() == 1 ? true : false);
         if(_screenSettings.getShowlanguage() == 1)
@@ -216,7 +216,7 @@ public class aty_screensetting_main extends BaseActivity implements View.OnClick
         faveritecheckItem.getCheckBox().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _screenSettings.setLogoflag(faveritecheckItem.getCheckBox().isChecked() ? 1 : 0);
+                _screenSettings.setShowfavourite(faveritecheckItem.getCheckBox().isChecked() ? 1 : 0);
                 _screenFactoryDao.getScreenSettingDao().update(_screenSettings);
             }
         });
@@ -239,9 +239,9 @@ public class aty_screensetting_main extends BaseActivity implements View.OnClick
                 startActivity(new Intent(aty_screensetting_main.this,aty_drink_layout.class));
                 break;
             case R.id.btn_back:
-                AppManager.getAppManager().finishActivity(aty_screensetting_main.this);
                 getApp().setIsmainpagereload(true);
                 getApp().updatescreenSettings(_screenSettings);
+                AppManager.getAppManager().finishActivity(aty_screensetting_main.this);
                 break;
             case R.id.txtfontitem:
                 colorPickerDialog = new ColorPickerDialog(aty_screensetting_main.this,_screenSettings.getTextcolor(),"Color",new ColorPickerDialog.OnColorChangedListener() {

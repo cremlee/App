@@ -2,6 +2,8 @@ package android.luna.ViewUi.FloatActionMenu;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
@@ -63,7 +65,9 @@ public class AddFloatingActionButton extends FloatingActionButton {
 
   @Override
   Drawable getIconDrawable() {
-    final float iconSize = getDimension(R.dimen.fab_icon_size);
+    return getResources().getDrawable(R.mipmap.coffee);
+  }
+    /*final float iconSize = getDimension(R.dimen.fab_icon_size);
     final float iconHalfSize = iconSize / 2f;
 
     final float plusSize = getDimension(R.dimen.fab_plus_icon_size);
@@ -73,7 +77,8 @@ public class AddFloatingActionButton extends FloatingActionButton {
     final Shape shape = new Shape() {
       @Override
       public void draw(Canvas canvas, Paint paint) {
-        //canvas.drawBitmap(R.drawable.ic_lang_gm);
+
+//        canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.busy),0,0,paint);
         canvas.drawRect(plusOffset, iconHalfSize - plusHalfStroke, iconSize - plusOffset, iconHalfSize + plusHalfStroke, paint);
         canvas.drawRect(iconHalfSize - plusHalfStroke, plusOffset, iconHalfSize + plusHalfStroke, iconSize - plusOffset, paint);
       }
@@ -87,5 +92,5 @@ public class AddFloatingActionButton extends FloatingActionButton {
     paint.setAntiAlias(true);
 
     return drawable;
-  }
+  }*/
 }

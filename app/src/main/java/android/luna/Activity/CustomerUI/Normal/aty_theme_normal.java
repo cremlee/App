@@ -3,9 +3,12 @@ package android.luna.Activity.CustomerUI.Normal;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.luna.Activity.Base.AppManager;
 import android.luna.Activity.CustomerUI.BaseUi.BaseUi;
 import android.luna.Activity.CustomerUI.Gallery.aty_customer_ui_11;
+import android.luna.Activity.CustomerUI.Gallery.aty_theme_gallery;
 import android.luna.Data.CustomerUI.DrinkMenuButton;
+import android.luna.Utils.Lang.LangLocalHelper;
 import android.luna.Utils.MyAnimation.Rotate3D;
 import android.luna.Utils.PictureManager;
 import android.luna.ViewUi.FloatButton.floateutil.FloatBallView;
@@ -34,7 +37,7 @@ import evo.luna.android.R;
  * Created by Lee.li on 2018/5/14.
  */
 
-public class aty_theme_normal extends BaseUi implements GestureDetector.OnGestureListener{
+public class aty_theme_normal extends BaseUi implements GestureDetector.OnGestureListener,BaseUi.Languagechanged{
     private myViewFlipper viewFlipper;
     private int totalPage;
     private int columnWidth;
@@ -61,6 +64,13 @@ public class aty_theme_normal extends BaseUi implements GestureDetector.OnGestur
         super.onCreate(savedInstanceState);
         getApp().setIsmainpagereload(false);
         initAnimation();
+    }
+
+
+    @Override
+    public void InitEvent() {
+        super.InitEvent();
+        this.setOnLanguagechanged(this);
     }
 
     @Override
@@ -224,7 +234,6 @@ public class aty_theme_normal extends BaseUi implements GestureDetector.OnGestur
 
         drinkname.setText(beverage.getName());
         drinkprice.setText("");
-        //drinkprice.setText(beverage.getPrice()==0?"":Float.toString(beverage.getPrice()));
         if(ispayment() && beverage.getPrice()>0)
         {
             // TODO: 2018/7/31 show price
@@ -262,13 +271,13 @@ public class aty_theme_normal extends BaseUi implements GestureDetector.OnGestur
             });
         }
         else if(beverage.getDrinkstate()==1){
-            drinkstate.setText("Out of Stock");
+            drinkstate.setText(getString(R.string.MAIN_UI_OUT_OF_STOCK));
         }
         else if(beverage.getDrinkstate()==2){
-            drinkstate.setText("Not Available");
+            drinkstate.setText(getString(R.string.MAIN_UI_OUT_OF_USE));
         }
         else if(beverage.getDrinkstate()==3){
-            drinkstate.setText("Empty waster bin");
+            drinkstate.setText(getString(R.string.MAIN_UI_OUT_OF_WASTER));
         }
 
 
@@ -352,5 +361,19 @@ public class aty_theme_normal extends BaseUi implements GestureDetector.OnGestur
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void updated() {
+        LangLocalHelper.updateLocale(this,LangLocalHelper.getlocalinfo(getApp().getCurrent_language()));
+        resetaty();
+    }
+    public void resetaty()
+    {
+        AppManager.getAppManager().finishActivity(aty_theme_normal.this);
+        Intent _Intent = new Intent(this, aty_theme_normal.class);
+        startActivity(_Intent);
+        //清除Activity退出和进入的动画
+        overridePendingTransition(0, 0);
     }
 }

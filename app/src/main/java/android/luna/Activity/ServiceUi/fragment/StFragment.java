@@ -59,7 +59,6 @@ public class StFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_st_impove, container, false);
-
         InitView(view);
         return view;
     }
@@ -103,6 +102,7 @@ public class StFragment extends Fragment implements View.OnClickListener {
                         if(wasterBinStock!=null)
                             waster_per.setText((wasterBinStock.getCapability()-wasterBinStock.getStock())*100/wasterBinStock.getCapability()+"%");
                         tipdialog.dismiss();
+                        app.setIsmainpagereload(true);
                     }
                 })
                 .negativeText("Later")

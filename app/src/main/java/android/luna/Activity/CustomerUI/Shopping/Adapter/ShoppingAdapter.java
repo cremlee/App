@@ -95,13 +95,13 @@ public class ShoppingAdapter extends BaseAdapter{
                 holder.drinkstate.setVisibility(View.GONE);
             }
             else if(item.getDrinkstate()==1){
-                holder.drinkstate.setText("Out of Stock");
+                holder.drinkstate.setText(mcontext.getString(R.string.MAIN_UI_OUT_OF_STOCK));
             }
             else if(item.getDrinkstate()==2){
-                holder.drinkstate.setText("Not Available");
+                holder.drinkstate.setText(mcontext.getString(R.string.MAIN_UI_OUT_OF_USE));
             }
             else if(item.getDrinkstate()==3){
-                holder.drinkstate.setText("Empty waster bin");
+                holder.drinkstate.setText(mcontext.getString(R.string.MAIN_UI_OUT_OF_WASTER));
             }
             holder.cart_btn.setCount(orderBean.getitemCups(item.getPid()));
             final ViewHolder finalHolder = holder;

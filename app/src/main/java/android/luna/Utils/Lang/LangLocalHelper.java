@@ -43,8 +43,10 @@ public class LangLocalHelper {
 
             FileOutputStream out = new FileOutputStream(file);
             out.write(str.getBytes());
+            out.getFD().sync();
             out.flush();
             out.close();
+
         } catch (IOException e) {
             e.printStackTrace();
             return false;

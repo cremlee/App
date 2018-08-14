@@ -29,7 +29,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:configChanges="locale"
-        android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+        android:theme="@style/AppTheme"
         android:supportsRtl="true">
         <!--welcome-->
         <activity
@@ -126,6 +126,7 @@
         <activity
             android:name="android.luna.Activity.CustomerUI.Shopping.aty_customer_ui_41"
             android:screenOrientation="landscape"
+            android:theme="@style/Transparent"
             android:configChanges="locale">
         </activity>
         <activity
@@ -195,16 +196,16 @@
             android:screenOrientation="landscape"
             android:configChanges="locale"
             android:name="android.luna.Activity.CustomerUI.Normal.aty_theme_normal">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:screenOrientation="landscape"
             android:configChanges="locale"
             android:name="android.luna.Activity.CustomerUI.Gallery.aty_theme_gallery">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:screenOrientation="landscape"

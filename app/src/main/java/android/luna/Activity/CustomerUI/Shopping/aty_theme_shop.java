@@ -5,6 +5,7 @@ import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
+import android.luna.Activity.Base.AppManager;
 import android.luna.Activity.Base.Constant;
 import android.luna.Activity.CustomerUI.BaseUi.BaseUi;
 import android.luna.Activity.CustomerUI.Shopping.Adapter.CartListAdapter;
@@ -19,6 +20,7 @@ import android.luna.Data.module.IngredientEspresso;
 import android.luna.Data.module.IngredientFilterBrew;
 import android.luna.Data.module.IngredientInstant;
 import android.luna.Data.module.IngredientWater;
+import android.luna.Utils.Lang.LangLocalHelper;
 import android.luna.ViewUi.HintLable.IconNumberView;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,7 +42,7 @@ import evo.luna.android.R;
  * Created by Lee.li on 2018/1/16.
  */
 
-public class aty_theme_shop extends BaseUi {
+public class aty_theme_shop extends BaseUi implements BaseUi.Languagechanged {
     private PopupWindow mPopWindow;
     private IconNumberView image_shop;
     private boolean showmPopWindow;
@@ -205,6 +207,7 @@ public class aty_theme_shop extends BaseUi {
             }
         });
         gv_drink.setAdapter(shoppingAdapter);
+        this.setOnLanguagechanged(this);
     }
 
     @Override
@@ -277,4 +280,17 @@ public class aty_theme_shop extends BaseUi {
     }
 
 
+    @Override
+    public void updated() {
+        LangLocalHelper.updateLocale(this,LangLocalHelper.getlocalinfo(getApp().getCurrent_language()));
+        resetaty();
+    }
+    public void resetaty()
+    {
+        AppManager.getAppManager().finishActivity(aty_theme_shop.this);
+        Intent _Intent = new Intent(this, aty_theme_shop.class);
+        startActivity(_Intent);
+        //清除Activity退出和进入的动画
+        overridePendingTransition(0, 0);
+    }
 }

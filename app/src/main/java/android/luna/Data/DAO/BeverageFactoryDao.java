@@ -562,7 +562,9 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
                     try {
                         QueryBuilder<DrinkName, Integer> builder = getHelper().getDrinknameDao().queryBuilder();
                         builder.where().eq("pid", pid).and().eq("localinfo", lang);
-                        return builder.queryForFirst().getName();
+                        DrinkName name = builder.queryForFirst();
+                        if(name!=null)
+                            return name.getName();
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
@@ -908,6 +910,33 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
         if(beverageCountDao ==null)
         {
             beverageCountDao = new IBeverageCount() {
+                @Override
+                public List<BeverageBasic> getTopFive() {
+                    List<BeverageBasic> ret = new ArrayList<>(5);
+                    QueryBuilder<BeverageCount, Integer> builder = getHelper().getBeverageCountDao().queryBuilder();
+                    builder.orderBy("drinkCount",false);
+                    try {
+                       List<BeverageCount> beverageCounts = builder.query();
+                        if(beverageCounts!=null && beverageCounts.size()>0)
+                        {
+                            int count =0;
+                            BeverageBasic basic;
+                            for (BeverageCount beverageCount:beverageCounts)
+                            {
+                                if(count>=5)
+                                    break;
+                                basic = getBeverageBasicDao().query(beverageCount.getPid());
+                                basic.setName(getBeverageNameDao().getDrinkname(basic.getPid(),app.getCurrent_language()));
+                                ret.add(basic);
+                                count ++;
+                            }
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    return ret;
+                }
+
                 @Override
                 public BeverageCount query(int pid) {
                     try {

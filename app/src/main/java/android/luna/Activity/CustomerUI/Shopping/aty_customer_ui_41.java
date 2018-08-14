@@ -3,7 +3,10 @@ package android.luna.Activity.CustomerUI.Shopping;
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
@@ -29,6 +32,7 @@ import android.luna.Data.module.IngredientEspresso;
 import android.luna.Data.module.IngredientFilterBrew;
 import android.luna.Data.module.IngredientInstant;
 import android.luna.Data.module.IngredientWater;
+import android.luna.Data.module.WasterBinStock;
 import android.luna.Utils.FileHelper;
 import android.luna.Utils.PictureManager;
 import android.luna.ViewUi.HintLable.IconNumberView;
@@ -104,9 +108,74 @@ public class aty_customer_ui_41 extends BaseActivity implements View.OnClickList
         vf_bg.setDisplayedChild(1);
 
     }
+    IntentFilter filter;
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if(action.equals(Constant.ACTION_MAKE_DRINK_ACK))
+            {
+                int ackresult = intent.getIntExtra("ACK",2);
+                if(ackresult ==1)
+                {
+                    setTheNumberProgressBar();
+                    new Thread(new DatabaseRunnable()).start();
+                }
+                else
+                {
+                    showToast("make drink failed:"+ackresult);
+                    mHandler.sendEmptyMessageDelayed(1000,500);
+                }
+            }
+            else if(action.equals(Constant.ACTION_MAKE_DRINK_FINISH_ACK))
+            {
+                // TODO: 2018/7/23 pan duan shi fou wei jugmode && cups left ==0?
+                mHandler.sendEmptyMessageDelayed(1000,2000);
+            }
+        }
+    };
+    private class DatabaseRunnable implements Runnable
+    {
+        @Override
+        public void run() {
+            updateAllDrinkInformation();
+        }
+    }
+    private void updateAllDrinkInformation()
+    {
+        int pid = cartitem.getDrinkMenuButton().getPid();
+        // TODO: 2018/7/3 this is count part
+        beverageCount = beverageFactoryDao.getBeverageCountDao().query(pid);
+        if(beverageCount==null) {
+            beverageCount = new BeverageCount();
+            beverageCount.setPid(pid);
+            beverageCount.setDrinkCount(1);
+            beverageFactoryDao.getBeverageCountDao().create(beverageCount);
+        }
+        else
+        {
+            beverageCount.setDrinkCount(beverageCount.getDrinkCount()+1);
+            beverageFactoryDao.getBeverageCountDao().update(beverageCount);
+        }
+        // TODO: 2018/7/3 canister part
+        stockFactoryDao.updateCanisterStockByPid(pid);
+
+        // TODO: 2018/7/3 stock part
+        if(beverageFactoryDao.isWasterBinDrink(pid))
+        {
+            WasterBinStock tmp = stockFactoryDao.getWasterbinStockDao().queryByPid(99);
+            if(tmp!=null) {
+                tmp.setStock(tmp.getStock()-1);
+                stockFactoryDao.getWasterbinStockDao().update(tmp);
+            }
+        }
+        // TODO: 2018/7/3 payment part
+    }
     @Override
     protected void onResume() {
         super.onResume();
+        registerReceiver(receiver, filter);
     }
     @Override
     public void InitData() {
@@ -158,10 +227,9 @@ public class aty_customer_ui_41 extends BaseActivity implements View.OnClickList
                     public void run() {
                         if (!isFinish && !TimerPause) {
                             cpbdrink.incrementProgressBy(100);
-                            if (cpbdrink.getProgress() >= (totaltm )) {
+                            if (cpbdrink.getProgress() >= (totaltm -100)) {
                                 cleanSendTimerTask();
                                 isFinish = true;
-                                mHandler.sendEmptyMessageDelayed(1000,2000);
                             }
                         }
                     }
@@ -182,6 +250,7 @@ public class aty_customer_ui_41 extends BaseActivity implements View.OnClickList
                     cpbdrink.setVisibility(View.INVISIBLE);
                     btn_Ok.setVisibility(View.VISIBLE);
                     cartitem.setCups(cartitem.getCups()-1);
+                    break;
                 default:
                     break;
             }
@@ -190,14 +259,18 @@ public class aty_customer_ui_41 extends BaseActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        filter = new IntentFilter();
+        filter.addAction(Constant.ACTION_MAKE_DRINK_FINISH_ACK);
+        filter.addAction(Constant.ACTION_MAKE_DRINK_ACK);
+        filter.addAction(Constant.ACTION_CMD_RSP_TIME_OUT);
         cartitem = getApp().getCartItems().get(0);
         getApp().addCmdQueue((new CmdMakeDrink()).buildMakeDrinkCmd(cartitem.getDrinkMenuButton().getPid(), CmdMakeDrink.OPERATE_START, 3, 3, 3, 3, 3, 0));
-        setTheNumberProgressBar();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        unregisterReceiver(receiver);
     }
 
     @Override
@@ -233,7 +306,6 @@ public class aty_customer_ui_41 extends BaseActivity implements View.OnClickList
             case R.id.step_next:
                 vf_bg.setDisplayedChild(1);
                 getApp().addCmdQueue((new CmdMakeDrink()).buildMakeDrinkCmd(cartitem.getDrinkMenuButton().getPid(), CmdMakeDrink.OPERATE_START, 3, 3, 3, 3, 3, 0));
-                setTheNumberProgressBar();
                 break;
             case R.id.btn_Ok:
                 if(cartitem.getCups()==0) {
@@ -260,7 +332,7 @@ public class aty_customer_ui_41 extends BaseActivity implements View.OnClickList
     private class PlayerVideo extends Thread{
         @Override
         public void run(){
-            String res = FileHelper.getSDCardDirPath()+"/crem/icon/a1.mp4";
+            String res = cartitem.getDrinkMenuButton().getDispensepath();
             try {
                 mMediaPlayer= new MediaPlayer();
                 mMediaPlayer.setDataSource(aty_customer_ui_41.this, Uri.parse(res));

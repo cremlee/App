@@ -911,4 +911,7 @@
     <string name="PL_REPORT_DATE">Report date:</string>
     <string name="PL_REPORT_ID">Employee ID:</string>
     <string name="PL_REPORT_UPLOAD">Upload</string>
+    <string name="MAIN_UI_OUT_OF_STOCK">Out of Stock</string>
+    <string name="MAIN_UI_OUT_OF_USE">Not Available</string>
+    <string name="MAIN_UI_OUT_OF_WASTER">Waster bin full</string>
 </resources>

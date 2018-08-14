@@ -852,7 +852,7 @@
     <string name="counter_reset">Reset</string>
     <string name="counter_reset_cxt">"All Log info will be reset.\nAre you sure you want to proceed?"</string>
     <!--design for gallery 20180108-->
-    <string name="company_name">Crem International Company Ltd</string>
+    <string name="company_name">群韵机械饮料</string>
 
     <string name="picker_sure">确定</string>
     <string name="picker_cancel">cancel</string>
@@ -909,4 +909,8 @@
     <string name="PL_REPORT_DATE">报告日期:</string>
     <string name="PL_REPORT_ID">操作员编号:</string>
     <string name="PL_REPORT_UPLOAD">上传</string>
+
+    <string name="MAIN_UI_OUT_OF_STOCK">库存不足</string>
+    <string name="MAIN_UI_OUT_OF_USE">料斗失效</string>
+    <string name="MAIN_UI_OUT_OF_WASTER">回收箱满</string>
 </resources>

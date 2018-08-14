@@ -30,6 +30,7 @@ import android.luna.rs232.Ack.AckQuery;
 import android.luna.service.BlueComService;
 import android.luna.service.ComService;
 import android.luna.service.ScheduleService;
+import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -605,9 +606,18 @@ public class CremApp extends Application {
         setCurrent_language(LangLocalHelper.getlocalinfo());
     }
 
-
-
-
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Locale _UserLocale=LangLocalHelper.getlocalinfo(getCurrent_language());
+        Configuration _Configuration = new Configuration(newConfig);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            _Configuration.setLocale(_UserLocale);
+        } else {
+            _Configuration.locale =_UserLocale;
+        }
+        getResources().updateConfiguration(_Configuration, getResources().getDisplayMetrics());
+    }
 
     public AckQuery getAckQueryInstance() {
         if(MachimeState==null)

@@ -29,6 +29,7 @@ import android.luna.Data.DAO.BeverageFactoryDao;
 import android.luna.Data.DAO.PaymentDao;
 import android.luna.Data.DAO.PersonFactoryDao;
 import android.luna.Data.DAO.ScreenFactoryDao;
+import android.luna.Data.module.BeverageBasic;
 import android.luna.Data.module.Key.AliAuthKey;
 import android.luna.Data.module.Languageitem;
 import android.luna.Data.module.PaymentSetting;
@@ -40,6 +41,7 @@ import android.luna.Utils.FileHelper;
 import android.luna.Utils.Key.KeyManager;
 import android.luna.Utils.Logger.EvoTrace;
 import android.luna.Utils.PictureManager;
+import android.luna.ViewUi.FloatActionMenu.FloatingActionButton;
 import android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu;
 import android.luna.ViewUi.FloatButton.floateutil.FloatBallView;
 import android.luna.ViewUi.FloatButton.util.FloatUtil;
@@ -124,6 +126,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
     private ScreenFactoryDao screenFactoryDao;
     private PaymentSetting _paymentSetting;
     private PaymentDao paymentDao;
+    private FloatingActionButton top1,top2,top3;
 
 
 
@@ -392,12 +395,16 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         menu_fav = findViewById(R.id.menu_fav);
         lang = findViewById(R.id.lang);
         image_banner= findViewById(R.id.image_banner);
+        top1 = findViewById(R.id.top1);
+        top2 = findViewById(R.id.top2);
+        top3 = findViewById(R.id.top3);
         setupview();
         InitFunctionLayout();
         StartTmClk();
     }
 
     private Languageitem languageitem;
+    private List<BeverageBasic> basics_top5;
     @Override
     public void InitData() {
         super.InitData();
@@ -412,6 +419,8 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         }
         languageitem = screenFactoryDao.getLanguageitemDao().query();
         initver();
+        basics_top5 = beverageFactoryDao.getBeverageCountDao().getTopFive();
+
     }
 
     public boolean ispayment()
@@ -466,10 +475,9 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         tv_time.setOnClickListener(this);
         tv_comp_name.setOnClickListener(this);
         lang.setOnClickListener(this);
-        tv_time.setFormat24Hour("E, MMMM dd, h:mmaa");
+        tv_time.setFormat24Hour("MM/dd HH:mm");
         profile.setOnClickListener(this);
     }
-
     private WarningPopWindow warningPopWindow=null;
     public void galleryfunction()
     {
@@ -583,6 +591,21 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         lang.setVisibility(getApp().get_screenSettings_instance().getShowlanguage()==1?View.VISIBLE:View.GONE);
         if(languageitem==null)
             lang.setVisibility(View.GONE);
+
+        if(basics_top5!=null && basics_top5.size()>0)
+        {
+            if(basics_top5.size()>=1)
+                top1.setTitle("Top1 : "+basics_top5.get(0).getName());
+
+            if(basics_top5.size()>=2)
+                top2.setTitle("Top2 : "+basics_top5.get(1).getName());
+            if(basics_top5.size()>=3)
+                top3.setTitle("Top3 : "+basics_top5.get(2).getName());
+
+        }else
+        {
+            menu_fav.setVisibility(View.GONE);
+        }
     }
     private void StartTmClk()
     {
@@ -630,6 +653,10 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
                         progressDialog.dismiss();
                     }*/
                 case 1004: //gengxin warning biao
+                    if(getApp().getallMachineWarnList().size()>0)
+                        btn_info.setVisibility(View.VISIBLE);
+                    else
+                        btn_info.setVisibility(View.GONE);
                     btn_info.setNumber(getApp().getallMachineWarnList().size()+"");
                     warningAdapter.setGridItems(getApp().getallMachineWarnList());
                     break;

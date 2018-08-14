@@ -73,17 +73,17 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.ViewHolder> imple
             holder.drinkstate.setVisibility(View.GONE);
         }
         else if(drinkMenuButtonList.get(position).getDrinkstate()==1){
-            holder.drinkstate.setText("Out of Stock");
+            holder.drinkstate.setText(context.getString(R.string.MAIN_UI_OUT_OF_STOCK));
             holder.drinkstate.setVisibility(View.VISIBLE);
             holder.itemView.setClickable(false);
         }
         else if(drinkMenuButtonList.get(position).getDrinkstate()==2){
-            holder.drinkstate.setText("Not Available");
+            holder.drinkstate.setText(context.getString(R.string.MAIN_UI_OUT_OF_USE));
             holder.drinkstate.setVisibility(View.VISIBLE);
             holder.itemView.setClickable(false);
         }
         else if(drinkMenuButtonList.get(position).getDrinkstate()==3){
-            holder.drinkstate.setText("Empty waster bin");
+            holder.drinkstate.setText(context.getString(R.string.MAIN_UI_OUT_OF_WASTER));
             holder.drinkstate.setVisibility(View.VISIBLE);
             holder.itemView.setClickable(false);
         }

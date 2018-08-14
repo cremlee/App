@@ -110,7 +110,6 @@ public class aty_customer_ui_12 extends BaseActivity implements View.OnClickList
             else if(action.equals(Constant.ACTION_MAKE_DRINK_FINISH_ACK))
             {
                 // TODO: 2018/7/23 qiehuan jiemian
-                showTestToast("get ack from ACTION_MAKE_DRINK_FINISH_ACK");
                 // TODO: 2018/7/23 pan duan shi fou wei jugmode && cups left ==0?
                 mHandler.sendEmptyMessageDelayed(1000,2000);
             }
@@ -152,7 +151,6 @@ public class aty_customer_ui_12 extends BaseActivity implements View.OnClickList
             }
         }
         // TODO: 2018/7/3 payment part
-
     }
     @Override
     public void InitView() {
@@ -201,7 +199,6 @@ public class aty_customer_ui_12 extends BaseActivity implements View.OnClickList
             super.handleMessage(msg);
             switch (msg.what) {
                 case 1000:
-                    //getApp().setIsmainpagereload(true);
                     AppManager.getAppManager().finishActivity(aty_customer_ui_12.this);
                 default:
                     break;
