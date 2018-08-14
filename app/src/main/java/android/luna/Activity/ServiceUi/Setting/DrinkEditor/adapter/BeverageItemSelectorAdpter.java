@@ -24,20 +24,44 @@ public class BeverageItemSelectorAdpter extends BaseAdapter {
     private Context mcontext;
 
     private List<Boolean> isClicks;
+
+    private OndrinkitemClicked ondrinkitemClicked=null;
+    public interface OndrinkitemClicked
+    {
+        void OnitemClick(int pid,int pos);
+    }
+    public void SetdrinkitemOnClicked(OndrinkitemClicked a)
+    {
+        ondrinkitemClicked =a;
+    }
     public void set_data(List<BeverageBasic> _data) {
         this._data = _data;
-        for(int i = 0;i<_data.size();i++){
-            isClicks.add(false);
+        isClicks.clear();
+        if(_data!=null) {
+            for (int i = 0; i < _data.size(); i++) {
+                isClicks.add(false);
+            }
         }
     }
 
+    public void resetClick()
+    {
+        isClicks.clear();
+        if(_data!=null) {
+            for (int i = 0; i < _data.size(); i++) {
+                isClicks.add(false);
+            }
+        }
+    }
     public BeverageItemSelectorAdpter(Context context, List<BeverageBasic> data)
     {
         _data=data;
         mcontext =context;
         isClicks = new ArrayList<>();
-        for(int i = 0;i<_data.size();i++){
-            isClicks.add(false);
+        if(_data!=null) {
+            for (int i = 0; i < _data.size(); i++) {
+                isClicks.add(false);
+            }
         }
     }
     @Override
@@ -73,10 +97,10 @@ public class BeverageItemSelectorAdpter extends BaseAdapter {
                     }
                     isClicks.set(position,true);
                     notifyDataSetChanged();
-                    /*if(m_OndrinkitemClicked!=null)
+                    if(ondrinkitemClicked!=null)
                     {
-                        m_OndrinkitemClicked.OnitemClick(position);
-                    }*/
+                        ondrinkitemClicked.OnitemClick(_data.get(position).getPid(),position);
+                    }
                 }
             });
         }
@@ -86,7 +110,7 @@ public class BeverageItemSelectorAdpter extends BaseAdapter {
         }
         if(isClicks.size()>0) {
             if (isClicks.get(position)) {
-                holder.text1.setBackgroundColor(Color.MAGENTA);
+                holder.text1.setBackgroundColor(Color.GREEN);
             } else {
                 holder.text1.setBackgroundColor(Color.TRANSPARENT);
             }

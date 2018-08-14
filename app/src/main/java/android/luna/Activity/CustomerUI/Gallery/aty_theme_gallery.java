@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.luna.Activity.Base.AppManager;
 import android.luna.Activity.CustomerUI.BaseUi.BaseUi;
 import android.luna.Data.CustomerUI.DrinkMenuButton;
+import android.luna.Utils.Lang.LangLocalHelper;
 import android.luna.Utils.PictureManager;
 import android.luna.ViewUi.FloatButton.floateutil.FloatBallView;
 import android.luna.ViewUi.FloatButton.util.FloatUtil;
@@ -26,7 +28,7 @@ import static android.support.v7.widget.RecyclerView.SCROLL_STATE_SETTLING;
  * Created by Lee.li on 2018/5/14.
  */
 
-public class aty_theme_gallery extends BaseUi {
+public class aty_theme_gallery extends BaseUi implements BaseUi.Languagechanged {
     private RecyclerView mRecycleView;
     private MyAdapter mAdapter;
     private LinearLayoutManager mLinearLayoutManager;
@@ -92,6 +94,7 @@ public class aty_theme_gallery extends BaseUi {
                 }
             }
         });
+        this.setOnLanguagechanged(this);
     }
     private int maxpostion=0;
     private RecyclerView.OnScrollListener mOnScrollListener = new RecyclerView.OnScrollListener() {
@@ -179,5 +182,19 @@ public class aty_theme_gallery extends BaseUi {
         mScreenWidth = getResources().getDisplayMetrics().widthPixels;
         mMinWidth = (int) (mScreenWidth * Screen5Items);
         mMaxWidth = mMinWidth;
+    }
+
+    @Override
+    public void updated() {
+        LangLocalHelper.updateLocale(this,LangLocalHelper.getlocalinfo(getApp().getCurrent_language()));
+        resetaty();
+    }
+    public void resetaty()
+    {
+        AppManager.getAppManager().finishActivity(aty_theme_gallery.this);
+        Intent _Intent = new Intent(this, aty_theme_gallery.class);
+        startActivity(_Intent);
+        //清除Activity退出和进入的动画
+        overridePendingTransition(0, 0);
     }
 }

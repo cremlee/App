@@ -124,6 +124,21 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
     private ScreenFactoryDao screenFactoryDao;
     private PaymentSetting _paymentSetting;
     private PaymentDao paymentDao;
+
+
+
+    public interface Languagechanged
+    {
+        void updated();
+    }
+    private Languagechanged languagechanged;
+    public void setOnLanguagechanged(Languagechanged a)
+    {
+        languagechanged =a;
+    }
+
+
+
     private void sendEmptyMessageDelayed() {
         if (handler.hasMessages(WATH)) {
             handler.removeMessages(WATH);
@@ -156,6 +171,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         }
         return super.dispatchTouchEvent(ev);
     }
+
 
 
     @Override
@@ -406,7 +422,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         drinkMenuButtonList.clear();
         personItems.clear();
 
-        List<DrinkMenuButton> tmp = beverageFactoryDao.getDrinkIconItems(beverageFactoryDao.getBeverageNameDao().getlocalinfo());
+        List<DrinkMenuButton> tmp = beverageFactoryDao.getDrinkIconItems(getApp().getCurrent_language());
 
         if(tmp!=null &&tmp.size()>0)
         {
@@ -423,6 +439,26 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         }
     }
 
+    private void refreshlanguage(int lang)
+    {
+        drinkMenuButtonList.clear();
+        personItems.clear();
+        getApp().setCurrent_language(lang);
+        List<DrinkMenuButton> tmp = beverageFactoryDao.getDrinkIconItems(lang);
+        if(tmp!=null &&tmp.size()>0)
+        {
+            drinkMenuButtonList.addAll(tmp);
+        }
+        personItems.add((PersonItem) new PersonItem("Add new Person","",0,"").setTop(true).setBaseIndexTag("+"));
+        List<PersonItem> ptmp = personFactoryDao.getPersonItemDao().quryallRecord();
+        if(ptmp!=null && ptmp.size()>0)
+        {
+            for (PersonItem pitem:ptmp)
+            {
+                personItems.add(pitem);
+            }
+        }
+    }
     @Override
     public void InitEvent() {
         super.InitEvent();
@@ -480,9 +516,16 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
                     languagePopWindow.getLanguageAdapter().setOnFileSelect(new LanguageAdapter.OnFileSelect() {
                         @Override
                         public void FileSelect(int id) {
-                            showToast("language FileSelect "+id);
                             // TODO: 2018/7/2 change the language dismiss the popwin
+                            //refreshlanguage(id);
+                            getApp().setCurrent_language(id);
+
+                            if(languagechanged!=null)
+                            {
+                                languagechanged.updated();
+                            }
                             languagePopWindow.dismiss();
+
                         }
                     });
                 }
@@ -639,4 +682,6 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
             }
         });*/
     }
+
+
 }

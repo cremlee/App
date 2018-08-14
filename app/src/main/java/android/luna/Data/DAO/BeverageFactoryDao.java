@@ -548,7 +548,9 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
                     try {
                         QueryBuilder<DrinkName, Integer> builder = getHelper().getDrinknameDao().queryBuilder();
                         builder.where().eq("pid", pid).and().eq("localinfo", getlocalinfo());
-                        return builder.queryForFirst().getName();
+                        DrinkName name = builder.queryForFirst();
+                        if(name!=null)
+                            return name.getName();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -798,6 +800,11 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
 
                 @Override
                 public List<BeverageGroup> querylistbyPid(int pid) {
+                    try {
+                        return getHelper().getBeverageGroupDao().queryForEq("groupid",pid);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                     return null;
                 }
 

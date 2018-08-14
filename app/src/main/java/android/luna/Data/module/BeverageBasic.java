@@ -256,4 +256,23 @@ public class BeverageBasic implements Serializable {
 				", name='" + name + '\'' +
 				'}';
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		BeverageBasic that = (BeverageBasic) o;
+
+		if (getId() != that.getId()) return false;
+		return getPid() == that.getPid();
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result = getId();
+		result = 31 * result + getPid();
+		return result;
+	}
 }

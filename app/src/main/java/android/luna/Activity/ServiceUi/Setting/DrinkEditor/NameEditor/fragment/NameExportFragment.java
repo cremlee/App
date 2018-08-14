@@ -30,7 +30,7 @@ public class NameExportFragment extends CleanFragment implements View.OnClickLis
         drinkNames =beverageFactoryDao.getBeverageNameDao().queryall();
         setTitle("Export Name");
         setIcon(0);
-        setContent("");
+        setContent("Please insert the USB stick,then press the start button");
         getStart().setOnClickListener(this);
         if(!isUsbReady)
             getStart().setEnabled(false);

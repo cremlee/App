@@ -31,7 +31,7 @@ public class NameImportFragment extends CleanFragment implements View.OnClickLis
         beverageFactoryDao = new BeverageFactoryDao(getActivity(),(CremApp) getActivity().getApplication());
         setTitle("Import Name");
         setIcon(0);
-        setContent("");
+        setContent("Please insert the USB stick,then press the start button");
         getStart().setOnClickListener(this);
         if(!isUsbReady)
             getStart().setEnabled(false);

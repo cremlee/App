@@ -23,6 +23,7 @@ import android.luna.Data.module.LogRecord;
 import android.luna.Data.module.MachineDevice.Device;
 import android.luna.Data.module.Production.AutoTestItem;
 import android.luna.Data.module.ScreenSettings;
+import android.luna.Utils.Lang.LangLocalHelper;
 import android.luna.Utils.LogDataBaseHelper;
 import android.luna.Utils.Logger.EvoTrace;
 import android.luna.rs232.Ack.AckQuery;
@@ -601,6 +602,7 @@ public class CremApp extends Application {
     public void onCreate() {
         super.onCreate();
         LeakCanary.install(this);
+        setCurrent_language(LangLocalHelper.getlocalinfo());
     }
 
 

@@ -28,6 +28,7 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -50,10 +51,14 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
     private HashMap<Integer,String> groupadapter = new HashMap<>();
     private GroupAdapter groupAdapter;
     private MaterialDialog progressDialog;
-    private ListView group_item_source;
+    private ListView group_item_source,group_item_dest;
     private int _groupid =-1;
-    private List<BeverageBasic> beverageBasics;
+    private List<BeverageBasic> beverageBasics=new ArrayList<>();;
     private BeverageItemSelectorAdpter beverageItemSelectorAdpter;
+    private List<BeverageBasic> beveragedest =new ArrayList<>();
+    private BeverageItemSelectorAdpter destbeverageItemSelectorAdpter;
+    private BeverageBasic _crtbvg;
+    private int mindex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,15 +98,20 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
 
         group_item_source = findViewById(R.id.group_item_source);
         group_item_source.setAdapter(beverageItemSelectorAdpter);
+        group_item_dest = findViewById(R.id.group_item_dest);
+        group_item_dest.setAdapter(destbeverageItemSelectorAdpter);
 
     }
 
     private void getbeveragebasicdataset()
     {
-        beverageBasics = beverageFactoryDao.getBeverageBasicDao().queryall();
+        beverageBasics.clear();
+        beverageBasics.addAll(beverageFactoryDao.getBeverageBasicDao().queryall());
         if(beverageBasics!=null && beverageBasics.size()>0)
         {
             // TODO: 2018/8/13 delete the exists one
+            if(beveragedest!=null && beveragedest.size()>0)
+            beverageBasics.removeAll(beveragedest);
         }
         beverageItemSelectorAdpter.set_data(beverageBasics);
         beverageItemSelectorAdpter.notifyDataSetChanged();
@@ -137,11 +147,27 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
         super.InitData();
         beverageFactoryDao = new BeverageFactoryDao(this,getApp());
         getgroupdataset();
-       // getbeveragebasicdataset();
         groupAdapter = new GroupAdapter(this,groupadapter);
         beverageItemSelectorAdpter = new BeverageItemSelectorAdpter(this,beverageBasics);
+        destbeverageItemSelectorAdpter = new BeverageItemSelectorAdpter(this,beveragedest);
     }
 
+    private void getdestdataset()
+    {
+        beveragedest.clear();
+        List<BeverageGroup> items= beverageFactoryDao.getBeverageGroup().querylistbyPid(_groupid);
+        if(items!=null&&items.size()>0)
+        {
+            for(BeverageGroup item:items)
+            {
+                BeverageBasic basic =beverageFactoryDao.getBeverageBasicDao().query(item.getPid());
+                if(basic!=null)
+                beveragedest.add(basic);
+            }
+            destbeverageItemSelectorAdpter.resetClick();
+            destbeverageItemSelectorAdpter.notifyDataSetChanged();
+        }
+    }
     @Override
     public void InitEvent() {
         super.InitEvent();
@@ -151,6 +177,8 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
         btn_save.setOnClickListener(this);
         group_item_add.setOnClickListener(this);
         group_item_remove.setOnClickListener(this);
+        group_item_add.setEnabled(false);
+        group_item_remove.setEnabled(false);
         btn_search.setOnClickListener(this);
         group_item_name.setOnClickListener(this);
         group_item_icon.setOnClickListener(this);
@@ -169,9 +197,10 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
                         group_item_icon.setTextValue(beverageGroup.getIconpath());
                         group_item_size.setChecked(beverageGroup.getBigmode()==1);
                         group_item_show.setChecked(beverageGroup.getShowinscreen()==1);
+                        getdestdataset();
                         getbeveragebasicdataset();
-
                     }
+
                 }
             }
 
@@ -180,7 +209,28 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
 
             }
         });
-
+        beverageItemSelectorAdpter.SetdrinkitemOnClicked(new BeverageItemSelectorAdpter.OndrinkitemClicked() {
+            @Override
+            public void OnitemClick(int pid,int pos) {
+                group_item_remove.setEnabled(false);
+                group_item_add.setEnabled(true);
+                _crtbvg = beverageFactoryDao.getBeverageBasicDao().query(pid);
+                mindex =pos;
+                destbeverageItemSelectorAdpter.resetClick();
+                destbeverageItemSelectorAdpter.notifyDataSetChanged();
+            }
+        });
+        destbeverageItemSelectorAdpter.SetdrinkitemOnClicked(new BeverageItemSelectorAdpter.OndrinkitemClicked() {
+            @Override
+            public void OnitemClick(int pid,int pos) {
+                group_item_add.setEnabled(false);
+                group_item_remove.setEnabled(true);
+                _crtbvg = beverageFactoryDao.getBeverageBasicDao().query(pid);
+                mindex =pos;
+                beverageItemSelectorAdpter.resetClick();
+                beverageItemSelectorAdpter.notifyDataSetChanged();
+            }
+        });
     }
 
     private void CreatenewGroup()
@@ -210,10 +260,48 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
       }
     }
 
+    private void savegroup()
+    {
+        BeverageGroup beverageGroup;
+        if(_groupid!=-1)
+            beverageFactoryDao.getBeverageGroup().deletegroup(_groupid);
+        if(beveragedest!=null && beveragedest.size()>0)
+        {
+            for(BeverageBasic basic:beveragedest) {
+                beverageGroup = new BeverageGroup(basic.getPid(),_groupid,group_item_name.getTextValue(),group_item_icon.getTextValue(),(group_item_size.isChecked()?1:0),(group_item_show.isChecked()?1:0));
+                beverageFactoryDao.getBeverageGroup().create(beverageGroup);
+            }
+        }
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
+            case R.id.btn_save:
+                savegroup();
+                break;
+            case R.id.group_item_remove:
+                if(_crtbvg!=null) {
+                    beverageBasics.add(_crtbvg);
+                    beveragedest.remove(mindex);
+                    beverageItemSelectorAdpter.resetClick();
+                    group_item_add.setEnabled(false);
+                    destbeverageItemSelectorAdpter.notifyDataSetChanged();
+                    beverageItemSelectorAdpter.notifyDataSetChanged();
+                    destbeverageItemSelectorAdpter.resetClick();
+                }
+                break;
+            case R.id.group_item_add:
+                if(_crtbvg!=null) {
+                    beveragedest.add(_crtbvg);
+                    beverageBasics.remove(mindex);
+                    beverageItemSelectorAdpter.resetClick();
+                    group_item_add.setEnabled(false);
+                    destbeverageItemSelectorAdpter.notifyDataSetChanged();
+                    beverageItemSelectorAdpter.notifyDataSetChanged();
+                    destbeverageItemSelectorAdpter.resetClick();
+                }
+                break;
             case R.id.btn_back:
                 AppManager.getAppManager().finishActivity(aty_group_maker.this);
                 break;
