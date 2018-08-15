@@ -1,5 +1,6 @@
 package android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -307,6 +308,7 @@ public class aty_ingrendient_maker extends BaseActivity implements View.OnClickL
         EvoTrace.e("ack","test wait time ="+ingredientTime);
         return ingredientTime;
     }
+    @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

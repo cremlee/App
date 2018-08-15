@@ -958,6 +958,51 @@
     <string name="SVR_DRINK_BEVERAGE_UI">界面信息</string>
     <string name="SVR_DRINK_BEVERAGE_INGREDIENT">配方信息</string>
     <string name="SVR_DRINK_BEVERAGE_ADD">新增菜单</string>
+    <!--基础部分-->
+    <string name="SVR_DRINK_BEVERAGE_BASIC_TITLE_1">菜单基础配置</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_NAME">菜单名称</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_CUP">杯子传感器</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_PRICE">价格</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_LED_COLOR">灯管颜色</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_LED_MODE">显示类型</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_DISPENSING_MODE">饮料模式</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_TITLE_2">预选项配置</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_CHOCOLATE">巧克力</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_MILK">牛奶</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_STRENGTH">浓度</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_SUGAR">糖</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_TOP">Topping</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_VOLUME">杯量</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_JUG">壶模式</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_QUICK">快速出饮料</string>
+    <!--菜单界面部分-->
+    <string name="SVR_DRINK_BEVERAGE_UI_TITLE">饮料界面设置</string>
+    <string name="SVR_DRINK_BEVERAGE_UI_ICON">饮料图标</string>
+    <string name="SVR_DRINK_BEVERAGE_UI_STORY">饮料介绍</string>
+    <string name="SVR_DRINK_BEVERAGE_UI_ANIMATION">出饮料的背景</string>
+    <string name="SVR_DRINK_BEVERAGE_UI_GALLERY">画廊背景</string>
+    <!--菜单配方部分-->
+    <string name="SVR_DRINK_BEVERAGE_STEP_TITLE">菜单配方设置</string>
+    <!--选择配方部分-->
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_TITLE">配方类型</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_FILTER">滴滤咖啡</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_FILTER_AD">滴滤咖啡高级</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_ESPRESSO">意式浓缩咖啡</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_INSTANT">速溶饮料</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_WATER">水</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_MILK">新鲜牛奶</string>
+    <!--意式浓缩部分-->
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_TITLE">意式浓缩配方设置</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_NAME">配方名称</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_WATER">冲泡水类型</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_VOLUME">水量</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_POWER_TYPE">咖啡粉类型</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_POWER_AMOUNT">咖啡粉重量</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_PRESSURE">冲泡压力</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_BREW_1">一阶段时间</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_BREW_2">二阶段时间</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_DRY">排空时间</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_TOTAL">总计时间</string>
     <!--ViewUI part-->
     <string name="VIEW_UI_TEMPERATURE">当前温度: </string>
     <string name="VIEW_UI_TOP_5">前五</string>
@@ -969,4 +1014,5 @@
     <string name="MENU_DONE">完成</string>
     <string name="MENU_CLOSE">关闭</string>
     <string name="MENU_OPEN">打开</string>
+    <string name="MENU_EXIT">退出</string>
 </resources>

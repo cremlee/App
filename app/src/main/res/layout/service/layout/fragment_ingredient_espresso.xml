@@ -14,7 +14,7 @@
         <android.luna.ViewUi.widget.SettingItemTextView1
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview1Text="@string/edt_ingredient_setting"
+            cqube:textview1Text="@string/SVR_DRINK_INGREDIENT_ESPRESSO_TITLE"
             cqube:textview1TextBackground="@color/title_text_color2"
             cqube:textview1TextColor="@android:color/white" />
 
@@ -24,7 +24,7 @@
             android:id="@+id/ingredientNameItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="@string/edt_ingredient_name"
+            cqube:textview2TextTitle="@string/SVR_DRINK_INGREDIENT_ESPRESSO_NAME"
             cqube:textview2TextValue="Water" />
 
         <!-- water Type -->
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             cqube:dropdownItems="Tea Water#Still Water#Sparkling Water"
-            cqube:dropdownTextName="@string/edt_ingredient_watertype"
+            cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_WATER"
             cqube:dropdownValues="0#1#2" />
 
         <!-- Water Volume -->
@@ -46,7 +46,7 @@
             cqube:sbCur="100"
             cqube:sbMax="200"
             cqube:sbMin="5"
-            cqube:sbName="@string/edt_ingredient_watervolume"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_VOLUME"
             cqube:sbUnit="ml" />
 
         <android.luna.ViewUi.widget.SettingItemDropDown
@@ -67,7 +67,7 @@
             cqube:sbCur="0"
             cqube:sbMax="20"
             cqube:sbMin="0"
-            cqube:sbName="@string/edt_ingredient_cofamt"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_POWER_AMOUNT"
             cqube:sbUnit="g" />
         <!-- Aereation -->
 
@@ -78,7 +78,7 @@
             cqube:sbCur="12"
             cqube:sbMax="12"
             cqube:sbMin="1"
-            cqube:sbName="Pressure"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_PRESSURE"
             cqube:sbUnit="bar" />
         <!-- Pre Brew Time -->
 
@@ -89,7 +89,7 @@
             cqube:sbCur="3"
             cqube:sbMax="20"
             cqube:sbMin="0"
-            cqube:sbName="Prebrew Time "
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_BREW_1"
             cqube:sbUnit="s" />
 
         <!-- Extraction Time -->
@@ -101,7 +101,7 @@
             cqube:sbCur="3"
             cqube:sbMax="20"
             cqube:sbMin="0"
-            cqube:sbName="Prebrew Time 1"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_BREW_2"
             cqube:sbUnit="s" />
 
         <!-- brewTime -->
@@ -113,7 +113,7 @@
             cqube:sbCur="10"
             cqube:sbMax="20"
             cqube:sbMin="1"
-            cqube:sbName="BrewTime"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_DRY"
             cqube:sbUnit="s" />
         <!-- Total Time -->
 
@@ -121,7 +121,7 @@
             android:id="@+id/totalTimeItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="@string/edt_ingredient_totaltime"
+            cqube:textview2TextTitle="@string/SVR_DRINK_INGREDIENT_ESPRESSO_TOTAL"
             cqube:textview2TextValue="20.0s" />
 
         <!--<evo.luna.android.widget.NumberCircleProgressBar

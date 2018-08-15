@@ -598,7 +598,13 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
                     try {
                         QueryBuilder<DrinkName, Integer> builder = getHelper().getDrinknameDao().queryBuilder();
                         builder.where().eq("localinfo", app.getCurrent_language());
-                        return builder.query();
+                        List<DrinkName> ret = builder.query();
+                        builder.reset();
+                        builder.where().eq("localinfo", getlocalinfo());
+                        List<DrinkName> ret1 = builder.query();
+                        if(ret.size()==ret1.size())
+                        return ret;
+                        return ret1;
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }

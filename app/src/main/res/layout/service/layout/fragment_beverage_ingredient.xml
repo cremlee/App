@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             cqube:textview1IsTextBold="true"
-            cqube:textview1Text="Recipe ingredient settings"
+            cqube:textview1Text="@string/SVR_DRINK_BEVERAGE_STEP_TITLE"
             cqube:textview1TextBackground="@color/title_text_color2"
             cqube:textview1TextColor="@android:color/white" />
         <android.luna.ViewUi.widget.SettingItemTextView2

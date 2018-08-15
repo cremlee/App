@@ -22,9 +22,7 @@
     <string name="beverage_maker">Beverage Maker</string>
     <string name="edit_beverage">Edit Beverage</string>
 
-    <string name="beverage_name">Beverage Name</string>
     <string name="change_recipe">Edit Recipe</string>
-    <string name="drink_icon_picture">Beverage Icon Picture</string>
     <string name="drink_bg_color">Beverage Icon Background Color</string>
     <string name="drink_icon_picture1">Beverage Image 2</string>
     <string name="drink_icon_picture2">Beverage Image 3</string>
@@ -32,18 +30,8 @@
     <string name="add_recipe_settings">Recipe Custom Settings</string>
     <string name="add_ingradient">Add Ingredient</string>
     <string name="stoppable">Stoppable</string>
-    <string name="brew_light">Brew Light</string>
     <string name="buzzer_sound">Buzzer Sound</string>
-    <string name="dispense_type">Dispensing Mode</string>
-    <string name="pre_selections">Preselection Options</string>
-    <string name="chocolate">Chocolate</string>
-    <string name="milk">Milk</string>
-    <string name="strength">Strength</string>
-    <string name="sugar">Sugar</string>
-    <string name="topping">Topping</string>
-    <string name="volume">Volume</string>
-    <string name="jug">Jug Option</string>
-    <string name="dirct">One Button Dispensing Mode</string>
+
     
     <!-- 待整理，有些不用了 end -->
     <!-- Scheduler Settings -->
@@ -957,10 +945,50 @@
     <string name="SVR_DRINK_BEVERAGE_INGREDIENT">Ingredient part</string>
     <string name="SVR_DRINK_BEVERAGE_ADD">Add new beverage</string>
     <!--基础部分-->
-    <string name="SVR_DRINK_BEVERAGE_BASIC_TITLE">Recipe Basic Settings</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_TITLE_1">Recipe Basic Settings</string>
     <string name="SVR_DRINK_BEVERAGE_BASIC_NAME">Beverage Name</string>
     <string name="SVR_DRINK_BEVERAGE_BASIC_CUP">Cup Sensor</string>
     <string name="SVR_DRINK_BEVERAGE_BASIC_PRICE">Drink Price</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_LED_COLOR">Brew Light</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_LED_MODE">LED Mode</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_DISPENSING_MODE">Dispensing Mode</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_TITLE_2">Preselection Options</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_CHOCOLATE">Chocolate</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_MILK">Milk</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_STRENGTH">Strength</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_SUGAR">Sugar</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_TOP">Topping</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_VOLUME">Volume</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_JUG">Jug Option</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_QUICK">One Button Dispensing Mode</string>
+    <!--菜单界面部分-->
+    <string name="SVR_DRINK_BEVERAGE_UI_TITLE">Recipe UI Settings</string>
+    <string name="SVR_DRINK_BEVERAGE_UI_ICON">Beverage Icon Picture</string>
+    <string name="SVR_DRINK_BEVERAGE_UI_STORY">Beverage Story Telling</string>
+    <string name="SVR_DRINK_BEVERAGE_UI_ANIMATION">Beverage Dispense Background</string>
+    <string name="SVR_DRINK_BEVERAGE_UI_GALLERY">Beverage Gallery Background</string>
+    <!--菜单配方部分-->
+    <string name="SVR_DRINK_BEVERAGE_STEP_TITLE">Recipe Ingredient Settings</string>
+    <!--选择配方部分-->
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_TITLE">Choose Ingredient Type</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_FILTER">Filter Brewer</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_FILTER_AD">Advanced Filter Brewer</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_ESPRESSO">Espresso</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_INSTANT">Instant</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_WATER">Water</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_MILK">Fresh Milk</string>
+    <!--意式浓缩部分-->
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_TITLE">Espresso Settings</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_NAME">Ingredient Name</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_WATER">Water Type</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_VOLUME">Water Volume</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_POWER_TYPE">Powder Type</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_POWER_AMOUNT">Powder Amount</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_PRESSURE">Brew Pressure</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_BREW_1">Brew Time 1</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_BREW_2">Brew Time 2</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_DRY">Dry Brewer Time</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_TOTAL">Total Time</string>
     <!--ViewUI part-->
     <string name="VIEW_UI_TEMPERATURE">Temperature: </string>
     <string name="VIEW_UI_TOP_5">TOP 5</string>
@@ -973,4 +1001,5 @@
     <string name="MENU_DONE">Done</string>
     <string name="MENU_CLOSE">Close</string>
     <string name="MENU_OPEN">Open</string>
+    <string name="MENU_EXIT">Exit</string>
 </resources>

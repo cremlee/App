@@ -13,14 +13,14 @@
             android:textSize="24sp"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Close"
+            android:text="@string/MENU_BACK"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:layout_marginStart="17dp" />
         <Button
             android:textSize="24sp"
             android:id="@+id/btn_save"
-            android:text="save"
+            android:text="@string/MENU_SAVE"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="144dp"
@@ -30,7 +30,7 @@
         <Button
             android:textSize="24sp"
             android:id="@+id/btn_test"
-            android:text="test"
+            android:text="@string/SVR_DRINK_MENU_TEST"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/btn_save"
