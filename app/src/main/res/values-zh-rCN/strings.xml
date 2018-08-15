@@ -909,8 +909,64 @@
     <string name="PL_REPORT_DATE">报告日期:</string>
     <string name="PL_REPORT_ID">操作员编号:</string>
     <string name="PL_REPORT_UPLOAD">上传</string>
-
+    <!--MainUI part-->
     <string name="MAIN_UI_OUT_OF_STOCK">库存不足</string>
     <string name="MAIN_UI_OUT_OF_USE">料斗失效</string>
     <string name="MAIN_UI_OUT_OF_WASTER">回收箱满</string>
+
+    <!--Service Part-->
+    <!--状态部分-->
+    <string name="SVR_ST_RB_TITLE_1">状态</string>
+    <string name="SVR_ST_RB_TITLE_2">计数</string>
+    <string name="SVR_ST_RB_TITLE_3">日志</string>
+    <string name="SVR_ST_RB_TITLE_4">帮助</string>
+    <string name="SVR_ST_RB_TITLE_5">关于本机</string>
+    <string name="SVR_ST_CANISTER">粉料状态</string>
+    <string name="SVR_ST_BIN">垃圾桶状态</string>
+    <string name="SVR_ST_BIN_NAME">垃圾桶</string>
+    <string name="SVR_ST_EVENT">机器信息</string>
+    <string name="SVR_ST_SENSOR">传感器状态</string>
+    <!--计数部分-->
+    <string name="SVR_CT_TITLE_BEVERAGE">饮料</string>
+    <string name="SVR_CT_TITLE_RESET">计数清零</string>
+    <string name="SVR_CT_TOTAL_WATER">水量总计</string>
+    <string name="SVR_CT_TOTAL_BEVERAGE">饮料总计</string>
+    <string name="SVR_CT_TITLE_ClEAN">清洁操作</string>
+    <!--关于本机部分-->
+    <string name="SVR_INFO_TITLE_SYSTEM">系统信息</string>
+    <string name="SVR_INFO_TITLE_SYSTEM_VERSION">安卓版本</string>
+    <string name="SVR_INFO_TITLE_SYSTEM_KERNAL">内核信息</string>
+    <string name="SVR_INFO_TITLE_SYSTEM_MODEL">模块信息</string>
+    <string name="SVR_INFO_TITLE_SYSTEM_BLUE">蓝牙地址</string>
+    <string name="SVR_INFO_TITLE_APP">应用信息</string>
+    <string name="SVR_INFO_TITLE_APP_SW">软件版本</string>
+    <string name="SVR_INFO_TITLE_APP_DB">数据库版本</string>
+    <string name="SVR_INFO_TITLE_FIRMWARE">固件信息</string>
+    <string name="SVR_INFO_TITLE_FIRMWARE_IO">主控板版本</string>
+    <string name="SVR_INFO_TITLE_FIRMWARE_PAY">支付模块版本</string>
+    <string name="SVR_INFO_TITLE_MACHINE">设备信息</string>
+    <string name="SVR_INFO_TITLE_MACHINE_NAME">设备名称</string>
+    <string name="SVR_INFO_TITLE_MACHINE_NO">序列号</string>
+    <string name="SVR_INFO_TITLE_MACHINE_INSTALL_DATE">安装日期</string>
+    <!--Drink part-->
+    <string name="SVR_DRINK_MENU_BEVERAGE">饮料编辑器</string>
+    <string name="SVR_DRINK_MENU_INGREDIENT">配方编辑器</string>
+    <string name="SVR_DRINK_MENU_GROUP">分组编辑器</string>
+    <string name="SVR_DRINK_MENU_NAME">名称编辑器</string>
+    <string name="SVR_DRINK_MENU_TEST">测试</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC">基础信息</string>
+    <string name="SVR_DRINK_BEVERAGE_UI">界面信息</string>
+    <string name="SVR_DRINK_BEVERAGE_INGREDIENT">配方信息</string>
+    <string name="SVR_DRINK_BEVERAGE_ADD">新增菜单</string>
+    <!--ViewUI part-->
+    <string name="VIEW_UI_TEMPERATURE">当前温度: </string>
+    <string name="VIEW_UI_TOP_5">前五</string>
+    <!--通用部分-->
+    <string name="MENU_BACK">返回</string>
+    <string name="MENU_SAVE">保存</string>
+    <string name="MENU_NEXT">下一步</string>
+    <string name="MENU_START">开始</string>
+    <string name="MENU_DONE">完成</string>
+    <string name="MENU_CLOSE">关闭</string>
+    <string name="MENU_OPEN">打开</string>
 </resources>

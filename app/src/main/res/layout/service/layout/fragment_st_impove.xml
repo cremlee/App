@@ -22,7 +22,7 @@
                 android:layout_marginTop="10dp"
                 android:textColor="@color/material_black"
                 android:textSize="30sp"
-                android:text="Container status"
+                android:text="@string/SVR_ST_CANISTER"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -45,7 +45,7 @@
                 android:layout_marginTop="10dp"
                 android:textColor="@color/material_black"
                 android:textSize="30sp"
-                android:text="Container status"
+                android:text="@string/SVR_ST_BIN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <LinearLayout
@@ -68,7 +68,7 @@
                     <TextView
                         android:textColor="@color/material_black"
                         android:layout_marginTop="10dp"
-                        android:text="Wasterbin"
+                        android:text="@string/SVR_ST_BIN_NAME"
                         android:gravity="center"
                         android:textSize="20sp"
                         android:layout_width="match_parent"
@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:text="Machine Event"
+                android:text="@string/SVR_ST_EVENT"
                 android:textColor="@color/material_black"
                 android:textSize="30sp" />
 
@@ -168,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:text="Others"
+                android:text="@string/SVR_ST_SENSOR"
                 android:textColor="@color/material_black"
                 android:textSize="30sp" />
 

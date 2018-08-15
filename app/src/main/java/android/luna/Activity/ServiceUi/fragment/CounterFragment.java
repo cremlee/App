@@ -106,7 +106,7 @@ public class CounterFragment extends Fragment implements View.OnClickListener ,I
         tf = Typeface.createFromAsset(getActivity().getAssets(), "OpenSans-Regular.ttf");
         mChart.setBackgroundColor(Color.TRANSPARENT);
         mChart.setCenterTextTypeface(Typeface.createFromAsset(getActivity().getAssets(), "OpenSans-Light.ttf"));
-        mChart.setCenterText("counter");
+        mChart.setCenterText(getString(R.string.VIEW_UI_TOP_5));
 
         sv = view.findViewById(R.id.sv);
 
@@ -173,7 +173,6 @@ public class CounterFragment extends Fragment implements View.OnClickListener ,I
         Viewport v = new Viewport(0, maxvalue<50?50:maxvalue, beverageCountListCopy.size(), 0);
         helloChart.setMaximumViewport(v);
         helloChart.setCurrentViewport(new Viewport(0, maxvalue<50?50:maxvalue, 8, 0));
-        //chart.setZoomType(ZoomType.VERTICAL);
         helloChart.setZoomEnabled(false);
     }
 

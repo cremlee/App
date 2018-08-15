@@ -12,21 +12,21 @@
             android:layout_margin="30dp"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Beverage Editor"
+            android:text="@string/SVR_DRINK_MENU_BEVERAGE"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/edt_ingredient"
             android:layout_margin="30dp"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Ingredient Editor"
+            android:text="@string/SVR_DRINK_MENU_INGREDIENT"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/edt_group"
             android:layout_margin="30dp"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Group Editor"
+            android:text="@string/SVR_DRINK_MENU_GROUP"
             android:layout_height="match_parent" />
     </LinearLayout>
 
@@ -37,7 +37,7 @@
         android:layout_height="0dp" >
         <Button
             android:id="@+id/namebtn"
-            android:text="Drink Name Editor"
+            android:text="@string/SVR_DRINK_MENU_NAME"
             android:layout_margin="30dp"
             android:layout_width="0dp"
             android:layout_weight="1"

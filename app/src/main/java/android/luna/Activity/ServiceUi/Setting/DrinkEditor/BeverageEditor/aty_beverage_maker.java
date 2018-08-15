@@ -243,7 +243,7 @@ public class aty_beverage_maker extends BaseActivity implements View.OnClickList
             e.printStackTrace();
         }
         EvoTrace.e("time", "makeDrinkTime:" + (totalTime) );
-        return (totalTime + 4000) * 1;
+        return (totalTime + 4000) ;
     }
     @Override
     protected void onDestroy() {
@@ -286,7 +286,7 @@ public class aty_beverage_maker extends BaseActivity implements View.OnClickList
         mDatas = new ArrayList<>();
         mAdapter = new SwipeDelMenuAdapter(this, mDatas);
         drinkNameList = mbeverageFactoryDao.getBeverageNameDao().queryallByLocale();
-        mDatas.add((DrinkBean) new DrinkBean(999,"Add new beverage","",false,false).setTop(true).setBaseIndexTag(INDEX_STRING_TOP));
+        mDatas.add((DrinkBean) new DrinkBean(999,getString(R.string.SVR_DRINK_BEVERAGE_ADD),"",false,false).setTop(true).setBaseIndexTag(INDEX_STRING_TOP));
         if(drinkNameList!=null && drinkNameList.size()>0)
         {
             for (DrinkName item: drinkNameList )

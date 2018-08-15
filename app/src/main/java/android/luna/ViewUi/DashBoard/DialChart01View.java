@@ -42,6 +42,8 @@ import org.xclcharts.view.GraphicalView;
 import java.util.ArrayList;
 import java.util.List;
 
+import evo.luna.android.R;
+
 
 /**
  * @ClassName DialChart例子
@@ -217,7 +219,7 @@ public class DialChart01View extends GraphicalView {
 		paintBase.setTextSize(18);
 		paintBase.setColor(Color.rgb(56, 172, 240));
 		plotAttrInfo.addAttributeInfo(XEnum.Location.BOTTOM, 
-								"Temperature:"+Float.toString(mPercentage * 100), 0.6f, paintBase);
+								getContext().getString(R.string.VIEW_UI_TEMPERATURE)+Float.toString(mPercentage * 100), 0.6f, paintBase);
 
 		/////////////////////////////////////////////////////////////
 	}

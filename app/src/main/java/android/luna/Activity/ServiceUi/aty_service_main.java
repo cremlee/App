@@ -52,21 +52,6 @@ public class aty_service_main extends BaseActivity {
         if(_screenSettings == null)
             _screenSettings = new ScreenSettings();
         lasttype = _screenSettings.getThemetype();
-       /* LangItem tmp;
-        List<LangItem>  langItemList =new ArrayList<>(100);
-        for (int i=0;i<100;i++)
-        {
-            tmp = new LangItem(String.format("TXT_MSG_%d",i),String.format("TXT_VALUE_%d",i+2));
-            langItemList.add(tmp);
-        }
-        //LangLocalHelper.UpdateLangfile(0,langItemList);
-
-
-        langItemList = LangLocalHelper.getlanglistfromfile(1);
-
-        EvoTrace.e("aa","count = "+langItemList.size());
-        EvoTrace.e("aa",langItemList.toString());*/
-
         app = (CremApp)getApplication();
         setContentView(R.layout.aty_service_main);
         bottomBar = findViewById(R.id.bottomBar);

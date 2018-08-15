@@ -20,7 +20,7 @@
             android:checked="true"
             android:gravity="center_horizontal|bottom"
             android:paddingTop="50dp"
-            android:text="Status"
+            android:text="@string/SVR_ST_RB_TITLE_1"
             android:textColor="@drawable/tab_selector_tv_color"
             android:textSize="28sp" />
 
@@ -33,7 +33,7 @@
             android:button="@null"
             android:gravity="center_horizontal|bottom"
             android:paddingTop="30dp"
-            android:text="Counter"
+            android:text="@string/SVR_ST_RB_TITLE_2"
             android:textColor="@drawable/tab_selector_tv_color"
             android:textSize="28sp" />
 
@@ -46,7 +46,7 @@
             android:button="@null"
             android:gravity="center_horizontal|bottom"
             android:paddingTop="30dp"
-            android:text="logs"
+            android:text="@string/SVR_ST_RB_TITLE_3"
             android:textColor="@drawable/tab_selector_tv_color"
             android:textSize="28sp" />
 
@@ -59,7 +59,7 @@
             android:button="@null"
             android:gravity="center_horizontal|bottom"
             android:paddingTop="30dp"
-            android:text="Help"
+            android:text="@string/SVR_ST_RB_TITLE_4"
             android:textColor="@drawable/tab_selector_tv_color"
             android:textSize="28sp" />
 
@@ -72,7 +72,7 @@
             android:button="@null"
             android:gravity="center_horizontal|bottom"
             android:paddingTop="30dp"
-            android:text="About"
+            android:text="@string/SVR_ST_RB_TITLE_5"
             android:textColor="@drawable/tab_selector_tv_color"
             android:textSize="28sp" />
 

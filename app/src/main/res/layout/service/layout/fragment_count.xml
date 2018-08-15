@@ -33,14 +33,6 @@
       android:layout_height="wrap_content"
       android:background="@color/spring_wood"
       android:orientation="vertical" >
-      <!--<android.luna.ViewUi.widget.SettingItemTextView2
-             android:id="@+id/chart_convert"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             cqube:textview2TextBackground="@color/material_blueGrey_900"
-             cqube:textview2TextColor="@color/white"
-             cqube:textview2TextTitle="Counter Chart"
-             cqube:textview2DrawbleRight="@drawable/ics_counters" />-->
       <!-- 不能被清掉 -->
       <android.luna.ViewUi.widget.SettingItemTextView2
           android:id="@+id/masterTotalWaterItem"
@@ -48,7 +40,7 @@
           android:layout_height="wrap_content"
           cqube:textview2TextBackground="@color/title_text_color2"
           cqube:textview2TextColor="@color/white"
-          cqube:textview2TextTitle="@string/counter_master_water"
+          cqube:textview2TextTitle="@string/SVR_CT_TOTAL_WATER"
           cqube:textview2TextValue="0" />
       <!-- 不能被清掉 -->
 
@@ -58,15 +50,15 @@
           android:layout_height="wrap_content"
           cqube:textview2TextBackground="@color/title_text_color2"
           cqube:textview2TextColor="@color/white"
-          cqube:textview2TextTitle="@string/counter_master_total"
+          cqube:textview2TextTitle="@string/SVR_CT_TOTAL_BEVERAGE"
           cqube:textview2TextValue="0" />
 
       <android.luna.ViewUi.widget.SettingItemTextView2
           android:id="@+id/resetCountBeverageItem"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          cqube:textview2TextTitle="@string/counter_beverage"
-          cqube:textview2TextValue="@string/counter_rst" />
+          cqube:textview2TextTitle="@string/SVR_CT_TITLE_BEVERAGE"
+          cqube:textview2TextValue="@string/SVR_CT_TITLE_RESET" />
 
       <ListView
           android:id="@+id/list_counter"
@@ -105,8 +97,8 @@
           android:id="@+id/resetCountProgramItem"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          cqube:textview2TextTitle="@string/counter_clean"
-          cqube:textview2TextValue="@string/counter_rst" />
+          cqube:textview2TextTitle="@string/SVR_CT_TITLE_ClEAN"
+          cqube:textview2TextValue="@string/SVR_CT_TITLE_RESET" />
 
       <ListView
           android:id="@+id/list_cleanprogram"

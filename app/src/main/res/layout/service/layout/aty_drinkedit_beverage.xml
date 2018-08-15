@@ -15,11 +15,12 @@
             android:layout_height="80dp">
             <Button
                 android:id="@+id/btn_close"
+                android:minWidth="150dp"
                 android:textSize="24sp"
                 android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Close"
+                android:text="@string/MENU_BACK"
                 />
             <!--<Button
                 android:layout_centerVertical="true"
@@ -80,18 +81,18 @@
             android:layout_alignBottom="@+id/btn_save"
             android:layout_marginStart="34dp"
             android:layout_toEndOf="@+id/btn_save"
-            android:text="test" />
+            android:text="@string/SVR_DRINK_MENU_TEST" />
 
         <Button
             android:id="@+id/btn_save"
-            android:text="save"
+            android:text="@string/MENU_SAVE"
             android:layout_centerVertical="true"
             android:layout_width="100dp"
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/btn_ingredient"
-            android:text="Ingredient"
-            android:layout_width="100dp"
+            android:text="@string/SVR_DRINK_BEVERAGE_INGREDIENT"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="23dp"
             android:layout_alignBaseline="@+id/btn_ui"
@@ -103,7 +104,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
-            android:text="Basic"
+            android:text="@string/SVR_DRINK_BEVERAGE_BASIC"
             android:layout_alignBaseline="@+id/btn_test"
             android:layout_alignBottom="@+id/btn_test"
             android:layout_toEndOf="@+id/btn_test" />
@@ -112,7 +113,7 @@
             android:id="@+id/btn_ui"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="UI"
+            android:text="@string/SVR_DRINK_BEVERAGE_UI"
             android:layout_alignBaseline="@+id/btn_basci"
             android:layout_alignBottom="@+id/btn_basci"
             android:layout_toEndOf="@+id/btn_basci"

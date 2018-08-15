@@ -547,7 +547,7 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
                 public String getDrinkname(int pid) {
                     try {
                         QueryBuilder<DrinkName, Integer> builder = getHelper().getDrinknameDao().queryBuilder();
-                        builder.where().eq("pid", pid).and().eq("localinfo", getlocalinfo());
+                        builder.where().eq("pid", pid).and().eq("localinfo", app.getCurrent_language());
                         DrinkName name = builder.queryForFirst();
                         if(name!=null)
                             return name.getName();
@@ -597,7 +597,7 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
                 public List<DrinkName> queryallByLocale() {
                     try {
                         QueryBuilder<DrinkName, Integer> builder = getHelper().getDrinknameDao().queryBuilder();
-                        builder.where().eq("localinfo", getlocalinfo());
+                        builder.where().eq("localinfo", app.getCurrent_language());
                         return builder.query();
                     } catch (SQLException e) {
                         e.printStackTrace();
@@ -619,7 +619,7 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
                 public DrinkName queryByPid(int pid) {
                     try {
                         QueryBuilder<DrinkName, Integer> builder = getHelper().getDrinknameDao().queryBuilder();
-                        builder.where().eq("pid", pid).and().eq("localinfo", getlocalinfo());
+                        builder.where().eq("pid", pid).and().eq("localinfo", app.getCurrent_language());
                         return builder.queryForFirst();
                     } catch (SQLException e) {
                         e.printStackTrace();

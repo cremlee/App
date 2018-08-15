@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <TextView
-                android:text="System "
+                android:text="@string/SVR_INFO_TITLE_SYSTEM"
                 android:gravity="center"
                 android:textSize="32sp"
                 android:layout_width="match_parent"
@@ -26,28 +26,28 @@
             <android.luna.ViewUi.widget.SettingItemTextViewVer
                 android:id="@+id/ver_android"
                 android:padding="5dp"
-                app:textview2TextTitle="Android version:"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_SYSTEM_VERSION"
                 app:textview2TextValue="4.4.2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <android.luna.ViewUi.widget.SettingItemTextViewVer
                 android:id="@+id/ver_kernal"
                 android:padding="5dp"
-                app:textview2TextTitle="kernal"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_SYSTEM_KERNAL"
                 app:textview2TextValue="dadakk3345"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <android.luna.ViewUi.widget.SettingItemTextViewVer
                 android:id="@+id/ver_mode"
                 android:padding="5dp"
-                app:textview2TextTitle="Model"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_SYSTEM_MODEL"
                 app:textview2TextValue="dadakk3345"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <android.luna.ViewUi.widget.SettingItemTextViewVer
                 android:id="@+id/blue_mac"
                 android:padding="5dp"
-                app:textview2TextTitle="Bluetooth Adress"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_SYSTEM_BLUE"
                 app:textview2TextValue=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -61,7 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <TextView
-                android:text="Application"
+                android:text="@string/SVR_INFO_TITLE_APP"
                 android:gravity="center"
                 android:textSize="32sp"
                 android:layout_width="match_parent"
@@ -69,14 +69,14 @@
             <android.luna.ViewUi.widget.SettingItemTextViewVer
                 android:id="@+id/ver_app"
                 android:padding="10dp"
-                app:textview2TextTitle="Software version:"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_APP_SW"
                 app:textview2TextValue="1.5.0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <android.luna.ViewUi.widget.SettingItemTextViewVer
                 android:id="@+id/ver_database"
                 android:padding="10dp"
-                app:textview2TextTitle="Database version :"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_APP_DB"
                 app:textview2TextValue="1.0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -98,20 +98,20 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <TextView
-                android:text="Firmware"
+                android:text="@string/SVR_INFO_TITLE_FIRMWARE"
                 android:gravity="center"
                 android:textSize="32sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <android.luna.ViewUi.widget.SettingItemTextViewVer
                 android:padding="10dp"
-                app:textview2TextTitle="IO-Board version:"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_FIRMWARE_IO"
                 app:textview2TextValue="1.5.0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <android.luna.ViewUi.widget.SettingItemTextViewVer
                 android:padding="10dp"
-                app:textview2TextTitle="Payment version :"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_FIRMWARE_PAY"
                 app:textview2TextValue="1.0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -131,28 +131,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Machine"
+                android:text="@string/SVR_INFO_TITLE_MACHINE"
                 android:textSize="32sp" />
 
             <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:textview2TextTitle="Machine name :"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_MACHINE_NAME"
                 app:textview2TextValue="EVO" />
 
             <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:id="@+id/no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:textview2TextTitle="Serial No :"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_MACHINE_NO"
                 app:textview2TextValue="2006-0713-0013-0001" />
 
             <android.luna.ViewUi.widget.SettingItemTextViewVer
+                android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                app:textview2TextTitle="Install Date :"
+                app:textview2TextTitle="@string/SVR_INFO_TITLE_MACHINE_INSTALL_DATE"
                 app:textview2TextValue="2018-01-01" />
 
 

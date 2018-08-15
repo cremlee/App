@@ -501,28 +501,49 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         return _smartSettingsIntegerDao;
     }
     //###############################################################################################//
+    //###############################v###########Machine info part#####################################//
+    //###############################################################################################//
+    private Dao<MachineInfo,Integer> _machineInfoIntegerDao =null;
+
+    public Dao<MachineInfo,Integer> get_machineInfoIntegerDao()
+    {
+        if(_machineInfoIntegerDao ==null)
+        {
+            try {
+                _machineInfoIntegerDao = getDao(MachineInfo.class);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return _machineInfoIntegerDao;
+    }
     //###############################################################################################//
     //###############################################################################################//
+    //###############################################################################################//
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource) {
-        /*
-        TableUtils.createTable(connectionSource, SchedulerCopy.class);
-        TableUtils.createTable(connectionSource, AdditionalEvent.class);
-        TableUtils.createTable(connectionSource, SchedulerDetailCopy.class);
-        */
-        /*TableUtils.createTable(connectionSource, Count.class);
-        TableUtils.createTable(connectionSource, CleanProgramCount.class);
-        TableUtils.createTable(connectionSource, Calibration.class);
-        TableUtils.createTable(connectionSource, TemperatureSetting.class);
-        TableUtils.createTable(connectionSource, AdditionalSetting.class);
-        TableUtils.createTable(connectionSource, DisplaySetting.class);
-        TableUtils.createTable(connectionSource, PinSetting.class);
-        TableUtils.createTable(connectionSource, DrinkSetting.class);
-        TableUtils.createTable(connectionSource, CanisterSetting.class);
-        TableUtils.createTable(connectionSource, MachineInfo.class);
-        TableUtils.createTable(connectionSource, LayoutSetting.class);
-        TableUtils.createTable(connectionSource, HardwareTest.class);
-        TableUtils.createTable(connectionSource, MasterTotalBeverage.class);*/
+        createtable(connectionSource);
+        InitDatabase();
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource, int i, int i1) {
+
+    }
+
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+
+    private void createtable(ConnectionSource connectionSource)
+    {
+        try {
+            TableUtils.createTable(connectionSource, MachineInfo.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         try {
             TableUtils.createTable(connectionSource, CanisterItemStock.class);
         } catch (SQLException e) {
@@ -698,28 +719,15 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
-        InitDatabase();
-        /*TableUtils.createTable(connectionSource, Maintenance.class);
-        TableUtils.createTable(connectionSource, Soldout.class);
-        TableUtils.createTable(connectionSource, SpiderDatastruct.class);
-        TableUtils.createTable(connectionSource, HardwareConfig.class);
-        TableUtils.createTable(connectionSource, TradeEvent.class);
-        TableUtils.createTable(connectionSource, CoinBoxItem.class);
-        TableUtils.createTable(connectionSource, IntelligentECO.class);*/
     }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource, int i, int i1) {
-
+    private void cleartable()
+    {
+        try {
+            TableUtils.dropTable(getConnectionSource(),SecretSettings.class,true);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-
-    @Override
-    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-    }
-
 
     private void InitDatabase()
     {
@@ -745,6 +753,11 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         }
         try {
             get_secretSettingsIntegerDao().createOrUpdate(new SecretSettings());
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            get_machineInfoIntegerDao().createOrUpdate(new MachineInfo());
         }catch (SQLException e) {
             e.printStackTrace();
         }

@@ -525,15 +525,13 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
                         @Override
                         public void FileSelect(int id) {
                             // TODO: 2018/7/2 change the language dismiss the popwin
-                            //refreshlanguage(id);
-                            getApp().setCurrent_language(id);
-
-                            if(languagechanged!=null)
-                            {
-                                languagechanged.updated();
+                            if(getApp().getCurrent_language()!=id) {
+                                getApp().setCurrent_language(id);
+                                if (languagechanged != null) {
+                                    languagechanged.updated();
+                                }
                             }
                             languagePopWindow.dismiss();
-
                         }
                     });
                 }

@@ -252,8 +252,8 @@ public class BeverageBasicFragment extends BaseFragment implements IIngredient<B
 
     private void ModifyPreselection()
     {
-        List<String> lstpre = new ArrayList<String>();
-        List<BeverageIngredient> beverageIngredients = new ArrayList<BeverageIngredient>();
+        List<String> lstpre = new ArrayList<>();
+        List<BeverageIngredient> beverageIngredients;
         try {
             beverageIngredients = app.getHelper().getBeverageIngredientDao().queryForEq("beveragePid", getBasic().getPid());
             if (beverageIngredients != null && beverageIngredients.size() > 0) {

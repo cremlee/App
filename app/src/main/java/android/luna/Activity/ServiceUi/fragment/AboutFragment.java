@@ -16,6 +16,7 @@ import evo.luna.android.R;
 
 public class AboutFragment extends Fragment {
     private SettingItemTextViewVer ver_android,ver_kernal,ver_database,ver_app,ver_mode,blue_mac;
+    private SettingItemTextViewVer name,id,date;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -26,6 +27,9 @@ public class AboutFragment extends Fragment {
 
     private  void InitView(View view)
     {
+        name = view.findViewById(R.id.name);
+        id = view.findViewById(R.id.id);
+        date = view.findViewById(R.id.date);
         blue_mac = view.findViewById(R.id.blue_mac);
         ver_mode= view.findViewById(R.id.ver_mode);
         ver_app= view.findViewById(R.id.ver_app);

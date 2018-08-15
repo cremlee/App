@@ -21,7 +21,7 @@
     <string name="setting_beverages">Beverages</string>
     <string name="beverage_maker">Beverage Maker</string>
     <string name="edit_beverage">Edit Beverage</string>
-    <string name="general_recipe_settings">Recipe Basic Settings</string>
+
     <string name="beverage_name">Beverage Name</string>
     <string name="change_recipe">Edit Recipe</string>
     <string name="drink_icon_picture">Beverage Icon Picture</string>
@@ -32,8 +32,6 @@
     <string name="add_recipe_settings">Recipe Custom Settings</string>
     <string name="add_ingradient">Add Ingredient</string>
     <string name="stoppable">Stoppable</string>
-    <string name="cup_sensor">Cup Sensor</string>
-    <string name="drink_price">Drink Price</string>
     <string name="brew_light">Brew Light</string>
     <string name="buzzer_sound">Buzzer Sound</string>
     <string name="dispense_type">Dispensing Mode</string>
@@ -911,7 +909,68 @@
     <string name="PL_REPORT_DATE">Report date:</string>
     <string name="PL_REPORT_ID">Employee ID:</string>
     <string name="PL_REPORT_UPLOAD">Upload</string>
+    <!--MainUI part-->
     <string name="MAIN_UI_OUT_OF_STOCK">Out of Stock</string>
     <string name="MAIN_UI_OUT_OF_USE">Not Available</string>
     <string name="MAIN_UI_OUT_OF_WASTER">Waster bin full</string>
+    <!--Service Part-->
+    <string name="SVR_ST_RB_TITLE_1">Status</string>
+    <string name="SVR_ST_RB_TITLE_2">Counter</string>
+    <string name="SVR_ST_RB_TITLE_3">Log</string>
+    <string name="SVR_ST_RB_TITLE_4">Help</string>
+    <string name="SVR_ST_RB_TITLE_5">About</string>
+    <string name="SVR_ST_CANISTER">Canister Status</string>
+    <string name="SVR_ST_BIN">Bin Status</string>
+    <string name="SVR_ST_BIN_NAME">Wasterbin</string>
+    <string name="SVR_ST_EVENT">Machine Events</string>
+    <string name="SVR_ST_SENSOR">Sensor status</string>
+    <!--计数部分-->
+    <string name="SVR_CT_TITLE_BEVERAGE">Beverages</string>
+    <string name="SVR_CT_TITLE_RESET">Reset Counters</string>
+    <string name="SVR_CT_TOTAL_WATER">Total Water</string>
+    <string name="SVR_CT_TOTAL_BEVERAGE">Total Beverages</string>
+    <string name="SVR_CT_TITLE_ClEAN">Cleaning Programs</string>
+    <!--关于本机部分-->
+    <string name="SVR_INFO_TITLE_SYSTEM">System info</string>
+    <string name="SVR_INFO_TITLE_SYSTEM_VERSION">Android version</string>
+    <string name="SVR_INFO_TITLE_SYSTEM_KERNAL">Kernal</string>
+    <string name="SVR_INFO_TITLE_SYSTEM_MODEL">Model</string>
+    <string name="SVR_INFO_TITLE_SYSTEM_BLUE">Bluetooth Adress</string>
+    <string name="SVR_INFO_TITLE_APP">Application info</string>
+    <string name="SVR_INFO_TITLE_APP_SW">Software Version</string>
+    <string name="SVR_INFO_TITLE_APP_DB">Database Version</string>
+    <string name="SVR_INFO_TITLE_FIRMWARE">Firmware info</string>
+    <string name="SVR_INFO_TITLE_FIRMWARE_IO">IO Version</string>
+    <string name="SVR_INFO_TITLE_FIRMWARE_PAY">Payment Version</string>
+    <string name="SVR_INFO_TITLE_MACHINE">Machine info</string>
+    <string name="SVR_INFO_TITLE_MACHINE_NAME">Machine name</string>
+    <string name="SVR_INFO_TITLE_MACHINE_NO">Serial No</string>
+    <string name="SVR_INFO_TITLE_MACHINE_INSTALL_DATE">Install date</string>
+     <!--Drink part-->
+    <string name="SVR_DRINK_MENU_BEVERAGE">Beverage Editor</string>
+    <string name="SVR_DRINK_MENU_INGREDIENT">Ingredient Editor</string>
+    <string name="SVR_DRINK_MENU_GROUP">Group Editor</string>
+    <string name="SVR_DRINK_MENU_NAME">Beverage Name Editor</string>
+    <string name="SVR_DRINK_MENU_TEST">Test</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC">Basic part</string>
+    <string name="SVR_DRINK_BEVERAGE_UI">UI part</string>
+    <string name="SVR_DRINK_BEVERAGE_INGREDIENT">Ingredient part</string>
+    <string name="SVR_DRINK_BEVERAGE_ADD">Add new beverage</string>
+    <!--基础部分-->
+    <string name="SVR_DRINK_BEVERAGE_BASIC_TITLE">Recipe Basic Settings</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_NAME">Beverage Name</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_CUP">Cup Sensor</string>
+    <string name="SVR_DRINK_BEVERAGE_BASIC_PRICE">Drink Price</string>
+    <!--ViewUI part-->
+    <string name="VIEW_UI_TEMPERATURE">Temperature: </string>
+    <string name="VIEW_UI_TOP_5">TOP 5</string>
+
+    <!--通用部分-->
+    <string name="MENU_BACK">Back</string>
+    <string name="MENU_SAVE">Save</string>
+    <string name="MENU_NEXT">Next</string>
+    <string name="MENU_START">Start</string>
+    <string name="MENU_DONE">Done</string>
+    <string name="MENU_CLOSE">Close</string>
+    <string name="MENU_OPEN">Open</string>
 </resources>
