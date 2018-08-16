@@ -1040,6 +1040,11 @@
     <!--机器清洁部分-->
     <string name="SVR_CLEAN_MENU_CLEAN">Clean &amp; Rinse</string>
     <string name="SVR_CLEAN_MENU_SCHEDULE">Scheduler</string>
+
+    <!--Payment part-->
+    <string name="SVR_PAY_MENU_NORMAL">Normal Settings</string>
+    <string name="SVR_PAY_MENU_ONLINE">Online pay</string>
+    <string name="SVR_PAY_MENU_HPY">Happy hour</string>
     <!--ViewUI part-->
     <string name="VIEW_UI_TEMPERATURE">Temperature: </string>
     <string name="VIEW_UI_TOP_5">TOP 5</string>

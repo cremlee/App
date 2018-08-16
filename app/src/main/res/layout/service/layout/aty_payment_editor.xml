@@ -12,7 +12,7 @@
         <TextView
             android:id="@+id/btn_back"
             android:textSize="42sp"
-            android:text="@string/back"
+            android:text="@string/MENU_BACK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>
@@ -40,7 +40,7 @@
                 android:checked="false"
                 android:gravity="center_horizontal|bottom"
                 android:paddingTop="30dp"
-                android:text="Normal Setting"
+                android:text="@string/SVR_PAY_MENU_NORMAL"
                 android:textColor="@drawable/tab_selector_tv_color"
                 android:textSize="28sp" />
 
@@ -54,7 +54,7 @@
                 android:checked="false"
                 android:gravity="center_horizontal|bottom"
                 android:paddingTop="30dp"
-                android:text="Online pay"
+                android:text="@string/SVR_PAY_MENU_ONLINE"
                 android:textColor="@drawable/tab_selector_tv_color"
                 android:textSize="28sp" />
             <RadioButton
@@ -67,7 +67,7 @@
                 android:checked="false"
                 android:gravity="center_horizontal|bottom"
                 android:paddingTop="30dp"
-                android:text="Happy hour"
+                android:text="@string/SVR_PAY_MENU_HPY"
                 android:textColor="@drawable/tab_selector_tv_color"
                 android:textSize="28sp" />
 

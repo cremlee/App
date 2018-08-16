@@ -1050,6 +1050,10 @@
     <!--机器清洁部分-->
     <string name="SVR_CLEAN_MENU_CLEAN">清洁保养</string>
     <string name="SVR_CLEAN_MENU_SCHEDULE">计划</string>
+    <!--Payment part-->
+    <string name="SVR_PAY_MENU_NORMAL">通用设置</string>
+    <string name="SVR_PAY_MENU_ONLINE">在线支付</string>
+    <string name="SVR_PAY_MENU_HPY">促销计划</string>
     <!--ViewUI part-->
     <string name="VIEW_UI_TEMPERATURE">当前温度: </string>
     <string name="VIEW_UI_TOP_5">前五</string>
