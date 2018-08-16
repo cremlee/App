@@ -36,6 +36,7 @@ public class FileHelper {
     public static final String PATH_DRINK_BKG= getSDCardDirPath()+"/crem/drinkbg/";
     public static final String PATH_BRAND= getSDCardDirPath()+"/crem/banner/";
     public static final String PATH_SCREEN_SAVER= getSDCardDirPath()+"/crem/screensave/";
+    public static final String PATH_SCREEN_LOGO= getSDCardDirPath()+"/crem/cup/";
     public static final String PATH_HELP_USER= getSDCardDirPath()+"/crem/help/user/";
     public static final String PATH_HELP_SERVICE= getSDCardDirPath()+"/crem/help/service/";
     public static final String PATH_PROFILE= getSDCardDirPath()+"/crem/profile/";
@@ -46,7 +47,7 @@ public class FileHelper {
     public static final String PATH_CLEAN= getSDCardDirPath()+"/crem/machine/clean/";
     public static final String FILE_DEVICE_CONFIG= PATH_CONFIG+"config.xmld";
     public static final String PATH_LANG= "/update/language/";
-
+    public static final String PATH_KEY= getSDCardDirPath()+"/crem/key/";
     public static final String PATH_CERT_FILE= getSDCardDirPath()+"/crem/machine/cert/apiclient_cert.p12";
 
     public static final String PATH_DB_MAIN= "/data/data/evo.luna.android/databases/";
@@ -543,8 +544,9 @@ public class FileHelper {
         if ((src == null) || (destPath== null)) {
             return result;
         }
+        new File(destPath).mkdirs();
         File dest= new File(destPath + FileName);
-        if (dest!= null && dest.exists()) {
+        if (dest.exists()) {
             dest.delete(); // delete file
         }
         try {

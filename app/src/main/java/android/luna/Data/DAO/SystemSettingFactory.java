@@ -10,6 +10,8 @@ import android.luna.Data.module.System.DisplaySoundSettings;
 import android.luna.Data.module.System.SecretSettings;
 import android.luna.Data.module.System.SmartSettings;
 
+import java.sql.SQLException;
+
 /**
  * Created by Lee.li on 2018/8/7.
  */
@@ -34,7 +36,11 @@ public class SystemSettingFactory extends BaseDaobak implements ISystemSettingFa
 
                 @Override
                 public void modify(SmartSettings smartSettings) {
-
+                    try {
+                        getHelper().get_smartSettingsIntegerDao().update(smartSettings);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 @Override
@@ -49,6 +55,17 @@ public class SystemSettingFactory extends BaseDaobak implements ISystemSettingFa
 
                 @Override
                 public SmartSettings query() {
+                    try {
+                        SmartSettings ret = getHelper().get_smartSettingsIntegerDao().queryForId(1);
+                        if(ret ==null)
+                        {
+                            getHelper().get_smartSettingsIntegerDao().create(new SmartSettings());
+                            return getHelper().get_smartSettingsIntegerDao().queryForId(1);
+                        }
+                        return ret;
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                     return null;
                 }
             };
@@ -66,7 +83,11 @@ public class SystemSettingFactory extends BaseDaobak implements ISystemSettingFa
 
                 @Override
                 public void modify(SecretSettings secretSettings) {
-
+                    try {
+                        getHelper().get_secretSettingsIntegerDao().update(secretSettings);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 @Override
@@ -81,6 +102,17 @@ public class SystemSettingFactory extends BaseDaobak implements ISystemSettingFa
 
                 @Override
                 public SecretSettings query() {
+                    try {
+                        SecretSettings ret = getHelper().get_secretSettingsIntegerDao().queryForId(1);
+                        if(ret ==null)
+                        {
+                            getHelper().get_secretSettingsIntegerDao().create(new SecretSettings());
+                            return getHelper().get_secretSettingsIntegerDao().queryForId(1);
+                        }
+                        return ret;
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                     return null;
                 }
             };
@@ -98,7 +130,11 @@ public class SystemSettingFactory extends BaseDaobak implements ISystemSettingFa
 
                 @Override
                 public void modify(DisplaySoundSettings displaySoundSettings) {
-
+                    try {
+                        getHelper().get_displaySoundSettingsIntegerDao().update(displaySoundSettings);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 @Override
@@ -113,6 +149,17 @@ public class SystemSettingFactory extends BaseDaobak implements ISystemSettingFa
 
                 @Override
                 public DisplaySoundSettings query() {
+                    try {
+                        DisplaySoundSettings ret = getHelper().get_displaySoundSettingsIntegerDao().queryForId(1);
+                        if(ret ==null)
+                        {
+                            getHelper().get_displaySoundSettingsIntegerDao().create(new DisplaySoundSettings());
+                            return getHelper().get_displaySoundSettingsIntegerDao().queryForId(1);
+                        }
+                        return ret;
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                     return null;
                 }
             };

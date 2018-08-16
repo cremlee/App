@@ -3,19 +3,19 @@
     <tab
         id="@+id/tab_nutrition"
         icon ="@android:drawable/ic_menu_search"
-        title="Nutrition"
+        title="@string/MENU_BOTTOM_NUTRITION"
 
         />
     <tab
         id="@+id/tab_contain"
         icon ="@android:drawable/ic_dialog_dialer"
-        title="Contains"
+        title="@string/MENU_BOTTOM_CONTAIN"
 
         />
     <tab
         id="@+id/tab_import"
         icon ="@android:drawable/ic_input_add"
-        title="Friends"
+        title="@string/MENU_BOTTOM_POWDER"
 
         />
 </tabs>

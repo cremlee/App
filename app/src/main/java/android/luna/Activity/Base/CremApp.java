@@ -413,6 +413,7 @@ public class CremApp extends Application {
             if(_screenSettings == null )
             {
                 _screenSettings = new ScreenSettings();
+                _screenSettings.setTextcolor(0xffffffff);
                 try {
                     getHelper().get_ScreenSettingsDao().create(_screenSettings);
                 } catch (SQLException e) {

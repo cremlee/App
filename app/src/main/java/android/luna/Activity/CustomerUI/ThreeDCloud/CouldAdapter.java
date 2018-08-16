@@ -2,6 +2,8 @@ package android.luna.Activity.CustomerUI.ThreeDCloud;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.luna.Activity.Base.BaseActivity;
+import android.luna.Activity.Base.CremApp;
 import android.luna.Data.CustomerUI.DrinkMenuButton;
 import android.luna.Utils.PictureManager;
 import android.luna.ViewUi.threeDCloudUi.TagsAdapter;
@@ -23,11 +25,12 @@ import evo.luna.android.R;
 public class CouldAdapter extends TagsAdapter {
     private List<DrinkMenuButton> drinkMenuButtonList;
     private Context context;
-
+    private CremApp app;
     public  CouldAdapter(Context context,List<DrinkMenuButton> data)
     {
         this.context =context;
         this.drinkMenuButtonList= data;
+        app = ((BaseActivity)context).getApp();
     }
     @Override
     public int getCount() {
@@ -40,7 +43,8 @@ public class CouldAdapter extends TagsAdapter {
         ImageView imageView = view.findViewById(R.id.drinkicon);
         TextView textView =view.findViewById(R.id.drinkname);
         textView.setText(drinkMenuButtonList.get(position).getName());
-        String path = drinkMenuButtonList.get(position).getIconpath();//== null?"":drinkMenuButtonList.get(position).getIconpath();
+        textView.setTextColor(app.get_screenSettings_instance().getTextcolor());
+        String path = drinkMenuButtonList.get(position).getIconpath();
         if(path!=null) {
             Bitmap bitmap = PictureManager.getInstance().getBitmapFromMemCache(path);
             if (bitmap == null) {

@@ -37,6 +37,10 @@ public class WXPayConfigImpl extends WXPayConfig{
 
     private String out_trade_no;
 
+    public void reloadWechatkey()
+    {
+        KeyInstance = KeyManager.getWechatkey();
+    }
     /**
      * zhengshu jiazai
      * @throws Exception

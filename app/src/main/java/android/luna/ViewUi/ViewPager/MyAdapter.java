@@ -2,6 +2,8 @@ package android.luna.ViewUi.ViewPager;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.luna.Activity.Base.BaseActivity;
+import android.luna.Activity.Base.CremApp;
 import android.luna.Data.CustomerUI.DrinkMenuButton;
 import android.luna.Utils.PictureManager;
 import evo.luna.android.R;
@@ -29,6 +31,7 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.ViewHolder> imple
     private List<DrinkMenuButton> drinkMenuButtonList;
     private Context context;
     private boolean fromcreate;
+    private CremApp app;
     @Override
     public void onClick(View view) {
         if (mOnItemClickListener != null) {
@@ -45,7 +48,7 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.ViewHolder> imple
     {
         this.drinkMenuButtonList = drinkMenuButtonList;
         this.context = context;
-
+        app = ((BaseActivity)context).getApp();
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -88,6 +91,7 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.ViewHolder> imple
             holder.itemView.setClickable(false);
         }
         holder.tvname.setText(drinkMenuButtonList.get(position).getName());
+        holder.tvname.setTextColor(app.get_screenSettings_instance().getTextcolor());
         holder.tvprice.setText(drinkMenuButtonList.get(position).getPrice()==0?"":Float.toString(drinkMenuButtonList.get(position).getPrice()));
         holder.drinkicon.setVisibility(drinkMenuButtonList.get(position).getName().equals("")?View.INVISIBLE:View.VISIBLE);
         String path = drinkMenuButtonList.get(position).getIconpath();

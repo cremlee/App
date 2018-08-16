@@ -23,4 +23,54 @@ public class SmartSettings implements Serializable{
     @DatabaseField(defaultValue = "0") //normal
     private int currentmode;
 
+    public SmartSettings() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getSmartmode() {
+        return smartmode;
+    }
+
+    public void setSmartmode(int smartmode) {
+        this.smartmode = smartmode;
+    }
+
+    public int getDaylightmode() {
+        return daylightmode;
+    }
+
+    public void setDaylightmode(int daylightmode) {
+        this.daylightmode = daylightmode;
+    }
+
+    public String getDlstart() {
+        return dlstart;
+    }
+
+    public void setDlstart(String dlstart) {
+        this.dlstart = dlstart;
+    }
+
+    public String getDlstop() {
+        return dlstop;
+    }
+
+    public void setDlstop(String dlstop) {
+        this.dlstop = dlstop;
+    }
+
+    public int getCurrentmode() {
+        return currentmode;
+    }
+
+    public void setCurrentmode(int currentmode) {
+        this.currentmode = currentmode;
+    }
 }

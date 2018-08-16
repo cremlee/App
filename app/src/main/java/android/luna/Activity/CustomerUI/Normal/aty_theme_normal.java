@@ -8,6 +8,7 @@ import android.luna.Activity.CustomerUI.BaseUi.BaseUi;
 import android.luna.Activity.CustomerUI.Gallery.aty_customer_ui_11;
 import android.luna.Activity.CustomerUI.Gallery.aty_theme_gallery;
 import android.luna.Data.CustomerUI.DrinkMenuButton;
+import android.luna.Utils.ImageConvertFactory;
 import android.luna.Utils.Lang.LangLocalHelper;
 import android.luna.Utils.MyAnimation.Rotate3D;
 import android.luna.Utils.PictureManager;
@@ -231,8 +232,9 @@ public class aty_theme_normal extends BaseUi implements GestureDetector.OnGestur
         final TextView drinkname =   view.findViewById(R.id.drinkname);
         final TextView drinkprice =  view.findViewById(R.id.drinkprice);
         final TextView drinkstate =  view.findViewById(R.id.drinkstate);
-
+        final ImageView cuplogo = view.findViewById(R.id.cuplogo);
         drinkname.setText(beverage.getName());
+        drinkname.setTextColor(getApp().get_screenSettings_instance().getTextcolor());
         drinkprice.setText("");
         if(ispayment() && beverage.getPrice()>0)
         {
@@ -242,6 +244,17 @@ public class aty_theme_normal extends BaseUi implements GestureDetector.OnGestur
             drinkicon.setLabelTextSize(18);
             drinkicon.setLabelText(Float.toString(beverage.getPrice()));
         }
+        if(getApp().get_screenSettings_instance().getLogoflag()==1)
+        {
+            cuplogo.setVisibility(View.VISIBLE);
+            cuplogo.setImageBitmap(ImageConvertFactory.getsavefrompath(getApp().get_screenSettings_instance().getLogopath(),40,40));
+        }
+        else
+        {
+            cuplogo.setVisibility(View.GONE);
+            cuplogo.setImageBitmap(null);
+        }
+
         String path = beverage.getIconpath();//== null?"":drinkMenuButtonList.get(position).getIconpath();
         if(path!=null) {
             Bitmap bitmap = PictureManager.getInstance().getBitmapFromMemCache(path);

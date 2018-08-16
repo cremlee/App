@@ -57,7 +57,7 @@ public class DialChart01View extends GraphicalView {
 	private String TAG = "DialChart01View";	
 	
 	private DialChart chart = new DialChart();		
-	private float mPercentage = 0.9f;
+	private float mPercentage = 0.0f;
 	
 	public DialChart01View(Context context) {
 		super(context);

@@ -991,6 +991,7 @@
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_INSTANT">速溶饮料</string>
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_WATER">水</string>
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_MILK">新鲜牛奶</string>
+    <string name="SVR_DRINK_INGREDIENT_ADD">新增配方</string>
     <!--意式浓缩部分-->
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_TITLE">意式浓缩配方设置</string>
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_NAME">配方名称</string>
@@ -1003,6 +1004,52 @@
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_BREW_2">二阶段时间</string>
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_DRY">排空时间</string>
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_TOTAL">总计时间</string>
+    <!--速溶饮料部分-->
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_TITLE">速溶饮料配方设置</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_NAME">配方名称</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_WATER">冲泡水类型</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_SPEED">搅拌速度</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_VOLUME">水量</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_MIXER">搅拌设置</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_POWDER_TYPE">速溶粉类型</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_POWDER_AMOUNT">速溶粉重量</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_PRE_VOLUME">预冲泡水量</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_PRE_DELAY">预冲泡等待时间</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_POST_VOLUME">冲洗水量</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_POST_DELAY">冲洗等待时间</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_TOTAL">总计时间</string>
+    <!--水部分-->
+    <string name="SVR_DRINK_INGREDIENT_WATER_TITLE">水配方设置</string>
+    <string name="SVR_DRINK_INGREDIENT_WATER_NAME">配方名称</string>
+    <string name="SVR_DRINK_INGREDIENT_WATER_TOTAL">总计时间</string>
+    <string name="SVR_DRINK_INGREDIENT_WATER_TYPE">冲泡水类型</string>
+    <string name="SVR_DRINK_INGREDIENT_WATER_VOLUME">水量</string>
+    <!--机器设置部分-->
+    <string name="SVR_SETTING_MENU_SCREEN">显示选项</string>
+    <string name="SVR_SETTING_MENU_CANISTER">料斗选项</string>
+    <string name="SVR_SETTING_MENU_MACHINE">机器参数</string>
+    <string name="SVR_SETTING_MENU_PAYMENT">支付选项</string>
+    <!--显示设置部分-->
+    <string name="SVR_SETTING_SCREEN_THEME">主界面风格</string>
+    <string name="SVR_SETTING_SCREEN_FONT">字体颜色</string>
+    <string name="SVR_SETTING_SCREEN_BACKGROUND">背景图片</string>
+    <string name="SVR_SETTING_SCREEN_BRAND">商标图片</string>
+    <string name="SVR_SETTING_SCREEN_SAVE_TIME">屏保间隔</string>
+    <string name="SVR_SETTING_SCREEN_SAVE_IMAGE">屏保资源</string>
+    <string name="SVR_SETTING_SCREEN_ECO_MSG">ECO 显示信息</string>
+    <string name="SVR_SETTING_SCREEN_ECO_IMAGE">ECO 显示图片</string>
+    <string name="SVR_SETTING_SCREEN_CUP">使用杯子商标</string>
+    <string name="SVR_SETTING_SCREEN_LANGUAGE">开启语言选择</string>
+    <string name="SVR_SETTING_SCREEN_FAVERITE">开启推送</string>
+    <string name="SVR_SETTING_SCREEN_PROFILE">开启个性化</string>
+    <string name="SVR_SETTING_SCREEN_LAYOUT_TITLE">界面布局</string>
+    <string name="SVR_SETTING_SCREEN_LAYOUT">界面布局编辑器</string>
+    <!--Canister设置部分-->
+    <string name="SVR_SETTING_CANISTER_TITLE">粉包类型</string>
+    <string name="SVR_SETTING_CANISTER_DEFAULT">默认设置</string>
+    <!--机器清洁部分-->
+    <string name="SVR_CLEAN_MENU_CLEAN">清洁保养</string>
+    <string name="SVR_CLEAN_MENU_SCHEDULE">计划</string>
     <!--ViewUI part-->
     <string name="VIEW_UI_TEMPERATURE">当前温度: </string>
     <string name="VIEW_UI_TOP_5">前五</string>
@@ -1015,4 +1062,10 @@
     <string name="MENU_CLOSE">关闭</string>
     <string name="MENU_OPEN">打开</string>
     <string name="MENU_EXIT">退出</string>
+
+    <string name="MENU_BOTTOM_NUTRITION">营养</string>
+    <string name="MENU_BOTTOM_CONTAIN">成份</string>
+    <string name="MENU_BOTTOM_POWDER">料斗设置</string>
+
+    <string name="LABLE_FREE">免费</string>
 </resources>

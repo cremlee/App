@@ -286,7 +286,7 @@ public class aty_screensetting_main extends BaseActivity implements View.OnClick
             case R.id.logoPictureItem:
                 intent = new Intent(aty_screensetting_main.this,aty_uiRes_selector.class);
                 intent.putExtra("path", _screenSettings.getLogopath());
-                intent.putExtra("folder", FileHelper.PATH_SCREEN_SAVER);
+                intent.putExtra("folder", FileHelper.PATH_SCREEN_LOGO);
                 intent.putExtra("reqCode", Constant.REQ_SCR_CUP);
                 startActivityForResult(intent, Constant.REQ_SCR_CUP);
                 break;

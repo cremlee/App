@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.luna.Activity.Base.AppManager;
 import android.luna.Activity.Base.BaseActivity;
 import android.luna.Activity.Base.Constant;
@@ -38,6 +39,7 @@ import android.luna.Data.module.PersonItem;
 import android.luna.Utils.AndroidUtils_Ext;
 import android.luna.Utils.BASE64Decoder;
 import android.luna.Utils.FileHelper;
+import android.luna.Utils.ImageConvertFactory;
 import android.luna.Utils.Key.KeyManager;
 import android.luna.Utils.Logger.EvoTrace;
 import android.luna.Utils.PictureManager;
@@ -127,7 +129,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
     private PaymentSetting _paymentSetting;
     private PaymentDao paymentDao;
     private FloatingActionButton top1,top2,top3;
-
+    private RelativeLayout ui_bg;
 
 
     public interface Languagechanged
@@ -148,6 +150,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         }
         handler.sendEmptyMessageDelayed(WATH, AndroidUtils_Ext.getScreenSaverTime(getApp().get_screenSettings_instance().getScreensaverflag()));
     }
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -181,7 +184,6 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getApp().getHelper().testadd();
-        //addDragView();
         getApp().bindAllService();
         warningAdapter = new MachineWarningAdapter(getApp().getallMachineWarnList(),this);
         IntentFilter filter = new IntentFilter();
@@ -398,6 +400,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         top1 = findViewById(R.id.top1);
         top2 = findViewById(R.id.top2);
         top3 = findViewById(R.id.top3);
+        ui_bg = findViewById(R.id.ui_bg);
         setupview();
         InitFunctionLayout();
         StartTmClk();
@@ -594,16 +597,17 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         {
             if(basics_top5.size()>=1)
                 top1.setTitle("Top1 : "+basics_top5.get(0).getName());
-
             if(basics_top5.size()>=2)
                 top2.setTitle("Top2 : "+basics_top5.get(1).getName());
             if(basics_top5.size()>=3)
                 top3.setTitle("Top3 : "+basics_top5.get(2).getName());
-
         }else
         {
             menu_fav.setVisibility(View.GONE);
         }
+        tv_comp_name.setTextColor(getApp().get_screenSettings_instance().getTextcolor());
+        tv_time.setTextColor(getApp().get_screenSettings_instance().getTextcolor());
+        ui_bg.setBackground(new BitmapDrawable(ImageConvertFactory.getsavefrompath(getApp().get_screenSettings_instance().getMainbkgpath(),800,600)));
     }
     private void StartTmClk()
     {

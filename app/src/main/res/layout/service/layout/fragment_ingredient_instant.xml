@@ -14,7 +14,7 @@
         <android.luna.ViewUi.widget.SettingItemTextView1
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview1Text="@string/edt_ingredient_bscset"
+            cqube:textview1Text="@string/SVR_DRINK_INGREDIENT_INSTANT_TITLE"
             cqube:textview1TextBackground="@color/title_text_color2"
             cqube:textview1TextColor="@android:color/white" />
         <!-- Ingredient Name -->
@@ -23,7 +23,7 @@
             android:id="@+id/ingredientNameItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="@string/edt_ingredient_name"
+            cqube:textview2TextTitle="@string/SVR_DRINK_INGREDIENT_INSTANT_NAME"
             cqube:textview2TextValue="Instant" />
 
         <!-- Whipper Speed -->
@@ -35,7 +35,7 @@
             cqube:sbCur="0"
             cqube:sbMax="100"
             cqube:sbMin="0"
-            cqube:sbName="@string/edt_ingredient_wipperspd"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_INSTANT_SPEED"
             cqube:sbUnit="%" />
 
         <!--
@@ -50,7 +50,7 @@
             cqube:sbCur="5"
             cqube:sbMax="150"
             cqube:sbMin="5"
-            cqube:sbName="@string/edt_ingredient_watervolume"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_INSTANT_VOLUME"
             cqube:sbUnit="ml" />
 
         <LinearLayout
@@ -61,7 +61,7 @@
             android:layout_marginLeft="30dp"
             android:orientation="horizontal">
             <TextView
-                android:text="@string/EDT_ING_AD_MIX"
+                android:text="@string/SVR_DRINK_INGREDIENT_INSTANT_MIXER"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -89,7 +89,7 @@
             android:id="@+id/package1TypeItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:dropdownTextName="@string/edt_ingredient_pdttype"
+            cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_INSTANT_POWDER_TYPE"
             cqube:dropdownTextValue="None" />
 
         <!--
@@ -104,7 +104,7 @@
             cqube:sbCur="10"
             cqube:sbMax="30"
             cqube:sbMin="0"
-            cqube:sbName="@string/edt_ingredient_pdtamt"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_INSTANT_POWDER_AMOUNT"
             cqube:sbUnit="g" />
 
         <!--
@@ -148,7 +148,7 @@
             cqube:sbCur="1"
             cqube:sbMax="15"
             cqube:sbMin="1"
-            cqube:sbName="@string/edt_ingredient_prevolume"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_INSTANT_PRE_VOLUME"
             cqube:sbUnit="ml" />
 
         <!-- Preflush pause time -->
@@ -160,7 +160,7 @@
             cqube:sbCur="1"
             cqube:sbMax="5"
             cqube:sbMin="0"
-            cqube:sbName="@string/edt_ingredient_pret"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_INSTANT_PRE_DELAY"
             cqube:sbUnit="s" />
 
         <!-- After Flush Volume -->
@@ -172,7 +172,7 @@
             cqube:sbCur="1"
             cqube:sbMax="15"
             cqube:sbMin="1"
-            cqube:sbName="@string/edt_ingredient_postvolume"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_INSTANT_POST_VOLUME"
             cqube:sbUnit="ml" />
 
         <!-- PostFlush pause time -->
@@ -184,7 +184,7 @@
             cqube:sbCur="3"
             cqube:sbMax="5"
             cqube:sbMin="0"
-            cqube:sbName="@string/edt_ingredient_postt"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_INSTANT_POST_DELAY"
             cqube:sbUnit="s" />
 
 
@@ -198,7 +198,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             cqube:dropdownItems="Cold water#Warm water#Hot warm water#Hot water"
-            cqube:dropdownTextName="@string/edt_ingredient_watertype"
+            cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_INSTANT_WATER"
             cqube:dropdownTextValue="None"
             cqube:dropdownValues="2#1#3#0" />
 
@@ -211,7 +211,7 @@
             android:id="@+id/totalTimeItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="@string/edt_ingredient_totaltime"
+            cqube:textview2TextTitle="@string/SVR_DRINK_INGREDIENT_INSTANT_TOTAL"
             cqube:textview2TextValue="20s" />
 
        <!-- <evo.luna.android.widget.NumberCircleProgressBar

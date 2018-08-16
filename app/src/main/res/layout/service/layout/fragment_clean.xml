@@ -12,14 +12,14 @@
             android:layout_margin="30dp"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Clean and Rinse"
+            android:text="@string/SVR_CLEAN_MENU_CLEAN"
             android:layout_height="match_parent" />
         <Button
             android:id="@+id/btn_schedule"
             android:layout_margin="30dp"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Schedule"
+            android:text="@string/SVR_CLEAN_MENU_SCHEDULE"
             android:layout_height="match_parent" />
         <Button
             android:visibility="invisible"

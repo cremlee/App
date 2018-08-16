@@ -7,12 +7,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.lid.lib.LabelImageView
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <com.lid.lib.LabelImageView
                 android:id="@+id/drinkicon"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-    />
+                android:layout_height="match_parent"
+                />
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/cuplogo"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
         <TextView
             android:id="@+id/drinkname"
             android:layout_width="wrap_content"

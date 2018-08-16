@@ -394,7 +394,7 @@ public class aty_ingrendient_maker extends BaseActivity implements View.OnClickL
             e.printStackTrace();
             ingredientList =null;
         }
-        mDatas.add((DrinkBean) new DrinkBean(999,"Add new ingredient","",false,false).setTop(true).setBaseIndexTag(INDEX_STRING_TOP));
+        mDatas.add((DrinkBean) new DrinkBean(999,getString(R.string.SVR_DRINK_INGREDIENT_ADD),"",false,false).setTop(true).setBaseIndexTag(INDEX_STRING_TOP));
         if(ingredientList!=null) {
             for (Ingredient item: ingredientList )
             {

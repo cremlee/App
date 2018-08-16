@@ -475,7 +475,7 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         return _displaySoundSettingsIntegerDao;
     }
 
-    private Dao<SecretSettings,Integer> get_secretSettingsIntegerDao()
+    public Dao<SecretSettings,Integer> get_secretSettingsIntegerDao()
     {
         if(_secretSettingsIntegerDao ==null)
         {
@@ -488,7 +488,7 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         return _secretSettingsIntegerDao;
     }
 
-    private Dao<SmartSettings,Integer> get_smartSettingsIntegerDao()
+    public Dao<SmartSettings,Integer> get_smartSettingsIntegerDao()
     {
         if(_smartSettingsIntegerDao ==null)
         {

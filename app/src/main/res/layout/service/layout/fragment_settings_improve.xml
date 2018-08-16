@@ -11,14 +11,14 @@
            app:layout_columnWeight="1"
            app:layout_gravity="fill"
            android:layout_margin="30dp"
-            android:text="Screen Settings" />
+            android:text="@string/SVR_SETTING_MENU_SCREEN" />
         <Button
             android:id="@+id/btn_canistersetting"
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"
             app:layout_gravity="fill"
             android:layout_margin="30dp"
-            android:text="Canister Settings" />
+            android:text="@string/SVR_SETTING_MENU_CANISTER" />
         <Button
 
             android:id="@+id/btn_machinesetting"
@@ -26,7 +26,7 @@
             app:layout_columnWeight="1"
             app:layout_gravity="fill"
             android:layout_margin="30dp"
-            android:text="Machine Settings" />
+            android:text="@string/SVR_SETTING_MENU_MACHINE" />
 
         <Button
             android:id="@+id/btn_payment"
@@ -34,7 +34,7 @@
             app:layout_columnWeight="1"
             app:layout_gravity="fill"
             android:layout_margin="30dp"
-            android:text="Payment Settings"
+            android:text="@string/SVR_SETTING_MENU_PAYMENT"
             />
        <!-- <Button
 

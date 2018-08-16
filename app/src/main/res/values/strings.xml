@@ -977,6 +977,7 @@
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_INSTANT">Instant</string>
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_WATER">Water</string>
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_MILK">Fresh Milk</string>
+    <string name="SVR_DRINK_INGREDIENT_ADD">Add new ingredient</string>
     <!--意式浓缩部分-->
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_TITLE">Espresso Settings</string>
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_NAME">Ingredient Name</string>
@@ -989,6 +990,56 @@
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_BREW_2">Brew Time 2</string>
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_DRY">Dry Brewer Time</string>
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_TOTAL">Total Time</string>
+    <!--速溶饮料部分-->
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_TITLE">Instant Settings</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_NAME">Ingredient Name</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_WATER">Water Type</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_SPEED">Whipper Speed</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_VOLUME">Water Volume</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_MIXER">Mixer Setting</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_POWDER_TYPE">Product Type</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_POWDER_AMOUNT">Product Amount</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_PRE_VOLUME">Preflush Volume</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_PRE_DELAY">Preflush Pause Time</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_POST_VOLUME">Postflush Volume</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_POST_DELAY">Postflush Pause Time</string>
+    <string name="SVR_DRINK_INGREDIENT_INSTANT_TOTAL">Total Time</string>
+    <!--水部分-->
+    <string name="SVR_DRINK_INGREDIENT_WATER_TITLE">Water Settings</string>
+    <string name="SVR_DRINK_INGREDIENT_WATER_NAME">Ingredient Name</string>
+    <string name="SVR_DRINK_INGREDIENT_WATER_TOTAL">Total Time</string>
+    <string name="SVR_DRINK_INGREDIENT_WATER_TYPE">Water Type</string>
+    <string name="SVR_DRINK_INGREDIENT_WATER_VOLUME">Water Volume</string>
+
+
+
+
+    <!--机器设置部分-->
+    <string name="SVR_SETTING_MENU_SCREEN">Screen settings</string>
+    <string name="SVR_SETTING_MENU_CANISTER">Canister settings</string>
+    <string name="SVR_SETTING_MENU_MACHINE">Machine settings</string>
+    <string name="SVR_SETTING_MENU_PAYMENT">Payment settings</string>
+    <!--显示设置部分-->
+    <string name="SVR_SETTING_SCREEN_THEME">Screen Theme</string>
+    <string name="SVR_SETTING_SCREEN_FONT">Font Color</string>
+    <string name="SVR_SETTING_SCREEN_BACKGROUND">Background Image</string>
+    <string name="SVR_SETTING_SCREEN_BRAND">Branding Image</string>
+    <string name="SVR_SETTING_SCREEN_SAVE_TIME">Screen Saver Activation Time</string>
+    <string name="SVR_SETTING_SCREEN_SAVE_IMAGE">Screen Saver Image</string>
+    <string name="SVR_SETTING_SCREEN_ECO_MSG">ECO Message</string>
+    <string name="SVR_SETTING_SCREEN_ECO_IMAGE">ECO Image</string>
+    <string name="SVR_SETTING_SCREEN_CUP">USE Cup Logo</string>
+    <string name="SVR_SETTING_SCREEN_LANGUAGE">Language Selection</string>
+    <string name="SVR_SETTING_SCREEN_FAVERITE">Show Faverite Button</string>
+    <string name="SVR_SETTING_SCREEN_PROFILE">Show Profile Button</string>
+    <string name="SVR_SETTING_SCREEN_LAYOUT_TITLE">Screen Layout</string>
+    <string name="SVR_SETTING_SCREEN_LAYOUT">Screen Layout Editor</string>
+    <!--Canister设置部分-->
+    <string name="SVR_SETTING_CANISTER_TITLE">Powder List</string>
+    <string name="SVR_SETTING_CANISTER_DEFAULT">Load Default</string>
+    <!--机器清洁部分-->
+    <string name="SVR_CLEAN_MENU_CLEAN">Clean &amp; Rinse</string>
+    <string name="SVR_CLEAN_MENU_SCHEDULE">Scheduler</string>
     <!--ViewUI part-->
     <string name="VIEW_UI_TEMPERATURE">Temperature: </string>
     <string name="VIEW_UI_TOP_5">TOP 5</string>
@@ -1002,4 +1053,10 @@
     <string name="MENU_CLOSE">Close</string>
     <string name="MENU_OPEN">Open</string>
     <string name="MENU_EXIT">Exit</string>
+
+    <string name="MENU_BOTTOM_NUTRITION">Nutrition</string>
+    <string name="MENU_BOTTOM_CONTAIN">Contains</string>
+    <string name="MENU_BOTTOM_POWDER">Power settings</string>
+
+    <string name="LABLE_FREE">Free</string>
 </resources>

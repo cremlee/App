@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:apps="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ui_bg"
     android:clickable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,7 +22,7 @@
             android:background="@android:color/transparent">
             <ImageView
                 android:id="@+id/image_banner"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent" />
             <!--showcompanyinfo-->
             <TextView
@@ -36,7 +36,7 @@
                 android:text="@string/company_name"
                 android:textColor="@android:color/background_light"
                 android:textSize="28sp"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
                 />
             <Button
                 android:layout_centerVertical="true"
@@ -96,49 +96,6 @@
 
         </RelativeLayout>
     </LinearLayout>
-    <android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu
-        android:layout_margin="8dp"
-        android:id="@+id/menu_fav"
-        apps:fab_labelsPosition="right"
-        apps:fab_addButtonSize="normal"
-        apps:fab_labelStyle="@style/menu_labels_style"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
-            android:id ="@+id/top1"
-            apps:fab_colorPressed="@android:color/holo_red_dark"
-            apps:fab_colorNormal="@android:color/holo_red_light"
-            apps:fab_icon="@drawable/coffee"
-            apps:fab_title="Top 1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
-            android:id ="@+id/top2"
-            apps:fab_title="Top 2"
-            apps:fab_icon="@drawable/bear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
-            android:id ="@+id/top3"
-            apps:fab_colorPressed="@android:color/holo_green_dark"
-            apps:fab_colorNormal="@android:color/holo_green_light"
-            apps:fab_title="Top 3"
-            apps:fab_icon="@drawable/butterfly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <!--<android.luna.ViewUi.FloatActionMenu.FloatingActionButton
-            apps:fab_title="All Drinks"
-            apps:fab_icon="@drawable/deer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
-            apps:fab_title="button5"
-            apps:fab_icon="@drawable/dolphin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />-->
-    </android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu>
     <ImageView
         android:layout_marginBottom="20dp"
         android:id="@+id/profile"
@@ -150,4 +107,50 @@
         android:padding="10dp"
         android:background="@drawable/button_corner"
         />
+    <android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu
+        android:id="@+id/menu_fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="53dp"
+        apps:fab_addButtonSize="normal"
+        apps:fab_labelStyle="@style/menu_labels_style"
+        apps:fab_labelsPosition="right">
+
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id="@+id/top1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            apps:fab_colorNormal="@android:color/holo_red_light"
+            apps:fab_colorPressed="@android:color/holo_red_dark"
+            apps:fab_icon="@drawable/coffee"
+            apps:fab_title="Top 1" />
+
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id="@+id/top2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            apps:fab_icon="@drawable/bear"
+            apps:fab_title="Top 2" />
+
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            android:id="@+id/top3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            apps:fab_colorNormal="@android:color/holo_green_light"
+            apps:fab_colorPressed="@android:color/holo_green_dark"
+            apps:fab_icon="@drawable/butterfly"
+            apps:fab_title="Top 3" />
+        <!--<android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            apps:fab_title="All Drinks"
+            apps:fab_icon="@drawable/deer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
+            apps:fab_title="button5"
+            apps:fab_icon="@drawable/dolphin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />-->
+    </android.luna.ViewUi.FloatActionMenu.FloatingActionsMenu>
 </RelativeLayout>

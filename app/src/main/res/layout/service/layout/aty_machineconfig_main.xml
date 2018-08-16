@@ -34,13 +34,11 @@
                 cqube:textview1TextBackground="@color/material_grey_600"
                 cqube:textview1TextColor="@android:color/white" />
             <!-- Brightness -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="72dp"
                 android:orientation="vertical" >
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -55,12 +53,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/mch_set_dislpay_txt1" />
-
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_screen_light_left" />
-
                     <SeekBar
                         android:id="@+id/seekBar"
                         style="@android:style/Widget.DeviceDefault.Light.SeekBar"
@@ -70,13 +66,11 @@
                         android:maxHeight="4dp"
                         android:progressDrawable="@drawable/seekbar_default"
                         android:thumb="@drawable/ic_settings_seekbar_thum" />
-
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_screen_light_right" />
                 </LinearLayout>
-
                 <View
                     android:id="@+id/line"
                     android:layout_width="match_parent"
@@ -123,6 +117,12 @@
                 cqube:textview1TextBackground="@color/material_grey_600"
                 cqube:textview1TextColor="@android:color/white" />
             <!-- fact for Qrcode -->
+            <android.luna.ViewUi.widget.SettingItemCheckBox
+                android:id="@+id/enableQrscanCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                cqube:checkBoxChecked="false"
+                cqube:checkBoxText="Enable Qrcode" />
             <android.luna.ViewUi.widget.SettingItemTextView2
                 android:id="@+id/qrcode_fact"
                 android:layout_width="match_parent"
@@ -131,7 +131,7 @@
                 cqube:textview2TextTitle="SecretKey for QrCode" />
             <!-- pin_service -->
             <android.luna.ViewUi.widget.SettingItemCheckBox
-                android:id="@+id/enableCanisterWarningCheck"
+                android:id="@+id/enableServicePinCheck"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 cqube:checkBoxChecked="false"
@@ -144,7 +144,7 @@
                 cqube:textview2TextTitle="@string/PIN_ENTER_SERVICE_PIN" />
             <!-- pin_service -->
             <android.luna.ViewUi.widget.SettingItemCheckBox
-                android:id="@+id/enableCanisterWarningCheck"
+                android:id="@+id/enableUserPinCheck"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 cqube:checkBoxChecked="false"
@@ -169,7 +169,7 @@
                 cqube:checkBoxChecked="false"
                 cqube:checkBoxText="Enable Smart ECO" />
             <android.luna.ViewUi.widget.SettingItemCheckBox
-                android:id="@+id/enableInteECO"
+                android:id="@+id/enableDaylight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 cqube:checkBoxChecked="false"

@@ -2,6 +2,8 @@ package android.luna.Activity.CustomerUI.Shopping.Adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.luna.Activity.Base.BaseActivity;
+import android.luna.Activity.Base.CremApp;
 import android.luna.Activity.CustomerUI.Gallery.Adapter.MachineWarningAdapter;
 import android.luna.Activity.CustomerUI.Shopping.model.OrderBean;
 import android.luna.Data.CustomerUI.DrinkMenuButton;
@@ -47,6 +49,7 @@ public class ShoppingAdapter extends BaseAdapter{
         mcontext = context;
         drinkMenuButtonList =data;
         orderBean = new OrderBean(data);
+        app = ((BaseActivity)mcontext).getApp();
     }
 
     public OrderBean getOrderBean() {
@@ -55,7 +58,8 @@ public class ShoppingAdapter extends BaseAdapter{
 
     private OrderBean orderBean;
     private Context mcontext;
-    private List<DrinkMenuButton> drinkMenuButtonList=null;
+    private CremApp app;
+    private List<DrinkMenuButton> drinkMenuButtonList;
     @Override
     public int getCount() {
         return drinkMenuButtonList==null?0:drinkMenuButtonList.size();
@@ -138,13 +142,14 @@ public class ShoppingAdapter extends BaseAdapter{
                 }
             });
             holder.drinkname.setText(item.getName());
+            holder.drinkname.setTextColor(app.get_screenSettings_instance().getTextcolor());
             holder.drinkicon.setLabelDistance(50);
             holder.drinkicon.setLabelHeight(30);
             holder.drinkicon.setLabelTextSize(18);
             if(item.getPrice()!=0 )
                 holder.drinkicon.setLabelText("$ "+Float.toString(item.getPrice()));
             else
-                holder.drinkicon.setLabelText("free");
+                holder.drinkicon.setLabelText(mcontext.getString(R.string.LABLE_FREE));
             String path = item.getIconpath();
             if(path!=null) {
                 Bitmap bitmap = PictureManager.getInstance().getBitmapFromMemCache(path);

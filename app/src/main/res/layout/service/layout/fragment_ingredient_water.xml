@@ -14,7 +14,7 @@
         <android.luna.ViewUi.widget.SettingItemTextView1
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview1Text="@string/edt_ingredient_setting"
+            cqube:textview1Text="@string/SVR_DRINK_INGREDIENT_WATER_TITLE"
             cqube:textview1TextBackground="@color/title_text_color2"
             cqube:textview1TextColor="@android:color/white" />
 
@@ -24,7 +24,7 @@
             android:id="@+id/ingredientNameItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="@string/edt_ingredient_name"
+            cqube:textview2TextTitle="@string/SVR_DRINK_INGREDIENT_WATER_NAME"
             cqube:textview2TextValue="Water" />
 
         <!-- water Type -->
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             cqube:dropdownItems="Tea Water#Still Water#Sparkling Water"
-            cqube:dropdownTextName="@string/edt_ingredient_watertype"
+            cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_WATER_TYPE"
             cqube:dropdownValues="0#1#2" />
 
         <!-- Water Volume -->
@@ -46,7 +46,7 @@
             cqube:sbCur="100"
             cqube:sbMax="200"
             cqube:sbMin="5"
-            cqube:sbName="@string/edt_ingredient_watervolume"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_WATER_VOLUME"
             cqube:sbUnit="ml" />
 
         <!-- Total Time -->
@@ -55,7 +55,7 @@
             android:id="@+id/totalTimeItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="@string/edt_ingredient_totaltime"
+            cqube:textview2TextTitle="@string/SVR_DRINK_INGREDIENT_WATER_TOTAL"
             cqube:textview2TextValue="20.0s" />
 
         <!--<evo.luna.android.widget.NumberCircleProgressBar

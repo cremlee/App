@@ -20,8 +20,8 @@ public class KeyManager {
     private static final int KEY_MCHID =4;
 
     private static final String PAY_AUTH_FILE_ENCRYPTKEY = "Crem1234";
-    private static final String W_PATH = FileHelper.getSDCardDirPath()+"crem/machine/config/pay.wuk";
-    private static final String A_PATH = FileHelper.getSDCardDirPath()+"crem/machine/config/pay.auk";
+    private static final String W_PATH = FileHelper.FILE_KEY_WECHAT;
+    private static final String A_PATH = FileHelper.FILE_KEY_ALI;
     public static Wechatkey getWechatkey()
     {
         String data =null;
