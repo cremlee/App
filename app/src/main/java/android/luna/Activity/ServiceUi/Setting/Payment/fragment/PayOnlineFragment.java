@@ -52,7 +52,7 @@ public class PayOnlineFragment extends Fragment implements View.OnClickListener 
     public void InitView(View view)
     {
         net = view.findViewById(R.id.net);
-        net.setTextValue(WXPayUtil.isNetworkAvalible(getActivity())?"Online":"Offline");
+        net.setTextValue(WXPayUtil.isNetworkAvalible(getActivity())?getString(R.string.SVR_PAY_ONLINE_ON):getString(R.string.SVR_PAY_ONLINE_OFF));
         ip = view.findViewById(R.id.ip);
         ip.setTextValue(WXPayUtil.getLocalIpAddress(getActivity()));
         auth_wechat_info = view.findViewById(R.id.auth_wechat_info);

@@ -1045,6 +1045,15 @@
     <string name="SVR_PAY_MENU_NORMAL">Normal Settings</string>
     <string name="SVR_PAY_MENU_ONLINE">Online pay</string>
     <string name="SVR_PAY_MENU_HPY">Happy hour</string>
+    <string name="SVR_PAY_ONLINE_ON">Online</string>
+    <string name="SVR_PAY_ONLINE_OFF">Offline</string>
+    <string name="SVR_PAY_ONLINE_TITLE">Online Settings</string>
+    <string name="SVR_PAY_ONLINE_NET">Network</string>
+    <string name="SVR_PAY_ONLINE_ADDRESS">IP Address</string>
+    <string name="SVR_PAY_ONLINE_TITLE_ALI">Alipay Settings</string>
+    <string name="SVR_PAY_ONLINE_TITLE_WCT">Wechat Settings</string>
+    <string name="SVR_PAY_ONLINE_AUTH_INFO">Auth file</string>
+    <string name="SVR_PAY_ONLINE_AUTH_IMPORT">Import Auth file</string>
     <!--ViewUI part-->
     <string name="VIEW_UI_TEMPERATURE">Temperature: </string>
     <string name="VIEW_UI_TOP_5">TOP 5</string>

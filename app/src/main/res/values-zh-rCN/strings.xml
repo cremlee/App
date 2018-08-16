@@ -1054,6 +1054,15 @@
     <string name="SVR_PAY_MENU_NORMAL">通用设置</string>
     <string name="SVR_PAY_MENU_ONLINE">在线支付</string>
     <string name="SVR_PAY_MENU_HPY">促销计划</string>
+    <string name="SVR_PAY_ONLINE_ON">在线</string>
+    <string name="SVR_PAY_ONLINE_OFF">离线</string>
+    <string name="SVR_PAY_ONLINE_TITLE">在线设置</string>
+    <string name="SVR_PAY_ONLINE_NET">网络</string>
+    <string name="SVR_PAY_ONLINE_ADDRESS">网络地址</string>
+    <string name="SVR_PAY_ONLINE_TITLE_ALI">支付宝设置</string>
+    <string name="SVR_PAY_ONLINE_TITLE_WCT">微信支付设置</string>
+    <string name="SVR_PAY_ONLINE_AUTH_INFO">授权文件</string>
+    <string name="SVR_PAY_ONLINE_AUTH_IMPORT">导入授权文件</string>
     <!--ViewUI part-->
     <string name="VIEW_UI_TEMPERATURE">当前温度: </string>
     <string name="VIEW_UI_TOP_5">前五</string>

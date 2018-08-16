@@ -12,56 +12,56 @@
         <android.luna.ViewUi.widget.SettingItemTextView1
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview1Text="Online Settings"
+            cqube:textview1Text="@string/SVR_PAY_ONLINE_TITLE"
             cqube:textview1TextBackground="@color/title_text_color2"
             cqube:textview1TextColor="@android:color/white" />
         <android.luna.ViewUi.widget.SettingItemTextView2
             android:id="@+id/net"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="Network"
+            cqube:textview2TextTitle="@string/SVR_PAY_ONLINE_NET"
             cqube:textview2TextValue="Online" />
         <android.luna.ViewUi.widget.SettingItemTextView2
             android:id="@+id/ip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="IP Adress"
+            cqube:textview2TextTitle="@string/SVR_PAY_ONLINE_ADDRESS"
             cqube:textview2TextValue="172.24.60.251" />
         <android.luna.ViewUi.widget.SettingItemTextView1
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview1Text="Alipay"
+            cqube:textview1Text="@string/SVR_PAY_ONLINE_TITLE_ALI"
             cqube:textview1TextBackground="@color/title_text_color2"
             cqube:textview1TextColor="@android:color/white" />
         <android.luna.ViewUi.widget.SettingItemTextView2
             android:id="@+id/auth_ali_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="Auth info"
+            cqube:textview2TextTitle="@string/SVR_PAY_ONLINE_AUTH_INFO"
             cqube:textview2TextValue="-" />
         <android.luna.ViewUi.widget.SettingItemTextView2
             android:id="@+id/auth_ali_import"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="Import auth file"
+            cqube:textview2TextTitle="@string/SVR_PAY_ONLINE_AUTH_IMPORT"
             cqube:textview2TextValue=">" />
         <android.luna.ViewUi.widget.SettingItemTextView1
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview1Text="Wechat"
+            cqube:textview1Text="@string/SVR_PAY_ONLINE_TITLE_WCT"
             cqube:textview1TextBackground="@color/title_text_color2"
             cqube:textview1TextColor="@android:color/white" />
         <android.luna.ViewUi.widget.SettingItemTextView2
             android:id="@+id/auth_wechat_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="Auth info"
+            cqube:textview2TextTitle="@string/SVR_PAY_ONLINE_AUTH_INFO"
             cqube:textview2TextValue="-" />
         <android.luna.ViewUi.widget.SettingItemTextView2
             android:id="@+id/auth_wechat_import"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:textview2TextTitle="Import auth file"
+            cqube:textview2TextTitle="@string/SVR_PAY_ONLINE_AUTH_IMPORT"
             cqube:textview2TextValue=">" />
     </LinearLayout>
 </ScrollView>
