@@ -34,4 +34,16 @@ public class ImageConvertFactory {
         }
         return null;
     }
+
+    public static Bitmap getfrompath(String path,int width,int height)
+    {
+        Bitmap bitmap = PictureManager.getInstance().getBitmapFromMemCache(path);
+        if (bitmap == null) {
+            final Bitmap tmpbitmap = PictureManager.decodeSampledBitmapFromResource(path, width, height);
+            if (tmpbitmap != null) {
+                bitmap = tmpbitmap;
+            }
+        }
+        return bitmap;
+    }
 }

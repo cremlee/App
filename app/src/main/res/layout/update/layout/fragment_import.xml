@@ -45,12 +45,15 @@
         </RadioGroup>
         <Button
         android:layout_margin="10dp"
+            android:minHeight="45dp"
+
         android:id="@+id/btn_import"
         android:text="import selected config"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
         <Button
+            android:visibility="gone"
             android:layout_margin="10dp"
             android:id="@+id/btn_update_lang"
             android:text="Update Drink Name"
@@ -73,78 +76,124 @@
                 android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-            <GridView
+            <android.support.v7.widget.RecyclerView
                 android:layout_below="@+id/title2"
                 android:id="@+id/gdv_pic"
-                android:numColumns="4"
-                android:verticalSpacing="20dp"
+                android:overScrollMode="never"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
-            <!--<ImageView
-                android:id="@+id/img_test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/coffee" />-->
         </RelativeLayout>
+<ScrollView
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:text="Dest Folders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/dir_background"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="background"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/dir_icon"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="Drink Icon"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/dir_dispense"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="Drink animation"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/dir_stroy"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="Drink story"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/dir_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="Gallery Image"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/dir_cuplogo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="Cup Logo"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/dir_banner"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="Banner Logo"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/dir_saver"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="Screen save "
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/dir_icon"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@android:color/white"
-                android:gravity="center"
-                android:text="Icon"
-                android:textSize="24sp" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/dir_pdf"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="Pdf &amp; Video"
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/dir_background"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@android:color/white"
-                android:gravity="center"
-                android:text="background"
-                android:textSize="24sp" />
+    </LinearLayout>
+</ScrollView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@android:color/white"
-                android:gravity="center"
-                android:text="Dispense"
-                android:textSize="24sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@android:color/white"
-                android:gravity="center"
-                android:text="Pdf/Video"
-                android:textSize="24sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@android:color/white"
-                android:gravity="center"
-                android:text="Other"
-                android:textSize="24sp" />
-        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

@@ -1054,6 +1054,12 @@
     <string name="SVR_PAY_ONLINE_TITLE_WCT">Wechat Settings</string>
     <string name="SVR_PAY_ONLINE_AUTH_INFO">Auth file</string>
     <string name="SVR_PAY_ONLINE_AUTH_IMPORT">Import Auth file</string>
+    <string name="SVR_PAY_NORMAL_TITLE_1">Normal</string>
+    <string name="SVR_PAY_NORMAL_TITLE_2">MDB</string>
+    <string name="SVR_PAY_NORMAL_TITLE_3">Free pin</string>
+    <string name="SVR_PAY_NORMAL_TITLE_4">Online</string>
+    <string name="SVR_PAY_NORMAL_TITLE_5">Happy hour</string>
+
     <!--ViewUI part-->
     <string name="VIEW_UI_TEMPERATURE">Temperature: </string>
     <string name="VIEW_UI_TOP_5">TOP 5</string>

@@ -1,8 +1,11 @@
 package android.luna.Activity.UpdateUi.fragment;
 
 import android.app.Fragment;
+import android.luna.Activity.Base.BaseActivity;
 import android.luna.Activity.Base.Constant;
 import android.luna.Activity.Base.CremApp;
+import android.luna.Activity.UpdateUi.Adpter.GridSpacingItemDecoration;
+import android.luna.Activity.UpdateUi.Adpter.PicImportRvAdapter;
 import android.luna.Activity.UpdateUi.PicImportAdapter;
 import android.luna.Data.DAO.BeverageFactoryDao;
 import android.luna.Data.DAO.FilterBrewStepDao;
@@ -28,6 +31,8 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.Gravity;
@@ -35,6 +40,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
@@ -59,9 +65,9 @@ import is.arontibo.library.ElasticDownloadView;
 public class ImportFragment extends Fragment implements View.OnDragListener ,View.OnClickListener{
     private PopupWindow mPopWindow;
     private boolean showmPopWindow;
-    private GridView gdv_pic;
-    private TextView dir_icon,dir_background;
-    private PicImportAdapter picImportAdapter=null;
+    private RecyclerView gdv_pic;
+    private TextView dir_icon,dir_background,dir_dispense,dir_stroy,dir_gallery,dir_cuplogo,dir_banner,dir_saver,dir_pdf;
+    private PicImportRvAdapter picImportAdapter=null;
     private RadioButton config_1,config_2,config_3,config_4;
     private CremApp app;
     private RadioGroup rgp_config;
@@ -81,8 +87,7 @@ public class ImportFragment extends Fragment implements View.OnDragListener ,Vie
         InitView(view);
         return view;
     }
-    private void InitView(View view)
-    {
+    private void InitView(View view) {
         btn_import = view.findViewById(R.id.btn_import);
         btn_import.setOnClickListener(this);
         btn_update_lang = view.findViewById(R.id.btn_update_lang);
@@ -92,22 +97,21 @@ public class ImportFragment extends Fragment implements View.OnDragListener ,Vie
         rgp_config.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                switch (i)
-                {
+                switch (i) {
                     case R.id.config_1:
-                        picImportAdapter.setMlistdata(FileHelper.getAllFile(new File(app.getUsbpath()+FileHelper.PATH_USB+"Configure 1/")));
+                        picImportAdapter.setMlistdata(FileHelper.getAllFile(new File(app.getUsbpath() + FileHelper.PATH_USB + "Configure 1/")));
                         ConfigPath = "Configure 1";
                         break;
                     case R.id.config_2:
-                        picImportAdapter.setMlistdata(FileHelper.getAllFile(new File(app.getUsbpath()+FileHelper.PATH_USB+"Configure 2/")));
+                        picImportAdapter.setMlistdata(FileHelper.getAllFile(new File(app.getUsbpath() + FileHelper.PATH_USB + "Configure 2/")));
                         ConfigPath = "Configure 2";
                         break;
                     case R.id.config_3:
                         ConfigPath = "Configure 3";
-                        picImportAdapter.setMlistdata(FileHelper.getAllFile(new File(app.getUsbpath()+FileHelper.PATH_USB+"Configure 3/")));
+                        picImportAdapter.setMlistdata(FileHelper.getAllFile(new File(app.getUsbpath() + FileHelper.PATH_USB + "Configure 3/")));
                         break;
                     case R.id.config_4:
-                        picImportAdapter.setMlistdata(FileHelper.getAllFile(new File(app.getUsbpath()+FileHelper.PATH_USB+"Configure 4/")));
+                        picImportAdapter.setMlistdata(FileHelper.getAllFile(new File(app.getUsbpath() + FileHelper.PATH_USB + "Configure 4/")));
                         ConfigPath = "Configure 4";
                         break;
                 }
@@ -121,14 +125,37 @@ public class ImportFragment extends Fragment implements View.OnDragListener ,Vie
 
         InitRadiogroup();
         gdv_pic = view.findViewById(R.id.gdv_pic);
-        picImportAdapter = new PicImportAdapter(getActivity(),null );
+        picImportAdapter = new PicImportRvAdapter(getActivity(), null);
         gdv_pic.setAdapter(picImportAdapter);
 
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 4);
+        //通过布局管理器可以控制条目排列的顺序 true反向显示 false正常显示(默认)
+        gridLayoutManager.setReverseLayout(false);
+        //设置RecycleView显示的方向是水平还是垂直
+        //GridLayout.HORIZONTAL水平 GridLayout.VERTICAL默认垂直
+        // 三元运算符
+        gridLayoutManager.setOrientation(GridLayout.VERTICAL);
+        //设置布局管理器， 参数linearLayoutManager对象
+        gdv_pic.setLayoutManager(gridLayoutManager);
+        gdv_pic.addItemDecoration(new GridSpacingItemDecoration(4, 1, false));
         dir_icon = view.findViewById(R.id.dir_icon);
         dir_background = view.findViewById(R.id.dir_background);
+        dir_dispense = view.findViewById(R.id.dir_dispense);
+        dir_stroy = view.findViewById(R.id.dir_stroy);
+        dir_gallery = view.findViewById(R.id.dir_gallery);
+        dir_cuplogo = view.findViewById(R.id.dir_cuplogo);
+        dir_banner = view.findViewById(R.id.dir_banner);
+        dir_saver = view.findViewById(R.id.dir_saver);
+        dir_pdf = view.findViewById(R.id.dir_pdf);
         dir_icon.setOnDragListener(this);
         dir_background.setOnDragListener(this);
-
+        dir_dispense.setOnDragListener(this);
+        dir_stroy.setOnDragListener(this);
+        dir_gallery.setOnDragListener(this);
+        dir_cuplogo.setOnDragListener(this);
+        dir_banner.setOnDragListener(this);
+        dir_saver.setOnDragListener(this);
+        dir_pdf.setOnDragListener(this);
     }
 
     private void InitRadiogroup()
@@ -171,6 +198,39 @@ public class ImportFragment extends Fragment implements View.OnDragListener ,Vie
             config_4.setEnabled(false);
         }
     }
+
+    private void showPutfile2destfolder(final String scr, final String dest)
+    {
+        MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+                .title("Copy files to pad")
+                .content("Do you want to cop the files to pad?")
+                .positiveText("agree")
+                .positiveColor(getResources().getColor(R.color.green_grass))
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                       if(FileHelper.copyFile(scr,dest+scr.substring(scr.lastIndexOf("/")+1)))
+                       {
+                           ((BaseActivity)getActivity()).showTestToast("copy finished!");
+                       }
+                       else
+                       {
+                           ((BaseActivity)getActivity()).showTestToast("copy failed!");
+                       }
+                        dialog.dismiss();
+                    }
+                })
+                .negativeText("later")
+                .negativeColor(getResources().getColor(R.color.red_wine))
+                .onNegative(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        dialog.dismiss();
+                    }
+                })
+                .canceledOnTouchOutside(false)
+                .show();
+    }
     @Override
     public boolean onDrag(View view, final DragEvent dragEvent) {
         int action = dragEvent.getAction();
@@ -178,33 +238,36 @@ public class ImportFragment extends Fragment implements View.OnDragListener ,Vie
         switch (action)
         {
             case DragEvent.ACTION_DROP:
-                if(id == R.id.dir_icon) {
-                    final String srcpath = dragEvent.getClipData().getDescription().getLabel().toString();
-                    MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
-                            .title("Copy files to pad")
-                            .content("Do you want to cop the files to pad?")
-                            .positiveText("agree")
-                            .positiveColor(getResources().getColor(R.color.green_grass))
-                            .onPositive(new MaterialDialog.SingleButtonCallback() {
-                                @Override
-                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                        FileHelper.copyFile(srcpath,FileHelper.getSDCardDirPath()+"/crem/icon/"+srcpath.substring(srcpath.lastIndexOf("/")+1));
-                                }
-                            })
-                            .negativeText("later")
-                            .negativeColor(getResources().getColor(R.color.red_wine))
-                            .onNegative(new MaterialDialog.SingleButtonCallback() {
-                                @Override
-                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                    dialog.dismiss();
-                                }
-                            })
-                            .show();
-
-                }
-                else if(id == R.id.dir_background)
+                final String srcpath = dragEvent.getClipData().getDescription().getLabel().toString();
+                switch (id)
                 {
-                    EvoTrace.e("usb", "dir_background " + dragEvent.getClipData().getDescription().getLabel().toString());
+                    case R.id.dir_background:
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_MAIN_BKG);
+                        break;
+                    case R.id.dir_icon:
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_ICON);
+                        break;
+                    case R.id.dir_dispense:
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_DRINK_AM);
+                        break;
+                    case R.id.dir_stroy:
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_STORY);
+                        break;
+                    case R.id.dir_gallery:
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_DRINK_BKG);
+                        break;
+                    case R.id.dir_cuplogo:
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_SCREEN_LOGO);
+                        break;
+                    case R.id.dir_banner:
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_BRAND);
+                        break;
+                    case R.id.dir_saver:
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_SCREEN_SAVER);
+                        break;
+                    case R.id.dir_pdf:
+
+                        break;
                 }
                 break;
         }

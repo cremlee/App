@@ -326,7 +326,6 @@ public class aty_screensetting_main extends BaseActivity implements View.OnClick
                             .onNeutral(new MaterialDialog.SingleButtonCallback() {
                                 @Override
                                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                    showToast("onNeutral");
                                     _languageitemdlg.dismiss();
 
                                 }
@@ -334,7 +333,6 @@ public class aty_screensetting_main extends BaseActivity implements View.OnClick
                             .onPositive(new MaterialDialog.SingleButtonCallback() {
                                 @Override
                                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                    showToast("onPositive");
                                     _screenFactoryDao.getLanguageitemDao().update(_languageitem);
                                     _languageitemdlg.dismiss();
 
