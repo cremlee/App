@@ -766,7 +766,7 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
 
     public void testadd()
     {
-        try {
+       /* try {
             TableUtils.createTable(connectionSource, DisplaySoundSettings.class);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -780,6 +780,6 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.createTable(connectionSource, SecretSettings.class);
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

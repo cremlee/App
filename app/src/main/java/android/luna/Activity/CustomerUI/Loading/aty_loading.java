@@ -5,27 +5,19 @@ import android.content.Intent;
 import android.graphics.Path;
 import android.luna.Activity.Base.AppManager;
 import android.luna.Activity.Base.BaseActivity;
-import android.luna.Activity.CustomerUI.Gallery.aty_customer_ui_1;
-import android.luna.Activity.CustomerUI.Gallery.aty_customer_ui_11;
+
 import android.luna.Activity.CustomerUI.Gallery.aty_theme_gallery;
 import android.luna.Activity.CustomerUI.Normal.aty_theme_normal;
 import android.luna.Activity.CustomerUI.Shopping.aty_theme_shop;
 import android.luna.Activity.CustomerUI.ThreeDCloud.aty_theme_3d;
-import android.luna.Activity.WelcomeUi.aty_wizard_main;
-import android.luna.Utils.Device.DeviceXmlFactory;
-import android.luna.Utils.FileHelper;
 import android.luna.Utils.XmlPathParser;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
-
 import com.mcxtzhang.pathanimlib.PathAnimView;
-import com.mcxtzhang.pathanimlib.SysLoadAnimHelper;
 import com.mcxtzhang.pathanimlib.utils.SvgPathParser;
 
-import java.io.File;
 import java.text.ParseException;
 
 import evo.luna.android.R;

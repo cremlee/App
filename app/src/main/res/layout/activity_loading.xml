@@ -12,7 +12,7 @@
         app:pv_host_text_anim_time="1500"
         app:pv_host_text="Crem "
         app:pv_host_text_size="96sp"
-        app:pv_particle_text=" EVO"
+        app:pv_particle_text=" Origin"
         app:pv_particle_text_size="48sp"
         app:pv_text_color="#FFF"
         app:pv_background_color="#2E2E2E"

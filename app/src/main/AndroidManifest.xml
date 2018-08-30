@@ -196,10 +196,6 @@
             android:screenOrientation="landscape"
             android:configChanges="locale"
             android:name="android.luna.Activity.CustomerUI.Normal.aty_theme_normal">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:screenOrientation="landscape"
@@ -264,7 +260,10 @@
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="android.luna.Activity.Tip.aty_psw_input"
