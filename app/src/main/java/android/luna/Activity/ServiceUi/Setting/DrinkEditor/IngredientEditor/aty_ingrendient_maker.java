@@ -27,8 +27,11 @@ import android.luna.Data.module.IngredientEspresso;
 import android.luna.Data.module.IngredientFilterBrew;
 import android.luna.Data.module.IngredientInstant;
 import android.luna.Data.module.IngredientWater;
+import android.luna.Data.module.MachineDevice.Device;
 import android.luna.Data.module.Powder.PowderItem;
 import android.luna.Utils.AndroidUtils_Ext;
+import android.luna.Utils.Device.DeviceXmlFactory;
+import android.luna.Utils.FileHelper;
 import android.luna.Utils.Logger.EvoTrace;
 import android.luna.ViewUi.MaterialDialog.DialogAction;
 import android.luna.ViewUi.MaterialDialog.MaterialDialog;
@@ -56,6 +59,7 @@ import com.mcxtzhang.swipemenulib.SwipeMenuLayout;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import evo.luna.android.R;
@@ -325,6 +329,33 @@ public class aty_ingrendient_maker extends BaseActivity implements View.OnClickL
             }
         }
     };
+    private void showornot(View contentView)
+    {
+        contentView.findViewById(R.id.add_espresso).setVisibility(View.GONE);
+        contentView.findViewById(R.id.add_mono).setVisibility(View.GONE);
+        contentView.findViewById(R.id.add_filter).setVisibility(View.GONE);
+        contentView.findViewById(R.id.add_filter_ad).setVisibility(View.GONE);
+        contentView.findViewById(R.id.add_instant).setVisibility(View.GONE);
+        contentView.findViewById(R.id.add_milk).setVisibility(View.GONE);
+        List<Device> devices = DeviceXmlFactory.getXmlDevice(FileHelper.PATH_CONFIG+"config.xmld");
+        if(devices.contains(new Device(0x0001,0x01)))
+        {
+            contentView.findViewById(R.id.add_espresso).setVisibility(View.VISIBLE);
+        }
+        if(devices.contains(new Device(0x0001,0x02)))
+        {
+            contentView.findViewById(R.id.add_mono).setVisibility(View.VISIBLE);
+        }
+        if(devices.contains(new Device(0x0001,0x03)))
+        {
+            contentView.findViewById(R.id.add_filter).setVisibility(View.VISIBLE);
+            contentView.findViewById(R.id.add_filter_ad).setVisibility(View.VISIBLE);
+        }
+        if(devices.contains(new Device(0x0003,0x01))||devices.contains(new Device(0x0003,0x02))||devices.contains(new Device(0x0003,0x03)))
+        {
+            contentView.findViewById(R.id.add_instant).setVisibility(View.VISIBLE);
+        }
+    }
     private void showPopupWindow(View parent,int type) {
         if (showmPopWindow) {
             DismissPopWindow();
@@ -335,9 +366,11 @@ public class aty_ingrendient_maker extends BaseActivity implements View.OnClickL
                 contentView.findViewById(R.id.add_filter).setOnClickListener(this);
                 contentView.findViewById(R.id.add_filter_ad).setOnClickListener(this);
                 contentView.findViewById(R.id.add_instant).setOnClickListener(this);
+                contentView.findViewById(R.id.add_mono).setOnClickListener(this);
                 contentView.findViewById(R.id.add_espresso).setOnClickListener(this);
                 contentView.findViewById(R.id.add_water).setOnClickListener(this);
                 contentView.findViewById(R.id.add_milk).setOnClickListener(this);
+                showornot(contentView);
                 mPopWindow.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
                 mPopWindow.setHeight(LinearLayout.LayoutParams.MATCH_PARENT);
                 mPopWindow.showAtLocation(btn_save,Gravity.CENTER, 0, 0);

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -58,20 +57,19 @@
             android:text="@string/SVR_DRINK_INGREDIENT_CHOOSE_FILTER_AD" />
         <Button
             android:minHeight="50dp"
-            android:id="@+id/add_instant"
-            android:textSize="18sp"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
+            android:id="@+id/add_mono"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="#3b5998"
             android:drawableLeft="@drawable/ic_loupe_white"
+            android:paddingBottom="5dp"
             android:paddingLeft="40dp"
             android:paddingRight="50dp"
-            android:paddingBottom="5dp"
             android:paddingTop="5dp"
-            android:background="#3b5998"
-            android:text="@string/SVR_DRINK_INGREDIENT_CHOOSE_INSTANT" />
-
+            android:text="@string/SVR_DRINK_INGREDIENT_CHOOSE_MONO"
+            android:textSize="18sp" />
         <Button
             android:minHeight="50dp"
             android:id="@+id/add_espresso"
@@ -87,6 +85,23 @@
             android:paddingTop="5dp"
             android:text="@string/SVR_DRINK_INGREDIENT_CHOOSE_ESPRESSO"
             android:textSize="18sp" />
+        <Button
+            android:minHeight="50dp"
+            android:id="@+id/add_instant"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_loupe_white"
+            android:paddingLeft="40dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:background="#3b5998"
+            android:text="@string/SVR_DRINK_INGREDIENT_CHOOSE_INSTANT" />
+
+
 
         <Button
             android:minHeight="50dp"

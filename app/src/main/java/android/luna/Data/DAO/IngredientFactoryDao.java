@@ -17,6 +17,7 @@ public class IngredientFactoryDao extends BaseDaobak implements IingredientFacto
     private WaterDao _waterDao=null;
     private IngredientDao _ingredientDao=null;
     private EspressoDao _EspressoDao =null;
+    private MonoDao _monoDao=null;
     @Override
     public FilterBrewDao getFilterBrewDao() {
         if(_filterBrewDao == null)
@@ -50,6 +51,13 @@ public class IngredientFactoryDao extends BaseDaobak implements IingredientFacto
         if(_EspressoDao ==null)
             _EspressoDao=new EspressoDao(getmContext(),getApp());
         return _EspressoDao;
+    }
+
+    @Override
+    public MonoDao getMonoDao() {
+        if(_monoDao==null)
+            _monoDao = new MonoDao(getmContext(),getApp());
+        return  _monoDao;
     }
 
 

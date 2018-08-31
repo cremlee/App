@@ -14,6 +14,8 @@ public class Ingredient implements Serializable {
 	public static final int TYPE_INSTANT = 4;
 	public static final int TYPE_WATER = 5;
 	public static final int TYPE_FILTER_BREW_ADVANCE = 6;
+	public static final int TYPE_TEA = 7;
+	public static final int TYPE_MONO = 8;
 
 	public static final int ACK_REJECT = 0;
 	public static final int ACK_OK = 1;

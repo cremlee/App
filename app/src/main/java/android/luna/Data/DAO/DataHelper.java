@@ -43,11 +43,23 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
     private Dao<IngredientWater, Integer> ingredientWaterDao = null;
     private Dao<IngredientMilk, Integer> ingredientMilkDao = null;
     private Dao<IngredientInstant, Integer> ingredientInstantDao = null;
-    private Dao<IngredientEspresso, Integer> ingredientEspresso = null;
-   // private Dao<SpiderDatastruct, Integer> spiderDatastructDao = null;
+    private Dao<IngredientEspresso, Integer> ingredientEspressoDao = null;
+    private Dao<IngredientMono, Integer> ingredientMonosDao = null;
     private Dao<FiterBrewStep,Integer> _fiterBrewStep = null;
     private Dao<IngredientFilterBrewAdvance, Integer> _IngredientFilterBrewAdvanceDao = null;
 
+
+
+    public Dao<IngredientMono, Integer> getIngredientMonoDao() {
+        if (ingredientMonosDao == null) {
+            try {
+                ingredientMonosDao = getDao(IngredientMono.class);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return ingredientMonosDao;
+    }
     public Dao<FiterBrewStep, Integer> getFiterBrewStep() {
         if (_fiterBrewStep == null) {
             try {
@@ -99,14 +111,14 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         return ingredientWaterDao;
     }
     public Dao<IngredientEspresso, Integer> getIngredientEspressoDao() {
-        if (ingredientEspresso == null) {
+        if (ingredientEspressoDao == null) {
             try {
-                ingredientEspresso = getDao(IngredientEspresso.class);
+                ingredientEspressoDao = getDao(IngredientEspresso.class);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        return ingredientEspresso;
+        return ingredientEspressoDao;
     }
     public Dao<IngredientMilk, Integer> getIngredientMilkDao() {
         if (ingredientMilkDao == null) {
@@ -666,6 +678,11 @@ public class DataHelper extends OrmLiteSqliteOpenHelper {
         }
         try {
             TableUtils.createTable(connectionSource, IngredientEspresso.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            TableUtils.createTable(connectionSource, IngredientMono.class);
         } catch (SQLException e) {
             e.printStackTrace();
         }

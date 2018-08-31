@@ -974,6 +974,7 @@
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_FILTER">Filter Brewer</string>
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_FILTER_AD">Advanced Filter Brewer</string>
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_ESPRESSO">Espresso</string>
+    <string name="SVR_DRINK_INGREDIENT_CHOOSE_MONO">Mono</string>
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_INSTANT">Instant</string>
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_WATER">Water</string>
     <string name="SVR_DRINK_INGREDIENT_CHOOSE_MILK">Fresh Milk</string>

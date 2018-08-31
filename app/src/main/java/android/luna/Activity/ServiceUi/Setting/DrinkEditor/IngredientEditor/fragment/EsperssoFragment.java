@@ -296,7 +296,6 @@ public class EsperssoFragment extends BaseFragment implements IIngredient<Ingred
         if (requestCode == Constant.REQ_INPUT) {
             getIngredient().setName(data.getStringExtra("response"));
             NotifyNameChange("name");
-            //ingredientNameItem.setTextValue(data.getStringExtra("response"));
         }
     }
 }

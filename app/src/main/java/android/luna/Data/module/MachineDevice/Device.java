@@ -1,7 +1,11 @@
 package android.luna.Data.module.MachineDevice;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Lee.li on 2018/4/16.
@@ -132,5 +136,45 @@ public class Device implements IDevice {
             return true;
         }
         return false;
+    }
+
+
+    @Override
+    public boolean isFilter() {
+        return (this.group_id ==0x0001 && this.compent_type ==0x03);
+    }
+
+    @Override
+    public boolean isMono() {
+        return (this.group_id ==0x0001 && this.compent_type ==0x02);
+    }
+
+    @Override
+    public boolean isEspresso() {
+        return (this.group_id ==0x0001 && this.compent_type ==0x01);
+    }
+
+    @Override
+    public boolean isInstant() {
+        return (this.group_id ==0x0003);
+    }
+
+    @Override
+    public boolean isFreshMilk() {
+        return false;
+    }
+
+    @Override
+    public boolean isTea() {
+        return false;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || !getClass().isAssignableFrom(o.getClass()))
+            return false;
+        return group_id == ((Device) o).group_id &&
+                compent_type == ((Device) o).compent_type;
     }
 }

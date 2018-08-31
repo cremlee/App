@@ -4,6 +4,7 @@ import android.luna.Data.DAO.EspressoDao;
 import android.luna.Data.DAO.FilterBrewDao;
 import android.luna.Data.DAO.IngredientDao;
 import android.luna.Data.DAO.InstantDao;
+import android.luna.Data.DAO.MonoDao;
 import android.luna.Data.DAO.WaterDao;
 
 /**
@@ -16,4 +17,5 @@ public interface IingredientFactory {
     WaterDao getWaterDao();
     IngredientDao getIngredientDao();
     EspressoDao getEspressoDao();
+    MonoDao getMonoDao();
 }

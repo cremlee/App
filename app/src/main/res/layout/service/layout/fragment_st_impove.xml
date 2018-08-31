@@ -177,7 +177,6 @@
                 android:layout_height="match_parent"
                 android:layout_below="@+id/title4"
                 android:layout_marginTop="20dp">
-
                 <android.luna.ViewUi.DashBoard.DialChart01View
                     android:id="@+id/dash_ntc"
                     android:layout_width="0dp"

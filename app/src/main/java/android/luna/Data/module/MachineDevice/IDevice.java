@@ -4,7 +4,7 @@ package android.luna.Data.module.MachineDevice;
  * Created by Lee.li on 2018/4/16.
  */
 
-public interface IDevice extends ICleanAble {
+public interface IDevice extends ICleanAble ,ITypeforSelect {
     public static final int  GROUP_BREWER = 0x0001;
     public  static final int GROUP_GRINDER = 0x0002;
     /* compnent type */

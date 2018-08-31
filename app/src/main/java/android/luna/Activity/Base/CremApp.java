@@ -32,6 +32,7 @@ import android.luna.service.ComService;
 import android.luna.service.ScheduleService;
 import android.os.Build;
 import android.os.IBinder;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.squareup.leakcanary.LeakCanary;
@@ -748,5 +749,9 @@ public class CremApp extends Application {
         return ints;
     }
 
-
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(base);
+    }
 }
