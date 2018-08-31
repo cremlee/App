@@ -22,7 +22,7 @@ import evo.luna.android.R;
  * Created by Lee.li on 2018/2/24.
  */
 
-public class aty_uiRes_selector extends BaseActivity implements View.OnClickListener,AdapterView.OnItemClickListener {
+public class aty_uiRes_selector extends BaseActivity implements View.OnClickListener,AdapterView.OnItemClickListener,AdapterView.OnItemLongClickListener {
     private GridView gv_res;
     private TextView title;
     private String path="";
@@ -30,6 +30,7 @@ public class aty_uiRes_selector extends BaseActivity implements View.OnClickList
     private DrinkResAdapter drinkResAdapter=null;
     private int reqCode;
     private List<DrinkRes> drinkResList =new ArrayList<>(30);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +90,7 @@ public class aty_uiRes_selector extends BaseActivity implements View.OnClickList
         title.setOnClickListener(this);
         gv_res.setClickable(true);
         gv_res.setOnItemClickListener(this);
+        gv_res.setOnItemLongClickListener(this);
     }
 
 
@@ -108,5 +110,12 @@ public class aty_uiRes_selector extends BaseActivity implements View.OnClickList
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         drinkResAdapter.setpicSelectStatus(i);
         drinkResAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        drinkResAdapter.setIshowdelete();
+        drinkResAdapter.notifyDataSetChanged();
+        return true;
     }
 }
