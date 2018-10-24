@@ -121,7 +121,7 @@ public class ScreenSaverActivity extends BaseActivity implements TextureView.Sur
 		Bitmap bitmap = PictureManager.getInstance().getBitmapFromMemCache(path);
 		if(bitmap == null)
 		{
-			final Bitmap tmpbitmap = PictureManager.decodeSampledBitmapFromResource(path,768,1024);
+			final Bitmap tmpbitmap = PictureManager.decodeSampledBitmapFromResource(path,800,600);
 			if(tmpbitmap!=null)
 			{
 			PictureManager.getInstance().addBitmapToMemoryCache(path,tmpbitmap);

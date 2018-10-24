@@ -68,6 +68,8 @@ public class DeviceItemLayout {
     {
         if(getUid().startsWith("000101"))
             return R.mipmap.esbrewer;
+        else if(getUid().startsWith("000102"))
+            return R.mipmap.monobrewer;
         else if(getUid().startsWith("0002"))
             return R.mipmap.grinder;
         else if(getUid().startsWith("0003"))
@@ -91,6 +93,8 @@ public class DeviceItemLayout {
             return "Grinder";
         else if(getUid().startsWith("000101"))
             return "ES-Brewer";
+        else if(getUid().startsWith("000102"))
+            return "Mono-Brewer";
         else if(getUid().startsWith("0003"))
             return "Canister";
         else if(getUid().startsWith("0004"))

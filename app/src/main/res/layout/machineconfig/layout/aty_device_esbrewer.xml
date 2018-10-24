@@ -109,33 +109,35 @@
                     cqube:dropdownTextValue="150 ml" />
 
                 <LinearLayout
-                android:id="@+id/lyt_fan"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/lyt_fan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    cqube:textview1Text="Fan property"
-                    cqube:textview1TextBackground="@color/title_text_color2"
-                    cqube:textview1TextColor="@android:color/white" />
-                <android.luna.ViewUi.widget.SettingItemTextView2
-                    android:id="@+id/fan_id"
-                    android:padding="1dp"
-                    cqube:textview2TextTitle="Hopper ID:"
-                    cqube:textview2TextValue="00020101"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <android.luna.ViewUi.widget.SettingItemSeekBar
-                    android:id="@+id/fan_spd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    cqube:sbName="Fan speed"
-                    cqube:sbMax="100"
-                    cqube:sbCur="0"
-                    cqube:sbUnit="%"
-                    />
-            </LinearLayout>
+                    android:orientation="vertical">
+
+                    <android.luna.ViewUi.widget.SettingItemTextView1
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:textview1Text="Fan property"
+                        cqube:textview1TextBackground="@color/title_text_color2"
+                        cqube:textview1TextColor="@android:color/white" />
+
+                    <android.luna.ViewUi.widget.SettingItemTextView2
+                        android:id="@+id/fan_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="1dp"
+                        cqube:textview2TextTitle="Hopper ID:"
+                        cqube:textview2TextValue="00020101" />
+
+                    <android.luna.ViewUi.widget.SettingItemSeekBar
+                        android:id="@+id/fan_spd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        cqube:sbCur="0"
+                        cqube:sbMax="100"
+                        cqube:sbName="Fan speed"
+                        cqube:sbUnit="%" />
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>

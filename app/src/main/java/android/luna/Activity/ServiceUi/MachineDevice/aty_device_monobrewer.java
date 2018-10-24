@@ -2,9 +2,8 @@ package android.luna.Activity.ServiceUi.MachineDevice;
 
 import android.luna.Activity.Base.AppManager;
 import android.luna.Activity.Base.BaseActivity;
-import android.luna.Data.module.MachineDevice.Dev_ES;
 import android.luna.Data.module.MachineDevice.Dev_Fan;
-import android.luna.Data.module.MachineDevice.Dev_Hopper;
+import android.luna.Data.module.MachineDevice.Dev_Mono;
 import android.luna.Data.module.MachineDevice.Device;
 import android.luna.Utils.Device.DeviceXmlFactory;
 import android.luna.ViewUi.widget.MaintenceItemView;
@@ -19,6 +18,7 @@ import android.support.annotation.IdRes;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -33,7 +33,7 @@ import evo.luna.android.R;
  * Created by Lee.li on 2018/4/19.
  */
 
-public class aty_device_esbrewer extends BaseActivity implements View.OnClickListener {
+public class aty_device_monobrewer extends BaseActivity implements View.OnClickListener {
     private Button btn_back;
     private RadioGroup device_rg;
     private ScrollView sv_pty,sv_tc,sv_mt;
@@ -44,6 +44,7 @@ public class aty_device_esbrewer extends BaseActivity implements View.OnClickLis
     private SettingItemCheckBox t_brew_motor,t_brew_valve,t_fan;
     private Map<String, String> es_cp_data = new TreeMap<>();
     private Device current_device =null;
+    private LinearLayout lyt_fan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +69,7 @@ public class aty_device_esbrewer extends BaseActivity implements View.OnClickLis
         sv_pty = findViewById(R.id.sv_pty);
         sv_tc = findViewById(R.id.sv_tc);
         sv_mt = findViewById(R.id.sv_mt);
-
+        lyt_fan = findViewById(R.id.lyt_fan);
         brewer_id = findViewById(R.id.brewer_id);
         cal_brew_inlet = findViewById(R.id.cal_brew_inlet);
         brewer_cp = findViewById(R.id.brewer_cp);
@@ -87,22 +88,27 @@ public class aty_device_esbrewer extends BaseActivity implements View.OnClickLis
         fan_spd.setVisibility(View.GONE);
         m_fan.setVisibility(View.GONE);
         t_fan.setVisibility(View.GONE);
-
+        lyt_fan.setVisibility(View.GONE);
         brewer_id.setTextValue(String.format("%08X",getApp().getMain_device().GetDeviceId()));
         brewer_cp.setItemAndValues(es_cp_data);
         brewer_cp.refreshData(0);
-        String key =(((Dev_ES)getApp().getMain_device()).getMax_capability()+"");
+        String key =(((Dev_Mono)getApp().getMain_device()).getMax_capability()+"");
         brewer_cp.setSelItem(key,brewer_cp.getItemAndValues().get(key));
 
-        if(getApp().getAttach_device().size()>0)
-        {
-            fan_id.setVisibility(View.VISIBLE);
-            fan_spd.setVisibility(View.VISIBLE);
-            m_fan.setVisibility(View.VISIBLE);
-            t_fan.setVisibility(View.VISIBLE);
-            fan_id.setTextValue(String.format("%08X",getApp().getAttach_device().get(0).GetDeviceId()));
-            fan_spd.setCur(((Dev_Fan)getApp().getAttach_device().get(0)).getRun_speed());
 
+        if(getApp().getAttach_device().size()>0) {
+            for (Device device : getApp().getAttach_device()) {
+                final Device deviceitem = device;
+                if (deviceitem.getGroup_id() == 0x0014) {
+                    lyt_fan.setVisibility(View.VISIBLE);
+                    fan_id.setVisibility(View.VISIBLE);
+                    fan_spd.setVisibility(View.VISIBLE);
+                    m_fan.setVisibility(View.VISIBLE);
+                    t_fan.setVisibility(View.VISIBLE);
+                    fan_id.setTextValue(String.format("%08X",getApp().getAttach_device().get(0).GetDeviceId()));
+                    fan_spd.setCur(((Dev_Fan)deviceitem).getRun_speed());
+                }
+            }
         }
         ((RadioButton)findViewById(R.id.rb_1)).setChecked(true);
     }
@@ -133,13 +139,10 @@ public class aty_device_esbrewer extends BaseActivity implements View.OnClickLis
                 brewer_cp.setSelItem(key, name);
                 //// TODO: 2018/4/20  xiugai yingjian peizhi wenjian tongbu device shu ju
                 current_device = getApp().getMain_device();
-                ((Dev_ES)current_device).setMax_capability(Integer.parseInt(key,10));
+                ((Dev_Mono)current_device).setMax_capability(Integer.parseInt(key,10));
                 setDeviceData(current_device);
             }
         });
-
-
-
         if(getApp().getAttach_device().size()>0) {
             for (Device device : getApp().getAttach_device()) {
                 final Device deviceitem = device;
@@ -167,6 +170,7 @@ public class aty_device_esbrewer extends BaseActivity implements View.OnClickLis
                 }
             }
         }
+
         btn_back.setOnClickListener(this);
         device_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -227,7 +231,7 @@ public class aty_device_esbrewer extends BaseActivity implements View.OnClickLis
         switch (id)
         {
             case R.id.btn_back:
-                AppManager.getAppManager().finishActivity(aty_device_esbrewer.this);
+                AppManager.getAppManager().finishActivity(aty_device_monobrewer.this);
                 break;
         }
     }

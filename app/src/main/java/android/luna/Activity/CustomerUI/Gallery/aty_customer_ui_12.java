@@ -22,10 +22,13 @@ import android.luna.Data.module.IngredientFilterBrewAdvance;
 import android.luna.Data.module.IngredientInstant;
 import android.luna.Data.module.IngredientWater;
 import android.luna.Data.module.WasterBinStock;
+import android.luna.Utils.ImageConvertFactory;
 import android.luna.Utils.Logger.EvoTrace;
 import android.luna.ViewUi.Progressbar.CircleProgressBar;
 import android.luna.ViewUi.Ratebar.MyRateBar;
 import evo.luna.android.R;
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
 
 import android.luna.rs232.Cmd.CmdMakeDrink;
 import android.media.MediaPlayer;
@@ -40,6 +43,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -65,6 +69,8 @@ public class aty_customer_ui_12 extends BaseActivity implements View.OnClickList
     private CircleProgressBar cpbdrink;
     private View Viewgif,ViewPic,ViewPictxt,viewVideo;
     private TextureView step_video;
+    private ImageView step_pic;
+    private GifImageView step_gif;
     private MediaPlayer mMediaPlayer;
     private Surface _surface;
     private BeverageFactoryDao beverageFactoryDao;
@@ -158,12 +164,35 @@ public class aty_customer_ui_12 extends BaseActivity implements View.OnClickList
         setContentView(R.layout.aty_customer_ui_12);
         vf_bg = findViewById(R.id.vf_bg);
         cpbdrink = findViewById(R.id.cpbdrink);
-
-        //// TODO: 2018/2/28 panduan shebei yingliao zhizuo shi de ziyuan
-        viewVideo = getLayoutInflater().inflate(R.layout.lyt_step_texture, null);
-        step_video = viewVideo.findViewById(R.id.textureView);
-        vf_bg.addView(viewVideo);
-        step_video.setSurfaceTextureListener(this);
+        String res = getApp().get_drinkMenuButton().getDispensepath();
+        if(res.toLowerCase().endsWith("mp4")) {
+            //// TODO: 2018/2/28 panduan shebei yingliao zhizuo shi de ziyuan
+            viewVideo = getLayoutInflater().inflate(R.layout.lyt_step_texture, null);
+            step_video = viewVideo.findViewById(R.id.textureView);
+            vf_bg.addView(viewVideo);
+            step_video.setSurfaceTextureListener(this);
+        }
+        else if(res.toLowerCase().endsWith("jpg") || res.toLowerCase().endsWith("png"))
+        {
+            // TODO: 2018/9/3 xianshi tupian zuowei ziyuan
+            ViewPic = getLayoutInflater().inflate(R.layout.lyt_step_picture, null);
+            step_pic = ViewPic.findViewById(R.id.step_pic);
+            step_pic.setImageBitmap(ImageConvertFactory.getsavefrompath(res,800,600));
+            vf_bg.addView(ViewPic);
+        }
+        else if(res.toLowerCase().endsWith("gif"))
+        {
+            // TODO: 2018/9/3 show gif when dispense
+            Viewgif = getLayoutInflater().inflate(R.layout.lyt_step_gif, null);
+            step_gif = Viewgif.findViewById(R.id.step_gif);
+            try {
+                GifDrawable gifDrawable = new GifDrawable(res);
+                step_gif.setImageDrawable(gifDrawable);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            vf_bg.addView(Viewgif);
+        }
     }
 
     @Override

@@ -1011,7 +1011,24 @@
     <string name="SVR_DRINK_INGREDIENT_WATER_TOTAL">Total Time</string>
     <string name="SVR_DRINK_INGREDIENT_WATER_TYPE">Water Type</string>
     <string name="SVR_DRINK_INGREDIENT_WATER_VOLUME">Water Volume</string>
-
+    <!--Mono部分-->
+    <string name="SVR_DRINK_INGREDIENT_MONO_TITLE">Mono Settings</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION">Infusion Time</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_BREW">Brewing Time</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_AIR_TIME">Air Pump Time</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_AIR_SPD">Air Pump Speed</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_BUB_TIME">Bub Pump Time</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_BUB_SPD">Bub Pump Speed</string>
+    <!--<string name="SVR_DRINK_INGREDIENT_ESPRESSO_NAME">Ingredient Name</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_WATER">Water Type</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_VOLUME">Water Volume</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_POWER_TYPE">Powder Type</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_POWER_AMOUNT">Powder Amount</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_PRESSURE">Brew Pressure</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_BREW_1">Brew Time 1</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_BREW_2">Brew Time 2</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_DRY">Dry Brewer Time</string>
+    <string name="SVR_DRINK_INGREDIENT_ESPRESSO_TOTAL">Total Time</string>-->
 
 
 

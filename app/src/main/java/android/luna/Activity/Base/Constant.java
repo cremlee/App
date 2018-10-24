@@ -154,6 +154,7 @@ public final class Constant {
 	public static final int REQ_SCR_ECO 	= 0x153;
 	public static final int REQ_SCR_CUP		= 0x154;
 
+	public static final int REQ_GROUP_ICON	= 0x155;
 
 	//public static final int REQ_WELCOM_MESSAGE = 0x105;
 	//public static final int REQ_SLEEP_MESSAGE = 0x106;

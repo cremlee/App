@@ -71,7 +71,18 @@ public class IngredientMono implements Serializable {
 		this.isDefault = isDefault;
 		this.createstatus = createstatus;
 	}
+	public boolean isChanged() {
+		return IsChanged;
+	}
 
+	private boolean IsChanged=false;
+	public void setChanged(boolean changed) {
+		IsChanged = changed;
+		if(createstatus==2)
+		{
+			createstatus =3;
+		}
+	}
 	public int getId() {
 		return id;
 	}

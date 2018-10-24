@@ -72,7 +72,7 @@ public class FreeCleanFragment extends Fragment implements View.OnClickListener 
         step_video = viewVideo.findViewById(R.id.textureView);
         icon.addView(viewVideo);
         step_video.setSurfaceTextureListener(this);
-        viewImage = getActivity().getLayoutInflater().inflate(R.layout.lyt_step_video, null);
+        viewImage = getActivity().getLayoutInflater().inflate(R.layout.lyt_step_picture, null);
         step_pic = viewImage.findViewById(R.id.step_pic);
         icon.addView(viewImage);
 

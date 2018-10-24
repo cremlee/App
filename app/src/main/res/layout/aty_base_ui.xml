@@ -81,7 +81,6 @@
             android:id="@+id/rlyt_bg"
             android:layout_height="0dp"
             android:layout_weight="5">
-
         </RelativeLayout>
         <!--foot area-->
         <TextView

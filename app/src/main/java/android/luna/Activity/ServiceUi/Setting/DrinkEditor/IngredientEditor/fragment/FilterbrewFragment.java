@@ -332,8 +332,6 @@ public class FilterbrewFragment extends BaseFragment implements IIngredient<Ingr
     public void InitView(IngredientFilterBrew filter)
     {
         //// TODO: 2018/2/9 shuaxin peizhi jiemian
-
-        //mingredientFilterBrew =filter;
         if(getIngredientFilterBrew()!=null)
         {
             Map<String, String> grinderType = new TreeMap<String, String>();

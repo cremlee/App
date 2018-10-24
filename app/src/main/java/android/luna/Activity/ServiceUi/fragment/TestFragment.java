@@ -11,6 +11,7 @@ import android.luna.Activity.ServiceUi.MachineDevice.aty_device_canister;
 import android.luna.Activity.ServiceUi.MachineDevice.aty_device_esbrewer;
 import android.luna.Activity.ServiceUi.MachineDevice.aty_device_grinder;
 import android.luna.Activity.ServiceUi.MachineDevice.aty_device_mixer;
+import android.luna.Activity.ServiceUi.MachineDevice.aty_device_monobrewer;
 import android.luna.Activity.ServiceUi.MachineDevice.aty_device_peripheral;
 import android.luna.Activity.ServiceUi.MachineDevice.aty_device_watersys;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.aty_ingrendient_maker;
@@ -84,7 +85,10 @@ public class TestFragment extends Fragment {
                             intent = new Intent(getActivity(), aty_device_esbrewer.class);
                             startActivity(intent);
                         }
-
+                        else if((a.getGroup_id() == 0x0001) && (a.getCompent_type()==0x0002)) {
+                            intent = new Intent(getActivity(), aty_device_monobrewer.class);
+                            startActivity(intent);
+                        }
                         else if((a.getGroup_id() == 0x0003)) {
                             intent = new Intent(getActivity(), aty_device_canister.class);
                             startActivity(intent);
@@ -159,21 +163,22 @@ public class TestFragment extends Fragment {
         String attstr = "";
         if(main!=null && main.getParent_id_list()!=null && main.getParent_id_list().size()>0)
         {
-
             for (Integer item:main.getParent_id_list())
             {
                 attstr = String.format("%08X",item);
-                if(attstr.startsWith("0005") || attstr.startsWith("0006")
+                        if(attstr.startsWith("0005")
+                        || attstr.startsWith("0006")
                         || attstr.startsWith("0007")
-                        ||attstr.startsWith("0008")
-                        ||attstr.startsWith("0009")
+                        || attstr.startsWith("0008")
+                        || attstr.startsWith("0009")
+                        || attstr.startsWith("000B")
                         || attstr.startsWith("000C")
                         || attstr.startsWith("000E")
                         || attstr.startsWith("0014")
                         || attstr.startsWith("0015")
                         || attstr.startsWith("0016")
                         || attstr.startsWith("0018")
-                        ||attstr.startsWith("0019")
+                        || attstr.startsWith("0019")
                         || attstr.startsWith("001A"))
                 {
                     ret.add(getMainDeviceByUid(attstr));

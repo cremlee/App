@@ -133,7 +133,6 @@ public class ImportFragment extends Fragment implements View.OnDragListener ,Vie
         gridLayoutManager.setReverseLayout(false);
         //设置RecycleView显示的方向是水平还是垂直
         //GridLayout.HORIZONTAL水平 GridLayout.VERTICAL默认垂直
-        // 三元运算符
         gridLayoutManager.setOrientation(GridLayout.VERTICAL);
         //设置布局管理器， 参数linearLayoutManager对象
         gdv_pic.setLayoutManager(gridLayoutManager);
@@ -199,8 +198,55 @@ public class ImportFragment extends Fragment implements View.OnDragListener ,Vie
         }
     }
 
-    private void showPutfile2destfolder(final String scr, final String dest)
+    public final static int FILE_MEDIA =1;
+    public final static int FILE_PICTURE =2;
+    public final static int FILE_GIF =3;
+    public final static int FILE_VIDEO =4;
+    public final static int FILE_DOCUMENT =5;
+
+    private void showtoast(String string)
     {
+        ((BaseActivity)getActivity()).showToast(string);
+    }
+    private void showPutfile2destfolder(final String scr, final String dest,int filetype)
+    {
+
+        switch ( filetype)
+        {
+            case FILE_MEDIA:
+                if(!(scr.endsWith("jpg") || scr.endsWith("png") || scr.endsWith("mp4") || scr.endsWith("gif"))) {
+                    showtoast("File type error!");
+                    return;
+                }
+                break;
+            case FILE_PICTURE:
+                if(!(scr.endsWith("jpg") || scr.endsWith("png"))) {
+                    showtoast("File type error!");
+                    return;
+                }
+                break;
+            case FILE_GIF:
+                if(!scr.endsWith("gif"))
+                {
+                    showtoast("File type error!");
+                    return;
+                }
+                break;
+            case FILE_VIDEO:
+                if(!scr.endsWith("mp4"))
+                {
+                    showtoast("File type error!");
+                    return;
+                }
+                break;
+            case FILE_DOCUMENT:
+                if(!scr.endsWith("pdf"))
+                {
+                    showtoast("File type error!");
+                    return;
+                }
+                break;
+        }
         MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                 .title("Copy files to pad")
                 .content("Do you want to cop the files to pad?")
@@ -242,31 +288,32 @@ public class ImportFragment extends Fragment implements View.OnDragListener ,Vie
                 switch (id)
                 {
                     case R.id.dir_background:
-                        showPutfile2destfolder(srcpath,FileHelper.PATH_MAIN_BKG);
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_MAIN_BKG,FILE_PICTURE);
                         break;
                     case R.id.dir_icon:
-                        showPutfile2destfolder(srcpath,FileHelper.PATH_ICON);
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_ICON,FILE_PICTURE);
                         break;
                     case R.id.dir_dispense:
-                        showPutfile2destfolder(srcpath,FileHelper.PATH_DRINK_AM);
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_DRINK_AM,FILE_MEDIA);
                         break;
                     case R.id.dir_stroy:
-                        showPutfile2destfolder(srcpath,FileHelper.PATH_STORY);
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_STORY,FILE_MEDIA);
                         break;
                     case R.id.dir_gallery:
-                        showPutfile2destfolder(srcpath,FileHelper.PATH_DRINK_BKG);
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_DRINK_BKG,FILE_PICTURE);
                         break;
                     case R.id.dir_cuplogo:
-                        showPutfile2destfolder(srcpath,FileHelper.PATH_SCREEN_LOGO);
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_SCREEN_LOGO,FILE_PICTURE);
                         break;
                     case R.id.dir_banner:
-                        showPutfile2destfolder(srcpath,FileHelper.PATH_BRAND);
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_BRAND,FILE_PICTURE);
                         break;
                     case R.id.dir_saver:
-                        showPutfile2destfolder(srcpath,FileHelper.PATH_SCREEN_SAVER);
+                        showPutfile2destfolder(srcpath,FileHelper.PATH_SCREEN_SAVER,FILE_MEDIA);
                         break;
                     case R.id.dir_pdf:
-
+                        // TODO: 2018/9/3 PDF?
+                            showPutfile2destfolder(srcpath,FileHelper.PATH_HELP_SERVICE,FILE_DOCUMENT);
                         break;
                 }
                 break;

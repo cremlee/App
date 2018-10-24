@@ -81,7 +81,8 @@ public class CanisterFragment extends Fragment {
                                     canisterItemStock.setPid((int)id);
                                     stockFactoryDao.getCanisterStockDao().update(canisterItemStock);
                                 }
-                                powderFactory.getPowerItemDao().updatePowderSelectedSt(((Dev_Hopper)item).getPowder_type(),0);
+                                if(stockFactoryDao.getCanisterStockDao().queryByPid(((Dev_Hopper)item).getPowder_type())==null)
+                                    powderFactory.getPowerItemDao().updatePowderSelectedSt(((Dev_Hopper)item).getPowder_type(),0);
                                 ((Dev_Hopper)item).setPowder_type((int)id);
                                 powderFactory.getPowerItemDao().updatePowderSelectedSt((int)id,1);
                                 DeviceXmlFactory.UpdateDeviceXml(item);
@@ -115,7 +116,8 @@ public class CanisterFragment extends Fragment {
                                     canisterItemStock.setPid((int)id);
                                     stockFactoryDao.getCanisterStockDao().update(canisterItemStock);
                                 }
-                                powderFactory.getPowerItemDao().updatePowderSelectedSt(((Dev_Canister)item).getPowder_type(),0);
+                                if(stockFactoryDao.getCanisterStockDao().queryByPid(((Dev_Hopper)item).getPowder_type())==null)
+                                    powderFactory.getPowerItemDao().updatePowderSelectedSt(((Dev_Canister)item).getPowder_type(),0);
                                 ((Dev_Canister) item).setPowder_type((int)id);
                                 powderFactory.getPowerItemDao().updatePowderSelectedSt((int)id,1);
                                 DeviceXmlFactory.UpdateDeviceXml(item);

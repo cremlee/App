@@ -4,9 +4,11 @@ import android.luna.Data.module.CleanActionItem;
 import android.luna.Data.module.DeviceLayout.DeviceItemLayout;
 import android.luna.Data.module.MachineDevice.DEV_Waterpump;
 import android.luna.Data.module.MachineDevice.DEV_virMachine;
+import android.luna.Data.module.MachineDevice.Dev_AirPump;
 import android.luna.Data.module.MachineDevice.Dev_Airbreak;
 import android.luna.Data.module.MachineDevice.Dev_Boiler_ES;
 import android.luna.Data.module.MachineDevice.Dev_Boiler_G;
+import android.luna.Data.module.MachineDevice.Dev_BubPump;
 import android.luna.Data.module.MachineDevice.Dev_Canister;
 import android.luna.Data.module.MachineDevice.Dev_ES;
 import android.luna.Data.module.MachineDevice.Dev_Fan;
@@ -15,6 +17,7 @@ import android.luna.Data.module.MachineDevice.Dev_Heater;
 import android.luna.Data.module.MachineDevice.Dev_Hopper;
 import android.luna.Data.module.MachineDevice.Dev_Led;
 import android.luna.Data.module.MachineDevice.Dev_Mixer_L;
+import android.luna.Data.module.MachineDevice.Dev_Mono;
 import android.luna.Data.module.MachineDevice.Dev_SenCup;
 import android.luna.Data.module.MachineDevice.Dev_SenDoor;
 import android.luna.Data.module.MachineDevice.Dev_SenDriptray;
@@ -79,6 +82,16 @@ public class DeviceXmlFactory {
                                 ((Dev_ES)device).setInlet_flow(Integer.parseInt(pullParser.getAttributeValue(null,"Flow_Meter")));
                                 ((Dev_ES)device).setLife_brewer_motor(Integer.parseInt(pullParser.getAttributeValue(null,"Life_Motor")));
                                 ((Dev_ES)device).setLife_inlet_valve(Integer.parseInt(pullParser.getAttributeValue(null,"Life_Valve")));
+                            }
+                            else if(id.startsWith("000102")) //Mono-brewer
+                            {
+                                device = new Dev_Mono(1);
+                                device.setID(pullParser.getAttributeValue(null,"GUID"));
+                                device.setPosition_id(Integer.parseInt(id.substring(6),16));
+                                ((Dev_Mono)device).setMax_capability(Integer.parseInt(pullParser.getAttributeValue(null,"Max_Capability")));
+                                ((Dev_Mono)device).setInlet_flow(Integer.parseInt(pullParser.getAttributeValue(null,"Flow_Meter")));
+                                ((Dev_Mono)device).setLife_brewer_motor(Integer.parseInt(pullParser.getAttributeValue(null,"Life_Motor")));
+                                ((Dev_Mono)device).setLife_inlet_valve(Integer.parseInt(pullParser.getAttributeValue(null,"Life_Valve")));
                             }
                             else if(id.startsWith("0002")) //grinder
                             {
@@ -162,6 +175,24 @@ public class DeviceXmlFactory {
                                 device.setPosition_id(Integer.parseInt(id.substring(6),16));
                                 ((DEV_Waterpump)device).setMotor_life(Integer.parseInt(pullParser.getAttributeValue(null,"Motor_life")));
                                 ((DEV_Waterpump)device).setSpeed(Integer.parseInt(pullParser.getAttributeValue(null,"Speed")));
+                            }
+                            else if(id.startsWith("000B01")) //airpump
+                            {
+                                device = new Dev_AirPump();
+                                device.setID(pullParser.getAttributeValue(null,"GUID"));
+                                device.setCompent_type(Integer.parseInt(id.substring(4,6),16));
+                                device.setPosition_id(Integer.parseInt(id.substring(6),16));
+                                ((Dev_AirPump)device).setMotor_life(Integer.parseInt(pullParser.getAttributeValue(null,"Motor_life")));
+                                ((Dev_AirPump)device).setSpeed(Integer.parseInt(pullParser.getAttributeValue(null,"Speed")));
+                            }
+                            else if(id.startsWith("000B02")) //airpump
+                            {
+                                device = new Dev_BubPump();
+                                device.setID(pullParser.getAttributeValue(null,"GUID"));
+                                device.setCompent_type(Integer.parseInt(id.substring(4,6),16));
+                                device.setPosition_id(Integer.parseInt(id.substring(6),16));
+                                ((Dev_BubPump)device).setMotor_life(Integer.parseInt(pullParser.getAttributeValue(null,"Motor_life")));
+                                ((Dev_BubPump)device).setSpeed(Integer.parseInt(pullParser.getAttributeValue(null,"Speed")));
                             }
                             else if(id.startsWith("000C")) //led
                             {
@@ -452,6 +483,15 @@ public class DeviceXmlFactory {
                 serializer.attribute(null, "Life_Valve", ( (Dev_ES) device).getLife_inlet_valve()+"");
 
             }
+            else if(DeviceIDStr.startsWith("000102")) //mono
+            {
+                serializer.attribute(null, "Name", "Mono-Brewer");
+                serializer.attribute(null, "Max_Capability", ( (Dev_Mono) device).getMax_capability()+"");
+                serializer.attribute(null, "Flow_Meter", ( (Dev_Mono) device).getInlet_flow()+"");
+                serializer.attribute(null, "Life_Motor", ( (Dev_Mono) device).getLife_brewer_motor()+"");
+                serializer.attribute(null, "Life_Valve", ( (Dev_Mono) device).getLife_inlet_valve()+"");
+
+            }
             else  if(DeviceIDStr.startsWith("0002")) //grinder
             {
                 serializer.attribute(null, "Name", "Grinder");
@@ -519,6 +559,20 @@ public class DeviceXmlFactory {
                 serializer.attribute(null, "Type", ( device).getCompent_type()+"");
                 serializer.attribute(null, "Speed", ( (DEV_Waterpump) device).getSpeed()+"");
                 serializer.attribute(null, "Motor_life", ( (DEV_Waterpump) device).getMotor_life()+"");
+            }
+            else if(DeviceIDStr.startsWith("000B01")) //air
+            {
+                serializer.attribute(null, "Name", "Waterpump");
+                serializer.attribute(null, "Type", ( device).getCompent_type()+"");
+                serializer.attribute(null, "Speed", ( (Dev_AirPump) device).getSpeed()+"");
+                serializer.attribute(null, "Motor_life", ( (Dev_AirPump) device).getMotor_life()+"");
+            }
+            else if(DeviceIDStr.startsWith("000B02")) //bub
+            {
+                serializer.attribute(null, "Name", "Waterpump");
+                serializer.attribute(null, "Type", ( device).getCompent_type()+"");
+                serializer.attribute(null, "Speed", ( (Dev_BubPump) device).getSpeed()+"");
+                serializer.attribute(null, "Motor_life", ( (Dev_BubPump) device).getMotor_life()+"");
             }
             else if(DeviceIDStr.startsWith("000C")) //led
             {
@@ -686,7 +740,7 @@ public class DeviceXmlFactory {
             for (Integer item:main.getParent_id_list())
             {
                 attstr = String.format("%08X",item.intValue());
-                if(attstr.startsWith("0005") || attstr.startsWith("0006") || attstr.startsWith("0007") ||attstr.startsWith("0008")
+                if(attstr.startsWith("0005") || attstr.startsWith("0006") || attstr.startsWith("0007") ||attstr.startsWith("0008") || attstr.startsWith("000B")
                         || attstr.startsWith("000C") || attstr.startsWith("0014") || attstr.startsWith("0015") || attstr.startsWith("0018") ||attstr.startsWith("0019") || attstr.startsWith("001A"))
                 {
                     ret.add(getMainDeviceByUid(attstr,devices));
@@ -708,5 +762,15 @@ public class DeviceXmlFactory {
             }
         }
         return null;
+    }
+
+    // TODO: 2018/10/9 according to the mpd get the correct type
+    public static int getEsBeanType()
+    {
+        return 0x81;
+    }
+    public static int getMonoBeanType()
+    {
+        return 0x81;
     }
 }

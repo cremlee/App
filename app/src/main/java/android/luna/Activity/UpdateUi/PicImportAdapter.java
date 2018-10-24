@@ -117,10 +117,5 @@ public class PicImportAdapter extends BaseAdapter {
     public static class ViewHolder //extends RecyclerView.ViewHolder
     {
         LabelImageView picicon;
-
-        /*public ViewHolder(View itemView) {
-            super(itemView);
-            picicon =itemView.findViewById(R.id.pic_icon);
-        }*/
     }
 }

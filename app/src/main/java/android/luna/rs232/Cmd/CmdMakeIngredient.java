@@ -5,6 +5,7 @@ import android.luna.Data.module.IngredientFilterBrew;
 import android.luna.Data.module.IngredientFilterBrewAdvance;
 import android.luna.Data.module.IngredientInstant;
 import android.luna.Data.module.IngredientMilk;
+import android.luna.Data.module.IngredientMono;
 import android.luna.Data.module.IngredientWater;
 import android.luna.Utils.AndroidUtils_Ext;
 import android.luna.rs232.Cmd.base.*;
@@ -98,15 +99,7 @@ public class CmdMakeIngredient extends BaseCmd {
 		buffer.append(AndroidUtils_Ext.float2Hex2(filterBrew.getGrinder2Amount() / 10.0f));
 
 		/* step2 */
-		// Pre Brew Time
-//		if (type == App.MACHINE_TYPE_MF13) {
-//			buffer.append(AndroidUtils.oct2Hex2(filterBrew.getTmPre13() * 100));
-//		} else if (type == App.MACHINE_TYPE_MF04) {
-//			buffer.append(AndroidUtils.oct2Hex2(filterBrew.getTmPre04() * 100));
-//		}
-		
 		buffer.append(AndroidUtils_Ext.oct2Hex2(filterBrew.getTmPre13() * 100));
-		
 		buffer.append(AndroidUtils_Ext.oct2Hex2(0));
 		buffer.append(AndroidUtils_Ext.oct2Hex2(0));
 		buffer.append(AndroidUtils_Ext.oct2Hex2(0));
@@ -168,7 +161,7 @@ public class CmdMakeIngredient extends BaseCmd {
 
 	public String buildInstantStructure(IngredientInstant instant) {
 
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 
 		buffer.append(AndroidUtils_Ext.oct2Hex(instant.getMixNumber()));
 		// Mix-whipper pre flush time (ms)
@@ -200,6 +193,21 @@ public class CmdMakeIngredient extends BaseCmd {
 		buffer.append(AndroidUtils_Ext.oct2Hex2(Integer.valueOf(instant.getPacket2Type())));
 		// packet2 amount
 		buffer.append(AndroidUtils_Ext.float2Hex2(instant.getPacket2Amount() / 10.0f));
+		return buffer.toString();
+	}
+
+
+	public String buildMonoStructure(IngredientMono mono) {
+		StringBuilder buffer = new StringBuilder();
+		buffer.append(AndroidUtils_Ext.float2Hex2(mono.getPowderamount()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getPowdertype()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getInfusiontime()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getBrewtime()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getAirruntime()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getPowdervolume()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getWaterpressure()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getAirspeed()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getPowdervolumetype()));
 		return buffer.toString();
 	}
 }

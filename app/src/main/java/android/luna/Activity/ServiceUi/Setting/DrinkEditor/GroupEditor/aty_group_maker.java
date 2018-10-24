@@ -5,12 +5,14 @@ import android.database.DataSetObserver;
 import android.luna.Activity.Base.AppManager;
 import android.luna.Activity.Base.BaseActivity;
 import android.luna.Activity.Base.Constant;
+import android.luna.Activity.ServiceUi.Setting.DrinkEditor.BeverageEditor.PicSelector.aty_uiRes_selector;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.tip.IngredientnameTip;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.adapter.BeverageItemSelectorAdpter;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.adapter.GroupAdapter;
 import android.luna.Data.DAO.BeverageFactoryDao;
 import android.luna.Data.module.BeverageBasic;
 import android.luna.Data.module.BeverageGroup;
+import android.luna.Utils.FileHelper;
 import android.luna.ViewUi.MaterialDialog.DialogAction;
 import android.luna.ViewUi.MaterialDialog.MaterialDialog;
 import android.luna.ViewUi.Tip.TipEditGroupText;
@@ -252,12 +254,21 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-      if (requestCode == Constant.REQ_INPUT)
-      {
-          String name = data.getStringExtra("NAME");
-          group_item_name.setTextValue(name);
-          // TODO: 2018/8/13 update all record in group
-      }
+        if (data == null) {
+            return;
+        }
+
+        switch (requestCode)
+        {
+            case Constant.REQ_GROUP_ICON:
+                String path = data.getStringExtra("newpath");
+                group_item_icon.setTextValue(path);
+                break;
+            case Constant.REQ_INPUT:
+                String name = data.getStringExtra("NAME");
+                group_item_name.setTextValue(name);
+                break;
+        }
     }
 
     private void savegroup()
@@ -360,6 +371,15 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
                 intent.putExtra("NAME",group_item_name.getTextValue());
                 startActivityForResult(intent, Constant.REQ_INPUT);
                 break;
+            case R.id.group_item_icon:
+                // TODO: 2018/10/24 show the icon path picture to select.
+                intent = new Intent(aty_group_maker.this,aty_uiRes_selector.class);
+                intent.putExtra("path", group_item_name.getTextValue());
+                intent.putExtra("folder", FileHelper.PATH_ICON);
+                intent.putExtra("reqCode", Constant.REQ_GROUP_ICON);
+                startActivityForResult(intent, Constant.REQ_GROUP_ICON);
+                break;
         }
     }
+
 }

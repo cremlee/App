@@ -25,33 +25,26 @@ import android.luna.SDK.Wechat.WXPayUtil;
 import android.luna.Utils.Nutrition.CalcHelpper;
 import android.luna.Utils.Nutrition.NutritionListItem;
 import android.luna.Utils.PictureManager;
-import android.luna.ViewUi.CupView.cupView;
 import android.luna.ViewUi.NutritionUi.NutritionPopWindow;
-import android.luna.ViewUi.NutritionUi.adapter.Nutritionadapter;
 import android.luna.ViewUi.Ratebar.MyRateBar;
 import android.luna.ViewUi.ViewPager.Rotate3dAnimation;
 import evo.luna.android.R;
 
-import android.luna.rs232.Cmd.CmdMakeDrink;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.GestureDetector;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -157,7 +150,7 @@ public class aty_customer_ui_11 extends BaseActivity implements View.OnClickList
         }
         else if(res.endsWith(".png") ||  res.endsWith(".jpg"))
         {
-            PicView = getLayoutInflater().inflate(R.layout.lyt_step_video, null);
+            PicView = getLayoutInflater().inflate(R.layout.lyt_step_picture, null);
             step_pic = PicView.findViewById(R.id.step_pic);
             vp_drinkstory.addView(PicView);
 

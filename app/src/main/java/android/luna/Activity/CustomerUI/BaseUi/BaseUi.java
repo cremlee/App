@@ -119,6 +119,11 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
     /* data part */
     protected List<DrinkMenuButton> drinkMenuButtonList=new ArrayList<>(20);
     private DrinkMenuButton currentbtn=null;
+
+    public BeverageFactoryDao getBeverageFactoryDao() {
+        return beverageFactoryDao;
+    }
+
     private BeverageFactoryDao beverageFactoryDao=null;
     private PersonFactoryDao personFactoryDao =null;
     private List<PersonItem> personItems = new ArrayList<>(10);

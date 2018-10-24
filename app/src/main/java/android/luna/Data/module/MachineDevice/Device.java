@@ -175,6 +175,8 @@ public class Device implements IDevice {
         if (o == null || !getClass().isAssignableFrom(o.getClass()))
             return false;
         return group_id == ((Device) o).group_id &&
-                compent_type == ((Device) o).compent_type;
+                compent_type == ((Device) o).compent_type && position_id ==((Device) o).position_id;
     }
+
+
 }

@@ -106,6 +106,123 @@ public class BeverageFactoryDao extends BaseDaobak implements IBeverageDao {
         }
         return tmp;
     }
+
+    public List<DrinkMenuButton> getDrinkIconItems(int lang,int groupid)
+    {
+        List<DrinkMenuButton> ret = new ArrayList<>(4);
+        DrinkMenuButton tmp;
+        String name;
+        List<BeverageGroup> beverageGroups= getBeverageGroup().querylistbyPid(groupid);
+        if(beverageGroups!=null && beverageGroups.size()>0)
+        {
+            for (BeverageGroup groupitem:beverageGroups)
+            {
+                BeverageUi beverageUi = getBeverageUiDao().query(groupitem.getPid());
+                Map<Integer, Integer> stocks = getStockInfo();
+                WasterBinStock wasterBinStock = getStockFactoryDao().getWasterbinStockDao().queryByPid(99);
+                if(wasterBinStock ==null)
+                {
+                    wasterBinStock = new WasterBinStock(150,150);
+                    wasterBinStock.setId(1);
+                    getStockFactoryDao().getWasterbinStockDao().create(wasterBinStock);
+                }
+                if(beverageUi!=null)
+                {
+                    BeverageBasic beverageBasic = getBeverageBasicDao().query(beverageUi.getPid());
+                    if (beverageBasic != null) {
+                        name = getBeverageNameDao().getDrinkname(beverageUi.getPid(), lang);
+                        if (name.equals(""))
+                            name = beverageBasic.getName();
+                        tmp = new DrinkMenuButton(name, beverageBasic.getDrinkPrice(), beverageUi.getIconPath(), beverageUi.getGalleryBkgPath(), beverageUi.getStoryTellingPath(), beverageUi.getDispenseTellingPath());
+                        tmp.setPid(beverageUi.getPid());
+                        tmp.setPreselect(beverageBasic.getPreselectvalue());
+                        tmp.setJugmode(beverageBasic.getJug());
+                        // TODO: 2018/7/23 set the drink state according to the machine state
+                        List<BeverageIngredient> beverageIngredients = getBeverageIngerdient().queryforbeveragepid(beverageUi.getPid());
+                        if (beverageIngredients != null && beverageIngredients.size() > 0) {
+                            outer:     for (BeverageIngredient bi : beverageIngredients) {
+                                switch (bi.getIngredientType()) {
+                                    case Ingredient.TYPE_ESPRESSO:
+                                        IngredientEspresso espresso = getingredientFactoryDao().getEspressoDao().findByT(bi.getIngredientPid());
+                                        if (espresso == null) {
+                                            tmp.setDrinkstate(2);
+                                            break outer;
+                                        }
+                                        if(wasterBinStock.getStock()<10)
+                                        {
+                                            tmp.setDrinkstate(3);
+                                            break outer;
+                                        }
+                                        if (stocks.size() > 0) {
+                                            if (!stocks.containsKey(espresso.getPowdertype())) {
+                                                tmp.setDrinkstate(2);
+                                                break outer;
+                                            } else if (stocks.get(espresso.getPowdertype()) <= STOCK_OUT_OF_VALUE) {
+                                                tmp.setDrinkstate(1);
+                                                break outer;
+                                            }
+                                        }
+                                        break;
+                                    case Ingredient.TYPE_FILTER_BREW:
+                                        IngredientFilterBrew filterBrew = getingredientFactoryDao().getFilterBrewDao().findByT(bi.getIngredientPid());
+                                        if (filterBrew == null) {
+                                            tmp.setDrinkstate(2);
+                                            break outer;
+                                        }
+                                        if(wasterBinStock.getStock()<10)
+                                        {
+                                            tmp.setDrinkstate(3);
+                                            break outer;
+                                        }
+                                        if (stocks.size() > 0) {
+                                            if (!stocks.containsKey(filterBrew.getGrinder1Type())) {
+                                                tmp.setDrinkstate(2);
+                                                break outer;
+                                            } else if (stocks.get(filterBrew.getGrinder1Type()) <= STOCK_OUT_OF_VALUE) {
+                                                tmp.setDrinkstate(1);
+                                                break outer;
+                                            }
+                                        }
+                                        break;
+                                    case Ingredient.TYPE_FILTER_BREW_ADVANCE:
+                                        // IngredientFilterBrewAdvance filterBrewAdvance =getingredientFactoryDao().getFilterBrewDao().findByT(bi.getIngredientPid());
+                                        break;
+                                    case Ingredient.TYPE_INSTANT:
+                                        IngredientInstant instant = getingredientFactoryDao().getInstantDao().findByT(bi.getIngredientPid());
+                                        if (instant == null) {
+                                            tmp.setDrinkstate(2);
+                                            break outer;
+                                        }
+                                        if (stocks.size() > 0) {
+                                            if (!stocks.containsKey(instant.getPacket1Type())) {
+                                                tmp.setDrinkstate(2);
+                                                break outer;
+                                            } else if (stocks.get(instant.getPacket1Type()) <= STOCK_OUT_OF_VALUE) {
+                                                tmp.setDrinkstate(1);
+                                                break outer;
+                                            }
+                                        }
+                                        break;
+                                    case Ingredient.TYPE_MILK:
+                                        break;
+                                    case Ingredient.TYPE_WATER:
+                                        IngredientWater water = getingredientFactoryDao().getWaterDao().findByT(bi.getIngredientPid());
+                                        if (water == null) {
+                                            tmp.setDrinkstate(2);
+                                            break outer;
+                                        }
+                                        break;
+                                }
+                            }
+                        }
+                        ret.add(tmp);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
     public List<DrinkMenuButton> getDrinkIconItems(int lang) {
         List<DrinkMenuButton> ret = new ArrayList<>(30);
         DrinkMenuButton tmp;

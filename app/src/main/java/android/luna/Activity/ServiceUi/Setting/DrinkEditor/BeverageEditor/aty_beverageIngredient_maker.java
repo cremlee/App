@@ -1,5 +1,6 @@
 package android.luna.Activity.ServiceUi.Setting.DrinkEditor.BeverageEditor;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -13,24 +14,30 @@ import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.frag
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.EsperssoFragment;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.FilterbrewFragment;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.InstantFragment;
+import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.MonoFragment;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.WaterFragment;
 import android.luna.Data.DAO.EspressoDao;
 import android.luna.Data.DAO.FilterBrewDao;
 import android.luna.Data.DAO.IngredientDao;
 import android.luna.Data.DAO.InstantDao;
+import android.luna.Data.DAO.MonoDao;
 import android.luna.Data.DAO.PowderFactory;
 import android.luna.Data.DAO.WaterDao;
 import android.luna.Data.module.Ingredient;
 import android.luna.Data.module.IngredientEspresso;
 import android.luna.Data.module.IngredientFilterBrew;
 import android.luna.Data.module.IngredientInstant;
+import android.luna.Data.module.IngredientMono;
 import android.luna.Data.module.IngredientWater;
 import android.luna.Data.module.Powder.PowderItem;
 import android.luna.Utils.AndroidUtils_Ext;
+import android.luna.Utils.Logger.EvoTrace;
 import android.luna.ViewUi.MaterialDialog.MaterialDialog;
 import android.luna.rs232.Ack.AckQuery;
 import android.luna.rs232.Cmd.CmdMakeIngredient;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -45,13 +52,12 @@ import evo.luna.android.R;
  */
 
 public class aty_beverageIngredient_maker  extends BaseActivity implements View.OnClickListener{
-    private static final String INDEX_STRING_TOP = "↑";
     private Button btn_save,btn_close,btn_test;
-    private RecyclerView mRv;
     private MaterialDialog progressDialog;
     private FilterbrewFragment Tb_Filterbrew;
     private InstantFragment Tb_Instant;
     private WaterFragment Tb_Water;
+    private MonoFragment Tb_mono;
     private EsperssoFragment Tb_espresso;
     private int mIngrendientPid=0;
     private int m_ingredientType;
@@ -72,11 +78,16 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
     public  static IngredientEspresso getMingredientEspresso() {
         return mingredientEspresso;
     }
+    private static IngredientMono mingredientMono=null;
+    public  static IngredientMono getMingredientMono() {
+        return mingredientMono;
+    }
     private IngredientDao mingredientDao=null;
     private FilterBrewDao mfilterBrewDao=null;
     private InstantDao minstantDao=null;
     private WaterDao mwaterDao=null;
     private EspressoDao mespressoDao=null;
+    private MonoDao mmonoDao=null;
     private PowderFactory powderFactory;
     public List<PowderItem> getPowderItems() {
         return powderItems;
@@ -91,6 +102,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
         minstantDao = new InstantDao(this,getApp());
         mwaterDao = new WaterDao(this,getApp());
         mespressoDao = new EspressoDao(this,getApp());
+        mmonoDao = new MonoDao(this,getApp());
         IntentFilter filter = new IntentFilter();
         filter.addAction(Constant.ACTION_MAKE_INGREDIENT_ACK);
         filter.addAction(Constant.ACTION_CMD_RSP_TIME_OUT);
@@ -112,21 +124,18 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
         public void onReceive(Context context, Intent intent) {
             // TODO Auto-generated method stub
             String action = intent.getAction();
-            if(action.equals(Constant.ACTION_MAKE_INGREDIENT_ACK))
-            {
-                int createst=1;
-                int ackresult = intent.getIntExtra("ACK",2);
-                int op = intent.getIntExtra("OP",4);
-                if(progressDialog!=null)
-                {
-                    progressDialog.dismiss();
-                }
-                if(op!=4) {
+            if (action.equals(Constant.ACTION_MAKE_INGREDIENT_ACK)) {
+                int createst = 1;
+                int ackresult = intent.getIntExtra("ACK", 2);
+                int op = intent.getIntExtra("OP", 4);
+                if (op != 4) {
+                    if (progressDialog != null) {
+                        progressDialog.dismiss();
+                    }
                     switch (m_ingredientType) {
                         case Ingredient.TYPE_FILTER_BREW:
                             if (mingredientFilterBrew != null) {
-                                switch (ackresult)
-                                {
+                                switch (ackresult) {
                                     case Ingredient.ACK_ERR:
                                     case Ingredient.ACK_ID_ERR:
                                     case Ingredient.ACK_REJECT:
@@ -135,7 +144,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                                         createst = mingredientFilterBrew.getCreatestatus();
                                         break;
                                     case Ingredient.ACK_OK:
-                                        createst =2;
+                                        createst = 2;
                                         break;
                                     case Ingredient.ACK_ID_NOT_EXIST:
                                         createst = 1;
@@ -150,8 +159,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                             break;
                         case Ingredient.TYPE_ESPRESSO:
                             if (mingredientEspresso != null) {
-                                switch (ackresult)
-                                {
+                                switch (ackresult) {
                                     case Ingredient.ACK_ERR:
                                     case Ingredient.ACK_ID_ERR:
                                     case Ingredient.ACK_REJECT:
@@ -160,7 +168,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                                         createst = mingredientEspresso.getCreatestatus();
                                         break;
                                     case Ingredient.ACK_OK:
-                                        createst =2;
+                                        createst = 2;
                                         break;
                                     case Ingredient.ACK_ID_NOT_EXIST:
                                         createst = 1;
@@ -177,8 +185,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                             break;
                         case Ingredient.TYPE_INSTANT:
                             if (mingredientInstant != null) {
-                                switch (ackresult)
-                                {
+                                switch (ackresult) {
                                     case Ingredient.ACK_ERR:
                                     case Ingredient.ACK_ID_ERR:
                                     case Ingredient.ACK_REJECT:
@@ -187,7 +194,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                                         createst = mingredientInstant.getCreatestatus();
                                         break;
                                     case Ingredient.ACK_OK:
-                                        createst =2;
+                                        createst = 2;
                                         break;
                                     case Ingredient.ACK_ID_NOT_EXIST:
                                         createst = 1;
@@ -204,8 +211,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                             break;
                         case Ingredient.TYPE_WATER:
                             if (mingredientWater != null) {
-                                switch (ackresult)
-                                {
+                                switch (ackresult) {
                                     case Ingredient.ACK_ERR:
                                     case Ingredient.ACK_ID_ERR:
                                     case Ingredient.ACK_REJECT:
@@ -214,7 +220,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                                         createst = mingredientWater.getCreatestatus();
                                         break;
                                     case Ingredient.ACK_OK:
-                                        createst =2;
+                                        createst = 2;
                                         break;
                                     case Ingredient.ACK_ID_NOT_EXIST:
                                         createst = 1;
@@ -227,15 +233,106 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                                 mwaterDao.modify(mingredientWater);
                             }
                             break;
+                        case Ingredient.TYPE_MONO:
+                            if (mingredientMono != null) {
+                                switch (ackresult) {
+                                    case Ingredient.ACK_ERR:
+                                    case Ingredient.ACK_ID_ERR:
+                                    case Ingredient.ACK_REJECT:
+                                    case Ingredient.ACK_NO_SPACE:
+                                    case Ingredient.ACK_PACKAGE_ERR:
+                                        createst = mingredientMono.getCreatestatus();
+                                        break;
+                                    case Ingredient.ACK_OK:
+                                        createst = 2;
+                                        break;
+                                    case Ingredient.ACK_ID_NOT_EXIST:
+                                        createst = 1;
+                                        break;
+                                    case Ingredient.ACK_ID_ALREADY_EXIST:
+                                        createst = 3;
+                                        break;
+                                }
+                                mingredientMono.setCreatestatus(createst);
+                                mmonoDao.modify(mingredientMono);
+                            }
+                            break;
                     }
                     if (ackresult == 1) {
                         showToast("save ingredient ok");
                     } else {
                         showToast("save ingredient failed:" + ackresult);
                     }
+                } else {
+                    mHandler.sendEmptyMessageDelayed(1000, makeDrinkTime());
                 }
             }
-        }};
+        }
+    };
+    private int makeDrinkTime()
+    {
+        int ingredientTime =30000;
+        switch (m_ingredientType) {
+            case Ingredient.TYPE_FILTER_BREW_ADVANCE:
+                        /*IngredientFilterBrewAdvance filterBrewadv = getHelper().getIngredientFilterBrewAdvanceDao().queryBuilder().where().eq("pid", beverageIngredient.getIngredientPid()).queryForFirst();
+                        if(filterBrewadv!=null)
+                        {
+                            FilterBrewStepDao aa = new FilterBrewStepDao(this,getApp());
+                            ingredientTime = 20000+aa.getsteptime(beverageIngredient.getIngredientPid());
+                        }*/
+                break;
+            case Ingredient.TYPE_FILTER_BREW:
+                /*if (filterBrew != null) {						// 计算总时间
+                    final int BREW_RUNNING_TIME = 10000;
+                    int time = filterBrew.getTmPre13();
+                    ingredientTime = (filterBrew.getDecompressTime() + filterBrew.getExtractionTime() + filterBrew.getOpenDelayTime() + time) * 100 + BREW_RUNNING_TIME;
+                }*/
+                break;
+            case Ingredient.TYPE_INSTANT:
+                if (mingredientInstant != null) {
+                    ingredientTime =  ((mingredientInstant.getWaterVolume()  + mingredientInstant.getPreflushVolume() + mingredientInstant.getWaterAfterFlushVolume()) * 100) + (mingredientInstant.getPauseTimeAfterDispense() + mingredientInstant.getPreflushPauseTime()) + 5000;
+                }
+                break;
+            case Ingredient.TYPE_WATER:
+                if (mingredientWater != null) {
+                    ingredientTime =  (mingredientWater.getWaterVolume() * 100);
+                }
+                break;
+            case Ingredient.TYPE_ESPRESSO:
+                if(mingredientEspresso!=null)
+                {
+                    ingredientTime =  (mingredientEspresso.getBrewtime()+mingredientEspresso.getPrebrewtime()+mingredientEspresso.getPreinfusiontime())*1000+10000+(int)(mingredientEspresso.getPowderamount()*100)+mingredientEspresso.getWatervolume()*100;
+                }
+                break;
+            case Ingredient.TYPE_MONO:
+                if(mingredientMono!=null)
+                {
+                    ingredientTime = mingredientMono.getBrewtime()+mingredientMono.getInfusiontime()+mingredientMono.getAirruntime();
+                }
+                break;
+            default:
+                break;
+        }
+        EvoTrace.e("ack","test wait time ="+ingredientTime);
+        return ingredientTime;
+    }
+    @SuppressLint("HandlerLeak")
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 1000:
+                    if(progressDialog!=null)
+                    {
+                        progressDialog.dismiss();
+                    }
+                    showToast("preview Ingredient ok");
+                default:
+                    break;
+            }
+        }
+    };
     @Override
     protected void onResume() {
         super.onResume();
@@ -272,7 +369,6 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
     }
 
     private void updateIngredientUi(int pid ) {
-
         mIngrendientPid = pid;
         Ingredient ingredient = mingredientDao.getIngredient(mIngrendientPid);
         if (ingredient == null)
@@ -352,6 +448,24 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                     getFragmentManager().beginTransaction().replace(R.id.flyt_ingredient, Tb_espresso).commit();
                 }
                 break;
+            case  Ingredient.TYPE_MONO:
+                mingredientMono = mmonoDao.findByT(ingredient.getPid());
+                if (mingredientMono != null) {
+                    if (Tb_mono == null)
+                        Tb_mono = new MonoFragment();
+                    if (Tb_mono.isAdded()) {
+                        //// TODO: 2018/2/11 shuaxin jiemian
+                        Tb_mono.InitView(mingredientMono);
+                    }
+                    Tb_mono.SetOningredientChanged(new BaseFragment.OningredientChanged() {
+                        @Override
+                        public void itemchanged(int type) {
+                            iscurrentChanged = true;
+                        }
+                    });
+                    getFragmentManager().beginTransaction().replace(R.id.flyt_ingredient, Tb_mono).commit();
+                }
+                break;
         }
     }
 
@@ -426,6 +540,16 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                 getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_PREVIEW, mingredientEspresso.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_ESPRESSO), ingredientStructure));
             }
         }
+        else if(m_ingredientType == Ingredient.TYPE_MONO)
+        {
+            if(mingredientMono!=null && Tb_mono!=null)
+            {
+                showSavewindow();
+                Tb_mono.save();
+                ingredientStructure = cmdMakeIngredient.buildMonoStructure(mingredientMono);
+                getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_PREVIEW, mingredientMono.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_MONO), ingredientStructure));
+            }
+        }
     }
     private void SaveIngredient() {
         CmdMakeIngredient cmdMakeIngredient = new CmdMakeIngredient();
@@ -471,6 +595,24 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                 ingredientStructure = cmdMakeIngredient.buildEspressoStructure(mingredientEspresso);
                 showSavewindow();
                 getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientEspresso.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_ESPRESSO), ingredientStructure));
+                iscurrentChanged =false;
+            }
+        }
+        else if(m_ingredientType == Ingredient.TYPE_MONO)
+        {
+            if(mingredientMono!=null && Tb_mono!=null)
+            {
+                Tb_mono.save();
+                ingredientStructure = cmdMakeIngredient.buildMonoStructure(mingredientMono);
+                if(mingredientMono.getCreatestatus()==1)
+                {
+                    showSavewindow();
+                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_ADD, mingredientMono.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_MONO), ingredientStructure));
+                }else if(mingredientMono.getCreatestatus()==3)
+                {
+                    showSavewindow();
+                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientMono.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_MONO), ingredientStructure));
+                }
                 iscurrentChanged =false;
             }
         }
