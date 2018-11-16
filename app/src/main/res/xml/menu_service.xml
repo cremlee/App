@@ -2,26 +2,22 @@
 <tabs>
     <tab
         id="@+id/tab_log"
-        icon="@drawable/ics_cfa"
-        title="Friends" />
+        icon="@drawable/selector_info"
+        title="info" />
     <tab
         id="@+id/tab_cup"
-        icon="@drawable/ics_drinksetting"
+        icon="@drawable/selector_drink"
         title="Favorites" />
     <tab
         id="@+id/tab_test"
-        icon="@drawable/ics_test"
+        icon="@drawable/selector_device"
         title="Nearby" />
     <tab
         id="@+id/tab_setting"
-        icon="@drawable/ics_setting"
+        icon="@drawable/selector_set"
         title="Friends" />
     <tab
         id="@+id/tab_clean"
-        icon="@drawable/ics_cleaning"
-        title="Friends" />
-    <tab
-        id="@+id/tab_home"
-        icon="@drawable/ics_home"
+        icon="@drawable/selector_clean"
         title="Friends" />
 </tabs>

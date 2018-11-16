@@ -377,7 +377,7 @@ public class aty_customer_ui_11 extends BaseActivity implements View.OnClickList
                         break;
                 }
                 btn_jug.setText(showContent);
-               showToast(showContent);
+                showToast(showContent);
             }
         };
         contentView.findViewById(R.id.menu1).setOnClickListener(listener);
@@ -505,7 +505,6 @@ public class aty_customer_ui_11 extends BaseActivity implements View.OnClickList
     private int cmdMilk=2;
     private boolean Iswork =false;
     int mProgress;
-
     private  void changemilk(final int changevalue)
     {
        // drinkimage.adjustMilk(changevalue+3);

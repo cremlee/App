@@ -24,9 +24,9 @@ import evo.luna.android.R;
 
 public class LanguageAdapter extends BaseAdapter{
     private List<Integer> _data;
-    private int[] langResId = new int[]{R.mipmap.ic_lang_en,R.mipmap.ic_lang_gm,R.mipmap.ic_lang_da,
-                                        R.mipmap.ic_lang_en,R.mipmap.ic_lang_gm,R.mipmap.ic_lang_da,
-                                        R.mipmap.ic_lang_en,R.mipmap.ic_lang_gm,R.mipmap.ic_lang_da};
+    private int[] langResId = new int[]{R.mipmap.en,R.mipmap.zh,R.mipmap.en,
+                                        R.mipmap.en,R.mipmap.en,R.mipmap.en,
+                                        R.mipmap.en,R.mipmap.en,R.mipmap.en};
     private Context mcontext;
     public interface OnFileSelect
     {

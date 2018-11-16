@@ -1,59 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:background="@mipmap/sr_bg"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
         android:layout_weight="1"
-        android:layout_height="0dp" >
-        <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageButton
             android:id="@+id/edt_beverage"
-            android:layout_margin="30dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:layout_gravity="center"
+            android:src="@mipmap/beverage_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sr_title_size"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
             android:text="@string/SVR_DRINK_MENU_BEVERAGE"
-            android:layout_height="match_parent" />
-        <Button
-            android:id="@+id/edt_ingredient"
-            android:layout_margin="30dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="@string/SVR_DRINK_MENU_INGREDIENT"
-            android:layout_height="match_parent" />
-        <Button
-            android:id="@+id/edt_group"
-            android:layout_margin="30dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="@string/SVR_DRINK_MENU_GROUP"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
-
     <LinearLayout
-        android:layout_marginBottom="50dp"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
         android:layout_weight="1"
-        android:layout_height="0dp" >
-        <Button
-            android:id="@+id/namebtn"
-            android:text="@string/SVR_DRINK_MENU_NAME"
-            android:layout_margin="30dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
-        <Button
-            android:visibility="invisible"
-            android:layout_margin="30dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
-        <Button
-            android:visibility="invisible"
-            android:layout_margin="30dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
-
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/edt_ingredient"
+            android:background="@color/transparent"
+            android:layout_gravity="center"
+            android:src="@mipmap/ingredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sr_title_size"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:text="@string/SVR_DRINK_MENU_INGREDIENT"
+            android:layout_height="wrap_content" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/edt_group"
+            android:background="@color/transparent"
+            android:layout_gravity="center"
+            android:src="@mipmap/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sr_title_size"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:text="@string/SVR_DRINK_MENU_GROUP"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/namebtn"
+            android:background="@color/transparent"
+            android:layout_gravity="center"
+            android:src="@mipmap/beverage_n_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sr_title_size"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:text="@string/SVR_DRINK_MENU_NAME"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
 </LinearLayout>

@@ -92,7 +92,6 @@ public class CounterFragment extends Fragment implements View.OnClickListener ,I
         resetCountProgramItem = view.findViewById(R.id.resetCountProgramItem);
         resetCountBeverageItem.setOnClickListener(this);
         resetCountProgramItem.setOnClickListener(this);
-
         list_counter = view.findViewById(R.id.list_counter);
         chart_bar = view.findViewById(R.id.chart_bar);
         chart_bar.setOnClickListener(this);
@@ -139,6 +138,7 @@ public class CounterFragment extends Fragment implements View.OnClickListener ,I
 
         helloChart = view.findViewById(R.id.helloChart);
         setHelloChartData();
+        chart_bar.setImageDrawable(this.getResources().getDrawable(R.drawable.ics_counters));
     }
     private ColumnChartData data;
     private void setHelloChartData() {
@@ -284,11 +284,13 @@ public class CounterFragment extends Fragment implements View.OnClickListener ,I
            if(lyt_chart.getVisibility() == View.GONE) {
                lyt_chart.setVisibility(View.VISIBLE);
                sv.setVisibility(View.GONE);
+               chart_bar.setImageDrawable(this.getResources().getDrawable(R.drawable.md_nav_back));
            }
            else
            {
                lyt_chart.setVisibility(View.GONE);
                sv.setVisibility(View.VISIBLE);
+               chart_bar.setImageDrawable(this.getResources().getDrawable(R.drawable.ics_counters));
            }
        }
        else if(v.getId() == R.id.resetCountBeverageItem)

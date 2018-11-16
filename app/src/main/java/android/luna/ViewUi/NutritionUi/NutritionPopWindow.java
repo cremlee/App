@@ -9,6 +9,7 @@ import android.luna.ViewUi.NutritionUi.adapter.Nutritionadapter;
 import android.luna.ViewUi.NutritionUi.data.PowderBean;
 import android.luna.ViewUi.radarview.RadarData;
 import android.luna.ViewUi.radarview.RadarView;
+import android.os.Build;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -106,7 +107,19 @@ public class NutritionPopWindow extends PopupWindow implements View.OnClickListe
         if (this.isShowing()) {
             this.dismiss();
         } else {
-            this.showAsDropDown(parent, 0, 0,Gravity.FILL);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                this.showAsDropDown(parent, 0, 0,Gravity.FILL);
+            }
+        }
+    }
+
+    public void showincenter(View parent) {
+        if (this.isShowing()) {
+            this.dismiss();
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                this.showAtLocation(parent, Gravity.CENTER,0, 0);
+            }
         }
     }
 

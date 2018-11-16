@@ -19,6 +19,16 @@ import evo.luna.android.R;
 public class adpter_group_button extends BaseAdapter {
     private Context context;
     private CremApp app;
+
+    public void setMwidthfact(float mwidthfact) {
+        this.mwidthfact = mwidthfact;
+    }
+
+    public void setMheightfact(float mheightfact) {
+        this.mheightfact = mheightfact;
+    }
+
+    private float mwidthfact,mheightfact;
     public void setData(List<DrinkMenuButton> data) {
         this.data = data;
         notifyDataSetChanged();
@@ -30,6 +40,14 @@ public class adpter_group_button extends BaseAdapter {
         this.context =context;
         this.data = data;
         this.app =app;
+    }
+    public adpter_group_button(Context context, List<DrinkMenuButton> data,CremApp app,float widthfact,float heightfact)
+    {
+        this.context =context;
+        this.data = data;
+        this.app =app;
+        this.mheightfact=heightfact;
+        this.mwidthfact =widthfact;
     }
     @Override
     public int getCount() {
@@ -49,13 +67,21 @@ public class adpter_group_button extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ItemView itemView;
+        final int pos = position;
         if(convertView==null)
         {
             convertView = LayoutInflater.from(context).inflate(R.layout.lyt_adp_buttonitem, null);
-            AbsListView.LayoutParams lp  = new AbsListView.LayoutParams(155,190);
+            AbsListView.LayoutParams lp  = new AbsListView.LayoutParams((int) (155*mwidthfact), (int) (190*mheightfact));
             convertView.setLayoutParams(lp);
             itemView = new ItemView((ImageView)convertView.findViewById(R.id.icon),(TextView)convertView.findViewById(R.id.name));
             convertView.setTag(itemView);
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(iconClickListener!=null)
+                        iconClickListener.onClicked(getItem(pos));
+                }
+            });
         }else
         {
             itemView = (ItemView) convertView.getTag();
@@ -75,5 +101,14 @@ public class adpter_group_button extends BaseAdapter {
             this.name =name;
 
         }
+    }
+    public void setOnIconClickListener(IconClickListener a)
+    {
+        iconClickListener =a;
+    }
+    private IconClickListener iconClickListener;
+    public interface IconClickListener
+    {
+        void onClicked(DrinkMenuButton a);
     }
 }

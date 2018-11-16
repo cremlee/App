@@ -19,12 +19,15 @@ import android.luna.Activity.ServiceUi.fragment.TestFragment;
 import android.luna.Data.DAO.ScreenFactoryDao;
 import android.luna.Data.module.LogRecord;
 import android.luna.Data.module.ScreenSettings;
+import android.luna.ViewUi.TempView.Themometer;
 import android.luna.ViewUi.bottombar.BottomBar;
 import android.luna.ViewUi.bottombar.OnTabSelectListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.IdRes;
+import android.view.View;
+import android.widget.ImageView;
 
 
 import evo.luna.android.R;
@@ -33,7 +36,7 @@ import evo.luna.android.R;
  * Created by Lee.li on 2018/1/29.
  */
 
-public class aty_service_main extends BaseActivity {
+public class aty_service_main extends BaseActivity implements View.OnClickListener {
     private BottomBar bottomBar;
     private Fragment tab_cup;
     private Fragment tab_test;
@@ -44,6 +47,7 @@ public class aty_service_main extends BaseActivity {
     private ScreenSettings _screenSettings =null;
     private ScreenFactoryDao _screenFactoryDao =null;
     private int lasttype;
+    private ImageView tab_home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +59,8 @@ public class aty_service_main extends BaseActivity {
         app = (CremApp)getApplication();
         setContentView(R.layout.aty_service_main);
         bottomBar = findViewById(R.id.bottomBar);
-
+        tab_home = findViewById(R.id.tab_home);
+        tab_home.setOnClickListener(this);
         if(app.getAuth_level() == Constant.AUTH_FIRSTLINE)
         {
             bottomBar.setItems(R.xml.menu_firstline);
@@ -119,7 +124,7 @@ public class aty_service_main extends BaseActivity {
 
                 }
                 else if(tabId == R.id.tab_home) {
-                    AppManager.getAppManager().finishActivity(aty_service_main.this);
+                    /*AppManager.getAppManager().finishActivity(aty_service_main.this);
                     _screenSettings = _screenFactoryDao.getScreenSettingDao().query();
                     int type = _screenSettings.getThemetype();
                     if(lasttype!=type) {
@@ -147,7 +152,7 @@ public class aty_service_main extends BaseActivity {
                         } else if (type == 4) {
                             startActivity(new Intent(aty_service_main.this, aty_theme_shop.class));
                         }
-                    }
+                    }*/
                 }
             }
         });
@@ -159,4 +164,39 @@ public class aty_service_main extends BaseActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.tab_home)
+        {
+            AppManager.getAppManager().finishActivity(aty_service_main.this);
+            _screenSettings = _screenFactoryDao.getScreenSettingDao().query();
+            int type = _screenSettings.getThemetype();
+            if(lasttype!=type) {
+                try {
+                    if(lasttype == 1)
+                        AppManager.getAppManager().finishActivity(aty_theme_normal.class);
+                    else if(lasttype == 2)
+                        AppManager.getAppManager().finishActivity(aty_theme_gallery.class);
+                    else if(lasttype == 3)
+                        AppManager.getAppManager().finishActivity(aty_theme_3d.class);
+                    else if(lasttype == 4)
+                        AppManager.getAppManager().finishActivity(aty_theme_shop.class);
+                }
+                catch (Exception e)
+                {
+
+                }
+                //1 normal 2 gallery 3 cloud 4 shop
+                if (type == 1) {
+                    startActivity(new Intent(aty_service_main.this, aty_theme_normal.class));
+                } else if (type == 2) {
+                    startActivity(new Intent(aty_service_main.this, aty_theme_gallery.class));
+                } else if (type == 3) {
+                    startActivity(new Intent(aty_service_main.this, aty_theme_3d.class));
+                } else if (type == 4) {
+                    startActivity(new Intent(aty_service_main.this, aty_theme_shop.class));
+                }
+            }
+        }
+    }
 }

@@ -10,6 +10,7 @@ import android.luna.ViewUi.widget.SettingItemCheckBox;
 import android.luna.ViewUi.widget.SettingItemTextView2;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
@@ -20,7 +21,7 @@ import evo.luna.android.R;
  */
 
 public class aty_machineconfig_main extends BaseActivity implements View.OnClickListener{
-    private TextView btn_back;
+    private Button btn_back;
     private SystemSettingFactory systemSettingFactory;
     private SecretSettings secretSettings;
     private SmartSettings smartSettings;

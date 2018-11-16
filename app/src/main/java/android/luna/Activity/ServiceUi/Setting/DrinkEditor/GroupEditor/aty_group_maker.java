@@ -43,7 +43,7 @@ import evo.luna.android.R;
 
 public class aty_group_maker extends BaseActivity implements View.OnClickListener {
 
-    private TextView btn_back;
+    private Button btn_back;
     private Spinner group_select,group_item_filter_1,group_item_filter_2;
     private Button btn_del,btn_new,btn_save,group_item_add,group_item_remove,btn_search;
     private SettingItemTextView2 group_item_name,group_item_icon;
@@ -88,6 +88,8 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
         group_item_icon= findViewById(R.id.group_item_icon);
         group_item_size= findViewById(R.id.group_item_size);
         group_item_show= findViewById(R.id.group_item_show);
+
+        group_item_name.setTextBackground(getResources().getColor(R.color.transparent));
 
         btn_del= findViewById(R.id.btn_del);
         btn_new= findViewById(R.id.btn_new);
@@ -214,6 +216,7 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
         beverageItemSelectorAdpter.SetdrinkitemOnClicked(new BeverageItemSelectorAdpter.OndrinkitemClicked() {
             @Override
             public void OnitemClick(int pid,int pos) {
+                showTestToast("beverageItemSelectorAdpter ="+pos);
                 group_item_remove.setEnabled(false);
                 group_item_add.setEnabled(true);
                 _crtbvg = beverageFactoryDao.getBeverageBasicDao().query(pid);
@@ -225,6 +228,7 @@ public class aty_group_maker extends BaseActivity implements View.OnClickListene
         destbeverageItemSelectorAdpter.SetdrinkitemOnClicked(new BeverageItemSelectorAdpter.OndrinkitemClicked() {
             @Override
             public void OnitemClick(int pid,int pos) {
+                showTestToast("destbeverageItemSelectorAdpter ="+pos);
                 group_item_add.setEnabled(false);
                 group_item_remove.setEnabled(true);
                 _crtbvg = beverageFactoryDao.getBeverageBasicDao().query(pid);

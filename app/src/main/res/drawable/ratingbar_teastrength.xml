@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+android:id/background"
+        android:drawable="@drawable/strength_grey">
+    </item>
+    <item
+        android:id="@+android:id/secondaryProgress"
+        android:drawable="@drawable/strength">
+    </item>
+    <item
+        android:height="40dp"
+        android:width="58dp"
+        android:id="@+android:id/progress"
+        android:drawable="@drawable/strength_green">
+
+    </item>
+
+</layer-list>

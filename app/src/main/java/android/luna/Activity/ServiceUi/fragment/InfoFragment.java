@@ -115,31 +115,29 @@ public class InfoFragment extends Fragment implements IAuthManage{
     }
     private  void InitView(View view)
     {
-
-
-        Drawable drawable1 = getResources().getDrawable(R.drawable.ics_log);
-        drawable1.setBounds(0, 0, 40, 40);//第一0是距左边距离，第二0是距上边距离，40分别是长宽
+        Drawable drawable1 = getResources().getDrawable(R.mipmap.log);
+        drawable1.setBounds(0, 0, 50, 50);//第一0是距左边距离，第二0是距上边距离，40分别是长宽
         RadioButton tmp = view.findViewById(R.id.rblog);
         tmp.setCompoundDrawables(drawable1, null, null, null);
 
         tmp = view.findViewById(R.id.rbStatus);
-        drawable1 = getResources().getDrawable(R.drawable.ic_st);
-        drawable1.setBounds(0, 0, 40, 40);//第一0是距左边距离，第二0是距上边距离，40分别是长宽
+        drawable1 = getResources().getDrawable(R.mipmap.status);
+        drawable1.setBounds(0, 0, 50, 50);//第一0是距左边距离，第二0是距上边距离，40分别是长宽
         tmp.setCompoundDrawables(drawable1, null, null, null);
 
         tmp = view.findViewById(R.id.rbcounter);
-        drawable1 = getResources().getDrawable(R.drawable.ics_counters);
-        drawable1.setBounds(0, 0, 40, 40);
+        drawable1 = getResources().getDrawable(R.mipmap.counter);
+        drawable1.setBounds(0, 0, 50, 50);
         tmp.setCompoundDrawables(drawable1, null, null, null);
 
         tmp = view.findViewById(R.id.rbhelp);
-        drawable1 = getResources().getDrawable(R.drawable.ic_help);
-        drawable1.setBounds(0, 0, 40, 40);
+        drawable1 = getResources().getDrawable(R.mipmap.help);
+        drawable1.setBounds(0, 0, 50, 50);
         tmp.setCompoundDrawables(drawable1, null, null, null);
 
         tmp = view.findViewById(R.id.rbabout);
-        drawable1 = getResources().getDrawable(R.drawable.ics_instruction);
-        drawable1.setBounds(0, 0, 40, 40);
+        drawable1 = getResources().getDrawable(R.mipmap.about);
+        drawable1.setBounds(0, 0, 50, 50);
         tmp.setCompoundDrawables(drawable1, null, null, null);
 
 

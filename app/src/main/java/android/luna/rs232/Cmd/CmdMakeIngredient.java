@@ -202,12 +202,23 @@ public class CmdMakeIngredient extends BaseCmd {
 		buffer.append(AndroidUtils_Ext.float2Hex2(mono.getPowderamount()));
 		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getPowdertype()));
 		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getInfusiontime()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getInfusionwatervolume()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getInfusionwatertype()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getInfusionwaterntc()));
+
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getBubblerruntime()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getBubblerspeed()));
+
 		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getBrewtime()));
-		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getAirruntime()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getDispensewatervolume()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getDispensewatertype()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getDispensewaterntc()));
+
+		/*buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getAirruntime()));
 		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getPowdervolume()));
 		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getWaterpressure()));
 		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getAirspeed()));
-		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getPowdervolumetype()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getPowdervolumetype()));*/
 		return buffer.toString();
 	}
 }

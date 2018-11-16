@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="@mipmap/sr_bg"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    //list function area
     <RelativeLayout
         android:layout_weight="1"
         android:layout_width="0dp"
@@ -14,24 +15,22 @@
             android:layout_width="match_parent"
             android:layout_height="80dp">
             <Button
+                android:drawableLeft="@drawable/ic_back"
                 android:id="@+id/btn_close"
                 android:minWidth="150dp"
                 android:textSize="24sp"
-                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:layout_marginStart="20dp"
+                android:background="@color/transparent"
+                android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/MENU_BACK"
+                android:textColor="@color/white"
                 />
-            <!--<Button
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:textSize="24sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add new"
-                />-->
         </RelativeLayout>
         <FrameLayout
+            android:background="@drawable/shape_drink_body"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:layout_below="@+id/rty_header"
@@ -39,9 +38,8 @@
             android:layout_height="match_parent">
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv"
-                android:background="@android:color/white"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+                android:layout_height="match_parent"/>
         <com.mcxtzhang.indexlib.IndexBar.widget.IndexBar
             android:id="@+id/indexBar"
             android:layout_gravity="right"
@@ -63,35 +61,47 @@
                 tools:visibility="visible"/>
         </FrameLayout>
     </RelativeLayout>
-    //detail info area
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="3">
+        android:layout_weight="2.66">
     <RelativeLayout
         android:id="@+id/rty_header1"
         android:layout_width="match_parent"
         android:layout_height="80dp">
-
         <Button
+            android:layout_marginStart="50dp"
+            android:textColor="@color/material_white"
+            android:background="@drawable/selector_button"
+            android:textSize="22sp"
+            android:minHeight="44dp"
+            android:id="@+id/btn_save"
+            android:text="@string/MENU_SAVE"
+            android:layout_centerVertical="true"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+             />
+        <Button
+            android:textColor="@color/material_white"
+            android:background="@drawable/selector_button"
+            android:textSize="22sp"
+            android:minHeight="44dp"
             android:id="@+id/btn_test"
-            android:layout_width="100dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/btn_save"
             android:layout_alignBottom="@+id/btn_save"
             android:layout_marginStart="34dp"
             android:layout_toEndOf="@+id/btn_save"
             android:text="@string/SVR_DRINK_MENU_TEST" />
-
         <Button
-            android:id="@+id/btn_save"
-            android:text="@string/MENU_SAVE"
-            android:layout_centerVertical="true"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content" />
-        <Button
+            android:textColor="@color/material_white"
+            android:background="@drawable/selector_button"
+            android:textSize="22sp"
+            android:minHeight="44dp"
             android:id="@+id/btn_ingredient"
             android:text="@string/SVR_DRINK_BEVERAGE_INGREDIENT"
+            android:minWidth="180dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="23dp"
@@ -100,8 +110,12 @@
             android:layout_toEndOf="@+id/btn_ui" />
 
         <Button
+            android:textColor="@color/material_white"
+            android:background="@drawable/selector_button"
+            android:textSize="22sp"
+            android:minHeight="44dp"
             android:id="@+id/btn_basci"
-            android:layout_width="100dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
             android:text="@string/SVR_DRINK_BEVERAGE_BASIC"
@@ -110,8 +124,12 @@
             android:layout_toEndOf="@+id/btn_test" />
 
         <Button
+            android:textColor="@color/material_white"
+            android:background="@drawable/selector_button"
+            android:textSize="22sp"
+            android:minHeight="44dp"
             android:id="@+id/btn_ui"
-            android:layout_width="100dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:text="@string/SVR_DRINK_BEVERAGE_UI"
             android:layout_alignBaseline="@+id/btn_basci"
@@ -120,11 +138,11 @@
             android:layout_marginStart="30dp" />
     </RelativeLayout>
         <FrameLayout
+            android:background="@drawable/shape_drink_body"
             android:layout_below="@id/rty_header1"
             android:id="@+id/flyt_beverage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="3"></FrameLayout>
+            android:layout_height="match_parent" />
     </RelativeLayout>
 
 </LinearLayout>

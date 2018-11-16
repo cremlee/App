@@ -95,6 +95,8 @@
                 <attr name="checkBoxChecked" format="boolean" />
                 <attr name="cbkTextColor" format="color" />
                 <attr name="lineEnable" format="boolean" />
+                <attr name="cbkMainbg" format="reference" />
+                <attr name="cbkLineColor" format="color" />
         </declare-styleable>
         <declare-styleable name="FancyButtonsAttrs">
                 <!-- Default Android attrs -->
@@ -294,6 +296,8 @@
                 <attr name="textview2TextColor" format="color" />
                 <attr name="textview2TextBackground" format="color" />
                 <attr name="textview2Line" format="boolean" />
+                <attr name="textview2Mainbg" format="reference" />
+                <attr name="textview2LineColor" format="color" />
         </declare-styleable>
         <declare-styleable name="SettingItemTextView1">
                 <attr name="textview1Text" format="string" />

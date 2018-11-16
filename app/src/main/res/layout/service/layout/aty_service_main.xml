@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottomBar"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:id="@+id/contentContainer"/>
-    <android.luna.ViewUi.bottombar.BottomBar
-        android:id="@+id/bottomBar"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        app:bb_behavior="iconsOnly"
-        app:bb_showShadow="true"
-        app:bb_tabXmlResource="@xml/menu_service" />
-</RelativeLayout>
+        android:layout_height="120dp">
+    <ImageView
+        android:id="@+id/tab_home"
+        android:background="@color/sr_bg_bottom_menu"
+        android:padding="15dp"
+        android:src="@drawable/home"
+        android:layout_width="235dp"
+        android:layout_height="match_parent" />
+        <android.luna.ViewUi.bottombar.BottomBar
+            android:background="@color/sr_bg_bottom_menu"
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:bb_showShadow="false"
+            app:bb_tabXmlResource="@xml/menu_service" />
+    </LinearLayout>
+
+
+</LinearLayout>

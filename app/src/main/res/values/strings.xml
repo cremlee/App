@@ -58,7 +58,8 @@
 	<string name="sch_daily">Daily Clean</string>
 	<string name="sch_weekly">Weekly Clean</string>
 	<string name="sch_eco">Energy Saving</string>
-	
+    <string name="strength">Strength</string>
+    <string name="volume">Volume</string>
     <!-- Counters -->
     <string name="counters">Counters</string>
     <string name="total_beverage">Total Beverages:<xliff:g name="tb">%d</xliff:g></string>
@@ -837,10 +838,10 @@
     <string name="counter_reset">Reset</string>
     <string name="counter_reset_cxt">"All Log info will be reset.\nAre you sure you want to proceed?"</string>
     <!--design for gallery 20180108-->
-    <string name="company_name">Crem International</string>
+    <string name="company_name">Crem</string>
 
-    <string name="picker_sure">确定</string>
-    <string name="picker_cancel">cancel</string>
+    <string name="picker_sure">Ok</string>
+    <string name="picker_cancel">Cancel</string>
     <string name="picker_title">Selection</string>
 
     <string name="picker_year">Year</string>
@@ -901,6 +902,11 @@
     <string name="MAIN_UI_OUT_OF_STOCK">Out of Stock</string>
     <string name="MAIN_UI_OUT_OF_USE">Not Available</string>
     <string name="MAIN_UI_OUT_OF_WASTER">Waster bin full</string>
+
+
+
+
+
     <!--Service Part-->
     <string name="SVR_ST_RB_TITLE_1">Status</string>
     <string name="SVR_ST_RB_TITLE_2">Counter</string>
@@ -938,7 +944,7 @@
     <string name="SVR_DRINK_MENU_BEVERAGE">Beverage Editor</string>
     <string name="SVR_DRINK_MENU_INGREDIENT">Ingredient Editor</string>
     <string name="SVR_DRINK_MENU_GROUP">Group Editor</string>
-    <string name="SVR_DRINK_MENU_NAME">Beverage Name Editor</string>
+    <string name="SVR_DRINK_MENU_NAME">Name Editor</string>
     <string name="SVR_DRINK_MENU_TEST">Test</string>
     <string name="SVR_DRINK_BEVERAGE_BASIC">Basic part</string>
     <string name="SVR_DRINK_BEVERAGE_UI">UI part</string>
@@ -1012,6 +1018,12 @@
     <string name="SVR_DRINK_INGREDIENT_WATER_TYPE">Water Type</string>
     <string name="SVR_DRINK_INGREDIENT_WATER_VOLUME">Water Volume</string>
     <!--Mono部分-->
+    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION_TYPE">Infusion Water Type</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION_VOLUME">Infusion Water Volume</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION_TEMP">Infusion Water Temperature</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_BREW_TYPE">Brew Water Type</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_BREW_VOLUME">Brew Water Volume</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_BREW_TEMP">Brew Water Temperature</string>
     <string name="SVR_DRINK_INGREDIENT_MONO_TITLE">Mono Settings</string>
     <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION">Infusion Time</string>
     <string name="SVR_DRINK_INGREDIENT_MONO_BREW">Brewing Time</string>
@@ -1038,6 +1050,7 @@
     <string name="SVR_SETTING_MENU_MACHINE">Machine settings</string>
     <string name="SVR_SETTING_MENU_PAYMENT">Payment settings</string>
     <!--显示设置部分-->
+    <string name="SVR_SETTING_SCREEN_PROPERTY">Screen Property</string>
     <string name="SVR_SETTING_SCREEN_THEME">Screen Theme</string>
     <string name="SVR_SETTING_SCREEN_FONT">Font Color</string>
     <string name="SVR_SETTING_SCREEN_BACKGROUND">Background Image</string>

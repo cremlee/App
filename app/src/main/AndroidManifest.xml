@@ -117,10 +117,23 @@
             android:configChanges="locale"
             android:name="android.luna.Activity.ServiceUi.Setting.ScreenEditor.aty_drink_layout">
         </activity>
+
+        <activity
+            android:screenOrientation="landscape"
+            android:configChanges="locale"
+            android:name="android.luna.Activity.CustomerUI.TeaMode.aty_teamode_selected">
+
+        </activity>
+        <activity
+            android:screenOrientation="landscape"
+            android:configChanges="locale"
+            android:name="android.luna.Activity.CustomerUI.TeaMode.aty_teamode_dispense">
+        </activity>
         <activity
             android:screenOrientation="landscape"
             android:configChanges="locale"
             android:name="android.luna.Activity.ServiceUi.Setting.DrinkEditor.GroupEditor.aty_group_maker">
+
         </activity>
         <activity
             android:screenOrientation="landscape"
@@ -160,6 +173,7 @@
         <activity
             android:screenOrientation="landscape"
             android:configChanges="locale"
+            android:theme="@style/Transparent"
             android:name="android.luna.Activity.ServiceUi.Setting.DrinkEditor.BeverageEditor.PicSelector.aty_uiRes_selector">
         </activity>
         <activity

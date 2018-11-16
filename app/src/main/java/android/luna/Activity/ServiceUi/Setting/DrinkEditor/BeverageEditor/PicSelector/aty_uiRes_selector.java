@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -24,7 +25,7 @@ import evo.luna.android.R;
 
 public class aty_uiRes_selector extends BaseActivity implements View.OnClickListener,AdapterView.OnItemClickListener,AdapterView.OnItemLongClickListener {
     private GridView gv_res;
-    private TextView title;
+    private Button btn_close;
     private String path="";
     private String folder ="";
     private DrinkResAdapter drinkResAdapter=null;
@@ -76,7 +77,7 @@ public class aty_uiRes_selector extends BaseActivity implements View.OnClickList
         super.InitView();
         setContentView(R.layout.aty_res_selector);
         gv_res = findViewById(R.id.gv_res);
-        title = findViewById(R.id.title);
+        btn_close = findViewById(R.id.btn_close);
     }
 
     @Override
@@ -87,7 +88,7 @@ public class aty_uiRes_selector extends BaseActivity implements View.OnClickList
     @Override
     public void InitEvent() {
         super.InitEvent();
-        title.setOnClickListener(this);
+        btn_close.setOnClickListener(this);
         gv_res.setClickable(true);
         gv_res.setOnItemClickListener(this);
         gv_res.setOnItemLongClickListener(this);
@@ -96,7 +97,7 @@ public class aty_uiRes_selector extends BaseActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        if(view.getId() == R.id.title)
+        if(view.getId() == R.id.btn_close)
         {
           Intent intent = new Intent();
           intent.putExtra("newpath", drinkResAdapter.getSelectPath());

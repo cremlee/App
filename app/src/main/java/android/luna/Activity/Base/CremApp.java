@@ -389,6 +389,16 @@ public class CremApp extends Application {
         this._drinkMenuButton = _drinkMenuButton;
     }
 
+    public String getGroupicon() {
+        return groupicon;
+    }
+
+    public void setGroupicon(String groupicon) {
+        this.groupicon = groupicon;
+    }
+
+    private String groupicon="";
+
     private DrinkMenuButton _drinkMenuButton=null;
 
 

@@ -27,28 +27,6 @@
             cqube:textview2TextTitle="@string/SVR_DRINK_INGREDIENT_ESPRESSO_NAME"
             cqube:textview2TextValue="Water" />
 
-        <!-- water Type -->
-
-        <android.luna.ViewUi.widget.SettingItemDropDown
-            android:id="@+id/waterTypeItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            cqube:dropdownItems="Tea Water#Still Water#Sparkling Water"
-            cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_WATER"
-            cqube:dropdownValues="0#1#2" />
-
-        <!-- Water Volume -->
-
-        <android.luna.ViewUi.widget.SettingItemSeekBar
-            android:id="@+id/waterVolumeItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            cqube:sbCur="100"
-            cqube:sbMax="200"
-            cqube:sbMin="5"
-            cqube:sbName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_VOLUME"
-            cqube:sbUnit="ml" />
-
         <android.luna.ViewUi.widget.SettingItemDropDown
             android:id="@+id/grinder1TypeItem"
             android:layout_width="match_parent"
@@ -69,6 +47,38 @@
             cqube:sbMin="0"
             cqube:sbName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_POWER_AMOUNT"
             cqube:sbUnit="g" />
+        <!-- water Type -->
+
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/infusionwaterTypeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:dropdownItems="Tea Water#Still Water#Sparkling Water"
+            cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_MONO_INFUSION_TYPE"
+            cqube:dropdownValues="0#1#2" />
+        <!-- Water Temp -->
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/infusionwaterTempItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="0"
+            cqube:sbMax="96"
+            cqube:sbMin="0"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_INFUSION_TEMP"
+            cqube:sbUnit="C" />
+        <!-- Water Volume -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/infusionwaterVolumeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="100"
+            cqube:sbMax="200"
+            cqube:sbMin="5"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_INFUSION_VOLUME"
+            cqube:sbUnit="ml" />
+
+
         <!-- Aereation -->
 
         <android.luna.ViewUi.widget.SettingItemSeekBar
@@ -78,6 +88,7 @@
             cqube:sbCur="12"
             cqube:sbMax="12"
             cqube:sbMin="1"
+            android:visibility="gone"
             cqube:sbName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_PRESSURE"
             cqube:sbUnit="bar" />
         <!-- Pre Brew Time -->
@@ -91,7 +102,36 @@
             cqube:sbMin="0"
             cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_INFUSION"
             cqube:sbUnit="s" />
+        <!-- water Type -->
 
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/brewwaterTypeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:dropdownItems="Tea Water#Still Water#Sparkling Water"
+            cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_MONO_BREW_TYPE"
+            cqube:dropdownValues="0#1#2" />
+        <!-- Water Temp -->
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/brewwaterTempItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="0"
+            cqube:sbMax="96"
+            cqube:sbMin="0"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_BREW_TEMP"
+            cqube:sbUnit="C" />
+        <!-- Water Volume -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/brewwaterVolumeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="100"
+            cqube:sbMax="200"
+            cqube:sbMin="5"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_BREW_VOLUME"
+            cqube:sbUnit="ml" />
         <!-- Extraction Time -->
 
         <android.luna.ViewUi.widget.SettingItemSeekBar

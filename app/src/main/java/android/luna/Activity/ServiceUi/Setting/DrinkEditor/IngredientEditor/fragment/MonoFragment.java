@@ -33,8 +33,10 @@ import evo.luna.android.R;
 public class MonoFragment extends BaseFragment implements IIngredient<IngredientMono> {
     private BaseActivity aty;
     private SettingItemTextView2 ingredientNameItem;
-    private SettingItemDropDown  waterTypeItem;
-    private SettingItemSeekBar   waterVolumeItem,pressureItem,grinder1AmountItem,preBrewTimeItem,brewTimeItem;
+    private SettingItemDropDown  infusionwaterTypeItem,brewwaterTypeItem;
+    private SettingItemSeekBar   pressureItem,grinder1AmountItem,preBrewTimeItem,brewTimeItem;
+    private SettingItemSeekBar infusionwaterTempItem,infusionwaterVolumeItem;
+    private SettingItemSeekBar brewwaterTempItem,brewwaterVolumeItem;
     private SettingItemSeekBar   airSpeedItem,airTimeItem,bubTimeItem,bubSpeedItem;
     private SettingItemTextView2 totalTimeItem;
     private float totalTime;
@@ -52,8 +54,13 @@ public class MonoFragment extends BaseFragment implements IIngredient<Ingredient
         View view = inflater.inflate(R.layout.fragment_ingredient_mono, container, false);
         initmap();
         ingredientNameItem=view.findViewById(R.id.ingredientNameItem);
-        waterTypeItem=view.findViewById(R.id.waterTypeItem);
-        waterVolumeItem=view.findViewById(R.id.waterVolumeItem);
+        infusionwaterTypeItem=view.findViewById(R.id.infusionwaterTypeItem);
+        infusionwaterTempItem=view.findViewById(R.id.infusionwaterTempItem);
+        infusionwaterVolumeItem=view.findViewById(R.id.infusionwaterVolumeItem);
+        brewwaterTypeItem=view.findViewById(R.id.brewwaterTypeItem);
+        brewwaterTempItem=view.findViewById(R.id.brewwaterTempItem);
+        brewwaterVolumeItem=view.findViewById(R.id.brewwaterVolumeItem);
+
 
         pressureItem=view.findViewById(R.id.pressureItem);
         grinder1AmountItem=view.findViewById(R.id.grinder1AmountItem);
@@ -97,21 +104,29 @@ public class MonoFragment extends BaseFragment implements IIngredient<Ingredient
         if(getIngredient()!=null)
         {
             ingredientNameItem.setTextValue(getIngredient().getName());
-            waterTypeItem.setItemAndValues(map);
+            infusionwaterTypeItem.setItemAndValues(map);
             // 设置默认值
-            String key = String.valueOf(getIngredient().getPowdervolumetype());
-            waterTypeItem.setSelItem(key, waterTypeItem.getItemAndValues().get(key));
-            waterVolumeItem.setCur(getIngredient().getPowdervolume());
+            String key = String.valueOf(getIngredient().getInfusionwatertype());
+            infusionwaterTypeItem.setSelItem(key, infusionwaterTypeItem.getItemAndValues().get(key));
+            infusionwaterVolumeItem.setCur(getIngredient().getInfusionwatervolume());
+            infusionwaterTempItem.setCur(getIngredient().getInfusionwaterntc());
+            preBrewTimeItem.setCur(getIngredient().getInfusiontime());
+
+
+            brewwaterTypeItem.setItemAndValues(map);
+            // 设置默认值
+            key = String.valueOf(getIngredient().getDispensewatertype());
+            brewwaterTypeItem.setSelItem(key, brewwaterTypeItem.getItemAndValues().get(key));
+            brewwaterVolumeItem.setCur(getIngredient().getDispensewatervolume());
+            brewwaterTempItem.setCur(getIngredient().getDispensewaterntc());
+            brewTimeItem.setCur(getIngredient().getBrewtime());
 
             grinder1AmountItem.setProgressMaxTimes(10);
             grinder1AmountItem.setCur2(getIngredient().getPowderamount());
             pressureItem.setCur(getIngredient().getWaterpressure());
-            brewTimeItem.setCur(getIngredient().getBrewtime());
-            preBrewTimeItem.setCur(getIngredient().getInfusiontime());
 
             airSpeedItem.setCur(getIngredient().getAirspeed());
             airTimeItem.setCur(getIngredient().getAirruntime());
-
             bubSpeedItem.setCur(getIngredient().getBubblerspeed());
             bubTimeItem.setCur(getIngredient().getBubblerruntime());
 
@@ -132,7 +147,15 @@ public class MonoFragment extends BaseFragment implements IIngredient<Ingredient
                 startActivityForResult(intent, Constant.REQ_INPUT);
             }
         });
-        waterVolumeItem.getSeekbar().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        infusionwaterTypeItem.getSpinerPopWindow().setItemListener(new MySpinerAdapter.OnItemSelectListener() {
+            @Override
+            public void onItemClick(String key) {
+                NotifyChange();
+                String name = infusionwaterTypeItem.getItemAndValues().get(key);
+                infusionwaterTypeItem.setSelItem(key, name);
+            }
+        });
+        infusionwaterVolumeItem.getSeekbar().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
@@ -146,22 +169,86 @@ public class MonoFragment extends BaseFragment implements IIngredient<Ingredient
 
                 int volume = progress;
                 if (fromUser) {
-                    volume += waterVolumeItem.getMin();
-                    waterVolumeItem.setCur(volume);
+                    volume += infusionwaterVolumeItem.getMin();
+                    infusionwaterVolumeItem.setCur(volume);
                     NotifyChange();
                 }
                 totalTime = Float.valueOf((volume / Constant.WATER_VOLUME) + "");
                 totalTimeItem.setTextValue(new DecimalFormat("0.0s").format(totalTime));
             }
         });
-        waterTypeItem.getSpinerPopWindow().setItemListener(new MySpinerAdapter.OnItemSelectListener() {
+        infusionwaterTempItem.getSeekbar().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                int volume = progress;
+                if (fromUser) {
+                    volume += infusionwaterTempItem.getMin();
+                    infusionwaterTempItem.setCur(volume);
+                    NotifyChange();
+                }
+            }
+        });
+
+        brewwaterTypeItem.getSpinerPopWindow().setItemListener(new MySpinerAdapter.OnItemSelectListener() {
             @Override
             public void onItemClick(String key) {
                 NotifyChange();
-                String name = waterTypeItem.getItemAndValues().get(key);
-                waterTypeItem.setSelItem(key, name);
+                String name = brewwaterTypeItem.getItemAndValues().get(key);
+                brewwaterTypeItem.setSelItem(key, name);
             }
         });
+        brewwaterVolumeItem.getSeekbar().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                int volume = progress;
+                if (fromUser) {
+                    volume += brewwaterVolumeItem.getMin();
+                    brewwaterVolumeItem.setCur(volume);
+                    NotifyChange();
+                }
+                totalTime = Float.valueOf((volume / Constant.WATER_VOLUME) + "");
+                totalTimeItem.setTextValue(new DecimalFormat("0.0s").format(totalTime));
+            }
+        });
+        brewwaterTempItem.getSeekbar().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                int volume = progress;
+                if (fromUser) {
+                    volume += brewwaterTempItem.getMin();
+                    brewwaterTempItem.setCur(volume);
+                    NotifyChange();
+                }
+            }
+        });
+
 
         grinder1AmountItem.getSeekbar().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -288,14 +375,22 @@ public class MonoFragment extends BaseFragment implements IIngredient<Ingredient
     private void initMono()
     {
         getIngredient().setName(ingredientNameItem.getTextValue());
-        getIngredient().setPowdervolumetype(Integer.valueOf(waterTypeItem.getSelKey()));
-        getIngredient().setPowdervolume(waterVolumeItem.getCur());
+        getIngredient().setInfusionwatertype(Integer.valueOf(infusionwaterTypeItem.getSelKey()));
+        getIngredient().setInfusionwatervolume(infusionwaterVolumeItem.getCur());
+        getIngredient().setInfusionwaterntc(infusionwaterTempItem.getCur());
+
+        getIngredient().setDispensewatertype(Integer.valueOf(brewwaterTypeItem.getSelKey()));
+        getIngredient().setDispensewatervolume(brewwaterVolumeItem.getCur());
+        getIngredient().setDispensewaterntc(brewwaterTempItem.getCur());
+
         getIngredient().setPowderamount(grinder1AmountItem.getCur());
         getIngredient().setWaterpressure(pressureItem.getCur());
         getIngredient().setInfusiontime(preBrewTimeItem.getCur());
         getIngredient().setBrewtime(brewTimeItem.getCur());
         getIngredient().setAirspeed(airSpeedItem.getCur());
         getIngredient().setAirruntime(airTimeItem.getCur());
+        getIngredient().setBubblerruntime(bubSpeedItem.getCur());
+        getIngredient().setBubblerspeed(bubTimeItem.getCur());
     }
     @Override
     public void save() {

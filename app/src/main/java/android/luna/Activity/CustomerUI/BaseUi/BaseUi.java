@@ -594,7 +594,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
             image_banner.setImageBitmap(null);
         }
         menu_fav.setVisibility(getApp().get_screenSettings_instance().getShowfavourite()==1?View.VISIBLE:View.GONE);
-        lang.setVisibility(getApp().get_screenSettings_instance().getShowlanguage()==1?View.VISIBLE:View.GONE);
+        lang.setVisibility(getApp().get_screenSettings_instance().getShowlanguage()==1?View.VISIBLE:View.INVISIBLE);
         if(languageitem==null)
             lang.setVisibility(View.GONE);
 

@@ -86,9 +86,11 @@ public class BeverageUiFragment extends BaseFragment implements IIngredient<Beve
     }
     @Override
     public void onAttach(Activity activity) {
-        aty = (aty_beverage_maker) activity;
-        //app = aty.getApp();
         super.onAttach(activity);
+        if(aty==null)
+            aty = (aty_beverage_maker) activity;
+        //app = aty.getApp();
+
     }
 
     @Override

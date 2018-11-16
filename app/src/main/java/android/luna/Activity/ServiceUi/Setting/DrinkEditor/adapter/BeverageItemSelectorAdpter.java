@@ -22,9 +22,7 @@ import evo.luna.android.R;
 public class BeverageItemSelectorAdpter extends BaseAdapter {
     private List<BeverageBasic> _data;
     private Context mcontext;
-
     private List<Boolean> isClicks;
-
     private OndrinkitemClicked ondrinkitemClicked=null;
     public interface OndrinkitemClicked
     {
@@ -87,7 +85,6 @@ public class BeverageItemSelectorAdpter extends BaseAdapter {
             holder = new ViewHolder();
             convertView = LayoutInflater.from(mcontext).inflate(R.layout.adp_simple_drink, null);
             holder.text1 = convertView.findViewById(R.id.text1);
-            convertView.setTag(holder);
             viewMap.put(position, convertView);
             holder.text1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -103,6 +100,7 @@ public class BeverageItemSelectorAdpter extends BaseAdapter {
                     }
                 }
             });
+            convertView.setTag(holder);
         }
         else {
             convertView = viewMap.get(position);
@@ -110,7 +108,7 @@ public class BeverageItemSelectorAdpter extends BaseAdapter {
         }
         if(isClicks.size()>0) {
             if (isClicks.get(position)) {
-                holder.text1.setBackgroundColor(Color.GREEN);
+                holder.text1.setBackgroundColor(mcontext.getResources().getColor(R.color.sr_txt_selected));
             } else {
                 holder.text1.setBackgroundColor(Color.TRANSPARENT);
             }

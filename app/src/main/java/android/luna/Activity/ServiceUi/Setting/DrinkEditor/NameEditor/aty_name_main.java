@@ -18,6 +18,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.IdRes;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -30,7 +31,7 @@ import evo.luna.android.R;
 public class aty_name_main extends BaseActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener {
     private RadioGroup myTabRg;
     private MaterialDialog progressDialog;
-    private TextView btn_back;
+    private Button btn_back;
     private NameExportFragment tb_export;
     private NameImportFragment tb_import;
 

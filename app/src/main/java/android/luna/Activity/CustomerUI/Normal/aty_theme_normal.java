@@ -57,6 +57,7 @@ public class aty_theme_normal extends BaseUi implements GestureDetector.OnGestur
 
     @Override
     protected void onDestroy() {
+        AppManager.getAppManager().RemoveRefInList(aty_theme_normal.this.getClass());
         super.onDestroy();
     }
 

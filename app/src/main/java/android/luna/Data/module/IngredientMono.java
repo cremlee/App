@@ -46,6 +46,69 @@ public class IngredientMono implements Serializable {
 	private int isDefault;
 	@DatabaseField(defaultValue ="1")
 	private int createstatus=1;
+
+	@DatabaseField(defaultValue="30")
+	private int infusionwatervolume;
+	@DatabaseField(defaultValue="0")
+	private int infusionwatertype;
+	@DatabaseField(defaultValue="0")
+	private int infusionwaterntc;
+	@DatabaseField(defaultValue="150")
+	private int dispensewatervolume;
+	@DatabaseField(defaultValue="0")
+	private int dispensewatertype;
+	@DatabaseField(defaultValue="0")
+	private int dispensewaterntc;
+
+
+	public int getInfusionwatervolume() {
+		return infusionwatervolume;
+	}
+
+	public void setInfusionwatervolume(int infusionwatervolume) {
+		this.infusionwatervolume = infusionwatervolume;
+	}
+
+	public int getInfusionwatertype() {
+		return infusionwatertype;
+	}
+
+	public void setInfusionwatertype(int infusionwatertype) {
+		this.infusionwatertype = infusionwatertype;
+	}
+
+	public int getInfusionwaterntc() {
+		return infusionwaterntc;
+	}
+
+	public void setInfusionwaterntc(int infusionwaterntc) {
+		this.infusionwaterntc = infusionwaterntc;
+	}
+
+	public int getDispensewatervolume() {
+		return dispensewatervolume;
+	}
+
+	public void setDispensewatervolume(int dispensewatervolume) {
+		this.dispensewatervolume = dispensewatervolume;
+	}
+
+	public int getDispensewatertype() {
+		return dispensewatertype;
+	}
+
+	public void setDispensewatertype(int dispensewatertype) {
+		this.dispensewatertype = dispensewatertype;
+	}
+
+	public int getDispensewaterntc() {
+		return dispensewaterntc;
+	}
+
+	public void setDispensewaterntc(int dispensewaterntc) {
+		this.dispensewaterntc = dispensewaterntc;
+	}
+
 	public IngredientMono() {
 		super();
 		// TODO Auto-generated constructor stub

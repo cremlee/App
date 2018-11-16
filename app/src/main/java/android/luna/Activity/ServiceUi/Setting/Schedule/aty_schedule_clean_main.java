@@ -15,6 +15,7 @@ import android.os.Message;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -32,7 +33,7 @@ public class aty_schedule_clean_main extends BaseActivity implements RadioGroup.
     private ScheduleECOFragment tb_eco;
     private RadioGroup myTabRg;
     private MaterialDialog progressDialog;
-    private TextView btn_back;
+    private Button btn_back;
     @Override
     protected void onResume() {
         super.onResume();

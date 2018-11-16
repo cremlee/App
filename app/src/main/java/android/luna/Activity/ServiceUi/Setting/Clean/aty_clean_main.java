@@ -9,6 +9,7 @@ import android.luna.Activity.ServiceUi.Setting.Clean.fragment.WeeklyCleanFragmen
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import evo.luna.android.R;
@@ -19,7 +20,7 @@ import evo.luna.android.R;
 
 public class aty_clean_main extends BaseActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener {
     private RadioGroup myTabRg;
-    private TextView btn_back;
+    private Button btn_back;
     private DailyCleanFragment tb_daily;
     private WeeklyCleanFragment tb_weekly;
     private BrewerCleanFragment tb_brewer;

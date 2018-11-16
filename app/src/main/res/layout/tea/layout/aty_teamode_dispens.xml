@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bgtest">
+    <ViewFlipper
+        android:id="@+id/vf_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ViewFlipper>
+    <android.luna.ViewUi.Progressbar.CircleProgressBar
+        android:id="@+id/cpbdrink"
+        apps:style="line"
+        apps:line_width="12dp"
+        apps:line_count="20"
+        apps:progress_stroke_width="10dp"
+        apps:progress_text_size_1="20sp"
+        apps:progress_background_color="@android:color/darker_gray"
+        apps:progress_start_color="@android:color/white"
+        apps:progress_end_color="@android:color/holo_blue_bright"
+        apps:progress_text_color_1="@android:color/white"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        />
+</RelativeLayout>

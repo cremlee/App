@@ -81,7 +81,7 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.ViewHolder> 
         holder.tvCity.setText(cityBean.getDrinkname());
         if(isClicks.size()>0) {
             if (isClicks.get(position)) {
-                holder.content.setBackgroundColor(Color.MAGENTA);
+                holder.content.setBackgroundColor(mContext.getResources().getColor(R.color.sr_txt_selected));
             } else {
                 holder.content.setBackgroundColor(Color.TRANSPARENT);
             }

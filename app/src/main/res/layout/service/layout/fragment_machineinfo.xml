@@ -2,87 +2,92 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <RadioGroup
         android:id="@+id/myTabRg"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:background="#3A3C41"
         android:layout_weight="1"
         android:orientation="vertical">
-
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
         <RadioButton
             android:id="@+id/rbStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:background="@null"
+            android:background="@drawable/radio_selector_bg"
             android:button="@null"
             android:checked="true"
-            android:gravity="center_horizontal|bottom"
-            android:paddingTop="50dp"
+            android:gravity="center"
+            android:paddingStart="20dp"
             android:text="@string/SVR_ST_RB_TITLE_1"
             android:textColor="@drawable/tab_selector_tv_color"
-            android:textSize="28sp" />
+            android:textSize="@dimen/sr_title_size" />
 
         <RadioButton
+            android:paddingStart="20dp"
             android:id="@+id/rbcounter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:background="@null"
+            android:background="@drawable/radio_selector_bg"
             android:button="@null"
-            android:gravity="center_horizontal|bottom"
-            android:paddingTop="30dp"
+            android:gravity="center"
             android:text="@string/SVR_ST_RB_TITLE_2"
             android:textColor="@drawable/tab_selector_tv_color"
-            android:textSize="28sp" />
+            android:textSize="@dimen/sr_title_size" />
 
         <RadioButton
+            android:paddingStart="20dp"
             android:id="@+id/rblog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:background="@null"
+            android:background="@drawable/radio_selector_bg"
             android:button="@null"
-            android:gravity="center_horizontal|bottom"
-            android:paddingTop="30dp"
+            android:gravity="center"
             android:text="@string/SVR_ST_RB_TITLE_3"
             android:textColor="@drawable/tab_selector_tv_color"
-            android:textSize="28sp" />
+            android:textSize="@dimen/sr_title_size" />
 
         <RadioButton
+            android:paddingStart="20dp"
             android:id="@+id/rbhelp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:background="@null"
+            android:background="@drawable/radio_selector_bg"
             android:button="@null"
-            android:gravity="center_horizontal|bottom"
-            android:paddingTop="30dp"
+            android:gravity="center"
+
             android:text="@string/SVR_ST_RB_TITLE_4"
             android:textColor="@drawable/tab_selector_tv_color"
-            android:textSize="28sp" />
+            android:textSize="@dimen/sr_title_size" />
 
         <RadioButton
+            android:paddingStart="20dp"
             android:id="@+id/rbabout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:background="@null"
+            android:background="@drawable/radio_selector_bg"
             android:button="@null"
-            android:gravity="center_horizontal|bottom"
-            android:paddingTop="30dp"
+            android:gravity="center"
+
             android:text="@string/SVR_ST_RB_TITLE_5"
             android:textColor="@drawable/tab_selector_tv_color"
-            android:textSize="28sp" />
+            android:textSize="@dimen/sr_title_size" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5" />
+            android:layout_weight="3" />
     </RadioGroup>
-
     <FrameLayout
+        android:background="@null"
         android:id="@+id/flt_st"
         android:layout_width="0dp"
         android:layout_weight="4.5"

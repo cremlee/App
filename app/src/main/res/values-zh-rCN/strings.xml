@@ -42,9 +42,10 @@
     <string name="chocolate">Chocolate</string>
     <string name="milk">Milk</string>
     <string name="strength">Strength</string>
+    <string name="volume">Volume</string>
     <string name="sugar">Sugar</string>
     <string name="topping">Topping</string>
-    <string name="volume">Volume</string>
+
     <string name="jug">Jug Option</string>
     <string name="dirct">One Button Dispensing Mode</string>
     

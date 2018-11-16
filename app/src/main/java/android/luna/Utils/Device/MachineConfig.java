@@ -21,4 +21,10 @@ public class MachineConfig {
     public static final int MACHINE_PSL50_14= 0x01001400;
     //zi dingyi system
     public static final int MACHINE_DEFINE= 0x00ff0000;
+
+    // TODO: 2018/11/15 define the machine type 01-tea machine 02-coffee machine
+    public static final int MACHINE_TYPE_TEA = 0x01;
+    public static final int MACHINE_TYPE_COFFEE = 0x02;
+
+    public static final int MACHINE_TYPE = 0x01;
 }

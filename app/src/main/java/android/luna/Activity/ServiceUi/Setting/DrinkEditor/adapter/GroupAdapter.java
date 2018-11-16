@@ -23,7 +23,6 @@ import evo.luna.android.R;
 
 public class GroupAdapter  extends BaseAdapter implements SpinnerAdapter {
     private HashMap<Integer,String> _data;
-    //private List<>
     private Context context;
     public  GroupAdapter(Context context,HashMap<Integer,String>  data)
     {

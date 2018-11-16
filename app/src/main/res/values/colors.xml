@@ -457,4 +457,15 @@
     <color name="md_material_blue_800">#1565C0</color>
 
     <color name="md_edittext_error">#DD2C00</color>
+
+
+    <color name="sr_txt_selected">#FF2B40</color>
+    <color name="sr_txt_unselected">#E6E6E6</color>
+
+    <color name="sr_bg_left_menu">#3A3C41</color>
+    <color name="sr_bg_bottom_menu">#585B62</color>
+    <color name="sr_bg_right_fun">#282A31</color>
+
+    <color name="sr_header_txt_list">#969696</color>
+    <color name="sr_line_boder">#646568</color>
 </resources>

@@ -75,7 +75,7 @@ public class PowderAdapter extends RecyclerView.Adapter<PowderAdapter.ViewHolder
         holder.tvCity.setText(cityBean.getName());
         if (isClicks.size() > 0) {
             if (isClicks.get(position)) {
-                holder.content.setBackgroundColor(Color.MAGENTA);
+                holder.content.setBackgroundColor(mContext.getResources().getColor(R.color.sr_txt_selected));
             } else {
                 holder.content.setBackgroundColor(Color.TRANSPARENT);
             }

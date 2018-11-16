@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:alignmentMode="alignBounds"
+    android:padding="10dp"
+    android:background="@color/sr_bg_right_fun"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -11,16 +13,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <LinearLayout
-            android:layout_margin="5dp"
-            android:background="@drawable/lineborder"
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_white_border"
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <TextView
                 android:text="@string/SVR_INFO_TITLE_SYSTEM"
+                android:textColor="@color/material_black"
                 android:gravity="center"
-                android:textSize="32sp"
+                android:textSize="@dimen/sr_title_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <android.luna.ViewUi.widget.SettingItemTextViewVer
@@ -54,16 +57,17 @@
 
         </LinearLayout>
         <LinearLayout
-            android:layout_margin="5dp"
-            android:background="@drawable/lineborder"
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_white_border"
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <TextView
+                android:textColor="@color/material_black"
                 android:text="@string/SVR_INFO_TITLE_APP"
                 android:gravity="center"
-                android:textSize="32sp"
+                android:textSize="@dimen/sr_title_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <android.luna.ViewUi.widget.SettingItemTextViewVer
@@ -91,16 +95,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <LinearLayout
-            android:layout_margin="5dp"
-            android:background="@drawable/lineborder"
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_white_border"
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <TextView
+                android:textColor="@color/material_black"
                 android:text="@string/SVR_INFO_TITLE_FIRMWARE"
                 android:gravity="center"
-                android:textSize="32sp"
+                android:textSize="@dimen/sr_title_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <android.luna.ViewUi.widget.SettingItemTextViewVer
@@ -120,19 +125,20 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_margin="5dp"
-            android:background="@drawable/lineborder"
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_white_border"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
+                android:textColor="@color/material_black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/SVR_INFO_TITLE_MACHINE"
-                android:textSize="32sp" />
+                android:textSize="@dimen/sr_title_size" />
 
             <android.luna.ViewUi.widget.SettingItemTextViewVer
                 android:id="@+id/name"

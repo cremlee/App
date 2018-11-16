@@ -1,8 +1,10 @@
 package android.luna.ViewUi.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.IdRes;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +21,7 @@ public class SettingItemTextView2 extends LinearLayout {
 	private TextView textView1;
 	private TextView textView2;
 	private View line;
-
+	private LinearLayout main_bg;
 	private String textTitle; // 前面的标题
 	private String textValue; // 后面的描述
 	private Drawable titleDrawable; // 标题图标，左边显示的图标,不设置不显示
@@ -43,18 +45,34 @@ public class SettingItemTextView2 extends LinearLayout {
 		View view = LayoutInflater.from(mContext).inflate(R.layout.layout_setting_item_textview2, this, true);
 		textView1 = (TextView) view.findViewById(R.id.textView1);
 		textView2 = (TextView) view.findViewById(R.id.textView2);
-
+		main_bg = view.findViewById(R.id.main_bg);
+        line = view.findViewById(R.id.line);
 		final TypedArray array = mContext.obtainStyledAttributes(attrs, R.styleable.SettingItemTextView2);
 		setTextTitle(array.getString(R.styleable.SettingItemTextView2_textview2TextTitle));
 		setTextValue(array.getString(R.styleable.SettingItemTextView2_textview2TextValue));
 		setTextBackground(array.getColor(R.styleable.SettingItemTextView2_textview2TextBackground, 0xFFF));
+
 		setTextNameColor(array.getColor(R.styleable.SettingItemTextView2_textview2TextColor, 0xFF3C3127));
 		setTitleDrawable(array.getDrawable(R.styleable.SettingItemTextView2_textview2DrawbleLeft));
 		setValueDrawable(array.getDrawable(R.styleable.SettingItemTextView2_textview2DrawbleRight));
 		setShowLine(array.getBoolean(R.styleable.SettingItemTextView2_textview2Line, true));
+        setLinecolor(array.getColor(R.styleable.SettingItemTextView2_textview2LineColor, 0xff000000));
+        setmainbg(array.getDrawable(R.styleable.SettingItemTextView2_textview2Mainbg));
 		array.recycle();
 	}
 
+
+	public void setLinecolor(int color)
+    {
+        line.setBackgroundColor(color);
+    }
+	public void setmainbg(Drawable color)
+	{
+		if(color!=null)
+			this.main_bg.setBackground(color);
+		else
+			this.main_bg.setBackgroundResource(R.drawable.setting_item_bg);
+	}
 	public String getTextTitle() {
 		return textTitle;
 	}

@@ -152,7 +152,7 @@
             android:id ="@+id/lang1"
             apps:fab_colorPressed="@android:color/holo_red_dark"
             apps:fab_colorNormal="@android:color/holo_red_light"
-            apps:fab_icon="@drawable/flag_english"
+            apps:fab_icon="@drawable/zh"
             apps:fab_title="Chinese"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -173,7 +173,7 @@
         <android.luna.ViewUi.FloatActionMenu.FloatingActionButton
             android:id ="@+id/lang4"
             apps:fab_title="English"
-            apps:fab_icon="@drawable/flag_english"
+            apps:fab_icon="@drawable/en"
             apps:fab_colorPressed="@android:color/holo_purple"
             apps:fab_colorNormal="@android:color/holo_purple"
             android:layout_width="wrap_content"

@@ -1,53 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:columnCount="3"
-    app:rowCount="2"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@mipmap/sr_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-       <Button
-           android:id="@+id/btn_screensetting"
-           app:layout_rowWeight="1"
-           app:layout_columnWeight="1"
-           app:layout_gravity="fill"
-           android:layout_margin="30dp"
-            android:text="@string/SVR_SETTING_MENU_SCREEN" />
-        <Button
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/btn_screensetting"
+            android:background="@color/transparent"
+            android:layout_gravity="center"
+            android:src="@mipmap/screen_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sr_title_size"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:text="@string/SVR_SETTING_MENU_SCREEN"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageButton
             android:id="@+id/btn_canistersetting"
-            app:layout_rowWeight="1"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            android:layout_margin="30dp"
-            android:text="@string/SVR_SETTING_MENU_CANISTER" />
-        <Button
-
+            android:background="@color/transparent"
+            android:layout_gravity="center"
+            android:src="@mipmap/canister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sr_title_size"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:text="@string/SVR_SETTING_MENU_CANISTER"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageButton
             android:id="@+id/btn_machinesetting"
-            app:layout_rowWeight="1"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            android:layout_margin="30dp"
-            android:text="@string/SVR_SETTING_MENU_MACHINE" />
-
-        <Button
+            android:background="@color/transparent"
+            android:layout_gravity="center"
+            android:src="@mipmap/mach_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sr_title_size"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:text="@string/SVR_SETTING_MENU_MACHINE"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <ImageButton
             android:id="@+id/btn_payment"
-            app:layout_rowWeight="1"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            android:layout_margin="30dp"
+            android:background="@color/transparent"
+            android:layout_gravity="center"
+            android:src="@mipmap/payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sr_title_size"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
             android:text="@string/SVR_SETTING_MENU_PAYMENT"
-            />
-       <!-- <Button
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
 
-            app:layout_rowWeight="1"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            android:layout_margin="30dp"
-            />
-         <Button
-             app:layout_rowWeight="1"
-             app:layout_columnWeight="1"
-             app:layout_gravity="fill"
-             android:layout_margin="30dp" />-->
-
-
-</android.support.v7.widget.GridLayout>
+</LinearLayout>

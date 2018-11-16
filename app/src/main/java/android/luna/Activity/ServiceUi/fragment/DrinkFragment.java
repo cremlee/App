@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import evo.luna.android.R;
 
@@ -22,7 +23,7 @@ import evo.luna.android.R;
  */
 
 public class DrinkFragment extends Fragment implements View.OnClickListener,IAuthManage{
-    private Button edt_ingredient,edt_beverage,edt_group,namebtn;
+    private ImageButton edt_ingredient,edt_beverage,edt_group,namebtn;
     private CremApp app;
     @Nullable
     @Override

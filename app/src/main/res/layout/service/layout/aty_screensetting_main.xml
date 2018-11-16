@@ -1,157 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/sr_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
    <RelativeLayout
        android:id="@+id/lytheader"
        android:background="@color/material_grey_700"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content">
-       <TextView
+       android:layout_height="80dp">
+       <Button
+           android:drawableLeft="@drawable/ic_back"
            android:id="@+id/btn_back"
-           android:textSize="42sp"
-           android:text="@string/MENU_BACK"
+           android:minWidth="150dp"
+           android:textSize="24sp"
+           android:textAlignment="center"
+           android:layout_marginStart="20dp"
+           android:background="@color/transparent"
+           android:layout_centerVertical="true"
            android:layout_width="wrap_content"
-           android:layout_height="wrap_content" />
+           android:layout_height="wrap_content"
+           android:text="@string/MENU_BACK"
+           android:textColor="@color/white"
+           />
    </RelativeLayout>
-    <ScrollView
-        android:background="@color/spring_wood"
-        android:scrollbars="none"
+    <LinearLayout
+        android:background="@drawable/shape_drink_body"
+        android:orientation="horizontal"
         android:layout_below="@+id/lytheader"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-            <android.luna.ViewUi.widget.SettingItemDropDown
-                android:id="@+id/themeItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:dropdownDrawble="@drawable/ic_setting_popup_arrow_grey"
-                app:dropdownItems="Normal#Gallery#Cloud#Shop"
-                app:dropdownTextName="@string/SVR_SETTING_SCREEN_THEME"
-                app:dropdownTextValue="Normal"
-                app:dropdownValues="1#2#3#4#" />
-            <android.luna.ViewUi.widget.SettingItemTextView2
-                android:id="@+id/txtfontitem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview2TextTitle="@string/SVR_SETTING_SCREEN_FONT" />
-            <android.luna.ViewUi.widget.SettingItemTextView1
-                android:id="@+id/backgroundPictureItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
-                app:textview1Text="@string/SVR_SETTING_SCREEN_BACKGROUND"
-                app:textview1TextColor="@color/default_text_title_color" />
-            <android.luna.ViewUi.widget.SettingItemTextView1
-                android:id="@+id/brandPictureItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
-                app:textview1Text="@string/SVR_SETTING_SCREEN_BRAND"
-                app:textview1TextColor="@color/default_text_title_color" />
-            <android.luna.ViewUi.widget.SettingItemDropDown
-                android:id="@+id/screenSaverTimeItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:dropdownDrawble="@drawable/ic_setting_popup_arrow_grey"
-                app:dropdownItems="Off#1 Minute#5 Minutes#15 Minutes#30 Minutes"
-                app:dropdownTextName="@string/SVR_SETTING_SCREEN_SAVE_TIME"
-                app:dropdownTextValue="Off"
-                app:dropdownValues="1#2#3#4#5" />
-            <android.luna.ViewUi.widget.SettingItemTextView1
-                android:id="@+id/screenSaverImageItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
-                app:textview1Text="@string/SVR_SETTING_SCREEN_SAVE_IMAGE"
-                app:textview1TextColor="@color/default_text_title_color" />
-            <android.luna.ViewUi.widget.SettingItemTextView1
-                android:id="@+id/sleepMessageItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
-                app:textview1Text="@string/SVR_SETTING_SCREEN_ECO_MSG"
-                app:textview1TextColor="@color/default_text_title_color" />
-            <android.luna.ViewUi.widget.SettingItemTextView1
-                android:id="@+id/sleepPictureItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
-                app:textview1Text="@string/SVR_SETTING_SCREEN_ECO_IMAGE"
-                app:textview1TextColor="@color/default_text_title_color" />
-            <!--<android.luna.ViewUi.widget.SettingItemTextView1
-                android:id="@+id/welcomMessageItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
-                app:textview1Text="@string/scrlyt_txt_4"
-                app:textview1TextColor="@color/default_text_title_color" />
-            -->
-            <android.luna.ViewUi.widget.SettingItemCheckBox
-                android:id="@+id/logoPicturecheckItem"
-                app:checkBoxText="@string/SVR_SETTING_SCREEN_CUP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <android.luna.ViewUi.widget.SettingItemTextView1
-                android:id="@+id/logoPictureItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
-                app:textview1Text="Cup Logo Image"
-                app:textview1TextColor="@color/default_text_title_color" />
-            <android.luna.ViewUi.widget.SettingItemCheckBox
-                android:id="@+id/languagecheckItem"
-                app:checkBoxText="@string/SVR_SETTING_SCREEN_LANGUAGE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <android.luna.ViewUi.widget.SettingItemTextView1
-                android:id="@+id/languageItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
-                app:textview1Text="Language selection"
-                app:textview1TextColor="@color/default_text_title_color" />
-
-            <android.luna.ViewUi.widget.SettingItemCheckBox
-                android:id="@+id/faveritecheckItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:checkBoxText="@string/SVR_SETTING_SCREEN_FAVERITE" />
-            <android.luna.ViewUi.widget.SettingItemCheckBox
-                android:id="@+id/profilecheckItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:checkBoxText="@string/SVR_SETTING_SCREEN_PROFILE" />
-            <LinearLayout
-                android:id="@+id/function_normal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <LinearLayout
-                android:id="@+id/function_gallery"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <LinearLayout
-                android:id="@+id/function_could"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <android.luna.ViewUi.widget.SettingItemTextView1
-                android:id="@+id/screenLayouttitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview1Text="@string/SVR_SETTING_SCREEN_LAYOUT_TITLE"
-                app:textview1TextBackground="@color/title_text_color2"
-                app:textview1TextColor="@android:color/white" />
-            <android.luna.ViewUi.widget.SettingItemTextView1
-                android:id="@+id/screenLayoutItem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
-                app:textview1Text="@string/SVR_SETTING_SCREEN_LAYOUT"
-                app:textview1TextColor="@color/default_text_title_color" />
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
         </LinearLayout>
-    </ScrollView>
+        <ScrollView
+            android:padding="5dp"
+            android:background="@drawable/shape_drink_body"
+            android:scrollbars="none"
+            android:layout_weight="2.66"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1Text="@string/SVR_SETTING_SCREEN_PROPERTY"
+                    app:textview1TextBackground="@color/title_text_color2"
+                    app:textview1TextColor="@android:color/white" />
+                <android.luna.ViewUi.widget.SettingItemDropDown
+                    android:id="@+id/themeItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/spring_wood"
+                    app:dropdownDrawble="@drawable/ic_setting_popup_arrow_grey"
+                    app:dropdownItems="Normal#Gallery#Cloud#Shop"
+                    app:dropdownTextName="@string/SVR_SETTING_SCREEN_THEME"
+                    app:dropdownTextValue="Normal"
+                    app:dropdownValues="1#2#3#4#" />
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/txtfontitem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview2TextTitle="@string/SVR_SETTING_SCREEN_FONT" />
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/backgroundPictureItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
+                    app:textview1Text="@string/SVR_SETTING_SCREEN_BACKGROUND"
+                    app:textview1TextColor="@color/default_text_title_color" />
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/brandPictureItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
+                    app:textview1Text="@string/SVR_SETTING_SCREEN_BRAND"
+                    app:textview1TextColor="@color/default_text_title_color" />
+                <android.luna.ViewUi.widget.SettingItemDropDown
+                    android:background="@color/spring_wood"
+                    android:id="@+id/screenSaverTimeItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:dropdownDrawble="@drawable/ic_setting_popup_arrow_grey"
+                    app:dropdownItems="Off#1 Minute#5 Minutes#15 Minutes#30 Minutes"
+                    app:dropdownTextName="@string/SVR_SETTING_SCREEN_SAVE_TIME"
+                    app:dropdownTextValue="Off"
+                    app:dropdownValues="1#2#3#4#5" />
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/screenSaverImageItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
+                    app:textview1Text="@string/SVR_SETTING_SCREEN_SAVE_IMAGE"
+                    app:textview1TextColor="@color/default_text_title_color" />
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/sleepMessageItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
+                    app:textview1Text="@string/SVR_SETTING_SCREEN_ECO_MSG"
+                    app:textview1TextColor="@color/default_text_title_color" />
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/sleepPictureItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
+                    app:textview1Text="@string/SVR_SETTING_SCREEN_ECO_IMAGE"
+                    app:textview1TextColor="@color/default_text_title_color" />
+                <!--<android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/welcomMessageItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
+                    app:textview1Text="@string/scrlyt_txt_4"
+                    app:textview1TextColor="@color/default_text_title_color" />
+                -->
+                <android.luna.ViewUi.widget.SettingItemCheckBox
+                    android:id="@+id/logoPicturecheckItem"
+                    app:checkBoxText="@string/SVR_SETTING_SCREEN_CUP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/logoPictureItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
+                    app:textview1Text="Cup Logo Image"
+                    app:textview1TextColor="@color/default_text_title_color" />
+                <android.luna.ViewUi.widget.SettingItemCheckBox
+                    android:id="@+id/languagecheckItem"
+                    app:checkBoxText="@string/SVR_SETTING_SCREEN_LANGUAGE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/languageItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
+                    app:textview1Text="Language selection"
+                    app:textview1TextColor="@color/default_text_title_color" />
+
+                <android.luna.ViewUi.widget.SettingItemCheckBox
+                    android:id="@+id/faveritecheckItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:checkBoxText="@string/SVR_SETTING_SCREEN_FAVERITE" />
+                <android.luna.ViewUi.widget.SettingItemCheckBox
+                    android:id="@+id/profilecheckItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:checkBoxText="@string/SVR_SETTING_SCREEN_PROFILE" />
+                <LinearLayout
+                    android:id="@+id/function_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:id="@+id/function_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:id="@+id/function_could"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/screenLayouttitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1Text="@string/SVR_SETTING_SCREEN_LAYOUT_TITLE"
+                    app:textview1TextBackground="@color/title_text_color2"
+                    app:textview1TextColor="@android:color/white" />
+                <android.luna.ViewUi.widget.SettingItemTextView1
+                    android:id="@+id/screenLayoutItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textview1DrawbleRight="@drawable/ic_arrow_right_gray"
+                    app:textview1Text="@string/SVR_SETTING_SCREEN_LAYOUT"
+                    app:textview1TextColor="@color/default_text_title_color" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
 </RelativeLayout>

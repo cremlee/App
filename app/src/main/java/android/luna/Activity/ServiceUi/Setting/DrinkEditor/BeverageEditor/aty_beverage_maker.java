@@ -145,6 +145,33 @@ public class aty_beverage_maker extends BaseActivity implements View.OnClickList
             }
         }
     };
+    /*@Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data == null) {
+            return;
+        }
+        if (requestCode == Constant.REQ_DRINKICONPICUTE) {
+            mbeverageUi.setIconPath(data.getStringExtra("newpath"));
+           saveUiData();
+        }
+        else if(requestCode == Constant.REQ_DRINKSTORY)
+        {
+            mbeverageUi.setStoryTellingPath(data.getStringExtra("newpath"));
+           saveUiData();
+        }
+        else if(requestCode == Constant.REQ_DRINKDISPENSE)
+        {
+            mbeverageUi.setDispenseTellingPath(data.getStringExtra("newpath"));
+            saveUiData();
+        }
+        else if(requestCode == Constant.REQ_DRINKGALLERY)
+        {
+            mbeverageUi.setGalleryBkgPath(data.getStringExtra("newpath"));
+            saveUiData();
+        }
+
+    }*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -267,7 +294,10 @@ public class aty_beverage_maker extends BaseActivity implements View.OnClickList
         mRv.setLayoutManager(mManager = new LinearLayoutManager(this));
 
         mRv.setAdapter(mAdapter);
-        mRv.addItemDecoration(mDecoration = new SuspensionDecoration(this, mDatas));
+        mDecoration = new SuspensionDecoration(this, mDatas);
+        mDecoration.setColorTitleBg(getResources().getColor(R.color.material_white));
+        mDecoration.setColorTitleFont(getResources().getColor(R.color.material_black));
+        mRv.addItemDecoration(mDecoration);
         mRv.addItemDecoration(new DividerItemDecoration(aty_beverage_maker.this, DividerItemDecoration.VERTICAL_LIST));
         mTvSideBarHint =  findViewById(R.id.tvSideBarHint);//HintTextView
         mIndexBar = findViewById(R.id.indexBar);//IndexBar

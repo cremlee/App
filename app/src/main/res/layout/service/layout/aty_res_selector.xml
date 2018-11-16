@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-<TextView
-    android:background="@color/suva_gray"
-    android:id="@+id/title"
-    android:textSize="48sp"
-    android:text="@string/back"
-    android:paddingLeft="20dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@mipmap/sr_bg"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <Button
+            android:drawableLeft="@drawable/ic_back"
+            android:id="@+id/btn_close"
+            android:minWidth="150dp"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:layout_marginStart="20dp"
+            android:background="@color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/MENU_BACK"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
     <GridView
+        android:background="@drawable/shape_drink_body"
         android:stretchMode="columnWidth"
         android:padding="10dp"
         android:id="@+id/gv_res"
         android:verticalSpacing="20dp"
-        android:layout_below="@+id/title"
         android:numColumns="4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</RelativeLayout>
+</LinearLayout>

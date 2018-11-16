@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:background="@color/sr_bg_right_fun"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_margin="10dp">
-   <ImageView
-       android:id="@+id/chart_bar"
-       android:layout_alignParentRight="true"
-       android:src="@drawable/ics_counters"
-       android:layout_margin="20dp"
-       android:layout_width="100dp"
-       android:layout_height="100dp" />
+    android:layout_height="fill_parent">
+
    <RelativeLayout
        android:id="@+id/a1"
        android:layout_alignParentRight="true"
@@ -23,23 +17,27 @@
           android:layout_height="250dp"/>
    </RelativeLayout>
    <ScrollView
+       android:layout_margin="10dp"
+       android:background="@drawable/shape_counter"
        android:id="@+id/sv"
        android:scrollbars="none"
        android:layout_toLeftOf="@+id/a1"
        android:layout_width="match_parent"
        android:layout_height="match_parent">
       <LinearLayout
+          android:padding="1dp"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:background="@color/spring_wood"
       android:orientation="vertical" >
       <!-- 不能被清掉 -->
       <android.luna.ViewUi.widget.SettingItemTextView2
+
           android:id="@+id/masterTotalWaterItem"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          cqube:textview2TextBackground="@color/title_text_color2"
-          cqube:textview2TextColor="@color/white"
+          cqube:textview2TextBackground="@color/sr_header_txt_list"
+          cqube:textview2TextColor="@color/material_black"
           cqube:textview2TextTitle="@string/SVR_CT_TOTAL_WATER"
           cqube:textview2TextValue="0" />
       <!-- 不能被清掉 -->
@@ -48,10 +46,11 @@
           android:id="@+id/masterTotalBeverageItem"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          cqube:textview2TextBackground="@color/title_text_color2"
-          cqube:textview2TextColor="@color/white"
+          cqube:textview2TextBackground="@color/sr_header_txt_list"
+          cqube:textview2TextColor="@color/material_black"
           cqube:textview2TextTitle="@string/SVR_CT_TOTAL_BEVERAGE"
-          cqube:textview2TextValue="0" />
+          cqube:textview2TextValue="0"
+          />
 
       <android.luna.ViewUi.widget.SettingItemTextView2
           android:id="@+id/resetCountBeverageItem"
@@ -117,6 +116,7 @@
   </LinearLayout>
    </ScrollView>
    <RelativeLayout
+       android:layout_margin="10dp"
        android:id="@+id/lyt_chart"
        android:layout_width="fill_parent"
        android:layout_height="fill_parent">
@@ -127,4 +127,11 @@
            android:layout_width="match_parent"
            android:layout_height="500dp" />
    </RelativeLayout>
+    <ImageView
+        android:id="@+id/chart_bar"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ics_counters"
+        android:layout_margin="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 </RelativeLayout>

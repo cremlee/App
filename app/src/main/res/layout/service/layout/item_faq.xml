@@ -15,25 +15,26 @@
         android:id="@+id/firstLayer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#6889ff"
+        android:background="@color/sr_txt_unselected"
         >
         <ImageView
-            android:layout_margin="5dp"
+            android:layout_margin="20dp"
+
             android:id="@+id/summoner_iv"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_help"
+            android:src="@drawable/info"
             />
 
         <TextView
             android:id="@+id/faq_title"
             android:layout_toRightOf="@+id/summoner_iv"
             android:layout_marginLeft="5dp"
-            android:textColor="@android:color/white"
+            android:textColor="@color/material_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="32sp"
+            android:textSize="@dimen/sr_title_size"
             android:text="Question"
             />
 
@@ -44,35 +45,36 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:layout_centerVertical="true"
-            android:textColor="@android:color/white"
+            android:textColor="@color/material_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="question content"
-            android:textSize="24sp"
+            android:textSize="20sp"
             />
 
     </RelativeLayout>
 
     <LinearLayout
+        android:layout_marginStart="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/sr_header_txt_list"
         android:padding="10dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
+            android:textColor="@color/material_red_500"
+            android:textSize="20sp"
             android:text="Answer"
             />
         <TextView
-            android:textColor="@android:color/white"
+            android:textColor="@color/material_red_500"
             android:id="@+id/faq_answer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="how to solve the issues"
-            android:textSize="24sp"/>
+            android:textSize="18sp"/>
 
     </LinearLayout>
 

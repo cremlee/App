@@ -56,6 +56,16 @@ public class AppManager {
 		return activity;
 	}
 
+	public void RemoveRefInList(Class<?> cls)
+	{
+		try {
+			activityStack.remove(findActivity(cls));
+		}
+		catch (Exception e)
+		{
+
+		}
+	}
 	/**
 	 * 获取当前Activity（栈顶Activity） 没有找到则返回null
 	 */
@@ -107,10 +117,6 @@ public class AppManager {
 		try {
 			for (BaseActivity activity : activityStack) {
 				if (activity.getClass().equals(cls)) {
-					/*if("BaseUi".equals(cls.getSuperclass().getSimpleName()))
-					{
-						FloatUtil.hideFloatView(activity, FloatBallView.class, false);
-					}*/
 					finishActivity(activity);
 				}
 			}

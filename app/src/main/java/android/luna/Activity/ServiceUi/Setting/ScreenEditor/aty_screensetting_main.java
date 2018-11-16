@@ -19,6 +19,7 @@ import android.luna.ViewUi.widget.SettingItemTextView2;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -32,7 +33,7 @@ import evo.luna.android.R;
  */
 
 public class aty_screensetting_main extends BaseActivity implements View.OnClickListener{
-    private TextView btn_back;
+    private Button btn_back;
     private ColorPickerDialog colorPickerDialog;
     private SettingItemDropDown themeItem,screenSaverTimeItem;
     private SettingItemTextView2 txtfontitem;
@@ -63,19 +64,19 @@ public class aty_screensetting_main extends BaseActivity implements View.OnClick
             screenSaverTimeItem.setSelItem(key, themetype);
             screenSaverTimeItem.refreshData(0);
         }
-        logoPicturecheckItem.setChecked(_screenSettings.getLogoflag() == 1 ? true : false);
+        logoPicturecheckItem.setChecked(_screenSettings.getLogoflag() == 1);
         if(_screenSettings.getLogoflag() == 1)
             logoPictureItem.setVisibility(View.VISIBLE);
         else
             logoPictureItem.setVisibility(View.GONE);
-        faveritecheckItem.setChecked(_screenSettings.getShowfavourite() == 1 ? true : false);
+        faveritecheckItem.setChecked(_screenSettings.getShowfavourite() == 1);
 
-        languagecheckItem.setChecked(_screenSettings.getShowlanguage() == 1 ? true : false);
+        languagecheckItem.setChecked(_screenSettings.getShowlanguage() == 1);
         if(_screenSettings.getShowlanguage() == 1)
             languageItem.setVisibility(View.VISIBLE);
         else
             languageItem.setVisibility(View.GONE);
-        profilecheckItem.setChecked(_screenSettings.getShowprofile() == 1 ? true : false);
+        profilecheckItem.setChecked(_screenSettings.getShowprofile() == 1);
 
     }
 

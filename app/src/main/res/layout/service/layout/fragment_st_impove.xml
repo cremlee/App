@@ -1,144 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/spring_wood"
+    android:background="@color/sr_bg_right_fun"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="0dp">
-        <LinearLayout
-            android:background="@drawable/layout_white_border"
-            android:layout_margin="10dp"
-            android:orientation="vertical"
-            android:id="@+id/lyt1"
-            android:layout_width="0dp"
-            android:layout_weight="4"
-            android:layout_height="match_parent">
-            <TextView
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/material_black"
-                android:textSize="30sp"
-                android:text="@string/SVR_ST_CANISTER"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_white_border"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_margin="10dp"
+                android:src="@mipmap/canistericon"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <LinearLayout
+                android:id="@+id/lyt1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/SVR_ST_CANISTER"
+                android:textColor="@color/material_black"
+                android:textSize="@dimen/sr_title_size" />
+
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                android:layout_width="match_parent"
+                android:background="@color/sr_bg_right_fun"
+                android:layout_height="1dp"/>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_canister"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                />
+                android:layout_margin="5dp" />
+        </LinearLayout>
         </LinearLayout>
         <RelativeLayout
-            android:background="@drawable/layout_white_border"
-            android:layout_margin="10dp"
             android:layout_width="0dp"
-            android:layout_weight="3.3"
-            android:layout_height="match_parent">
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_white_border">
+            <ImageView
+                android:layout_margin="10dp"
+                android:src="@mipmap/bin"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
             <TextView
                 android:id="@+id/title2"
-                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/material_black"
-                android:textSize="30sp"
                 android:text="@string/SVR_ST_BIN"
+                android:textColor="@color/material_black"
+                android:textSize="@dimen/sr_title_size" />
+            <View
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="40dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:background="@color/sr_bg_right_fun"
+                android:layout_height="1dp"/>
             <LinearLayout
-                android:layout_below="@+id/title2"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title2">
                 <LinearLayout
                     android:id="@+id/lyt_waster"
-                    android:clickable="true"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical"
-                    android:layout_weight="0.8"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
                     <com.lid.lib.LabelImageView
-                        android:padding="15dp"
-                        android:src="@mipmap/waster"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp" />
+                        android:layout_height="100dp"
+                        android:padding="5dp"
+                        android:src="@mipmap/waster" />
+
                     <TextView
-                        android:textColor="@color/material_black"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/SVR_ST_BIN_NAME"
-                        android:gravity="center"
-                        android:textSize="20sp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="@string/SVR_ST_BIN_NAME"
+                        android:textColor="@color/material_black"
+                        android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/waster_per"
-                        android:textColor="@color/material_black"
-                        android:layout_marginTop="15dp"
-                        android:text="50%"
-                        android:gravity="center"
-                        android:textSize="24sp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="50%"
+                        android:textColor="@color/material_black"
+                        android:textSize="20sp" />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_margin="10dp"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
                     <com.lid.lib.LabelImageView
                         android:layout_width="match_parent"
                         android:layout_height="100dp" />
+
                     <TextView
-                        android:visibility="gone"
                         android:id="@+id/clean_info"
-                        android:textColor="@color/material_black"
-                        android:layout_marginTop="15dp"
-                        android:text="Next maintenance 2 days left"
-                        android:gravity="center"
-                        android:textSize="24sp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:text="Next maintenance 2 days left"
+                        android:textColor="@color/material_black"
+                        android:textSize="24sp"
+                        android:visibility="gone" />
                 </LinearLayout>
             </LinearLayout>
 
 
-
         </RelativeLayout>
     </LinearLayout>
-
     <LinearLayout
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
+        android:layout_weight="1"
+        android:layout_height="0dp">
         <RelativeLayout
             android:id="@+id/lyt2"
             android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:layout_weight="4"
             android:background="@drawable/layout_white_border"
             android:orientation="horizontal">
-
+            <ImageView
+                android:layout_margin="10dp"
+                android:src="@mipmap/machine_event"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
             <TextView
                 android:id="@+id/title3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="70dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/SVR_ST_EVENT"
                 android:textColor="@color/material_black"
-                android:textSize="30sp" />
-
+                android:textSize="@dimen/sr_title_size" />
+            <View
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="40dp"
+                android:layout_width="match_parent"
+                android:background="@color/sr_bg_right_fun"
+                android:layout_height="1dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/title3"
-                android:layout_margin="10dp">
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="15dp">
 
                 <ListView
                     android:id="@+id/errorlsv"
@@ -154,34 +200,44 @@
                     android:layout_height="match_parent" />
             </LinearLayout>
         </RelativeLayout>
-
         <RelativeLayout
             android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:layout_weight="3.3"
             android:background="@drawable/layout_white_border">
 
             <TextView
                 android:id="@+id/title4"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="70dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/SVR_ST_SENSOR"
                 android:textColor="@color/material_black"
-                android:textSize="30sp" />
-
+                android:textSize="@dimen/sr_title_size" />
+            <ImageView
+                android:layout_margin="10dp"
+                android:src="@mipmap/sensor_sta"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <View
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="40dp"
+                android:layout_width="match_parent"
+                android:background="@color/sr_bg_right_fun"
+                android:layout_height="1dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/title4"
-                android:layout_marginTop="20dp">
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="15dp">
                 <android.luna.ViewUi.DashBoard.DialChart01View
                     android:id="@+id/dash_ntc"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="10dp"
                     android:layout_weight="1" />
                  <LinearLayout
                      android:orientation="vertical"
@@ -190,22 +246,22 @@
                      android:layout_height="match_parent">
                      <TextView
                          android:id="@+id/st_door"
-                         android:textSize="26sp"
+                         android:textSize="20sp"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content" />
                      <TextView
                          android:id="@+id/st_water"
-                         android:textSize="26sp"
+                         android:textSize="20sp"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content" />
                      <TextView
                          android:id="@+id/st_drip"
-                         android:textSize="26sp"
+                         android:textSize="20sp"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content" />
                      <TextView
                          android:id="@+id/st_bin"
-                         android:textSize="26sp"
+                         android:textSize="20sp"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content" />
                  </LinearLayout>
