@@ -15,6 +15,7 @@ import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.frag
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.IIngredient;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.adapter.IngredientSelectAdapter;
 import android.luna.Data.DAO.EspressoDao;
+import android.luna.Data.DAO.MonoStepDao;
 import android.luna.Data.module.BeverageBasic;
 import android.luna.Data.module.BeverageIngredient;
 import android.luna.Data.module.BeverageUi;
@@ -23,6 +24,8 @@ import android.luna.Data.module.IngredientEspresso;
 import android.luna.Data.module.IngredientFilterBrew;
 import android.luna.Data.module.IngredientFilterBrewAdvance;
 import android.luna.Data.module.IngredientInstant;
+import android.luna.Data.module.IngredientMono;
+import android.luna.Data.module.IngredientMonoProcess;
 import android.luna.Data.module.IngredientWater;
 import android.luna.Utils.AndroidUtils_Ext;
 import android.luna.Utils.FileHelper;
@@ -82,7 +85,7 @@ public class BeverageIngredientFragment extends BaseFragment implements IIngredi
     {
         return aty.getMbeverageBasic();
     }
-
+    private MonoStepDao monoStepDao=null;
     private Object currentIngredient =null;
     @Nullable
     @Override
@@ -103,6 +106,7 @@ public class BeverageIngredientFragment extends BaseFragment implements IIngredi
                 AddAnIngredientStep(ingredientSelectAdapter.GetItemPid(itemIndex));
             }
         });
+        monoStepDao = new MonoStepDao(aty,aty.getApp());
         return view;
     }
 
@@ -175,6 +179,25 @@ public class BeverageIngredientFragment extends BaseFragment implements IIngredi
                         currentIngredient = water;
                         ingredientStructure = cmdMakeIngredient.buildWaterStructure(water);
                         aty.getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_ADD, water.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_WATER), ingredientStructure));
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case Ingredient.TYPE_MONO:
+                try {
+                    newpid = aty.getMingredientFactoryDao().getIngredientDao().createIngredient(name, ingredientType, 0);
+                    IngredientMono mono = aty.getMingredientFactoryDao().getMonoDao().copymono(oldpid, newpid, name);
+                    if (mono != null) {
+                        //// TODO: 2018/2/26 send water to luna
+                        List<IngredientMonoProcess> monosteps = monoStepDao.getmonosteps(oldpid);
+                        if(monosteps!=null)
+                        {
+                            monoStepDao.updatemonosteplist(newpid, monosteps);
+                        }
+                        currentIngredient = mono;
+                        ingredientStructure = cmdMakeIngredient.buildMonoStructure(mono,monosteps);
+                        aty.getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_ADD, mono.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_MONO), ingredientStructure));
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -414,6 +437,27 @@ public class BeverageIngredientFragment extends BaseFragment implements IIngredi
                         });
                     }
                     break;
+                    case Ingredient.TYPE_MONO:
+                        final IngredientMono mono = app.getHelper().getIngredientMonoDao().queryBuilder().where().eq("pid", ingredientId).queryForFirst();
+                        if(mono!=null)
+                        {
+                            float brewtime = mono.getInfusiontime()+mono.getBubblerruntime()+mono.getAirruntime()+mono.getBrewtime();
+                            totalVolume += (mono.getInfusionwatervolume()+mono.getDispensewatervolume()) * cur;
+                            beverageTotalTime = brewtime*cur;
+                            editWidget = new RecipeEditWidget(aty, 10 + position);
+                            editWidget.setBaseValue(pub, mono);
+                            editWidget.getDragView().setRecipeWidth(beverageTotalTime);
+                            editWidget.getDragView().setOnDoubleClickListener(new RecipeDragView.DoubleClickListener() {
+                                @Override
+                                public void onDoubleClickListener(View v) {
+                                    app.setMcurrentIngredientPid(mono.getPid());
+                                    Intent intent = new Intent(aty, aty_beverageIngredient_maker.class);
+                                    startActivity(intent);
+                                    aty.showToast("Water Double click!!!"+mono.toString());
+                                }
+                            });
+                        }
+                        break;
                 default:
                     break;
             }

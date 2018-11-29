@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spring_wood"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <android.luna.ViewUi.widget.SettingItemTextView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview1Text="@string/SVR_DRINK_INGREDIENT_MONO_TITLE"
+            cqube:textview1TextBackground="@color/title_text_color2"
+            cqube:textview1TextColor="@android:color/white" />
+
+        <!-- Ingredient Name -->
+
+        <android.luna.ViewUi.widget.SettingItemTextView2
+            android:id="@+id/ingredientNameItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview2TextTitle="@string/SVR_DRINK_INGREDIENT_ESPRESSO_NAME" />
+
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/grinder1TypeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_POWER_TYPE" />
+
+        <!-- Grinder1 Amount -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/grinder1AmountItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="0"
+            cqube:sbMax="20"
+            cqube:sbMin="0"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_POWER_AMOUNT"
+            cqube:sbUnit="g" />
+        <!-- Water Temp -->
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/powderwait"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="0"
+            cqube:sbMax="20"
+            cqube:sbMin="0"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_WAIT"
+            cqube:sbUnit=" s" />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/emptytime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="3"
+            cqube:sbMax="60"
+            cqube:sbMin="0"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_EMPTY_TIME"
+            cqube:sbUnit="s" />
+        <!-- air running speed -->
+
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/emptyspeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="80"
+            cqube:sbMax="100"
+            cqube:sbMin="0"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_EMPTY_SPEED"
+            cqube:sbUnit="%" />
+        <!-- Water wash part -->
+        <android.luna.ViewUi.widget.SettingItemCheckBox
+            android:id="@+id/washenable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:checkBoxText="@string/SVR_DRINK_INGREDIENT_MONO_WASH"
+            cqube:cbkMainbg="@color/title_text_color2"
+            cqube:cbkTextColor="@android:color/white"
+            cqube:cbkLineColor="@color/transparent"
+            />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/washcount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="1"
+            cqube:sbMax="2"
+            cqube:sbMin="0"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_WASH_COUNT" />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/washvolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="0"
+            cqube:sbMax="100"
+            cqube:sbMin="0"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_WASH_Volume"
+            cqube:sbUnit="ml" />
+        <android.luna.ViewUi.widget.SettingItemDropDown
+            android:id="@+id/washtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_MONO_WASH_TYPE" />
+        <android.luna.ViewUi.widget.SettingItemSeekBar
+            android:id="@+id/washtemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:sbCur="0"
+            cqube:sbMax="100"
+            cqube:sbMin="0"
+            cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_WASH_TEMP"
+            cqube:sbUnit="C" />
+
+
+
+        <android.luna.ViewUi.widget.SettingItemTextView2
+            android:id="@+id/monostep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview2TextBackground="@color/title_text_color2"
+            cqube:textview2TextColor="@android:color/white"
+            cqube:textview2TextValue=">"
+            cqube:textview2TextTitle="@string/SVR_DRINK_INGREDIENT_MONO_AD" />
+
+        <android.luna.ViewUi.widget.SettingItemTextView2
+            android:id="@+id/totalTimeItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cqube:textview2TextTitle="@string/SVR_DRINK_INGREDIENT_ESPRESSO_TOTAL"
+            cqube:textview2TextValue="20.0s" />
+
+    </LinearLayout>
+
+</ScrollView>

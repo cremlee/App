@@ -148,7 +148,6 @@ public class IngredientDao extends BaseDaobak {
 		int ingredientType = ingredient.getType();
 		try {
 			if (ingredient.getIsDefault() == 1) {
-				System.out.println("系统的不能删除");				
 				// 删除中间表（IngredientBeverage）表中IngredientPid为Ingredient Pid的数据
 				deleteBeverageIngredient(ingredientId);
 				return "";
@@ -159,39 +158,48 @@ public class IngredientDao extends BaseDaobak {
 			deleteBeverageIngredient(ingredientId);
 			CmdMakeIngredient cmdMakeIngredient = new CmdMakeIngredient();
 			switch (ingredientType) {
-			case Ingredient.TYPE_FILTER_BREW:
-				IngredientFilterBrew filterBrew = getHelper().getIngredientFilterBrewDao()
-						.queryForEq("pid", ingredientId).get(0);
-				buildStructure = cmdMakeIngredient.buildFilterBrewStructure(filterBrew);
-				getHelper().getIngredientFilterBrewDao().deleteById(filterBrew.getId());
-				break;
-			case Ingredient.TYPE_INSTANT:
-				IngredientInstant instant = getHelper().getIngredientInstantDao().queryForEq("pid", ingredientId)
-						.get(0);
-				buildStructure = cmdMakeIngredient.buildInstantStructure(instant);
-				getHelper().getIngredientInstantDao().deleteById(instant.getId());
-				break;
-			case Ingredient.TYPE_WATER:
-				IngredientWater water = getHelper().getIngredientWaterDao().queryForEq("pid", ingredientId).get(0);
-				buildStructure = cmdMakeIngredient.buildWaterStructure(water);
-				getHelper().getIngredientWaterDao().deleteById(water.getId());
-				break;
-			case Ingredient.TYPE_FILTER_BREW_ADVANCE:
-				IngredientFilterBrewAdvance fadv = getHelper().getIngredientFilterBrewAdvanceDao().queryForEq("pid", ingredientId).get(0);
-				FilterBrewStepDao aa = new FilterBrewStepDao(getmContext(),((CremApp) getmContext().getApplicationContext()));
-				getHelper().getIngredientFilterBrewAdvanceDao().deleteById(fadv.getId());
-				aa.ClearTableforPid(ingredientId);
-				//todo : send cmd
-				break;
-			case Ingredient.TYPE_ESPRESSO:
-				IngredientEspresso espresso = getHelper().getIngredientEspressoDao().queryForEq("pid", ingredientId).get(0);
-				if(espresso!=null) {
-					getHelper().getIngredientEspressoDao().deleteById(espresso.getId());
-					buildStructure = cmdMakeIngredient.buildEspressoStructure(espresso);
-				}
-				break;
-			default:
-				break;
+				case Ingredient.TYPE_FILTER_BREW:
+					IngredientFilterBrew filterBrew = getHelper().getIngredientFilterBrewDao()
+							.queryForEq("pid", ingredientId).get(0);
+					buildStructure = cmdMakeIngredient.buildFilterBrewStructure(filterBrew);
+					getHelper().getIngredientFilterBrewDao().deleteById(filterBrew.getId());
+					break;
+				case Ingredient.TYPE_INSTANT:
+					IngredientInstant instant = getHelper().getIngredientInstantDao().queryForEq("pid", ingredientId)
+							.get(0);
+					buildStructure = cmdMakeIngredient.buildInstantStructure(instant);
+					getHelper().getIngredientInstantDao().deleteById(instant.getId());
+					break;
+				case Ingredient.TYPE_WATER:
+					IngredientWater water = getHelper().getIngredientWaterDao().queryForEq("pid", ingredientId).get(0);
+					buildStructure = cmdMakeIngredient.buildWaterStructure(water);
+					getHelper().getIngredientWaterDao().deleteById(water.getId());
+					break;
+				case Ingredient.TYPE_FILTER_BREW_ADVANCE:
+					IngredientFilterBrewAdvance fadv = getHelper().getIngredientFilterBrewAdvanceDao().queryForEq("pid", ingredientId).get(0);
+					FilterBrewStepDao aa = new FilterBrewStepDao(getmContext(), ((CremApp) getmContext().getApplicationContext()));
+					getHelper().getIngredientFilterBrewAdvanceDao().deleteById(fadv.getId());
+					aa.ClearTableforPid(ingredientId);
+					//todo : send cmd
+					break;
+				case Ingredient.TYPE_ESPRESSO:
+					IngredientEspresso espresso = getHelper().getIngredientEspressoDao().queryForEq("pid", ingredientId).get(0);
+					if (espresso != null) {
+						getHelper().getIngredientEspressoDao().deleteById(espresso.getId());
+						buildStructure = cmdMakeIngredient.buildEspressoStructure(espresso);
+					}
+					break;
+				case Ingredient.TYPE_MONO:
+					IngredientMono mono = getHelper().getIngredientMonoDao().queryForEq("pid", ingredientId).get(0);
+					if(mono!=null)
+					{
+						getHelper().getIngredientMonoDao().deleteById(mono.getId());
+					}
+					MonoStepDao monostep = new MonoStepDao(getmContext(), ((CremApp) getmContext().getApplicationContext()));
+					monostep.clearmonostepbypid(ingredientId);
+					break;
+				default:
+					break;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -24,7 +24,7 @@ import evo.luna.android.R;
 
 public class LanguageAdapter extends BaseAdapter{
     private List<Integer> _data;
-    private int[] langResId = new int[]{R.mipmap.en,R.mipmap.zh,R.mipmap.en,
+    private int[] langResId = new int[]{R.mipmap.zh,R.mipmap.en,R.mipmap.en,
                                         R.mipmap.en,R.mipmap.en,R.mipmap.en,
                                         R.mipmap.en,R.mipmap.en,R.mipmap.en};
     private Context mcontext;

@@ -230,4 +230,14 @@
         <item>00ff0000</item>
     </string-array>
 
+    <string-array name="filter_water_value" >
+        <item>Hot water</item>
+        <item>Warn water</item>
+        <item>Cold water</item>
+    </string-array>
+    <integer-array name="filter_water_key" >
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
+    </integer-array>
 </resources>

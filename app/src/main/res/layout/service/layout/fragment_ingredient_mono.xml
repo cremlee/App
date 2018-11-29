@@ -31,10 +31,7 @@
             android:id="@+id/grinder1TypeItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            cqube:dropdownItems="None#Bean1#Bean2"
-            cqube:dropdownTextName="Grinder"
-            android:visibility="gone"
-            cqube:dropdownValues="0#129#130" />
+            cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_ESPRESSO_POWER_TYPE" />
 
         <!-- Grinder1 Amount -->
 
@@ -98,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             cqube:sbCur="3"
-            cqube:sbMax="20"
+            cqube:sbMax="60"
             cqube:sbMin="0"
             cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_INFUSION"
             cqube:sbUnit="s" />
@@ -139,7 +136,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             cqube:sbCur="3"
-            cqube:sbMax="20"
+            cqube:sbMax="60"
             cqube:sbMin="0"
             cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_BREW"
             cqube:sbUnit="s" />

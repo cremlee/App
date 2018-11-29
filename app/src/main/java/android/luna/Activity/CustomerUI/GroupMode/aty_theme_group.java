@@ -12,6 +12,7 @@ import android.luna.Data.DAO.BeverageFactoryDao;
 import android.luna.Data.module.BeverageGroup;
 import android.luna.Utils.Device.MachineConfig;
 import android.luna.Utils.ImageConvertFactory;
+import android.luna.Utils.Lang.LangLocalHelper;
 import android.luna.Utils.PictureManager;
 import android.os.Handler;
 import android.util.DisplayMetrics;
@@ -47,13 +48,15 @@ public class aty_theme_group extends BaseUi implements BaseUi.Languagechanged {
     @Override
     protected void onResume() {
         super.onResume();
-        new Handler().postDelayed(new Runnable() {
-            public void run() {
-                groupdrinkMenuButtons = getBeverageFactoryDao().getDrinkIconItems(getApp().getCurrent_language(), grouplist.get(0));
-                adpterGroupButton.setData(groupdrinkMenuButtons);
-                //getApp().setGroupicon(groupiconset.get(0));
-            }
-        },  500);
+        if(grouplist!=null &&grouplist.size()>0) {
+            new Handler().postDelayed(new Runnable() {
+                public void run() {
+                    groupdrinkMenuButtons = getBeverageFactoryDao().getDrinkIconItems(getApp().getCurrent_language(), grouplist.get(0));
+                    adpterGroupButton.setData(groupdrinkMenuButtons);
+                    //getApp().setGroupicon(groupiconset.get(0));*/
+                }
+            }, 500);
+        }
     }
 
     @Override
@@ -84,6 +87,7 @@ public class aty_theme_group extends BaseUi implements BaseUi.Languagechanged {
     public void InitEvent() {
         super.InitEvent();
         initLinstener();
+        this.setOnLanguagechanged(this);
     }
 
     private void getgroupdataset() {
@@ -204,6 +208,15 @@ public class aty_theme_group extends BaseUi implements BaseUi.Languagechanged {
     }
     @Override
     public void updated() {
-
+        LangLocalHelper.updateLocale(this,LangLocalHelper.getlocalinfo(getApp().getCurrent_language()));
+        resetaty();
+    }
+    public void resetaty()
+    {
+        AppManager.getAppManager().finishActivity(aty_theme_group.this);
+        Intent _Intent = new Intent(this, aty_theme_group.class);
+        startActivity(_Intent);
+        //清除Activity退出和进入的动画
+        overridePendingTransition(0, 0);
     }
 }

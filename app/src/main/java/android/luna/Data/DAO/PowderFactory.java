@@ -7,6 +7,7 @@ import android.luna.Data.Interface.IPowderNutrition;
 import android.luna.Data.Interface.IPowerItem;
 import android.luna.Data.module.Powder.PowderItem;
 import android.luna.Data.module.Powder.PowderNutrition;
+import android.luna.Utils.Device.MachineConfig;
 
 import com.j256.ormlite.stmt.DeleteBuilder;
 import com.j256.ormlite.stmt.QueryBuilder;
@@ -14,6 +15,8 @@ import com.j256.ormlite.stmt.UpdateBuilder;
 
 import java.sql.SQLException;
 import java.util.List;
+
+import static android.luna.Utils.Device.MachineConfig.MACHINE_TYPE_TEA;
 
 /**
  * Created by Lee.li on 2018/5/17.
@@ -57,60 +60,88 @@ public class PowderFactory extends BaseDaobak implements IPowderDao {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
-
-                    PowderItem tmp =new PowderItem(1,"Espresso",1,0,0,3,0,1);
-                    try {
-                        getHelper().get_powderItemDao().create(tmp);
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                     tmp =new PowderItem(2,"Chocolate",1,0,0,3,0,1);
-                    try {
-                        getHelper().get_powderItemDao().create(tmp);
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                     tmp =new PowderItem(3,"Whitening",1,780,1170,3,0,1);
-                    try {
-                        getHelper().get_powderItemDao().create(tmp);
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                     tmp =new PowderItem(4,"Milk powder",1,780,1170,3,0,1);
-                    try {
-                        getHelper().get_powderItemDao().create(tmp);
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                     tmp =new PowderItem(5,"Milk granulate",1,780,1170,3,0,1);
-                    try {
-                        getHelper().get_powderItemDao().create(tmp);
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                     tmp =new PowderItem(6,"Sugar",1,780,1170,3,0,1);
-                    try {
-                        getHelper().get_powderItemDao().create(tmp);
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                     tmp =new PowderItem(7,"Instant coffee",1,780,1170,3,0,1);
-                    try {
-                        getHelper().get_powderItemDao().create(tmp);
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                     tmp =new PowderItem(8,"Soup",1,780,1170,3,0,1);
-                    try {
-                        getHelper().get_powderItemDao().create(tmp);
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                     tmp =new PowderItem(129,"bean",1,780,1170,2,0,1);
-                    try {
-                        getHelper().get_powderItemDao().create(tmp);
-                    } catch (SQLException e) {
-                        e.printStackTrace();
+                    PowderItem tmp;
+                    if(MachineConfig.MACHINE_TYPE == MACHINE_TYPE_TEA)
+                    {
+                        tmp = new PowderItem(1, "绿茶", 1, 0, 0, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(2, "红茶", 1, 0, 0, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(3, "菊花茶", 1, 780, 1170, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(4, "Milk powder", 1, 780, 1170, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }else {
+                        tmp = new PowderItem(1, "Espresso", 1, 0, 0, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(2, "Chocolate", 1, 0, 0, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(3, "Whitening", 1, 780, 1170, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(4, "Milk powder", 1, 780, 1170, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(5, "Milk granulate", 1, 780, 1170, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(6, "Sugar", 1, 780, 1170, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(7, "Instant coffee", 1, 780, 1170, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(8, "Soup", 1, 780, 1170, 3, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        tmp = new PowderItem(129, "bean", 1, 780, 1170, 2, 0, 1);
+                        try {
+                            getHelper().get_powderItemDao().create(tmp);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
 

@@ -51,6 +51,7 @@ public class InstantFragment extends BaseFragment implements IIngredient<Ingredi
     private SeekBarPressure      instantadvanceItem;
     private BaseActivity aty;
     private Map<String, String> map = new HashMap<>();
+
     private List<PowderItem> getpowderItems()
     {
         if(aty instanceof aty_ingrendient_maker)

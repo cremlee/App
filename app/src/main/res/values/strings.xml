@@ -76,9 +76,7 @@
     <string name="counter_brewflush">Flush Brewer</string>
     <string name="counter_openbrew">Open Brewer</string>
     <string name="counter_openvalve">Open Valve</string>
-    
-    
-    
+
     <!-- Screen Settings -->
     <string name="button_background">Button Background</string>
     <string name="button_size">Button Size</string>
@@ -1018,9 +1016,10 @@
     <string name="SVR_DRINK_INGREDIENT_WATER_TYPE">Water Type</string>
     <string name="SVR_DRINK_INGREDIENT_WATER_VOLUME">Water Volume</string>
     <!--Mono部分-->
-    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION_TYPE">Infusion Water Type</string>
-    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION_VOLUME">Infusion Water Volume</string>
-    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION_TEMP">Infusion Water Temperature</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION_TIME">Infusion time</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION_TYPE">Infusion type</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION_VOLUME">Infusion volume</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_INFUSION_TEMP">Infusion temperature</string>
     <string name="SVR_DRINK_INGREDIENT_MONO_BREW_TYPE">Brew Water Type</string>
     <string name="SVR_DRINK_INGREDIENT_MONO_BREW_VOLUME">Brew Water Volume</string>
     <string name="SVR_DRINK_INGREDIENT_MONO_BREW_TEMP">Brew Water Temperature</string>
@@ -1031,6 +1030,21 @@
     <string name="SVR_DRINK_INGREDIENT_MONO_AIR_SPD">Air Pump Speed</string>
     <string name="SVR_DRINK_INGREDIENT_MONO_BUB_TIME">Bub Pump Time</string>
     <string name="SVR_DRINK_INGREDIENT_MONO_BUB_SPD">Bub Pump Speed</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_WAIT">Powder wait time</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_WASH">Wash process enable</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_WASH_COUNT">Wash process count</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_WASH_Volume">Wash water volume</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_WASH_TYPE">Wash water type</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_WASH_TEMP">Wash water temperature</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_EMPTY_TIME">Empty time</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_EMPTY_SPEED">Empty speed</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_AD">Tea advanced process</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_DS_VOLUME">Dispense volume</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_DS_TYPE">Dispense Type</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_DS_TEMP">Dispense Temperature</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_OUTLET_TIME">Outlet time</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_OUTLET_SPEED">Outlet speed</string>
+    <string name="SVR_DRINK_INGREDIENT_MONO_STEP">Step</string>
     <!--<string name="SVR_DRINK_INGREDIENT_ESPRESSO_NAME">Ingredient Name</string>
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_WATER">Water Type</string>
     <string name="SVR_DRINK_INGREDIENT_ESPRESSO_VOLUME">Water Volume</string>
@@ -1110,4 +1124,6 @@
     <string name="MENU_BOTTOM_POWDER">Power settings</string>
 
     <string name="LABLE_FREE">Free</string>
+
+
 </resources>

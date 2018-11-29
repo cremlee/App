@@ -6,6 +6,7 @@ import android.luna.Data.module.IngredientFilterBrewAdvance;
 import android.luna.Data.module.IngredientInstant;
 import android.luna.Data.module.IngredientMilk;
 import android.luna.Data.module.IngredientMono;
+import android.luna.Data.module.IngredientMonoProcess;
 import android.luna.Data.module.IngredientWater;
 import android.luna.Utils.AndroidUtils_Ext;
 import android.luna.rs232.Cmd.base.*;
@@ -197,9 +198,9 @@ public class CmdMakeIngredient extends BaseCmd {
 	}
 
 
-	public String buildMonoStructure(IngredientMono mono) {
+	public String buildMonoStructure(IngredientMono mono ) {
 		StringBuilder buffer = new StringBuilder();
-		buffer.append(AndroidUtils_Ext.float2Hex2(mono.getPowderamount()));
+		buffer.append(AndroidUtils_Ext.float2Hex2(mono.getPowderamount()/10.f));
 		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getPowdertype()));
 		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getInfusiontime()));
 		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getInfusionwatervolume()));
@@ -214,11 +215,50 @@ public class CmdMakeIngredient extends BaseCmd {
 		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getDispensewatertype()));
 		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getDispensewaterntc()));
 
-		/*buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getAirruntime()));
-		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getPowdervolume()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getAirruntime()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getAirspeed()));
+		/*buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getPowdervolume()));
 		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getWaterpressure()));
-		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getAirspeed()));
 		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getPowdervolumetype()));*/
+		return buffer.toString();
+	}
+
+	public String buildMonoStructure(IngredientMono mono , List<IngredientMonoProcess> monostep) {
+		StringBuilder buffer = new StringBuilder();
+		buffer.append(AndroidUtils_Ext.float2Hex2(mono.getPowderamount()/10.f));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getPowdertype()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getPowderwait()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getWashenable()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getWashcount()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getWashvolume()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getWashtype()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getWashtemp()));
+		buffer.append(AndroidUtils_Ext.oct2Hex2(mono.getEmptytime()));
+		buffer.append(AndroidUtils_Ext.oct2Hex(mono.getEmptyspeed()));
+		if(monostep!=null && monostep.size()>0)
+		{
+			buffer.append(AndroidUtils_Ext.oct2Hex(monostep.size()));
+			for (IngredientMonoProcess item :monostep)
+			{
+				buffer.append(AndroidUtils_Ext.oct2Hex2(item.getInfusion_tm()));
+				buffer.append(AndroidUtils_Ext.oct2Hex2(item.getInfusion_volume()));
+				buffer.append(AndroidUtils_Ext.oct2Hex(item.getInfusion_type()));
+				buffer.append(AndroidUtils_Ext.oct2Hex(item.getInfusion_temperature()));
+				buffer.append(AndroidUtils_Ext.oct2Hex2(item.getBubpump_tm()));
+				buffer.append(AndroidUtils_Ext.oct2Hex(item.getBubpump_spd()));
+				buffer.append(AndroidUtils_Ext.oct2Hex2(item.getPress_tm()));
+				buffer.append(AndroidUtils_Ext.oct2Hex2(item.getDispense_volume()));
+				buffer.append(AndroidUtils_Ext.oct2Hex(item.getDispense_type()));
+				buffer.append(AndroidUtils_Ext.oct2Hex(item.getDispense_temperature()));
+				buffer.append(AndroidUtils_Ext.oct2Hex2(item.getOutlet_tm()));
+				buffer.append(AndroidUtils_Ext.oct2Hex(item.getOutlet_speed()));
+			}
+		}
+		else
+		{
+			return "";
+		}
+
 		return buffer.toString();
 	}
 }

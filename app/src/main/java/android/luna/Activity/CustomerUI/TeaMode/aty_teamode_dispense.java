@@ -13,6 +13,8 @@ import android.luna.Activity.Base.Constant;
 import android.luna.Activity.CustomerUI.Gallery.aty_customer_ui_1;
 import android.luna.Data.DAO.BeverageFactoryDao;
 import android.luna.Data.DAO.IngredientFactoryDao;
+import android.luna.Data.DAO.MonoDao;
+import android.luna.Data.DAO.MonoStepDao;
 import android.luna.Data.DAO.StockFactoryDao;
 import android.luna.Data.module.BeverageCount;
 import android.luna.Data.module.BeverageIngredient;
@@ -20,6 +22,8 @@ import android.luna.Data.module.Ingredient;
 import android.luna.Data.module.IngredientEspresso;
 import android.luna.Data.module.IngredientFilterBrew;
 import android.luna.Data.module.IngredientInstant;
+import android.luna.Data.module.IngredientMono;
+import android.luna.Data.module.IngredientMonoProcess;
 import android.luna.Data.module.IngredientWater;
 import android.luna.Data.module.WasterBinStock;
 import android.luna.Utils.FileHelper;
@@ -71,7 +75,7 @@ public class aty_teamode_dispense extends BaseActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        curPid =1;//getApp().get_drinkMenuButton().getPid();
+        curPid =getApp().get_drinkMenuButton().getPid();
         beverageFactoryDao = new BeverageFactoryDao(this,getApp());
         ingredientFactoryDao = new IngredientFactoryDao(this,getApp());
         stockFactoryDao = new StockFactoryDao(this,getApp());
@@ -80,8 +84,8 @@ public class aty_teamode_dispense extends BaseActivity implements View.OnClickLi
         filter.addAction(Constant.ACTION_MAKE_DRINK_ACK);
         filter.addAction(Constant.ACTION_CMD_RSP_TIME_OUT);
         // TODO: 2018/6/28 send make drink cmd for test
-        //getApp().addCmdQueue((new CmdMakeDrink()).buildMakeDrinkCmd(getApp().get_drinkMenuButton().getPid(), CmdMakeDrink.OPERATE_START, 3, 3, 3, 3, 3, 0));
-        setTheNumberProgressBar();
+        getApp().addCmdQueue((new CmdMakeDrink()).buildMakeDrinkCmd(getApp().get_drinkMenuButton().getPid(), CmdMakeDrink.OPERATE_START, 3, 3, 3, 3, 3, 0));
+        //setTheNumberProgressBar();
     }
     private BroadcastReceiver receiver = new BroadcastReceiver() {
 
@@ -153,7 +157,7 @@ public class aty_teamode_dispense extends BaseActivity implements View.OnClickLi
         setContentView(R.layout.aty_teamode_dispens);
         vf_bg = findViewById(R.id.vf_bg);
         cpbdrink = findViewById(R.id.cpbdrink);
-        String res = FileHelper.PATH_DRINK_AM+"a1.mp4";//getApp().get_drinkMenuButton().getDispensepath();
+        String res = getApp().get_drinkMenuButton().getDispensepath();
         if(res.toLowerCase().endsWith("mp4")) {
             //// TODO: 2018/2/28 panduan shebei yingliao zhizuo shi de ziyuan
             viewVideo = getLayoutInflater().inflate(R.layout.lyt_step_texture, null);
@@ -270,6 +274,20 @@ public class aty_teamode_dispense extends BaseActivity implements View.OnClickLi
                             ingredientTime = (int) (espresso.getBrewtime()+espresso.getPrebrewtime()+espresso.getPreinfusiontime())*1000+10000+espresso.getWatervolume()*100+(int)espresso.getPowderamount()*100;
                         }
                         break;
+                    case Ingredient.TYPE_MONO:
+                        IngredientMono mono = ingredientFactoryDao.getMonoDao().findByT(beverageIngredient.getIngredientPid());
+                        if(mono!=null)
+                        {
+                            int washtime=0;
+                            MonoStepDao monoStepDao = new MonoStepDao(this,getApp());
+                            if(mono.getWashenable() ==1 )
+                            {
+                                washtime = 5*mono.getWashcount();
+                            }
+                            ingredientTime = (washtime+mono.getEmptytime()+ monoStepDao.getsteptime(mono.getPid()))*1000;
+
+                        }
+                        break;
                     default:
                         break;
                 }
@@ -284,7 +302,7 @@ public class aty_teamode_dispense extends BaseActivity implements View.OnClickLi
     }
     private  void setTheNumberProgressBar()
     {
-        final int totaltm =5000;// makeDrinkTime();
+        final int totaltm =makeDrinkTime();
         cpbdrink.setMax(totaltm);
         if (timer == null) {
             timer = new Timer();
@@ -340,7 +358,7 @@ public class aty_teamode_dispense extends BaseActivity implements View.OnClickLi
     private class PlayerVideo extends Thread{
         @Override
         public void run(){
-            String res =FileHelper.PATH_DRINK_AM+"a1.mp4";// getApp().get_drinkMenuButton().getDispensepath();
+            String res = getApp().get_drinkMenuButton().getDispensepath();
             try {
                 mMediaPlayer= new MediaPlayer();
                 mMediaPlayer.setDataSource(aty_teamode_dispense.this, Uri.parse(res));

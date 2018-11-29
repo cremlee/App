@@ -15,12 +15,14 @@ import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.frag
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.FilterbrewFragment;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.InstantFragment;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.MonoFragment;
+import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.MonoStepFragment;
 import android.luna.Activity.ServiceUi.Setting.DrinkEditor.IngredientEditor.fragment.WaterFragment;
 import android.luna.Data.DAO.EspressoDao;
 import android.luna.Data.DAO.FilterBrewDao;
 import android.luna.Data.DAO.IngredientDao;
 import android.luna.Data.DAO.InstantDao;
 import android.luna.Data.DAO.MonoDao;
+import android.luna.Data.DAO.MonoStepDao;
 import android.luna.Data.DAO.PowderFactory;
 import android.luna.Data.DAO.WaterDao;
 import android.luna.Data.module.Ingredient;
@@ -28,6 +30,7 @@ import android.luna.Data.module.IngredientEspresso;
 import android.luna.Data.module.IngredientFilterBrew;
 import android.luna.Data.module.IngredientInstant;
 import android.luna.Data.module.IngredientMono;
+import android.luna.Data.module.IngredientMonoProcess;
 import android.luna.Data.module.IngredientWater;
 import android.luna.Data.module.Powder.PowderItem;
 import android.luna.Utils.AndroidUtils_Ext;
@@ -57,7 +60,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
     private FilterbrewFragment Tb_Filterbrew;
     private InstantFragment Tb_Instant;
     private WaterFragment Tb_Water;
-    private MonoFragment Tb_mono;
+    private MonoStepFragment Tb_mono;
     private EsperssoFragment Tb_espresso;
     private int mIngrendientPid=0;
     private int m_ingredientType;
@@ -89,6 +92,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
     private EspressoDao mespressoDao=null;
     private MonoDao mmonoDao=null;
     private PowderFactory powderFactory;
+    private MonoStepDao monoStepDao=null;
     public List<PowderItem> getPowderItems() {
         return powderItems;
     }
@@ -103,6 +107,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
         mwaterDao = new WaterDao(this,getApp());
         mespressoDao = new EspressoDao(this,getApp());
         mmonoDao = new MonoDao(this,getApp());
+        monoStepDao = new MonoStepDao(this,getApp());
         IntentFilter filter = new IntentFilter();
         filter.addAction(Constant.ACTION_MAKE_INGREDIENT_ACK);
         filter.addAction(Constant.ACTION_CMD_RSP_TIME_OUT);
@@ -452,7 +457,7 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
                 mingredientMono = mmonoDao.findByT(ingredient.getPid());
                 if (mingredientMono != null) {
                     if (Tb_mono == null)
-                        Tb_mono = new MonoFragment();
+                        Tb_mono = new MonoStepFragment();
                     if (Tb_mono.isAdded()) {
                         //// TODO: 2018/2/11 shuaxin jiemian
                         Tb_mono.InitView(mingredientMono);
@@ -546,7 +551,8 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
             {
                 showSavewindow();
                 Tb_mono.save();
-                ingredientStructure = cmdMakeIngredient.buildMonoStructure(mingredientMono);
+                List<IngredientMonoProcess> monosteps = monoStepDao.getmonosteps(mingredientMono.getPid());
+                ingredientStructure = cmdMakeIngredient.buildMonoStructure(mingredientMono,monosteps);
                 getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_PREVIEW, mingredientMono.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_MONO), ingredientStructure));
             }
         }
@@ -603,16 +609,10 @@ public class aty_beverageIngredient_maker  extends BaseActivity implements View.
             if(mingredientMono!=null && Tb_mono!=null)
             {
                 Tb_mono.save();
-                ingredientStructure = cmdMakeIngredient.buildMonoStructure(mingredientMono);
-                if(mingredientMono.getCreatestatus()==1)
-                {
-                    showSavewindow();
-                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_ADD, mingredientMono.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_MONO), ingredientStructure));
-                }else if(mingredientMono.getCreatestatus()==3)
-                {
-                    showSavewindow();
-                    getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientMono.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_MONO), ingredientStructure));
-                }
+                List<IngredientMonoProcess> monosteps = monoStepDao.getmonosteps(mingredientMono.getPid());
+                ingredientStructure = cmdMakeIngredient.buildMonoStructure(mingredientMono,monosteps);
+                showSavewindow();
+                getApp().addCmdQueue(cmdMakeIngredient.buildCmd(Constant.OPCMD_MODIFY, mingredientMono.getPid(), AndroidUtils_Ext.oct2Hex(Ingredient.TYPE_MONO), ingredientStructure));
                 iscurrentChanged =false;
             }
         }

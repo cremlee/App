@@ -25,8 +25,9 @@
                 android:id="@+id/image_banner"
                 android:maxHeight="80dp"
                 android:maxWidth="160dp"
+                android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
             <!--showcompanyinfo-->
             <TextView
                 android:layout_toEndOf="@+id/image_banner"
@@ -60,18 +61,24 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:textColor="@android:color/background_light"
                 android:textSize="22sp" />
-            <Button
+            <RelativeLayout
                 android:layout_centerVertical="true"
                 android:layout_margin="5dp"
                 android:layout_toStartOf="@+id/tv_time"
-                android:id="@+id/lang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@mipmap/flag_mask"
-                />
+                android:layout_width="190dp"
+                android:layout_height="80dp">
+                <Button
+                    android:layout_centerInParent="true"
+                    android:id="@+id/lang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/zh"
+                    />
+            </RelativeLayout>
+
         </RelativeLayout>
         <TextView
             android:layout_width="match_parent"

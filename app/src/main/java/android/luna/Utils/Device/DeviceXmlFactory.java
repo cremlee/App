@@ -207,7 +207,7 @@ public class DeviceXmlFactory {
                                 ((Dev_Led)device).setLed_warn_intensity(Integer.parseInt(pullParser.getAttributeValue(null,"WarnInt")));
                                 ((Dev_Led)device).setLife_led(Integer.parseInt(pullParser.getAttributeValue(null,"LedLife")));
                             }
-                            else if(id.startsWith("000e")) //air
+                            else if(id.startsWith("000E")) //air
                             {
                                 device =new Dev_Airbreak(1);
                                 device.setID(pullParser.getAttributeValue(null,"GUID"));

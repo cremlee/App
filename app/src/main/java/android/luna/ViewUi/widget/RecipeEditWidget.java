@@ -45,6 +45,7 @@ public class RecipeEditWidget extends LinearLayout {
 	private IngredientWater water;
 	private IngredientMilk milk;
 	private IngredientEspresso _espresso;
+	private IngredientMono _mono;
 //	private int machineType = App.MACHINE_TYPE_MF13;
 	//private DataHelper dataHelper;
 	private BeverageFactoryDao mbeverageFactoryDao=null;
@@ -233,50 +234,57 @@ public class RecipeEditWidget extends LinearLayout {
 		int ingredientType = pub.getIngredientType();
 		float scaleUp = pub.getScaleUp()/100.0f;
 		switch (ingredientType) {
-		case Ingredient.TYPE_FILTER_BREW_ADVANCE:
-			filterBrewAdvance = (IngredientFilterBrewAdvance)ingredient;
-			name = filterBrewAdvance.getName();
-			float[] filteradvValues = CremApp.calcFilterBrewAdvanceValue(filterBrewAdvance, filterBrewStepDao.getFilterBrewStep(filterBrewAdvance.getPid()));
-			totalTime = filteradvValues[0];
-			totalVolume = filteradvValues[1]*scaleUp;
-			break;
-		case Ingredient.TYPE_FILTER_BREW:
-			filterBrew = (IngredientFilterBrew) ingredient;
-			name = filterBrew.getName();			
+			case Ingredient.TYPE_FILTER_BREW_ADVANCE:
+				filterBrewAdvance = (IngredientFilterBrewAdvance) ingredient;
+				name = filterBrewAdvance.getName();
+				float[] filteradvValues = CremApp.calcFilterBrewAdvanceValue(filterBrewAdvance, filterBrewStepDao.getFilterBrewStep(filterBrewAdvance.getPid()));
+				totalTime = filteradvValues[0];
+				totalVolume = filteradvValues[1] * scaleUp;
+				break;
+			case Ingredient.TYPE_FILTER_BREW:
+				filterBrew = (IngredientFilterBrew) ingredient;
+				name = filterBrew.getName();
 //			float[] filterValues = CalcRecipeValueUtils.calcFilterBrewValue(filterBrew,App.getMachineType());
-			float[] filterValues = CremApp.calcFilterBrewValue(filterBrew);
-			totalTime = filterValues[0];
-			totalVolume = filterValues[1]*scaleUp;
-			break;
-		case Ingredient.TYPE_INSTANT:
-			instant = (IngredientInstant) ingredient;
-			name = instant.getName();
-			float[] instantValues = CremApp.calcInstantValue(instant);
-			totalTime = instantValues[0]*scaleUp+(instant.getPauseTimeAfterDispense()+instant.getPreflushPauseTime()+Constant.MIX_DELAY_TM)/1000.0f;
-			totalVolume = instantValues[1]*scaleUp;
-			break;
-		case Ingredient.TYPE_WATER:
-			water = (IngredientWater) ingredient;
-			name = water.getName();
-			float[] waterValues = CremApp.calcWaterValue(water);
-			totalTime = waterValues[0]*scaleUp;
-			totalVolume = waterValues[1]*scaleUp;
-			break;
-		case Ingredient.TYPE_MILK:
-			milk = (IngredientMilk) ingredient;
-			name = milk.getName();
-			float[] milkValues = CremApp.calcMilkValue(milk);
-			totalTime = milkValues[0]*scaleUp;
-			totalVolume = milkValues[1]*scaleUp;
-			break;
-		case Ingredient.TYPE_ESPRESSO:
-			_espresso = (IngredientEspresso)ingredient;
-			name = _espresso.getName();
-			totalTime = (_espresso.getBrewtime()+_espresso.getPreinfusiontime()+_espresso.getPrebrewtime())/10;
-			totalVolume = _espresso.getWatervolume()*scaleUp;
-			break;
-		default:
-			break;
+				float[] filterValues = CremApp.calcFilterBrewValue(filterBrew);
+				totalTime = filterValues[0];
+				totalVolume = filterValues[1] * scaleUp;
+				break;
+			case Ingredient.TYPE_INSTANT:
+				instant = (IngredientInstant) ingredient;
+				name = instant.getName();
+				float[] instantValues = CremApp.calcInstantValue(instant);
+				totalTime = instantValues[0] * scaleUp + (instant.getPauseTimeAfterDispense() + instant.getPreflushPauseTime() + Constant.MIX_DELAY_TM) / 1000.0f;
+				totalVolume = instantValues[1] * scaleUp;
+				break;
+			case Ingredient.TYPE_WATER:
+				water = (IngredientWater) ingredient;
+				name = water.getName();
+				float[] waterValues = CremApp.calcWaterValue(water);
+				totalTime = waterValues[0] * scaleUp;
+				totalVolume = waterValues[1] * scaleUp;
+				break;
+			case Ingredient.TYPE_MILK:
+				milk = (IngredientMilk) ingredient;
+				name = milk.getName();
+				float[] milkValues = CremApp.calcMilkValue(milk);
+				totalTime = milkValues[0] * scaleUp;
+				totalVolume = milkValues[1] * scaleUp;
+				break;
+			case Ingredient.TYPE_ESPRESSO:
+				_espresso = (IngredientEspresso) ingredient;
+				name = _espresso.getName();
+				totalTime = (_espresso.getBrewtime() + _espresso.getPreinfusiontime() + _espresso.getPrebrewtime()) / 10;
+				totalVolume = _espresso.getWatervolume() * scaleUp;
+				break;
+			case Ingredient.TYPE_MONO:
+				_mono = (IngredientMono) ingredient;
+				name = _mono.getName();
+				totalTime = (_mono.getInfusiontime()+_mono.getBubblerruntime()+_mono.getAirruntime()+_mono.getBrewtime());
+				totalVolume = (_mono.getInfusionwatervolume()+_mono.getDispensewatervolume()) * scaleUp;
+
+				break;
+			default:
+				break;
 		}
 		setName(name);
 		setTotalVolume(totalVolume);

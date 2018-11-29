@@ -92,7 +92,7 @@ public class SerialPortManager {
 	 */
 	protected SerialPort getSerialPort() throws SecurityException, IOException, InvalidParameterException {
 		if (mSerialPort == null) {
-			mSerialPort = new SerialPort(new File("/dev/ttyS3"), 19200, 0);
+			mSerialPort = new SerialPort(new File("/dev/ttyS2"), 19200, 0);
 		}
 		return mSerialPort;
 	}

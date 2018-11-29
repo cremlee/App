@@ -12,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.HashMap;
 import java.util.List;
 
 import evo.luna.android.R;
@@ -64,17 +65,19 @@ public class adpter_group_button extends BaseAdapter {
         return position;
     }
 
+    private HashMap<Integer, View> viewMap = new HashMap<Integer, View>();
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ItemView itemView;
         final int pos = position;
-        if(convertView==null)
+        if(!viewMap.containsKey(position) || viewMap.get(position) == null)
         {
             convertView = LayoutInflater.from(context).inflate(R.layout.lyt_adp_buttonitem, null);
             AbsListView.LayoutParams lp  = new AbsListView.LayoutParams((int) (155*mwidthfact), (int) (190*mheightfact));
             convertView.setLayoutParams(lp);
             itemView = new ItemView((ImageView)convertView.findViewById(R.id.icon),(TextView)convertView.findViewById(R.id.name));
             convertView.setTag(itemView);
+            viewMap.put(position, convertView);
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -84,6 +87,7 @@ public class adpter_group_button extends BaseAdapter {
             });
         }else
         {
+            convertView = viewMap.get(position);
             itemView = (ItemView) convertView.getTag();
         }
         itemView.icon.setImageBitmap(ImageConvertFactory.getsavefrompath(getItem(position).getIconpath(),155,155));

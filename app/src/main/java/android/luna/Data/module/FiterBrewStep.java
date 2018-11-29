@@ -6,8 +6,6 @@ import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "tb_filterstep")
 public class FiterBrewStep implements Serializable  {
-	
-	
 	/**
 	 * 
 	 */

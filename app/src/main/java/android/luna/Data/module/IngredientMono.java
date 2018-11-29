@@ -60,6 +60,87 @@ public class IngredientMono implements Serializable {
 	@DatabaseField(defaultValue="0")
 	private int dispensewaterntc;
 
+	@DatabaseField(defaultValue="0")
+	private int powderwait;
+	@DatabaseField(defaultValue="0")
+	private int washcount;
+	@DatabaseField(defaultValue="0")
+	private int washenable;
+	@DatabaseField(defaultValue="0")
+	private int washvolume;
+	@DatabaseField(defaultValue="0")
+	private int washtype;
+	@DatabaseField(defaultValue="0")
+	private int washtemp;
+	@DatabaseField(defaultValue="5")
+	private int emptytime;
+	@DatabaseField(defaultValue="80")
+	private int emptyspeed;
+
+
+	public int getPowderwait() {
+		return powderwait;
+	}
+
+	public void setPowderwait(int powderwait) {
+		this.powderwait = powderwait;
+	}
+
+	public int getWashcount() {
+		return washcount;
+	}
+
+	public void setWashcount(int washcount) {
+		this.washcount = washcount;
+	}
+
+	public int getWashenable() {
+		return washenable;
+	}
+
+	public void setWashenable(int washenable) {
+		this.washenable = washenable;
+	}
+
+	public int getWashvolume() {
+		return washvolume;
+	}
+
+	public void setWashvolume(int washvolume) {
+		this.washvolume = washvolume;
+	}
+
+	public int getWashtype() {
+		return washtype;
+	}
+
+	public void setWashtype(int washtype) {
+		this.washtype = washtype;
+	}
+
+	public int getWashtemp() {
+		return washtemp;
+	}
+
+	public void setWashtemp(int washtemp) {
+		this.washtemp = washtemp;
+	}
+
+	public int getEmptytime() {
+		return emptytime;
+	}
+
+	public void setEmptytime(int emptytime) {
+		this.emptytime = emptytime;
+	}
+
+	public int getEmptyspeed() {
+		return emptyspeed;
+	}
+
+	public void setEmptyspeed(int emptyspeed) {
+		this.emptyspeed = emptyspeed;
+	}
 
 	public int getInfusionwatervolume() {
 		return infusionwatervolume;

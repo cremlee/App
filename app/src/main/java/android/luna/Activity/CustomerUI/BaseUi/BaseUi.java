@@ -70,6 +70,7 @@ import android.widget.TextClock;
 import android.widget.TextView;
 
 import com.cqube.communication.BluePortManager;
+import com.j256.ormlite.stmt.query.In;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -136,7 +137,9 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
     private FloatingActionButton top1,top2,top3;
     private RelativeLayout ui_bg;
 
-
+    private int[] langResId = new int[]{R.mipmap.zh,R.mipmap.en,R.mipmap.en,
+            R.mipmap.en,R.mipmap.en,R.mipmap.en,
+            R.mipmap.en,R.mipmap.en,R.mipmap.en};
     public interface Languagechanged
     {
         void updated();
@@ -397,6 +400,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         btn_info = findViewById(R.id.btn_info);
         tv_time = findViewById(R.id.tv_time);
         tv_comp_name = findViewById(R.id.tv_comp_name);
+        tv_comp_name.setVisibility(View.INVISIBLE);
         rlyt_bg = findViewById(R.id.rlyt_bg);
         profile = findViewById(R.id.profile);
         menu_fav = findViewById(R.id.menu_fav);
@@ -579,7 +583,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         if(path!=null && !"".equals(path)) {
             Bitmap bitmap = PictureManager.getInstance().getBitmapFromMemCache(path);
             if (bitmap == null) {
-                final Bitmap tmpbitmap = PictureManager.decodeSampledBitmapFromResource(path, 200, 100);
+                final Bitmap tmpbitmap = PictureManager.decodeSampledBitmapFromResource(path, 140, 80);
                 if (tmpbitmap != null) {
                     PictureManager.getInstance().addBitmapToMemoryCache(path, tmpbitmap);
                     bitmap = PictureManager.getInstance().getBitmapFromMemCache(path);
@@ -597,7 +601,7 @@ public class BaseUi extends BaseActivity implements View.OnClickListener ,IBaseU
         lang.setVisibility(getApp().get_screenSettings_instance().getShowlanguage()==1?View.VISIBLE:View.INVISIBLE);
         if(languageitem==null)
             lang.setVisibility(View.GONE);
-
+        lang.setBackground(getResources().getDrawable(langResId[getApp().getCurrent_language()-1]));
         if(basics_top5!=null && basics_top5.size()>0)
         {
             if(basics_top5.size()>=1)

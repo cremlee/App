@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cqube="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/sr_bg"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <Button
+            android:drawableStart="@drawable/ic_back"
+            android:textColor="@color/material_white"
+            android:id="@+id/btn_close"
+            android:minWidth="150dp"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:layout_marginStart="20dp"
+            android:background="@color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/MENU_BACK"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:background="@drawable/shape_drink_body"
+            android:orientation="vertical"
+            android:layout_width="250dp"
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/lv_step"
+                android:padding="20dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+            <Button
+                android:id="@+id/add"
+                android:textSize="22sp"
+                android:text="新增步骤"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ScrollView
+            android:padding="10dp"
+            android:background="@drawable/shape_drink_body"
+            android:layout_weight="3.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:background="@color/spring_wood"
+                android:id="@+id/stepinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.luna.ViewUi.widget.SettingItemTextView2
+                    android:id="@+id/stepindex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:textview2TextTitle="step name"
+                    cqube:textview2DrawbleRight="@drawable/ic_delete"
+                    cqube:textview2TextBackground="@color/title_text_color2"
+                    cqube:textview2TextColor="@android:color/white" />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/infusiontime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbCur="0"
+                    cqube:sbMax="60"
+                    cqube:sbMin="0"
+                    cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_INFUSION_TIME"
+                    cqube:sbUnit="s" />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/infusionvolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbCur="0"
+                    cqube:sbMax="150"
+                    cqube:sbMin="0"
+                    cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_INFUSION_VOLUME"
+                    cqube:sbUnit="ml" />
+                <android.luna.ViewUi.widget.SettingItemDropDown
+                    android:id="@+id/infusiontype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:dropdownItems="Tea Water#Still Water#Sparkling Water"
+                    cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_MONO_INFUSION_TYPE"
+                    cqube:dropdownValues="0#1#2" />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/infusiontemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbCur="0"
+                    cqube:sbMax="96"
+                    cqube:sbMin="0"
+                    cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_INFUSION_TEMP"
+                    cqube:sbUnit="C" />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/bubSpeedItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbCur="80"
+                    cqube:sbMax="100"
+                    cqube:sbMin="0"
+                    cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_BUB_SPD"
+                    cqube:sbUnit="%" />
+                <!-- bub running time -->
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/bubTimeItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbCur="10"
+                    cqube:sbMax="20"
+                    cqube:sbMin="0"
+                    cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_BUB_TIME"
+                    cqube:sbUnit="s" />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/presstime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbCur="3"
+                    cqube:sbMax="60"
+                    cqube:sbMin="0"
+                    cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_BREW"
+                    cqube:sbUnit="s" />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/dispensevolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbCur="0"
+                    cqube:sbMax="150"
+                    cqube:sbMin="0"
+                    cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_DS_VOLUME"
+                    cqube:sbUnit="ml" />
+                <android.luna.ViewUi.widget.SettingItemDropDown
+                    android:id="@+id/dispensetype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:dropdownItems="Tea Water#Still Water#Sparkling Water"
+                    cqube:dropdownTextName="@string/SVR_DRINK_INGREDIENT_MONO_DS_TYPE"
+                    cqube:dropdownValues="0#1#2" />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/dispensetemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbCur="0"
+                    cqube:sbMax="96"
+                    cqube:sbMin="0"
+                    cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_DS_TEMP"
+                    cqube:sbUnit="C" />
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/outletspeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbCur="80"
+                    cqube:sbMax="100"
+                    cqube:sbMin="0"
+                    cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_OUTLET_SPEED"
+                    cqube:sbUnit="%" />
+                <!-- bub running time -->
+                <android.luna.ViewUi.widget.SettingItemSeekBar
+                    android:id="@+id/outlettime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    cqube:sbCur="10"
+                    cqube:sbMax="20"
+                    cqube:sbMin="0"
+                    cqube:sbName="@string/SVR_DRINK_INGREDIENT_MONO_OUTLET_TIME"
+                    cqube:sbUnit="s" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    </LinearLayout>
